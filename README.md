@@ -51,4 +51,4 @@ Alfredo Barron
 
 ##Derechos de autor y licencias
 
-Copyright 2013 Smock, bajo la licencia MIT.
+Copyright 2013 Smock, bajo la [licencia MIT.](https://github.com/alfredobarron/smock/blob/master/LICENCIA)
