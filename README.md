@@ -5,4 +5,14 @@ Jquery Plugin, validación de formularios fácil y simple, mensajes de alerta y 
 
 
 
+
+
+
+
+
+
+
+
+
+
 Creado por Alfredo Barron
