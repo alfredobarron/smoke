@@ -1,9 +1,19 @@
-/*
-|---------------------------------------------------------------------
-|	smoke v2.0
-|	Copyright 2013-2014 Alfredo Barron.
-|	http://alfredobarron.com/smoke
-|---------------------------------------------------------------------
+/** 
+* Smoke Jquery Plugin diseñado para usarse en Bootstrap 3. * 
+* @package Smoke
+* @version 2.0
+* @link https://github.com/alfredobarron/smoke The Smoke GitHub project 
+* @author Alfredo Barron <alfredobarronc@gmail.com>
+* @copyright 2014 Alfredo Barron 
+* @license http://www.gnu.org/licenses/gpl.html GNU General Public License 
+* @note This program is free software: you can redistribute it and/or modify 
+* it under the terms of the GNU General Public License as published by 
+* the Free Software Foundation, either version 3 of the License, or 
+* (at your option) any later version. 
+* This program is distributed in the hope that it will be useful, 
+* but WITHOUT ANY WARRANTY; without even the implied warranty of 
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+* GNU General Public License for more details. 
 */
 
 /*
