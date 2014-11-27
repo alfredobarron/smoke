@@ -1,10 +1,10 @@
-#[Smock](http://www.alfredobarron.com/smock)
+#[Smoke](http://alfredobarron.com/smoke)
 
-Jquery Plugin, validación de formularios fácil y simple, mensajes de alerta y confirmación con estilo, colección de funciones para programar.
+Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación y Mas.
 
 
 
-Para empezar, echa un vistazo a [http://www.alfredobarron.com/smock](http://www.alfredobarron.com/smock)
+Para empezar, echa un vistazo a [http://alfredobarron.com/smoke](http://alfredobarron.com/smoke)
 
 
 ## Tabla de contenidos
@@ -13,7 +13,7 @@ Para empezar, echa un vistazo a [http://www.alfredobarron.com/smock](http://www.
  - [Requiere](#requiere)
  - [Documentación](#documentacion)
  - [Communidad](#communidad)
- - [Autor](#autor)
+ - [Creador](#creador)
  - [Derechos de autor y licencias](#derechos-de-autor-y-licencias)
 
 
@@ -22,18 +22,18 @@ Para empezar, echa un vistazo a [http://www.alfredobarron.com/smock](http://www.
 
 Existen dos opciones disponibles para iniciar:
 
-- [Descarga la versión más reciente.](https://github.com/alfredobarron/smock/archive/master.zip)
-- Clona el repositorio: `git clone https://github.com/alfredobarron/smock.git.`
+- [Descarga la versión más reciente.](https://github.com/alfredobarron/smoke/archive/master.zip)
+- Clona el repositorio: `git clone https://github.com/alfredobarron/smoke.git`.
 
-Lee la página de primeros pasos para obtener más información sobre el contenido.
+Lee la página de [primeros pasos](http://alfredobarron.com/smoke/getting-started.html) para obtener más información sobre el contenido.
 
 ##Requiere
 
-Para que funcione el plugin Smock se requiere de la librería [Jquery](http://jquery.com/) y del framework [Bootstrap 3.](http://getbootstrap.com/)
+Para que funcione el plugin Smoke se requiere de la librería [Jquery](http://jquery.com/) y del framework [Bootstrap 3.](http://getbootstrap.com/)
 
 ##Documentación
 
-La documentación la puedes consultar en [http://www.alfredobarron.com/smock/primeros-pasos.html](http://www.alfredobarron.com/smock/primeros-pasos.html) 
+La documentación la puedes consultar en [http://alfredobarron.com/smoke/getting-started.html](http://alfredobarron.com/smoke/getting-started.html) 
 
 
 ##Comunidad
@@ -45,10 +45,10 @@ No pierdas de vista el desarrollo y noticias para la comunidad.
 - Añademe a tus círculos en [Google+.](https://plus.google.com/+Alfredobarron)
 - Visita mi pagina oficial [www.alfredobarron.com](http://www.alfredobarron.com)
 
-##Autor
+##Creador
 
 Alfredo Barron
 
 ##Derechos de autor y licencias
 
-Copyright 2014 Smock, bajo la [licencia MIT.](https://github.com/alfredobarron/smock/blob/master/LICENCIA)
+Código y documentación copyright 2014 Alfredo Barron. Código publicado bajo la [licencia GPL.](https://github.com/alfredobarron/smoke/blob/master/LICENCIA)
