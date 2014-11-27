@@ -131,6 +131,7 @@ $.fn.smkValidate = function() {
 
 			// Se valida el input SELECT
 			if (required === 'required' && tag === 'select') {
+				// Se valida que el value del select no este vació
 				if (value === '') {
 					// Se agrega el mensaje de error
 					result = $.smkAddError(self, textSelect);
@@ -142,7 +143,8 @@ $.fn.smkValidate = function() {
 
 			// Se validan los input RADIO y/o CHECKBOX
 			if (required === 'required' && type === 'radio' || type === 'checkbox') {
-				var check = $("input[name='" + this.name + "']:checked").val();
+				var check = $("input[name='" + self.name + "']:checked").val();
+				// Se valida que el value del input este ckecked
 				if (check === undefined) {
 					// Se agrega el mensaje de error
 					result = $.smkAddError(self, textCheckbox);
@@ -156,6 +158,7 @@ $.fn.smkValidate = function() {
 			if (smkType === 'number') {
 				// Se crea la expresión regular para el input number
 				var numberRegex = /^([0-9])*$/;
+				// Se valida que el value del input cumpla con la expresión regular
 				if (!numberRegex.test(value)) {
 					// Se agrega el mensaje de error
 					result = $.smkAddError(self, textNumber);
@@ -169,6 +172,7 @@ $.fn.smkValidate = function() {
 			if (smkType === 'alphanumeric') {
 				// Se crea la expresión regular para el input alphanumeric
 				var alphanumericRegex = /^[a-z0-9]+$/i;
+				// Se valida que el value del input cumpla con la expresión regular
 				if (!alphanumericRegex.test(value)) {
 					// Se agrega el mensaje de error
 					result = $.smkAddError(self, textAlphanumeric);
@@ -184,6 +188,7 @@ $.fn.smkValidate = function() {
 				//var currencyRegex = /^\$?(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
 				// Se crea la expresión regular para el input currency
 				var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
+				// Se valida que el value del input cumpla con la expresión regular
 				if (!currencyRegex.test(value)) {
 					// Se agrega el mensaje de error
 					result = $.smkAddError(self, textCurrency);
@@ -225,6 +230,7 @@ $.fn.smkValidate = function() {
 
 	// Si se teclea algo en el input se remueven los mensajes de error
 	$(self).keyup(function() {
+		// Se valida que el value del input no este vació
 		if (self.val() !== '') {
 			// Se remueve el mensaje de error
 			$.smkRemoveError(self);
@@ -232,6 +238,7 @@ $.fn.smkValidate = function() {
 	});
 	// Si cambia el input select se remueven los mensajes de error
 	$(self).change(function() {
+		// Se valida que el value del input no este vació
 		if (self.val() !== '') {
 			// Se remueve el mensaje de error
 			$.smkRemoveError(self);
