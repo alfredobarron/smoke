@@ -44,6 +44,8 @@ $.fn.smkValidate = function() {
 			self = $(v);
 			// Se obtiene el elemento padre
 			father = $(v).parents('.form-group');
+			// Se obtiene el name
+			var name = $(v).attr('name');
 			// Se obtiene el value
 			var value = $(v).val();
 			// Se obtiene el type
@@ -143,9 +145,11 @@ $.fn.smkValidate = function() {
 
 			// Se validan los input RADIO y/o CHECKBOX
 			if (required === 'required' && type === 'radio' || type === 'checkbox') {
-				var check = $("input[name='" + self.name + "']:checked").val();
+				var check = $("input[name=" + name + "]:checked").val();
+				//var check = self.is(':checked');
 				// Se valida que el value del input este ckecked
 				if (check === undefined) {
+				//if (check === false) {
 					// Se agrega el mensaje de error
 					result = $.smkAddError(self, textCheckbox);
 					return false;
