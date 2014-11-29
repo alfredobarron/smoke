@@ -1,0 +1,154 @@
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+.navbar-default{
+	background: #fff;
+}
+.navbar-default .navbar-nav>.active>a{
+	border-bottom: 3px solid #000;
+	background-color: #fff;
+}
+.navbar-brand{
+	color: #000 !important;
+}
+
+.black{
+	color: #fff;
+	background: #000;
+	padding-top: 110px;
+	padding-bottom: 120px;
+}
+.black h1, .black h3, .black .lead{
+	font-family: 'Poiret One', Arial !important;
+}
+.black h1{
+	font-size: 95px;
+	margin-bottom: 25px
+}
+.black .lead{
+	padding: 0 10%;
+	font-size: 30px;
+	margin-bottom: 50px;
+	color: #ddd;
+}
+.black .lead2{
+	font-size: 22px;
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+.black .btn{
+	color: #fff;
+	background: #000;
+	font-size: 20px;
+	padding: 18px  35px;
+}
+.black .btn:hover{
+	background: #fff;
+	color: #000;
+}
+
+.white{
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+.white .row{
+	margin-bottom: 140px;
+}
+.white .col-lg-4 a{
+	font-family: 'Poiret One', Arial !important;
+	border:10px solid #000;
+	background:#000;
+	color: #fff;
+	display: block;
+	border-radius: 50%;
+	height: 0;
+	padding-bottom: 50%;
+	width: 55%;
+	margin: 0 22%;
+	transition:all .2s ease-in-out;
+	-webkit-transition:all .2s ease-in-out; /* Chrome & Safari */
+	-moz-transition:all .2s ease-in-out; /* Firefox */
+	-o-transition:all .2s ease-in-out; /* Opera */
+	-ms-transition:all .2s ease-in-out; /* IE 9 */
+}
+.white .col-lg-4 a:hover{
+	text-decoration: none;
+	background:#fff;
+	color: #000
+}
+.white .col-lg-4 a:hover span{
+	font-size: 110px;
+	margin-bottom: 35px;
+}
+.white .col-lg-4 span{
+	font-size: 100px;
+	margin-bottom: 55px;
+	margin-top: 20%;
+	transition:all .2s ease-in-out;
+	-webkit-transition:all .2s ease-in-out; /* Chrome & Safari */
+	-moz-transition:all .2s ease-in-out; /* Firefox */
+	-o-transition:all .2s ease-in-out; /* Opera */
+	-ms-transition:all .2s ease-in-out; /* IE 9 */
+}
+
+.white .small{
+	width: 140px;
+}
+.white .lead{
+	font-size: 40px;
+	font-family: 'Poiret One', Arial !important;
+	margin-top: 60px;
+}
+
+
+.follow{
+	padding: 30px 0;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+.follow ul li .fb-share-button>span{
+	vertical-align: initial !important;
+}
+
+.jumbotron{
+	margin-top: 50px;
+	margin-bottom: 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #000;
+	background-image: url('../images/bg-smoke.jpg');
+	background-position: center;
+	color: #ddd;
+}
+.list-group{
+	margin-top:65px;
+}
+
+.affix{
+	top:0px;
+}
+
+.col-lg-9{
+	background: #fff;
+}
+
+section{
+	padding-top: 40px;
+	margin-bottom: 100px;
+}
+
+
+
+
+@media (max-width: 767px) {
+	.affix {
+		position: static;
+	}
+	.black h1{
+		font-size: 66px
+	}
+}
+@media (min-width: 1200px){
+	.affix {
+		width: 258px;
+	}
+}

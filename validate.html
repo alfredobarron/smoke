@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Smoke . Validación</title>
+		<meta name="description" content="Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación y Mas" />
+		<meta name="keywords" content="HTML, CSS, JS, JavaScript, JQuery, plugin, bootstrap, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, notificacion, notificaciones, alert, confirmacion, confirm, alfredobarron, alfredo barron, alfredo, barron" />
+		<meta name="robots" content="index,follow,archive">
+		<meta name="author" content="Alfredo Barron" />
+		<link rel="shortcut icon" href="images/favicon.png">
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Smoke -->
+		<link href="smoke/css/smoke.css" rel="stylesheet">
+		<!-- Styles -->
+		<link href="css/styles.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Smoke</a>
+				</div><!-- /.navbar-header -->
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="getting-started.html">Primeros pasos</a></li>
+						<li class="active"><a href="validate.html">Validación</a></li>
+						<li><a href="notifications.html">Notificaciones</a></li>
+						<li><a href="helpers.html">Helpers</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container -->
+		</nav>
+
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Validar formulario</h1>
+				<p class="lead">Hace que la validación de formularios del lado del cliente sea fácil, simple y sobre todo segura.</p>
+			</div>
+		</div><!-- /.smock -->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="list-group" data-spy="affix" data-offset-top="260">
+						<ul class="nav">
+							<a href="#input-empty" class="list-group-item">Campo vacío</a>
+							<a href="#input-email" class="list-group-item">Campo email</a>
+							<a href="#input-number" class="list-group-item">Campo numérico</a>
+							<a href="#input-alphanumeric" class="list-group-item">Campo alfanumérico</a>
+							<a href="#input-currency" class="list-group-item">Campo Moneda</a>
+							<a href="#number-character" class="list-group-item">Numero de caracteres</a>
+							<a href="#range-character" class="list-group-item">Rango de caracteres</a>
+							<a href="#strong-password" class="list-group-item">Contraseña fuerte</a>
+							<a href="#equal-password" class="list-group-item">Contraseñas iguales</a>
+							<a href="#equal-password-var" class="list-group-item">Contraseña igual a variable</a>
+							<a href="#language" class="list-group-item">Lenguaje</a>
+							<a href="#customize-message" class="list-group-item">Personalizar mensaje</a>
+							<a href="#clear-form" class="list-group-item">Limpiar formulario</a>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-9">
+
+					<section id="input-empty">
+
+						<h1>Campo vacío</h1><hr>
+						<p>Para validar que un campo no sea enviado vació de un formulario solo tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. Los tipos de campos soportados hasta el momento son <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> y <code>checkbox</code>. La función que se utiliza es <span class="text-success">smkValidate()</span>.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formEmpty">
+									<div class="form-group">
+										<label for="text">Text</label>
+										<input type="text" class="form-control" placeholder="Enter text" required>
+									</div>
+									<div class="form-group">
+										<label for="text">Select</label>
+										<select class="form-control" required>
+											<option value="">Select</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="text">Textarea</label>
+										<textarea class="form-control" rows="3" required></textarea>
+									</div>
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="check" value="1" required>
+												Checkbox
+											</label>
+										</div>
+									</div>
+									<dif class="form-group">
+										<div class="radio">
+											<label>
+												<input type="radio" name="rad" value="option1" required>
+												Option 1
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="rad" value="option2">
+												Option 2
+											</label>
+										</div>
+									</dif>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/c28db278dc300293315d.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="600" data-theme-id="8624" data-slug-hash="wrfCI" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/wrfCI/'>Smoke Validate Empty</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="input-email">
+
+						<h1>Campo email</h1><hr>
+						<p>Para validar una cuenta de correo electrónico valida, el campo debe ser de tipo <code>email</code> y agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formEmail">
+									<div class="form-group">
+										<label for="text">Email</label>
+										<input type="email" class="form-control" placeholder="Enter email" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/a1fae1f5114faa25cbe9.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="bNdrxb" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/bNdrxb/'>Smoke Validate Email</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+					</section>
+
+					<section id="input-number">
+
+						<h1>Campo numérico</h1><hr>
+						<p>Para validar que en el campo solo se ingresen números, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>number</code>.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formNumber">
+									<div class="form-group">
+										<label for="text">Number</label>
+										<input type="text" class="form-control" placeholder="Enter number" smk-type="number" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/3190da6e2750e8b6e153.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="VYLMjR" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/VYLMjR/'>Smoke Validate Number</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="input-alphanumeric">
+
+						<h1>Campo alfanumérico</h1><hr>
+						<p>Para validar que en el campo solo se ingresen números y letras, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>alphanumeric</code>.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formAlphanumeric">
+									<div class="form-group">
+										<label for="text">Alphanumeric</label>
+										<input type="text" class="form-control" placeholder="Enter alphanumeric string" smk-type="alphanumeric" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/7a4eb0150a2f1be4b544.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="GgJMNK" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/GgJMNK/'>Smoke Validate Alphanumeric</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="input-currency">
+
+						<h1>Campo Moneda</h1><hr>
+						<p>Para validar que en el campo solo se ingresen números, comas, puntos y tenga un formato de moneda, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>currency</code>.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formCurrency">
+									<div class="form-group">
+										<label for="text">Currency</label>
+										<input type="text" class="form-control" placeholder="Enter currency" smk-type="currency" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/7a4eb0150a2f1be4b544.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="GgJMNK" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/GgJMNK/'>Smoke Validate Alphanumeric</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="number-character">
+
+						<h1>Numero de caracteres</h1><hr>
+						<p>Para validar que el campo acepte un determinado numero de caracteres, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar los atributos <code>minlength</code> y <code>maxlength</code> y dentro de estos el numero de caracteres permitido.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formNumberChar">
+									<div class="form-group">
+										<label for="text">Number Character</label>
+										<input type="text" class="form-control" placeholder="Enter text" minlength="8" maxlength="8" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/dcc395702ee2503b2969.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="yyNvwK" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/yyNvwK/'>Smoke Validate Number Character</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="range-character">
+
+						<h1>Rango de caracteres</h1><hr>
+						<p>Para validar que el campo acepte un rango de numero de caracteres, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar los atributos <code>minlength</code> y <code>maxlength</code> y dentro de estos el rango de numero de caracteres permitido.</p>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formRangeChar">
+									<div class="form-group">
+										<label for="text">Range Character</label>
+										<input type="text" class="form-control" placeholder="Enter text" minlength="4" maxlength="8" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/f23fab5edf7a5f2ef79b.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="PwqQgb" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/PwqQgb/'>Smoke Validate Range Character</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="strong-password">
+
+						<h1>Contraseña fuerte</h1><hr>
+						<p>Para validar una contraseña fuerte o segura, el campo debe ser de tipo <code>password</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> y por ultimo añadir el atributo <code>smk-strongPass</code> y dentro de este el nivel de fuerza que se requiera.</p>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Nivel</th>
+									<th>Descripción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Default</td>
+									<td>Mínimo 4 caracteres</td>
+								</tr>
+								<tr>
+									<td>weak</td>
+									<td>Mínimo 6 caracteres</td>
+								</tr>
+								<tr>
+									<td>medium</td>
+									<td>Mínimo 6 caracteres y un numero</td>
+								</tr>
+								<tr>
+									<td>strong</td>
+									<td>Mínimo 6 caracteres un numero y una mayúscula</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formStrongPass">
+									<div class="form-group">
+										<label for="text">Password</label>
+										<input type="password" class="form-control" placeholder="Enter password" smk-strongPass="medium" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/0166a41e380b7535232c.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="qEdXQo" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/qEdXQo/'>Smoke Validate Password</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+					</section>
+
+					<section id="equal-password">
+
+						<h1>Contraseñas iguales</h1><hr>
+						<p>Para validar que el texto de dos campos sean iguales, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> en el primer campo. La función que se utiliza es <span class="text-success">$.smkEqualPass()</span>.</p>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formEqualPass">
+									<div class="form-group">
+										<label for="text">Password</label>
+										<input type="password" class="form-control" placeholder="Enter password" id="pass1" required>
+									</div>
+									<div class="form-group">
+										<label for="text">Confirm Password</label>
+										<input type="password" class="form-control" placeholder="Confirm password" id="pass2">
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/0294312e08e5528dbce7.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/dd3569a204c71fe86eb3.js"></script>
+							</div>
+						</div>
+
+						<p data-height="400" data-theme-id="8624" data-slug-hash="LEVdOG" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/LEVdOG/'>Smoke Validate Equal Password</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="equal-password-var">
+
+						<h1>Contraseña igual a variable</h1><hr>
+						<p>Para validar que el texto de un campo es igual al valor de una variable Javascript, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. La función que se utiliza es <span class="text-success">$.smkEqualPass()</span>.</p>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formEqualPassVar">
+									<div class="form-group">
+										<label for="text">Password</label>
+										<p class="form-control-static">Smoke1</p>
+									</div>
+									<div class="form-group">
+										<label for="text">Confirm Password</label>
+										<input type="password" class="form-control" placeholder="Confirm password" smk-strongPass="strong" id="pass" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/b689cb15ff982c20da63.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/2e277dfbdf9a561ffbc3.js"></script>
+							</div>
+						</div>
+
+						<p data-height="400" data-theme-id="8624" data-slug-hash="LEVdeN" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/LEVdeN/'>Smoke Validate Equal Password & Var</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="language">
+
+						<h1>Lenguaje</h3><hr>
+						<p>Para cambiar el lenguaje de los mensajes de validación, se agrega el archivo de lenguaje dentro del html y despues se agrega la opción <code>lang</code> dentro de la función <span class="text-success">smkValidate()</span>.</p>
+						<div class="panel panel-default">
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/71df7c95c90ed5bb7c61.js"></script>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/e020231a38adafea6d38.js"></script>
+							</div>
+						</div>
+
+						<h4>Lenguajes soportados</h4>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Lang</th>
+									<th>Language</th>
+									<th>Archive</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>es</td>
+										<td>Spanish</td>
+										<td>Default</td>
+									</tr>
+									<tr>
+										<td>en</td>
+										<td>English</td>
+										<td>smoke.en.js</td>
+									</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section id="customize-message">
+
+						<h1>Personalizar mensaje</h3><hr>
+						<p>Personaliza el mensaje añadiendo el atributo <code>smk-text</code></p>
+						<div class="panel panel-default">
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/b1e3d4db93266fb569d5.js"></script>
+							</div>
+						</div>
+
+					</section>
+
+					<section id="clear-form">
+
+						<h1>Limpiar formulario</h1><hr>
+						<p>Para limpiar formularios se usa la función <span class="text-success">smkClear()</span>. Para no limpiar uno o más tipos de campos se usa la opción <span class="text-primary">noClear</span> dentro de la función.</p>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formClear">
+									<div class="form-group">
+										<label for="text">Text</label>
+										<input type="text" class="form-control" value="Text" >
+									</div>
+									<div class="form-group">
+										<label for="text">Select</label>
+										<select class="form-control">
+											<option value="">Select</option>
+											<option value="1" selected>1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="text">Textarea</label>
+										<textarea class="form-control" rows="3">Textarea</textarea>
+									</div>
+									<div class="form-group">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="checkbox" value="1" checked>
+												Checkbox
+											</label>
+										</div>
+									</div>
+									<dif class="form-group">
+										<div class="radio">
+											<label>
+												<input type="radio" name="radios" value="option1" checked>
+												Option 1
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="radios" value="option2">
+												Option 2
+											</label>
+										</div>
+									</dif>
+									<button type="button" class="btn btn-default">Clear</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/2c631283936ff85b7b1d.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/ac3a6190b6d3f4a72896.js"></script>
+							</div>
+						</div>
+
+						<p data-height="600" data-theme-id="8624" data-slug-hash="dPomjO" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/dPomjO/'>Smoke Clear Form</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<footer>
+						<div class="follow">
+							<hr>
+							<p>Diseñado y desarrollado con ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
+						</div>
+					</footer>
+
+				</div><!--/.col-lg-9 -->
+			</div><!--/.row -->
+		</div><!-- /.container -->
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<!-- Smoke -->
+		<script src="smoke/js/smoke.js"></script>
+		<script src="smoke/lang/smoke.en.js"></script>
+		<!-- Scripts -->
+		<script src="js/scripts.js"></script>
+		<!-- CodePen-->
+		<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+	</body>
+</html>

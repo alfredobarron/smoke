@@ -1,19 +1,19 @@
-/** 
-* Smoke Jquery Plugin diseñado para usarse en Bootstrap 3. * 
+/**
+* Smoke Jquery Plugin diseñado para usarse en Bootstrap 3. *
 * @package Smoke
 * @version 2.0
-* @link https://github.com/alfredobarron/smoke The Smoke GitHub project 
+* @link https://github.com/alfredobarron/smoke The Smoke GitHub project
 * @author Alfredo Barron <alfredobarronc@gmail.com>
-* @copyright 2014 Alfredo Barron 
-* @license http://www.gnu.org/licenses/gpl.html GNU General Public License 
-* @note This program is free software: you can redistribute it and/or modify 
-* it under the terms of the GNU General Public License as published by 
-* the Free Software Foundation, either version 3 of the License, or 
-* (at your option) any later version. 
-* This program is distributed in the hope that it will be useful, 
-* but WITHOUT ANY WARRANTY; without even the implied warranty of 
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
-* GNU General Public License for more details. 
+* @copyright 2014 Alfredo Barron
+* @license http://www.gnu.org/licenses/gpl.html GNU General Public License
+* @note This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 */
 
 (function($) {
@@ -24,27 +24,51 @@
 |   Validate all inputs
 |---------------------------------------------------------------------
 */
-$.fn.smkValidate = function() {
+$.fn.smkValidate = function(options) {
+
+	var settings = $.extend({
+		lang: 'es'
+	}, $.fn.smkValidate.Languaje, options);
+
+	var languaje =  {
+		es: {
+			// Mensaje de error para los input vacíos
+			textEmpty        : 'Campo requerido',
+			// Mensaje de error para el input email
+			textEmail        : 'Ingresa una cuenta de correo válida',
+			// Mensaje de error para el input number
+			textNumber       : 'Solo se admiten números',
+			// Mensaje de error para el input alphanumeric
+			textAlphanumeric : 'Solo se admiten números y/o letras',
+			// Mensaje de error para el input currency
+			textCurrency     : 'Ingresa una cantidad monetaria válida',
+			// Mensaje de error para el input select
+			textSelect       : 'Es necesario que selecciones una opción',
+			// Mensaje de error para el input checkbox y radio
+			textCheckbox     : 'Es necesario que selecciones una opción',
+			// Mensaje de error para longitud de caracteres
+			textLength       : 'El número de caracteres debe ser igual a <b> {@} </b>',
+			// Mensaje de error para rango de caracteres
+			textRange        : 'El número de caracteres debe ser mayor a <b> {@} </b> y menor a <b> {@} </b>',
+			// Mensaje de error para strongPass Default
+			textSPassDefault : 'Mínimo 4 caracteres',
+			// Mensaje de error para strongPass Weak
+			textSPassWeak    : 'Mínimo 6 caracteres',
+			// Mensaje de error para strongPass Madium
+			textSPassMedium  : 'Mínimo 6 caracteres y un número',
+			// Mensaje de error para strongPass Strong
+			textSPassStrong  : 'Mínimo 6 caracteres un número y una mayúscula'
+		}
+	};
+
+	if(settings.lang != 'es'){
+		languaje = $.fn.smkValidate.Languaje;
+	}
 
 	// Se inicializan las variables globales
 	var self = '';
 	var father = '';
 	var result = false;
-
-	// Se crea el mensaje de error para los input vacíos
-	var textEmpty = 'Campo requerido';
-	// Se crea el mensaje de error para el input email
-	var textEmail = 'Ingresa una cuenta de correo valida';
-	// Se crea el mensaje de error para el input number
-	var textNumber = 'Solo se admiten números';
-	// Se crea el mensaje de error para el input alphanumeric
-	var textAlphanumeric = 'Solo se admiten números y/o letras';
-	// Se crea el mensaje de error para el input currency
-	var textCurrency = 'Ingresa una cantidad monetaria valida';
-	// Se crea el mensaje de error para el input select
-	var textSelect = 'Es necesario que selecciones una opción';
-	// Se crea el mensaje de error para el input checkbox
-	var textCheckbox = 'Es necesario que selecciones una opción';
 
 	// Se recorren todos los inputs del formulario
 	$(':input', this).each(function(k,v) {
@@ -75,11 +99,6 @@ $.fn.smkValidate = function() {
 			// Se obtiene el valor de longitud mayor aceptada
 			var maxlength = $(v).attr('maxlength');
 
-			// Se crea el mensaje de error para longitud de caracteres
-			var textLength = 'El numero de caracteres debe ser igual a <b>' + maxlength + '</b>';
-			// Se crea el mensaje de error para rango de caracteres
-			var textRange = 'El numero de caracteres debe ser mayor a <b>' + (minlength-1) + '</b> y menor a <b>' + (parseInt(maxlength)+1) + '</b>';
-
 			// Se remueve el mensaje de error
 			$.smkRemoveError(self);
 
@@ -88,7 +107,7 @@ $.fn.smkValidate = function() {
 				// Se valida que el value del input no este vació
 				if (value === '') {
 					// Se agrega el mensaje de error
-					result =  $.smkAddError(self, textEmpty);
+					result =  $.smkAddError(self, languaje[settings.lang].textEmpty);
 					return false;
 				} else {
 					result = true;
@@ -102,7 +121,7 @@ $.fn.smkValidate = function() {
 				// Se valida que el value del input cumpla con la expresión regular
 				if (!emailRegex.test(value)) {
 					// Se agrega el mensaje de error
-					result =  $.smkAddError(self, textEmail);
+					result =  $.smkAddError(self, languaje[settings.lang].textEmail);
 					return false;
 				} else {
 					result = true;
@@ -117,19 +136,19 @@ $.fn.smkValidate = function() {
 				switch (smkStrongPass) {
 					case ('weak'):// Debe contener al menos 4 caracteres
 						strongPassRegex = /^(?=.*[a-z0-9])\w{6,}$/;
-						textPass = 'Mínimo 6 caracteres';
+						textPass = languaje[settings.lang].textSPassWeak;
 					break;
 					case ('medium'):// Debe contener al menos 6 caracteres y un numero
 						strongPassRegex = /^(?=.*\d)(?=.*[a-z])\w{6,}$/;
-						textPass = 'Mínimo 6 caracteres y un numero';
+						textPass = languaje[settings.lang].textSPassMedium;
 					break;
 					case ('strong'):// Debe contener al menos 6 caracteres, un numero y una mayúscula
 						strongPassRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
-						textPass = 'Mínimo 6 caracteres un numero y una mayúscula';
+						textPass = languaje[settings.lang].textSPassStrong;
 					break;
 					default:// Debe contener al menos 4 caracteres
 						strongPassRegex = /^(?=.*[a-z0-9])\w{4,}$/;
-						textPass = 'Mínimo 4 caracteres';
+						textPass = languaje[settings.lang].textSPassDefault;
 				}
 				// Se valida que el value del input cumpla con la expresión regular
 				if (!strongPassRegex.test(value)) {
@@ -146,7 +165,7 @@ $.fn.smkValidate = function() {
 				// Se valida que el value del select no este vació
 				if (value === '') {
 					// Se agrega el mensaje de error
-					result = $.smkAddError(self, textSelect);
+					result = $.smkAddError(self, languaje[settings.lang].textSelect);
 					return false;
 				} else {
 					result = true;
@@ -161,7 +180,7 @@ $.fn.smkValidate = function() {
 				if (check === undefined) {
 				//if (check === false) {
 					// Se agrega el mensaje de error
-					result = $.smkAddError(self, textCheckbox);
+					result = $.smkAddError(self, languaje[settings.lang].textCheckbox);
 					return false;
 				} else {
 					result = true;
@@ -175,7 +194,7 @@ $.fn.smkValidate = function() {
 				// Se valida que el value del input cumpla con la expresión regular
 				if (!numberRegex.test(value)) {
 					// Se agrega el mensaje de error
-					result = $.smkAddError(self, textNumber);
+					result = $.smkAddError(self, languaje[settings.lang].textNumber);
 					return false;
 				} else {
 					result = true;
@@ -189,7 +208,7 @@ $.fn.smkValidate = function() {
 				// Se valida que el value del input cumpla con la expresión regular
 				if (!alphanumericRegex.test(value)) {
 					// Se agrega el mensaje de error
-					result = $.smkAddError(self, textAlphanumeric);
+					result = $.smkAddError(self, languaje[settings.lang].textAlphanumeric);
 					return false;
 				} else {
 					result = true;
@@ -205,7 +224,7 @@ $.fn.smkValidate = function() {
 				// Se valida que el value del input cumpla con la expresión regular
 				if (!currencyRegex.test(value)) {
 					// Se agrega el mensaje de error
-					result = $.smkAddError(self, textCurrency);
+					result = $.smkAddError(self, languaje[settings.lang].textCurrency);
 					return false;
 				} else {
 					result = true;
@@ -217,6 +236,8 @@ $.fn.smkValidate = function() {
 				// Si contiene ambos y son iguales
 				if (minlength === maxlength) {
 					if ((value.length != minlength) && (value.length != maxlength)) {
+						// Se perzonaliza el mensaje de error
+						var textLength = $.smokeCustomizeText(languaje[settings.lang].textLength, maxlength);
 						// Se agrega el mensaje de error
 						result = $.smkAddError(self, textLength);
 						return false;
@@ -226,6 +247,11 @@ $.fn.smkValidate = function() {
 				// Si contiene ambos y son diferentes
 				} else if (minlength !== maxlength) {
 					if ((value.length < minlength) || (value.length > maxlength)) {
+						var arrayTextRange = [];
+						arrayTextRange[0] = parseInt(minlength-1);
+						arrayTextRange[1] = parseInt(maxlength)+1;
+						// Se perzonaliza el mensaje de error
+						var textRange = $.smokeCustomizeText(languaje[settings.lang].textRange, arrayTextRange);
 						// Se agrega el mensaje de error
 						result = $.smkAddError(self, textRange);
 						return false;
@@ -264,7 +290,7 @@ $.fn.smkValidate = function() {
 /*
 |---------------------------------------------------------------------
 |	Usage
-|	if($('#form').smkValidate()){}
+|	if($('#form').smkValidate({lang:'en'})){}
 |---------------------------------------------------------------------
 */
 
@@ -421,12 +447,7 @@ $.smkAddError = function (obj, text)
 		parent.addClass('has-feedback has-error smk-' + type);
 		// Se agrega el icono y el mensaje de error
 		parent.append(icon + msj);
-	} else if(type == 'checkbox'){
-		// Se agrega la clase de error
-		parent.addClass('has-feedback has-error smk-' + type);
-		// Se agrega el icono y el mensaje de error
-		parent.children().append(msj);
-	}else if(type == 'radio'){
+	}else if(type == 'checkbox' || type == 'radio'){
 		// Se agrega la clase de error
 		parent.addClass('has-feedback has-error smk-' + type);
 		// Se agrega el icono y el mensaje de error
@@ -457,6 +478,23 @@ $.smkRemoveError = function(obj)
 	parent.removeClass('has-error has-feedback');
 	// Se retorna false
 	return false;
+};
+/*
+|---------------------------------------------------------------------
+|   Se crea el método que personaliza los mensaje de error
+|---------------------------------------------------------------------
+*/
+$.smokeCustomizeText = function(text, arrayText){
+	var customText = '';
+	if(typeof(arrayText) == 'string'){
+		customText = text.replace('{@}', arrayText);
+	}else{
+		var split = text.split('{@}');
+		$.each(arrayText, function(index, val) {
+			customText += split[index] + val;
+		});
+	}
+	return customText;
 };
 
 
