@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Smoke . Primeros pasos</title>
+		<meta name="description" content="Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación y Mas" />
+		<meta name="keywords" content="HTML, CSS, JS, JavaScript, JQuery, plugin, bootstrap, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, notificacion, notificaciones, alert, confirmacion, confirm, alfredobarron, alfredo barron, alfredo, barron" />
+		<meta name="robots" content="index,follow,archive">
+		<meta name="author" content="Alfredo Barron" />
+		<link rel="shortcut icon" href="images/favicon.png">
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Smoke -->
+		<link href="smoke/css/smoke.css" rel="stylesheet">
+		<!-- Styles -->
+		<link href="css/styles.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Smoke</a>
+				</div><!-- /.navbar-header -->
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="getting-started.html">Primeros pasos</a></li>
+						<li><a href="validate.html">Validación</a></li>
+						<li><a href="notifications.html">Notificaciones</a></li>
+						<li><a href="helpers.html">Helpers</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container -->
+		</nav>
+
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Primeros pasos</h1>
+				<p class="lead">Una visión general de Smoke, cómo descargar y utilizar.</p>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-3">
+					<div class="list-group" data-spy="affix" data-offset-top="260">
+						<ul class="nav">
+							<a href="#download-smoke" class="list-group-item">Descargar Smoke</a>
+							<a href="#whats-included" class="list-group-item">Que incluye</a>
+							<a href="#required" class="list-group-item">Requerimientos</a>
+							<a href="#basic-template" class="list-group-item">Plantilla básica</a>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-9 col-sm-9">
+
+					<section id="download-smoke">
+						<h1>Descargar Smoke</h1><hr>
+						<p class="lead">Descarga Smoke y agregalo a tu proyecto, usarlo es fácil y rápido.</p>
+						<p><a class="btn btn-default btn-lg" role="button" href="https://github.com/alfredobarron/smock" target="_blank">Descargar Smoke</a></p>
+					</section>
+
+					<section id="whats-included">
+						<h1>Que incluye</h1><hr>
+						<p class="lead">Una vez descargado el archivo, descomprime el .zip para ver la estructura de Smoke. Verás algo como esto:</p>
+						<pre>
+smoke/
+├── css/
+│   ├── smoke.css
+│   └── smoke.min.css
+└── js/
+   ├── smoke.js
+   └── smoke.min.js
+						</pre>
+					</section>
+
+					<section id="required">
+						<h1>Requerimientos</h1><hr>
+						<p class="lead">El plugin Smoke requiere que se incluyan estas dos librerías para su funcionamiento.</p>
+						<div class="alert alert-warning"><b>jQuery requerido</b><br>Ten en cuenta que el plugin Smoke requiere que se incluya la librería jQuery.</div>
+						<div class="alert alert-warning"><b>Bootstrap 3 requerido</b><br>PTen en cuenta que el plugin Smoke requiere que se incluya el framework Bootstrap 3.</div>
+					</section>
+
+					<section id="basic-template">
+            <h1>Plantilla básica</h1><hr>
+            <p class="lead">Comienza con esta plantilla de HTML o modifícala a tus necesidades.</p>
+            <p>Copia el código HTML de abajo para empezar a trabajar con los requerimientos mínimos de Smoke.</p>
+            <pre>
+<code><span class="text-success">&lt;!DOCTYPE html&gt;</span>
+<span class="text-info">&lt;html </span><span class="text-primary">lang=</span><span class="text-danger">"es"</span> <span class="text-info">&gt;</span>
+  <span class="text-info">&lt;head&gt;</span>
+    <span class="text-info">&lt;meta</span> <span class="text-primary">charset=</span><span class="text-danger">"utf-8"</span><span class="text-info">&gt;</span>
+    <span class="text-info">&lt;meta</span> <span class="text-primary">http-equiv=</span><span class="text-danger">"X-UA-Compatible"</span> <span class="text-primary">content=</span><span class="text-danger">"IE=edge"</span><span class="text-info">&gt;</span>
+    <span class="text-info">&lt;meta</span> <span class="text-primary">name=</span><span class="text-danger">"viewport"</span> <span class="text-primary">content=</span><span class="text-danger">"width=device-width, initial-scale=1"</span><span class="text-info">&gt;</span>
+    <span class="text-info">&lt;title&gt;</span>Plantilla básica<span class="text-info">&lt;/title&gt;</span>
+
+    <span class="text-muted">&lt;!-- Bootstrap (necesario para el CSS del plugin Smoke) --&gt;</span>
+    <span class="text-info">&lt;link</span> <span class="text-primary">href=</span><span class="text-danger">"css/bootstrap.min.css"</span> <span class="text-primary">rel=</span><span class="text-danger">"stylesheet"</span><span class="text-info">&gt;</span>
+    <span class="text-muted">&lt;!-- Smoke --&gt;</span>
+    <span class="text-info">&lt;link</span> <span class="text-primary">href=</span><span class="text-danger">"css/smoke.min.css"</span> <span class="text-primary">rel=</span><span class="text-danger">"stylesheet"</span><span class="text-info">&gt;</span>
+
+    <span class="text-muted">&lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;</span>
+    <span class="text-muted">&lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;</span>
+    <span class="text-muted">&lt;!--[if lt IE 9]&gt;</span>
+<span class="text-muted">      &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"&gt;&lt;/script&gt;</span>
+<span class="text-muted">      &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span>
+<span class="text-muted">    &lt;![endif]--&gt;</span>
+  <span class="text-info">&lt;/head&gt;</span>
+  <span class="text-info">&lt;body&gt;</span>
+    <span class="text-info">&lt;h1&gt;</span>Hola Mundo!<span class="text-info">&lt;/h1&gt;</span>
+
+    <span class="text-muted">&lt;!-- jQuery (necesario para el Javascript del plugin Smoke) --&gt;</span>
+    <span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"https://code.jquery.com/jquery.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
+    <span class="text-muted">&lt;!-- Bootstrap (necesario para el Javascript del plugin Smoke) --&gt;</span>
+    <span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"js/bootstrap.min.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
+    <span class="text-muted">&lt;!-- Smoke --&gt;</span>
+    <span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"js/smoke.min.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
+  <span class="text-info">&lt;/body&gt;</span>
+<span class="text-info">&lt;/html&gt;</span>
+</code>
+            </pre>
+          </section>
+
+					<footer>
+						<div class="follow">
+							<hr>
+							<p>Diseñado y desarrollado con ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
+						</div>
+					</footer>
+
+				</div><!--/.col-lg-9 -->
+			</div><!--/.row -->
+		</div><!-- /.container -->
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Botstrap -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<!-- Smoke -->
+		<script src="smoke/js/smoke.js"></script>
+		<!-- Scripts -->
+		<script src="js/scripts.js"></script>
+
+	</body>
+</html>
