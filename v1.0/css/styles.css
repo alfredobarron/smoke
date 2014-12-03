@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+body {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.navbar-brand{
+	color: #fff !important;
+}
+.smock{
+	font-family: 'Poiret One', Arial;
+}
+.smock h1{
+	font-family: 'Poiret One', Arial;
+	font-size: 99px;
+	font-weight: bold;
+	margin-bottom: 20px
+}
+.smock .lead{
+	padding: 0 20%;
+}
+.smock .btn{
+	margin-bottom: 60px;
+}
+.smock .btn:hover{
+	background: #000;
+	color: #fff
+}
+.smock>a{
+	font-size: 16px;
+	color: #69D2E7
+}
+.follow{
+	padding: 30px 0;
+}
+.follow ul li .fb-share-button>span{
+	vertical-align: initial !important;
+}
+
+.jumbotron{
+	margin-bottom: 0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.col-lg-9{
+	background: #fff;
+}
+section{
+	padding-top: 40px;
+	margin-bottom: 100px;
+}
+.list-group{
+	margin-top:65px;
+}
+.affix{
+	top:0px;
+}
+footer{
+	margin-top: 60px
+}
+@media (max-width: 767px) {
+	.affix {
+    	position: static;
+  	}
+  	.smock h1{
+		font-size: 66px
+	}
+}
+@media (min-width: 1200px){
+	.affix {
+		width: 258px;
+	}
+}
