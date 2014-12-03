@@ -92,9 +92,17 @@
 	width: 140px;
 }
 .white .lead{
-	font-size: 40px;
 	font-family: 'Poiret One', Arial !important;
+	font-size: 40px;
 	margin-top: 60px;
+}
+.white .lead2{
+	font-family: 'Poiret One', Arial !important;
+	font-size: 30px;
+	margin-top: 40px;
+}
+.white a{
+	margin-bottom: 40px;
 }
 .follow{
 	margin-bottom: 50px;
