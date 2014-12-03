@@ -79,13 +79,13 @@
 					<section id="download-smoke">
 						<h1>Descargar Smoke</h1><hr>
 						<p class="lead">Descarga Smoke y agregalo a tu proyecto, usarlo es fácil y rápido.</p>
-						<p><a class="btn btn-default btn-lg" role="button" href="https://github.com/alfredobarron/smock" target="_blank">Descargar Smoke</a></p>
+						<p><a class="btn btn-default btn-lg" role="button" href="https://github.com/alfredobarron/smoke/archive/v2.0.1-dist.zip" target="_blank">Descargar Smoke</a></p>
 					</section>
 
 					<section id="whats-included">
 						<h1>Que incluye</h1><hr>
 						<p class="lead">Una vez descargado el archivo, descomprime el .zip para ver la estructura de Smoke. Verás algo como esto:</p>
-						<pre>
+<pre>
 smoke/
 ├── css/
 │   ├── smoke.css
@@ -93,7 +93,7 @@ smoke/
 └── js/
    ├── smoke.js
    └── smoke.min.js
-						</pre>
+</pre>
 					</section>
 
 					<section id="required">
@@ -104,11 +104,10 @@ smoke/
 					</section>
 
 					<section id="basic-template">
-            <h1>Plantilla básica</h1><hr>
-            <p class="lead">Comienza con esta plantilla de HTML o modifícala a tus necesidades.</p>
-            <p>Copia el código HTML de abajo para empezar a trabajar con los requerimientos mínimos de Smoke.</p>
-            <pre>
-<code><span class="text-success">&lt;!DOCTYPE html&gt;</span>
+			            <h1>Plantilla básica</h1><hr>
+			            <p class="lead">Comienza con esta plantilla de HTML o modifícala a tus necesidades.</p>
+			            <p>Copia el código HTML de abajo para empezar a trabajar con los requerimientos mínimos de Smoke.</p>
+<pre><code><span class="text-success">&lt;!DOCTYPE html&gt;</span>
 <span class="text-info">&lt;html </span><span class="text-primary">lang=</span><span class="text-danger">"es"</span> <span class="text-info">&gt;</span>
   <span class="text-info">&lt;head&gt;</span>
     <span class="text-info">&lt;meta</span> <span class="text-primary">charset=</span><span class="text-danger">"utf-8"</span><span class="text-info">&gt;</span>
@@ -139,15 +138,23 @@ smoke/
     <span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"js/smoke.min.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
   <span class="text-info">&lt;/body&gt;</span>
 <span class="text-info">&lt;/html&gt;</span>
-</code>
-            </pre>
-          </section>
+</code></pre>
+			        </section>
 
-					<footer>
-						<div class="follow">
-							<hr>
-							<p>Diseñado y desarrollado con ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
-						</div>
+					<footer class="follow">
+						<hr>
+						<ul class="list-inline">
+							<li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://alfredobarron.github.io/smoke"></div></li>
+
+							<li><div class="fb-share-button" data-href="http://alfredobarron.github.io/smoke" data-layout="button_count"></div></li>
+
+							<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://alfredobarron.github.io/smoke" data-via="AlfredoBarronC" data-hashtags="Smoke">Tweet</a></li>
+						</ul>
+						<p>Diseñado y Desarrollado con muchas ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
+
+						<p>Código y documentación (c) Copyright 2014 Alfredo Barron. Código publicado bajo la <a href="https://github.com/alfredobarron/smoke/blob/master/LICENCIA">licencia GPL v3.</a></p>
+
+						<p><a href="https://github.com/alfredobarron/smoke" target="_blank">GitHub</a> . <a href="http://alfredobarron.github.io/smoke/v1.0/" target="_blank">v1.0</a> . <a href="https://github.com/alfredobarron/smoke/issues" target="_blank">Preguntas</a> . <a href="https://github.com/alfredobarron/smoke/releases" target="_blank">Versiones</a></p>
 					</footer>
 
 				</div><!--/.col-lg-9 -->
@@ -162,6 +169,25 @@ smoke/
 		<script src="smoke/js/smoke.js"></script>
 		<!-- Scripts -->
 		<script src="js/scripts.js"></script>
+
+		<!-- Twitter -->
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+		<!-- Google + -->
+		<script src="https://apis.google.com/js/platform.js" async defer>
+		  {lang: 'es'}
+		</script>
+
+		<!-- Facebook -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=521651221243058&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
 		<!-- Analytics -->
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -70,7 +70,7 @@
 |	Confirmation
 |---------------------------------------------------------------------
 */
-.smk-confirmation-back {
+.smk-confirm-back {
 	position:fixed;
 	top:0;
 	right:0;
@@ -78,7 +78,7 @@
 	left:0;
 	z-index:1030;
 }
-.smk-confirmation {
+.smk-confirm {
 	position:absolute;
 	opacity:0;
 	filter:alpha(opacity=0);
@@ -88,9 +88,9 @@
 	margin:auto;
 	max-width:440px;
 	z-index:2060;
-	box-shadow:0 5px 25px #333;
-	-webkit-box-shadow:0 5px 25px #333; /* Chrome & Safari */
-	-moz-box-shadow:0 5px 25px #333; /* Firefox */
+	box-shadow:0 5px 25px -1px #333;
+	-webkit-box-shadow:0 5px 25px -1px #333; /* Chrome & Safari */
+	-moz-box-shadow:0 5px 25px -1px #333; /* Firefox */
 }
 
 

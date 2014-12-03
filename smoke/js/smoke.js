@@ -513,7 +513,7 @@ $.smkAlert = function(options) {
 
 	// Variables default
 	var settings = $.extend({
-		text: 'Hello World',
+		text: 'Hola Mundo',
 		type: 'warning',
 		icon: 'glyphicon-exclamation-sign',
 		time: 5,
@@ -603,47 +603,56 @@ $.smkAlert = function(options) {
 |   Confirmation
 |---------------------------------------------------------------------
 */
-$.smkConfirmation = function(text, callback) {
+$.smkConfirm = function(options, callback) {
+	// Variables default
+	var settings = $.extend({
+		text: '¿Estas seguro?',
+		accept: 'Aceptar',
+		cancel: 'Cancelar'
+	}, options);
 	// Se agrega el panel de confirmacion en el body
-	$('body').append('<div class="smk-confirmation-back"><div class="panel panel-default smk-confirmation"><div class="panel-body"><br>' + text + '<br><br></div><div class="panel-footer text-right"><a class="btn btn-default btn-sm smk-cancel" href="#" >Cancel</a> <a class="btn btn-primary btn-sm smk-accept" href="#">Accept</a></div></div></div>');
+	$('body').append('<div class="smk-confirm-back"><div class="panel panel-default smk-confirm"><div class="panel-body"><br>' + settings.text + '<br><br></div><div class="panel-footer text-right"><a class="btn btn-default btn-sm smk-cancel" href="#" >' + settings.cancel + '</a> <a class="btn btn-primary btn-sm smk-accept" href="#">' + settings.accept + '</a></div></div></div>');
 	// Se aplica la animacion de entrada del panel de confirmacion
-	$('.smk-confirmation').animate({
+	$('.smk-confirm').animate({
 		top: "-5px",
 		opacity: '1'
 	}, 400);
 	// Si se presiona el boton .smk-cancel se retorna false
 	$('.smk-cancel').click(function(e) {
 		e.preventDefault();
-		smkConfirmationHide();
+		smkConfirmHide();
+		//return false;
 		callback(false);
 	});
 	// Si se presiona el boton .smk-accept se retorna true
 	$('.smk-accept').click(function(e) {
 		e.preventDefault();
-		smkConfirmationHide();
+		smkConfirmHide();
+		//return true;
 		callback(true);
 	});
 	// Se remueve el panel de confirmacion del body
-	function smkConfirmationHide(){
-		$('.smk-confirmation-back').fadeOut(200, function() {
-			$('.smk-confirmation-back').remove();
+	function smkConfirmHide(){
+		$('.smk-confirm-back').fadeOut(200, function() {
+			$('.smk-confirm-back').remove();
 		});
-		$('.smk-confirmation').animate({
+		$('.smk-confirm').animate({
 			top: "-500px",
 			opacity: '0'
 		}, 400, function() {
-			$('.smk-confirmation').remove();
+			$('.smk-confirm').remove();
 		});
 	}
 };
 /*
 |---------------------------------------------------------------------
 |   Usage
-|   $.smkConfirmation('are you sure?', function(e){if(e){
+|   $.smkConfirm({text: 'are you sure?', accept: 'Accept', cancel: 'Cancel'}, function(e){if(e){
 |	  // Code here
 |   }});
 |---------------------------------------------------------------------
 */
+
 
 
 
