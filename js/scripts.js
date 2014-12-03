@@ -129,9 +129,9 @@ $(document).ready(function(){
 		Confirmation
 	|---------------------------------------------------------------------
 	*/
-	$('#btnConfirmation').click(function(e){
+	$('#btnConfirm').click(function(e){
 		e.preventDefault();
-		$.smkConfirmation('Are you sure?', function(e){if(e){
+		$.smkConfirm({text:'Are you sure?', accept:'Accept', cancel:'Cancel'}, function(e){if(e){
 			$.smkAlert({text: 'Confirm!!', type:'success'});
 		}});
 	});

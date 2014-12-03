@@ -111,7 +111,7 @@
 								<tr>
 									<td>text</td>
 									<td>Text | HTML</td>
-									<td>Hello World</td>
+									<td>Hola Mundo</td>
 									<td>Mensaje</td>
 								</tr>
 								<tr>
@@ -170,7 +170,7 @@
 								<form class="form-horizontal" role="form">
 									<div class="form-group">
 										<div class="col-sm-12">
-											<a href="#" class="btn btn-default" id="btnConfirmation">Confirmation</a>
+											<a href="#" class="btn btn-default" id="btnConfirm">Confirmation</a>
 										</div>
 									</div>
 								</form>
@@ -181,15 +181,58 @@
 							</div>
 						</div>
 
+						<h3>Opciones</h3>
+						<p>Personaliza las confirmaciones, cambiando el mensaje y el texto de los botones.</p>
+
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Opción</th>
+									<th>Tipo</th>
+									<th>Default</th>
+									<th>Descripción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>text</td>
+									<td>Text | HTML</td>
+									<td>¿Estas seguro?</td>
+									<td>Mensaje</td>
+								</tr>
+								<tr>
+									<td>accept</td>
+									<td>Text</td>
+									<td>Aceptar</td>
+									<td>Texto del botón aceptar</td>
+								</tr>
+								<tr>
+									<td>cancel</td>
+									<td>Text</td>
+									<td>Cancelar</td>
+									<td>Texto del botón cancelar</td>
+								</tr>
+							</tbody>
+						</table>
+
 						<p data-height="260" data-theme-id="8624" data-slug-hash="tbcdw" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/tbcdw/'>Smoke Confirmation</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 					</section>
 
-					<footer>
-						<div class="follow">
-							<hr>
-							<p>Diseñado y desarrollado con ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
-						</div>
+					<footer class="follow">
+						<hr>
+						<ul class="list-inline">
+							<li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://alfredobarron.github.io/smoke"></div></li>
+
+							<li><div class="fb-share-button" data-href="http://alfredobarron.github.io/smoke" data-layout="button_count"></div></li>
+
+							<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://alfredobarron.github.io/smoke" data-via="AlfredoBarronC" data-hashtags="Smoke">Tweet</a></li>
+						</ul>
+						<p>Diseñado y Desarrollado con muchas ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
+
+						<p>Código y documentación (c) Copyright 2014 Alfredo Barron. Código publicado bajo la <a href="https://github.com/alfredobarron/smoke/blob/master/LICENCIA">licencia GPL v3.</a></p>
+
+						<p><a href="https://github.com/alfredobarron/smoke" target="_blank">GitHub</a> . <a href="http://alfredobarron.github.io/smoke/v1.0/" target="_blank">v1.0</a> . <a href="https://github.com/alfredobarron/smoke/issues" target="_blank">Preguntas</a> . <a href="https://github.com/alfredobarron/smoke/releases" target="_blank">Versiones</a></p>
 					</footer>
 
 				</div><!--/.col-lg-9 -->
@@ -206,6 +249,25 @@
 		<script src="js/scripts.js"></script>
 		<!-- CodePen-->
 		<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+		<!-- Twitter -->
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+		<!-- Google + -->
+		<script src="https://apis.google.com/js/platform.js" async defer>
+		  {lang: 'es'}
+		</script>
+
+		<!-- Facebook -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=521651221243058&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
 		<!-- Analytics -->
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -14,7 +14,7 @@
 .black{
 	color: #fff;
 	background: #000;
-	padding-top: 110px;
+	padding-top: 120px;
 	padding-bottom: 120px;
 }
 .black h1, .black h3, .black .lead{
@@ -47,11 +47,10 @@
 }
 
 .white{
-	margin-top: 100px;
-	margin-bottom: 20px;
+	margin-top: 40px;
 }
 .white .row{
-	margin-bottom: 140px;
+	margin-top: 120px;
 }
 .white .col-lg-4 a{
 	font-family: 'Poiret One', Arial !important;
@@ -89,7 +88,6 @@
 	-o-transition:all .2s ease-in-out; /* Opera */
 	-ms-transition:all .2s ease-in-out; /* IE 9 */
 }
-
 .white .small{
 	width: 140px;
 }
@@ -98,12 +96,11 @@
 	font-family: 'Poiret One', Arial !important;
 	margin-top: 60px;
 }
-
-
 .follow{
-	padding: 30px 0;
-	margin-top: 50px;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
+}
+.follow ul{
+	margin-top: 20px;
 }
 .follow ul li .fb-share-button>span{
 	vertical-align: initial !important;
