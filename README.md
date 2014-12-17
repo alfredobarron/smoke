@@ -1,6 +1,6 @@
 #[Smoke](http://alfredobarron.github.io/smoke)
 
-Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación y Mas.
+Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación, Barra de progreso y Mas.
 
 
 
