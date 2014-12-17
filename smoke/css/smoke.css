@@ -110,7 +110,7 @@
 |---------------------------------------------------------------------
 */
 .smk-progressbar{
-	position: fixed;
+	/*position: fixed;*/
 	left: 0;
 	top: 0;
 	right: 0;
@@ -123,6 +123,7 @@
 	height: 4px;
 	background-color: transparent;
 	border-radius: 0;
+	margin-bottom: 0;
 }
 .smk-progressbar .progress-bar{
 	background: #28A8E0;
