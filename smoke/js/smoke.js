@@ -952,6 +952,7 @@ $.smkProgressBar = function(options) {
 		element: 'body',
 		status: 'start'
 	}, options);
+
 	// Se crea el template de la progressbar
 	var progressbar = '<div class="smk-progressbar">';
 		progressbar +='<div class="progress">';
@@ -959,9 +960,17 @@ $.smkProgressBar = function(options) {
 		progressbar +='<span class="sr-only">0% Complete</span>';
 		progressbar +='</div></div></div>';
 
-	if(settings.status ==  'start'){
-		// Se carga la progressbar al dom
-		$(settings.element).prepend($(progressbar).fadeIn('fast'));
+	// Se carga la progressbar al dom
+	$(settings.element).prepend($(progressbar).fadeIn('fast'));
+
+	if(settings.element == 'body'){
+		$('.smk-progressbar').css('position', 'fixed');
+	}else{
+		$(settings.element).css('position', 'relative');
+		$('.smk-progressbar').css('position', 'absolute');
+	}
+
+	if(settings.status == 'start'){
 		// Se comienza a simular el progreso de la carga de la pagina
 		$(settings.element +' .smk-progressbar .progress .progress-bar').width((50 + Math.random() * 30) + '%');
 	}else if(settings.status ==  'end'){
