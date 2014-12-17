@@ -173,7 +173,7 @@ $.fn.smkValidate = function(options) {
 			}
 
 			// Se validan los input RADIO y/o CHECKBOX
-			if (required === 'required' && type === 'radio' || type === 'checkbox') {
+			if (required === 'required' && (type === 'radio' || type === 'checkbox')) {
 				var check = $("input[name=" + name + "]:checked").val();
 				//var check = self.is(':checked');
 				// Se valida que el value del input este ckecked
@@ -547,7 +547,7 @@ $.smkAlert = function(options) {
 		$('body').append('<div class="smk-alert-content"></div>');
 	}
 	// Se crea la alerta en el contenedor
-	var obj = $('<div class="alert alert-dismissable ' + settings.type + ' smk-alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon ' + settings.icon + '"></span>' + settings.text + '</div>');
+	var obj = $('<div class="alert alert-dismissable ' + settings.type + ' smk-alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon ' + settings.icon + '"></span><p>' + settings.text + '</p></div>');
 
 	$('.smk-alert-content').prepend(obj);
 
@@ -909,7 +909,7 @@ $.smkDateDiff = function(options) {
 
 /*
 |---------------------------------------------------------------------
-|   SmokeScrolling
+|   Scrolling
 |---------------------------------------------------------------------
 */
 $.smkScrolling = function(options) {
@@ -934,6 +934,49 @@ $.smkScrolling = function(options) {
 |---------------------------------------------------------------------
 |   Usage
 |	$.smkScrolling({speed:1000});
+|---------------------------------------------------------------------
+*/
+
+
+
+
+
+/*
+|---------------------------------------------------------------------
+|   ProgressBar
+|---------------------------------------------------------------------
+*/
+$.smkProgressBar = function(options) {
+	//Variables default
+	var settings = $.extend({
+		element: 'body',
+		status: 'start'
+	}, options);
+	// Se crea el template de la progressbar
+	var progressbar = '<div class="smk-progressbar">';
+		progressbar +='<div class="progress">';
+		progressbar +='<div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">';
+		progressbar +='<span class="sr-only">0% Complete</span>';
+		progressbar +='</div></div></div>';
+
+	if(settings.status ==  'start'){
+		// Se carga la progressbar al dom
+		$(settings.element).prepend($(progressbar).fadeIn('fast'));
+		// Se comienza a simular el progreso de la carga de la pagina
+		$(settings.element +' .smk-progressbar .progress .progress-bar').width((50 + Math.random() * 30) + '%');
+	}else if(settings.status ==  'end'){
+		// Se completa el progreso de carga
+		$(settings.element +' .smk-progressbar .progress .progress-bar').width('110%').delay(200, function(){
+		   // Se remueve la progressbar del dom
+		   $(settings.element +' .smk-progressbar').fadeOut('slow', function() { $(this).remove(); });
+		});
+	}
+
+};
+/*
+|---------------------------------------------------------------------
+|   Usage
+|	$.smkProgressBar({element:'body', status:'start'});
 |---------------------------------------------------------------------
 */
 

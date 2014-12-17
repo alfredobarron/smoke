@@ -126,7 +126,7 @@ $(document).ready(function(){
 
 	/*
 	|---------------------------------------------------------------------
-		Confirmation
+	|	Confirmation
 	|---------------------------------------------------------------------
 	*/
 	$('#btnConfirm').click(function(e){
@@ -134,6 +134,19 @@ $(document).ready(function(){
 		$.smkConfirm({text:'Are you sure?', accept:'Accept', cancel:'Cancel'}, function(e){if(e){
 			$.smkAlert({text: 'Confirm!!', type:'success'});
 		}});
+	});
+
+
+
+	/*
+	|---------------------------------------------------------------------
+	|   ProgressBar
+	|---------------------------------------------------------------------
+	*/
+	$('#btnProgressBar').click(function(event) {
+		event.preventDefault();
+		$.smkProgressBar({element:'body', status:'start'});
+		setTimeout(function(){ $.smkProgressBar({element:'body', status:'end'}); }, 1000);
 	});
 
 
