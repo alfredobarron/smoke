@@ -52,7 +52,7 @@
 .white .row{
 	margin-top: 120px;
 }
-.white .col-lg-4 a{
+.white .col-xs-12 a{
 	font-family: 'Poiret One', Arial !important;
 	border:10px solid #000;
 	background:#000;
@@ -60,25 +60,25 @@
 	display: block;
 	border-radius: 50%;
 	height: 0;
-	padding-bottom: 50%;
-	width: 55%;
-	margin: 0 22%;
+	padding-bottom: 70%;
+	width: 80%;
+	margin: 0 10%;
 	transition:all .2s ease-in-out;
 	-webkit-transition:all .2s ease-in-out; /* Chrome & Safari */
 	-moz-transition:all .2s ease-in-out; /* Firefox */
 	-o-transition:all .2s ease-in-out; /* Opera */
 	-ms-transition:all .2s ease-in-out; /* IE 9 */
 }
-.white .col-lg-4 a:hover{
+.white .col-xs-12 a:hover{
 	text-decoration: none;
 	background:#fff;
 	color: #000
 }
-.white .col-lg-4 a:hover span{
+.white .col-xs-12 a:hover span{
 	font-size: 110px;
 	margin-bottom: 35px;
 }
-.white .col-lg-4 span{
+.white .col-xs-12 span{
 	font-size: 100px;
 	margin-bottom: 55px;
 	margin-top: 20%;
