@@ -47,15 +47,15 @@
 |---------------------------------------------------------------------
 */
 .smk-alert-content{
-	position:fixed;
-	width:360px;
+	position: fixed;
+	width: 360px;
 	top: 0;
-	right:20px;
-	z-index:2060;
+	right: 20px;
+	z-index: 2060;
 }
 .smk-alert {
-	opacity:0;
-	filter:alpha(opacity=0);
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
 .smk-alert .glyphicon {
 	font-size: 20px;
@@ -77,26 +77,26 @@
 |---------------------------------------------------------------------
 */
 .smk-confirm-back {
-	position:fixed;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	z-index:1030;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1030;
 }
 .smk-confirm {
-	position:absolute;
-	opacity:0;
-	filter:alpha(opacity=0);
-	top:-500px;
-	right:0;
-	left:0;
-	margin:auto;
-	max-width:440px;
-	z-index:2060;
-	box-shadow:0 5px 25px -1px #333;
-	-webkit-box-shadow:0 5px 25px -1px #333; /* Chrome & Safari */
-	-moz-box-shadow:0 5px 25px -1px #333; /* Firefox */
+	position: absolute;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	top: -500px;
+	right: 0;
+	left: 0;
+	margin: auto;
+	max-width: 440px;
+	z-index: 2060;
+	box-shadow: 0 5px 25px -1px #333;
+	-webkit-box-shadow: 0 5px 25px -1px #333; /* Chrome & Safari */
+	-moz-box-shadow: 0 5px 25px -1px #333; /* Firefox */
 }
 
 
@@ -158,57 +158,58 @@
 |	Elimina los spin del input number
 |---------------------------------------------------------------------
 */
-input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
-	-webkit-appearance:none;
-	margin:0;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Transition */
 .smk-transition1 {
-	transition:all .2s ease-in-out;
-	-webkit-transition:all .2s ease-in-out; /* Chrome & Safari */
-	-moz-transition:all .2s ease-in-out; /* Firefox */
-	-o-transition:all .2s ease-in-out; /* Opera */
-	-ms-transition:all .2s ease-in-out; /* IE 9 */
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out; /* Chrome & Safari */
+	-moz-transition: all .2s ease-in-out; /* Firefox */
+	-o-transition: all .2s ease-in-out; /* Opera */
+	-ms-transition: all .2s ease-in-out; /* IE 9 */
 }
 .smk-transition2 {
-	transition:all .5s ease-in-out;
-	-webkit-transition:all .5s ease-in-out; /* Chrome & Safari */
-	-moz-transition:all .5s ease-in-out; /* Firefox */
-	-o-transition:all .5s ease-in-out; /* Opera */
-	-ms-transition:all .5s ease-in-out; /* IE 9 */
+	transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out; /* Chrome & Safari */
+	-moz-transition: all .5s ease-in-out; /* Firefox */
+	-o-transition: all .5s ease-in-out; /* Opera */
+	-ms-transition: all .5s ease-in-out; /* IE 9 */
 }
 
 /* Shadow */
-.shadow-smock {
-	box-shadow:3px 3px 5px 6px #ccc;
-	-webkit-box-shadow:3px 3px 5px 6px #ccc; /* Chrome & Safari */
-	-moz-box-shadow:3px 3px 5px 6px #ccc; /* Firefox */
+.smk-shadow {
+	box-shadow: 3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Chrome & Safari */
+	-moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox */
 }
 
 /* Animations */
 .smk-animation {
-	animation:fadeOut 3.5s;
-	-webkit-animation:fadeOut 3.5s; /* Chrome & Safari */
-	-moz-animation:fadeOut 3.5s; /* Firefox */
-	-o-animation:fadeOut 3.5s; /* Opera */
-	-ms-animation:fadeOut 3.5s; /* IE 9 */
+	animation: fadeOut 3.5s;
+	-webkit-animation: fadeOut 3.5s; /* Chrome & Safari */
+	-moz-animation: fadeOut 3.5s; /* Firefox */
+	-o-animation: fadeOut 3.5s; /* Opera */
+	-ms-animation: fadeOut 3.5s; /* IE 9 */
 }
 
 /* Translate */
-.translate-smock {
-	transform:translate(50px,100px);
-	-webkit-transform:translate(50px,100px); /* Chrome & Safari */
-	-moz-transform:translate(50px,100px); /* Firefox */
-	-o-transform:translate(50px,100px); /* Opera */
-	-ms-transform:translate(50px,100px); /* IE 9 */
+.smk-translate {
+	transform: translate(50px,100px);
+	-webkit-transform: translate(50px,100px); /* Chrome & Safari */
+	-moz-transform: translate(50px,100px); /* Firefox */
+	-o-transform: translate(50px,100px); /* Opera */
+	-ms-transform: translate(50px,100px); /* IE 9 */
 }
 
 /* Rotate */
-.rotate-smock {
-	transform:rotate(7deg);
-	-webkit-transform:rotate(7deg); /* Chrome & Safari */
-	-moz-transition:rotate(7deg); /* Firefox */
-	-o-transition:rotate(7deg); /* Opera */
-	-ms-transform:rotate(7deg); /* IE 9 */
+.smk-rotate {
+	transform: rotate(7deg);
+	-webkit-transform: rotate(7deg); /* Chrome & Safari */
+	-moz-transition: rotate(7deg); /* Firefox */
+	-o-transition: rotate(7deg); /* Opera */
+	-ms-transform: rotate(7deg); /* IE 9 */
 }
