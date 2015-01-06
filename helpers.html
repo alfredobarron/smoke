@@ -170,149 +170,69 @@
 									<td>date</td>
 									<td>date</td>
 									<td>Fecha actual</td>
-									<td>Fecha a procesar</td>
+									<td>Fecha numérica</td>
 								</tr>
 								<tr>
 									<td>format</td>
 									<td>string</td>
-									<td>yyyymmdd hhmmss</td>
-									<td>Tipo de mensaje</td>
+									<td>yyyy-mm-dd</td>
+									<td>Formato</td>
 								</tr>
 								<tr>
 									<td>lang</td>
 									<td>en | es</td>
 									<td>en</td>
-									<td>Lenguaje de la fecha(Mes)</td>
-								</tr>
-								<tr>
-									<td>separatorDate</td>
-									<td>string</td>
-									<td>/</td>
-									<td>Separador de fecha</td>
-								</tr>
-								<tr>
-									<td>separatorTime</td>
-									<td>string</td>
-									<td>:</td>
-									<td>Separador de hora</td>
+									<td>Lenguaje de la fecha</td>
 								</tr>
 							</tbody>
 						</table>
 
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formDateCustomize">
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="text">Date</label>
-												<input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa" value="09/25/2014">
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="format">Format</label>
-												<input type="text" class="form-control" id="format" placeholder="ddMMyyyy" value="ddMMyyyy">
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="lang">Language</label>
-												<input type="text" class="form-control" id="lang" placeholder="es" value="es">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="separatorDate">Separator Date</label>
-												<input type="text" class="form-control" id="separatorDate" placeholder="/" value="/">
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="separatorTime">Separator Time</label>
-												<input type="text" class="form-control" id="separatorTime" placeholder=":" value=":">
-											</div>
-										</div>
-									</div>
-									<button type="button" class="btn btn-default">Customize</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/e62cec2a0a629de77cbc.js"></script>
-							</div>
-						</div>
-
-						<p data-height="400" data-theme-id="8624" data-slug-hash="eBgmD" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/eBgmD/'>eBgmD</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-
-						<h4>Formatos soportados</h4>
+						<h4>Formatos</h4>
 						<table class="table table-bordered">
 							<thead>
 								<tr>
 									<th>Format</th>
-									<th>Result</th>
+									<th>Descripción</th>
 								</tr>
 							</thead>
 							<tbody>
 									<tr>
-										<td>yyyymmdd hhmmss</td>
-										<td>2014-12-31 12:30:60</td>
+										<td>d</td>
+										<td>Día sin cero</td>
 									</tr>
 									<tr>
-										<td>yyyymmdd</td>
-										<td>2014-12-31</td>
+										<td>dd</td>
+										<td>Día con cero</td>
 									</tr>
 									<tr>
-										<td>yyyyMMdd</td>
-										<td>2014-Diciembre-31</td>
+										<td>m</td>
+										<td>Mes numérico sin cero</td>
 									</tr>
 									<tr>
-										<td>yyyyMdd</td>
-										<td>2014-Dic-31</td>
+										<td>mm</td>
+										<td>Mes numérico con cero</td>
 									</tr>
 									<tr>
-										<td>yymmdd</td>
-										<td>14-12-31</td>
+										<td>M</td>
+										<td>Nombre del mes abreviado</td>
 									</tr>
 									<tr>
-										<td>yyMMdd</td>
-										<td>14-Diciembre-31</td>
+										<td>MM</td>
+										<td>Nombre del mes completo</td>
 									</tr>
 									<tr>
-										<td>yyMdd</td>
-										<td>14-Dic-31</td>
+										<td>yy</td>
+										<td>Año 2 dígitos</td>
 									</tr>
 									<tr>
-										<td>ddmmyyyy</td>
-										<td>31-12-2014</td>
-									</tr>
-									<tr>
-										<td>ddMMyyyy</td>
-										<td>31-Diciembre-2014</td>
-									</tr>
-									<tr>
-										<td>ddMyyyy</td>
-										<td>31-Dic-2014</td>
-									</tr>
-									<tr>
-										<td>ddmmyy</td>
-										<td>31-12-14</td>
-									</tr>
-									<tr>
-										<td>ddMMyy</td>
-										<td>31-Diciembre-14</td>
-									</tr>
-									<tr>
-										<td>ddMyy</td>
-										<td>31-Dic-14</td>
+										<td>yyyy</td>
+										<td>Año 4 dígitos</td>
 									</tr>
 							</tbody>
 						</table>
 
-						<h4>Lenguajes soportados</h4>
+						<h4>Lenguaje</h4>
+
 						<table class="table table-bordered">
 							<thead>
 								<tr>
@@ -331,6 +251,48 @@
 									</tr>
 							</tbody>
 						</table>
+
+						<div class="alert alert-info">
+							Para cambiar el lenguaje de la fecha, se agrega el archivo de lenguaje dentro del html.
+						</div>
+
+						<script src="https://gist.github.com/alfredobarron/71df7c95c90ed5bb7c61.js"></script>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formDateCustomize">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label for="text">Date</label>
+												<input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa" value="30-12-2014">
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label for="format">Format</label>
+												<input type="text" class="form-control" id="format" placeholder="dd/MM/yyyy" value="dd/MM/yyyy">
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label for="lang">Language</label>
+												<input type="text" class="form-control" id="lang" placeholder="es" value="es">
+											</div>
+										</div>
+									</div>
+									<button type="button" class="btn btn-default">Customize</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/e62cec2a0a629de77cbc.js"></script>
+							</div>
+						</div>
+
+						<p data-height="330" data-theme-id="8624" data-slug-hash="eBgmD" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/eBgmD/'>eBgmD</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
 
 					</section>
 
@@ -420,7 +382,7 @@
 						</ul>
 						<p>Diseñado y Desarrollado con muchas ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
 
-						<p>Código y documentación (c) Copyright 2014 Alfredo Barron. Código publicado bajo la <a href="https://github.com/alfredobarron/smoke/blob/master/LICENCIA">licencia GPL v3.</a></p>
+						<p>Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la <a href="https://github.com/alfredobarron/smoke/blob/master/LICENCIA">licencia GPL v3.</a></p>
 
 						<p><a href="https://github.com/alfredobarron/smoke" target="_blank">GitHub</a> . <a href="http://alfredobarron.github.io/smoke/v1.0/" target="_blank">Smock v1.0</a> . <a href="https://github.com/alfredobarron/smoke/issues" target="_blank">Preguntas</a> . <a href="https://github.com/alfredobarron/smoke/releases" target="_blank">Versiones</a></p>
 					</footer>
@@ -435,6 +397,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<!-- Smoke -->
 		<script src="smoke/js/smoke.js"></script>
+		<script src="smoke/lang/smoke.en.js"></script>
 		<!-- Scripts -->
 		<script src="js/scripts.js"></script>
 		<!-- CodePen-->

@@ -51,4 +51,4 @@ Alfredo Barron
 
 ##Derechos de autor y licencias
 
-Código y documentación (c) Copyright 2014 Alfredo Barron. Código publicado bajo la [licencia GPL v3.](https://github.com/alfredobarron/smoke/blob/master/LICENCIA)
+Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la [licencia GPL v3.](https://github.com/alfredobarron/smoke/blob/master/LICENCIA)
