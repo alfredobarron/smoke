@@ -49,8 +49,11 @@
 .white{
 	margin-top: 40px;
 }
+.white .row:first-child{
+	margin-top: 0;
+}
 .white .row{
-	margin-top: 120px;
+	margin-top: 80px;
 }
 .white .col-xs-12 a{
 	font-family: 'Poiret One', Arial !important;

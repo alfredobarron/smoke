@@ -742,6 +742,50 @@ $.smkGetURL = function(folder) {
 
 
 
+/*
+|---------------------------------------------------------------------
+|   DatePicker
+|---------------------------------------------------------------------
+*/
+$.smkDatePicker = function(date) {
+
+	if(date !== ''){
+		// Se obtiene el dia
+		var day   = date.getDate();
+		// Se obtiene el mes
+		var month = date.getMonth() + 1;
+		// Se obtiene el año
+		var year = date.getFullYear();
+
+		// Si el dia es menor que 10 se agrega 0 al inicio
+		if (day < 10) {
+			day = '0' + day;
+		}
+		// Si el mes es menor que 10 se agrega 0 al inicio
+		if (month < 10) {
+			month = '0' + month;
+		}
+
+		// Se construye la fecha con el formato para BD yyyy-mm-dd
+		result = year + '-' + month + '-' + day;
+	}else{
+		result = '';
+	}
+
+	// Se retorna la fecha formateada
+	return result;
+};
+/*
+|---------------------------------------------------------------------
+|   Usage
+|	var date = $.smkDatePicker( $('.datepicker').datepicker('getDate') );
+|---------------------------------------------------------------------
+*/
+
+
+
+
+
 
 /*
 |---------------------------------------------------------------------
@@ -749,104 +793,104 @@ $.smkGetURL = function(folder) {
 |---------------------------------------------------------------------
 */
 $.smkDate = function(options) {
-	//Variables default
+	var today = $.smkDatePicker( new Date() );
 	var settings = $.extend({
-		date: new Date(),
-		format: 'yyyymmdd hhmmss',
-		lang: 'en',
-		separatorDate: '-',
-		separatorTime: ':'
-	}, options);
+		date: today,
+		format: 'yyyy-mm-dd',
+		lang: 'es',
+	}, $.smkDate.Languaje, options);
+
+	var languaje =  {
+		es: {
+			shortMonthNames  : ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+			monthNames : ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+		}
+	};
+
+	if(settings.lang != 'es'){
+		languaje = $.smkDate.Languaje;
+	}else{
+		// Se obtienen los separadores
+		var validDate = /\d+|[a-zA-z]/g;
+		var separator = settings.date.replace(validDate, '\0').split('\0');
+		// Se obtiene el formato
+		var splitDate = settings.date.match(validDate);
+		// Se formatea la fecha (format gringo) para poder instanciar el método new Date()
+		//var splitDate = settings.date.split('-');
+		if(splitDate[0].length == 4){
+			// Formato yyyy-mm-dd => mm-dd-yyyy
+			settings.date = splitDate[1] + '-' + splitDate[2] + '-' + splitDate[0];
+		}else{
+			// Formato dd-mm-yyyy => mm-dd-yyyy
+			settings.date = splitDate[1] + '-' + splitDate[0] + '-' + splitDate[2];
+		}
+	}
 
 	var date = new Date(settings.date);
+	var result = '';
 
-	var monthNames = [];
+	if(date != 'Invalid Date'){
+		// Se obtiene el dia
+		var day   = date.getDate();
+		// Se obtiene el mes
+		var month = date.getMonth() + 1;
 
-	//Se obtiene el dia
-	var dd = date.getDate();
-	//Se obtiene el mes
-	var mm = date.getMonth() + 1; //January is 0!
-	//Se obtiene el año
-	var yyyy = date.getFullYear();
-	//Se obtiene el año 2 digitos
-	var yy = yyyy.toString().substring(2);
-
-	//Se obtiene la hora
-	var hh = date.getHours();
-	//Se obtienen los minutos
-	var mi = date.getMinutes();
-	//Se obtienen los segundos
-	var ss = date.getSeconds();
-
-	//Si el dia es menor que 10 se agrega 0 al inicio
-	if (dd < 10) {
-		dd = '0' + dd;
-	}
-	//Si el mes es menor que 10 se agrega 0 al inicio
-	if (mm < 10) {
-		mm = '0' + mm;
-	}
-
-	//Si los minutos son menor que 10 se agrega 0 al inicio
-	if (mi < 10) {
-		mi = '0' + mi;
-	}
-	//Si los segundos son menor que 10 se agrega 0 al inicio
-	if (ss < 10) {
-		ss = '0' + ss;
-	}
-
-	//Se muestran los meses segun el lenguaje
-	if (settings.lang == 'es') {
-
-		if (settings.format == 'yyyyMdd' || settings.format == 'yyMdd' || settings.format == 'ddMyyyy' | settings.format == 'ddMyy') {
-			monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-		} else {
-			monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+		// Si el dia es menor que 10 se agrega 0 al inicio
+		if (day < 10) {
+			day = '0' + day;
 		}
-	} else {
-		if (settings.format == 'yyyyMdd' || settings.format == 'yyMdd' || settings.format == 'ddMyyyy' | settings.format == 'ddMyy') {
-			monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-		} else {
-			monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+		// Si el mes es menor que 10 se agrega 0 al inicio
+		if (month < 10) {
+			month = '0' + month;
 		}
+
+		// Se crea el array que contiene el día, mes y año
+		var arrayDate = {
+			// Se obtiene el dia
+			'd'    : date.getDate(),
+			'dd'   : day,
+			// Se obtiene el mes
+			'm'    : date.getMonth() + 1, //January is 0!
+			'mm'   : month,
+			// Se obtiene el año
+			'yyyy' : date.getFullYear(),
+			// Se obtiene el año 2 digitos
+			'yy'   : date.getFullYear().toString().substring(2),
+			// Se obtiene la hora
+			'hh'   : date.getHours(),
+			// Se obtienen los minutos
+			'mi'   : date.getMinutes(),
+			// Se obtienen los segundos
+			'ss'   : date.getSeconds()
+		};
+
+		// Se obtienen los separadores
+		var validParts = /dd?|DD?|mm?|MM?|yy(?:yy)?/g;
+		var separators = settings.format.replace(validParts, '\0').split('\0');
+		// Se obtiene el formato
+		var parts = settings.format.match(validParts);
+
+		// Se construye la fecha con el formato y los separadores indicados
+		$.each(parts, function(index, val) {
+			if(val == 'M'){
+				result += separators[index] + languaje[settings.lang].shortMonthNames[date.getMonth()];
+			}else if(val == 'MM'){
+				result += separators[index] + languaje[settings.lang].monthNames[date.getMonth()];
+			}else{
+				result += separators[index] + arrayDate[val];
+			}
+		});
+	}else{
+		result = '';
 	}
 
-	//Se construye el formato para base de datos 0000-00-00 00:00:00
-	//Se retorna la fecha formateada
-	switch (settings.format) {
-	case "yyyymmdd hhmmss":
-		return yyyy + settings.separatorDate + mm + settings.separatorDate + dd + ' ' + hh + settings.separatorTime + mi + settings.separatorTime + ss;
-	case "yyyymmdd":
-		return yyyy + settings.separatorDate + mm + settings.separatorDate + dd;
-	case "yyyyMMdd":
-		return yyyy + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + dd;
-	case "yyyyMdd":
-		return yyyy + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + dd;
-	case "yymmdd":
-		return yy + settings.separatorDate + mm + settings.separatorDate + dd;
-	case "yyMMdd":
-		return yy + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + dd;
-	case "yyMdd":
-		return yy + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + dd;
-	case "ddmmyyyy":
-		return dd + settings.separatorDate + mm + settings.separatorDate + yyyy;
-	case "ddMMyyyy":
-		return dd + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + yyyy;
-	case "ddMyyyy":
-		return dd + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + yyyy;
-	case "ddmmyy":
-		return dd + settings.separatorDate + mm + settings.separatorDate + yy;
-	case "ddMMyy":
-		return dd + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + yy;
-	case "ddMyy":
-		return dd + settings.separatorDate + monthNames[date.getMonth()] + settings.separatorDate + yy;
-	}
+	// Se retorna la fecha formateada
+	return result;
 };
 /*
 |---------------------------------------------------------------------
 |   Usage
-|	var today = $.smkDate({date:new Date(), format:'yyyymmdd', lang: 'es', separatorDate:'-', separatorTime:':'});
+|	var date = $.smkDate({date:new Date(), format:'yyyy-mm-dd', lang: 'es' });
 |---------------------------------------------------------------------
 */
 

@@ -196,9 +196,7 @@ $(document).ready(function(){
 		var date = $.smkDate({
 			date: $('#formDateCustomize #date').val(),
 			format: $('#formDateCustomize #format').val(),
-			lang: $('#formDateCustomize #lang').val(),
-			separatorDate: $('#formDateCustomize #separatorDate').val(),
-			separatorTime: $('#formDateCustomize #separatorTime').val()
+			lang: $('#formDateCustomize #lang').val()
 		});
 		$.smkAlert({text: date, type:'success'});
 	});
