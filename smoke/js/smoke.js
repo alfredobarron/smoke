@@ -751,21 +751,11 @@ $.smkDatePicker = function(date) {
 
 	if(date !== ''){
 		// Se obtiene el dia
-		var day   = date.getDate();
+		var day   = (date.getDate() < 10 ? '0' : '') + date.getDate();
 		// Se obtiene el mes
-		var month = date.getMonth() + 1;
+		var month = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
 		// Se obtiene el año
 		var year = date.getFullYear();
-
-		// Si el dia es menor que 10 se agrega 0 al inicio
-		if (day < 10) {
-			day = '0' + day;
-		}
-		// Si el mes es menor que 10 se agrega 0 al inicio
-		if (month < 10) {
-			month = '0' + month;
-		}
-
 		// Se construye la fecha con el formato para BD yyyy-mm-dd
 		result = year + '-' + month + '-' + day;
 	}else{
@@ -802,86 +792,78 @@ $.smkDate = function(options) {
 
 	var languaje =  {
 		es: {
-			shortMonthNames  : ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+			shortMonthNames : ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
 			monthNames : ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 		}
 	};
 
-	if(settings.lang != 'es'){
-		languaje = $.smkDate.Languaje;
-	}else{
-		// Se obtienen los separadores
-		var validDate = /\d+|[a-zA-z]/g;
-		var separator = settings.date.replace(validDate, '\0').split('\0');
-		// Se obtiene el formato
-		var splitDate = settings.date.match(validDate);
-		// Se formatea la fecha (format gringo) para poder instanciar el método new Date()
-		//var splitDate = settings.date.split('-');
+	//Se obtienen los separadores
+	var validDate = /\d+|[a-zA-z]/g;
+	var separator = settings.date.replace(validDate, '\0').split('\0');
+	// Se obtiene las partes de la fecha
+	var splitDate = settings.date.match(validDate);
+
+	if(settings.lang == 'es'){
+		// Se formatea la fecha (yyyy,mm,dd) para poder instanciar el método new Date()
 		if(splitDate[0].length == 4){
-			// Formato yyyy-mm-dd => mm-dd-yyyy
-			settings.date = splitDate[1] + '-' + splitDate[2] + '-' + splitDate[0];
+			// Formato yyyy-mm-dd => yyyy,mm,dd
+			settings.date = new Date(splitDate[0],(splitDate[1]-1),splitDate[2]);
 		}else{
-			// Formato dd-mm-yyyy => mm-dd-yyyy
-			settings.date = splitDate[1] + '-' + splitDate[0] + '-' + splitDate[2];
+			// Formato dd-mm-yyyy => yyyy,mm,dd
+			settings.date = new Date(splitDate[2],(splitDate[1]-1),splitDate[0]);
+		}
+	}else{
+		languaje = $.smkDate.Languaje;
+		// Se formatea la fecha (yyyy,mm,dd) para poder instanciar el método new Date()
+		if(splitDate[0].length == 4){
+			// Formato yyyy-dd-mm => yyyy,mm,dd
+			settings.date = new Date(splitDate[0],(splitDate[2]-1),splitDate[1]);
+		}else{
+			// Formato mm-dd-yyyy => yyyy,mm,dd
+			settings.date = new Date(splitDate[2],(splitDate[0]-1),splitDate[1]);
 		}
 	}
 
-	var date = new Date(settings.date);
 	var result = '';
 
-	if(date != 'Invalid Date'){
-		// Se obtiene el dia
-		var day   = date.getDate();
-		// Se obtiene el mes
-		var month = date.getMonth() + 1;
-
-		// Si el dia es menor que 10 se agrega 0 al inicio
-		if (day < 10) {
-			day = '0' + day;
-		}
-		// Si el mes es menor que 10 se agrega 0 al inicio
-		if (month < 10) {
-			month = '0' + month;
-		}
+	if(settings.date != 'Invalid Date'){
 
 		// Se crea el array que contiene el día, mes y año
 		var arrayDate = {
 			// Se obtiene el dia
-			'd'    : date.getDate(),
-			'dd'   : day,
+			'd'    : settings.date.getDate(),
+			'dd'   : (settings.date.getDate() < 10 ? '0' : '') + settings.date.getDate(),
 			// Se obtiene el mes
-			'm'    : date.getMonth() + 1, //January is 0!
-			'mm'   : month,
+			'm'    : settings.date.getMonth() + 1, //January is 0!
+			'mm'   : ((settings.date.getMonth() + 1) < 10 ? '0' : '') + (settings.date.getMonth() + 1),
+			'M'    : languaje[settings.lang].shortMonthNames[settings.date.getMonth()],
+			'MM'   : languaje[settings.lang].monthNames[settings.date.getMonth()],
 			// Se obtiene el año
-			'yyyy' : date.getFullYear(),
+			'yyyy' : settings.date.getFullYear(),
 			// Se obtiene el año 2 digitos
-			'yy'   : date.getFullYear().toString().substring(2),
+			'yy'   : settings.date.getFullYear().toString().substring(2),
 			// Se obtiene la hora
-			'hh'   : date.getHours(),
+			'hh'   : settings.date.getHours(),
 			// Se obtienen los minutos
-			'mi'   : date.getMinutes(),
+			'mi'   : settings.date.getMinutes(),
 			// Se obtienen los segundos
-			'ss'   : date.getSeconds()
+			'ss'   : settings.date.getSeconds()
 		};
 
 		// Se obtienen los separadores
-		var validParts = /dd?|DD?|mm?|MM?|yy(?:yy)?/g;
-		var separators = settings.format.replace(validParts, '\0').split('\0');
-		// Se obtiene el formato
-		var parts = settings.format.match(validParts);
+		var validFormat = /dd?|DD?|mm?|MM?|yy(?:yy)?/g;
+		var separators = settings.format.replace(validFormat, '\0').split('\0');
+		// Se obtienen las partes del formato
+		var splitFormat = settings.format.match(validFormat);
 
 		// Se construye la fecha con el formato y los separadores indicados
-		$.each(parts, function(index, val) {
-			if(val == 'M'){
-				result += separators[index] + languaje[settings.lang].shortMonthNames[date.getMonth()];
-			}else if(val == 'MM'){
-				result += separators[index] + languaje[settings.lang].monthNames[date.getMonth()];
-			}else{
-				result += separators[index] + arrayDate[val];
-			}
+		$.each(splitFormat, function(key, val) {
+			result += separators[key] + arrayDate[val];
 		});
+
 	}else{
 		result = '';
+		console.log('Invalid Date');
 	}
 
 	// Se retorna la fecha formateada
