@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Smoke . Barra de Progreso</title>
+		<title>Smoke . Notificaciones</title>
 		<meta name="description" content="Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación, Barra de progreso y Mas" />
 		<meta name="keywords" content="HTML, CSS, JS, JavaScript, JQuery, plugin, bootstrap, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, notificacion, notificaciones, alert, confirmacion, confirm, progressbar, alfredobarron, alfredo barron, alfredo, barron" />
 		<meta name="robots" content="index,follow,archive">
@@ -15,7 +15,7 @@
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<!-- Smoke -->
-		<link href="smoke/css/smoke.css" rel="stylesheet">
+		<link href="../dist/css/smoke.css" rel="stylesheet">
 		<!-- Styles -->
 		<link href="css/styles.css" rel="stylesheet">
 
@@ -45,8 +45,8 @@
 					<ul class="nav navbar-nav">
 						<li><a href="getting-started.html">Primeros pasos</a></li>
 						<li><a href="validate.html">Validación</a></li>
-						<li><a href="notifications.html">Notificaciones</a></li>
-						<li class="active"><a href="progressbar.html">Barra de Progreso</a></li>
+						<li class="active"><a href="notifications.html">Notificaciones</a></li>
+						<li><a href="progressbar.html">Barra de Progreso</a></li>
 						<li><a href="helpers.html">Helpers</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
@@ -55,8 +55,8 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Barra de Progreso</h1>
-				<p class="lead">Añade una barra de progreso a tu aplicación.</p>
+				<h1>Notificaciones</h1>
+				<p class="lead">Crea mensajes de Alerta y de Confirmación vistosos y funcionales, y su uso es tan sencillo como los nativos de javascript.</p>
 			</div>
 		</div>
 
@@ -66,17 +66,18 @@
 				<div class="col-lg-3">
 					<div class="list-group" data-spy="affix" data-offset-top="260">
 							<ul class="nav">
-								<a href="#progressbar" class="list-group-item">Barra de Progreso</a>
+								<a href="#alerts" class="list-group-item">Alertas</a>
+								<a href="#confirmation" class="list-group-item">Confirmación</a>
 							</ul>
 					</div>
 				</div>
 
 				<div class="col-lg-9">
 
-					<section id="progressbar">
+					<section id="alerts">
 
-						<h1>Barra de Progreso</h1><hr>
-						<p class="lead">Añade una barra de progreso a tu aplicación, en cualquier evento.</p>
+						<h1>Alertas</h1><hr>
+						<p class="lead">Proporciona mensajes de alerta para las acciones típicas de usuario al momento de invocar un evento.</p>
 
 						<div class="panel panel-default">
 							<div class="panel-body">
@@ -84,19 +85,19 @@
 								<form class="form-horizontal" role="form">
 									<div class="form-group">
 										<div class="col-sm-12">
-											<a href="#" class="btn btn-info" id="btnProgressBar">Start</a>
+											<a href="#" class="btn btn-default" id="btnAlert">Alert</a>
 										</div>
 									</div>
 								</form>
 							</div>
 							<div class="panel-footer">
 								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/ae5120fb3ee80fc247a2.js"></script>
+								<script src="https://gist.github.com/alfredobarron/6cbba803e7b82e33f928.js"></script>
 							</div>
 						</div>
 
 						<h3>Opciones</h3>
-						<p>Personaliza el elemento en el que se agregara la barra de progreso, define cuando inicia y cuando termina.</p>
+						<p>Personaliza las alertas, cambiando el mensaje, tiempo de duración, el color y si el mensaje sera permanente.</p>
 
 						<table class="table table-bordered">
 							<thead>
@@ -109,24 +110,115 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>element</td>
-									<td>id | class</td>
-									<td>body</td>
-									<td>Elemento en el que se agregara el progressBar</td>
+									<td>text</td>
+									<td>Text | HTML</td>
+									<td>Hola Mundo</td>
+									<td>Mensaje</td>
 								</tr>
 								<tr>
-									<td>status</td>
-									<td>start | end</td>
-									<td>start</td>
-									<td>Cuando inicia y cuando termina</td>
+									<td>type</td>
+									<td>warning | success | danger | info</td>
+									<td>warning</td>
+									<td>Tipo de mensaje</td>
+								</tr>
+								<tr>
+									<td>time</td>
+									<td>Number | Seconds</td>
+									<td>5</td>
+									<td>Tiempo que dura la alerta</td>
+								</tr>
+								<tr>
+									<td>permanent</td>
+									<td>Boolean</td>
+									<td>false</td>
+									<td>La alerta es permanente</td>
 								</tr>
 							</tbody>
 						</table>
 
-						<p data-height="250" data-theme-id="8624" data-slug-hash="zxBojo" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/zxBojo/'>Smoke ProgressBar</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form class="form-horizontal" role="form">
+									<div class="form-group">
+										<div class="col-sm-12">
+											<a href="#" class="btn btn-warning" id="btnAlertWarning">Warning</a>
+											<a href="#" class="btn btn-success" id="btnAlertSuccess">Success</a>
+											<a href="#" class="btn btn-danger" id="btnAlertDanger">Danger 10 seconds</a>
+											<a href="#" class="btn btn-info" id="btnAlertInfo">Info permanent</a>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+									<script src="https://gist.github.com/alfredobarron/3f20ce580bb6dda3d6d8.js"></script>
+							</div>
+						</div>
+
+						<p data-height="250" data-theme-id="8624" data-slug-hash="tpzrb" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/tpzrb/'>tpzrb</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 					</section>
 
+					<section id="confirmation">
+
+						<h1>Confirmación</h1><hr>
+						<p class="lead">Proporciona mensajes de confirmación para las acciones típicas de usuario al momento de invocar un evento.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form class="form-horizontal" role="form">
+									<div class="form-group">
+										<div class="col-sm-12">
+											<a href="#" class="btn btn-default" id="btnConfirm">Confirmation</a>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/0f5da6454e7023091cd4.js"></script>
+							</div>
+						</div>
+
+						<h3>Opciones</h3>
+						<p>Personaliza las confirmaciones, cambiando el mensaje y el texto de los botones.</p>
+
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Opción</th>
+									<th>Tipo</th>
+									<th>Default</th>
+									<th>Descripción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>text</td>
+									<td>Text | HTML</td>
+									<td>¿Estas seguro?</td>
+									<td>Mensaje</td>
+								</tr>
+								<tr>
+									<td>accept</td>
+									<td>Text</td>
+									<td>Aceptar</td>
+									<td>Texto del botón aceptar</td>
+								</tr>
+								<tr>
+									<td>cancel</td>
+									<td>Text</td>
+									<td>Cancelar</td>
+									<td>Texto del botón cancelar</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p data-height="260" data-theme-id="8624" data-slug-hash="tbcdw" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/tbcdw/'>Smoke Confirmation</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
 
 					<footer class="follow">
 						<hr>
@@ -153,7 +245,7 @@
 		<!-- Botstrap -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<!-- Smoke -->
-		<script src="smoke/js/smoke.js"></script>
+		<script src="../dist/js/smoke.js"></script>
 		<!-- Scripts -->
 		<script src="js/scripts.js"></script>
 		<!-- CodePen-->
