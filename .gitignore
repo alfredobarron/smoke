@@ -1,0 +1,5 @@
+# Extension to ognore
+*.zip
+
+# Folders to ignore
+node_modules
