@@ -20,9 +20,9 @@
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Validate all inputs
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.fn.smkValidate = function(options) {
 
@@ -261,9 +261,9 @@ $.fn.smkValidate = function(options) {
 				}
 			}
 			/*
-			|---------------------------------------------------------------------
+			|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 			|	FALTAN INPUTS POR VALIDAR
-			|---------------------------------------------------------------------
+			|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 			*/
 		}
 	});
@@ -288,10 +288,10 @@ $.fn.smkValidate = function(options) {
 	return result;
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |	Usage
 |	if($('#form').smkValidate({lang:'en'})){}
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -300,9 +300,9 @@ $.fn.smkValidate = function(options) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Validate Equal passwords
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkEqualPass = function(password, repassword) {
 
@@ -333,10 +333,10 @@ $.smkEqualPass = function(password, repassword) {
 	});
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |   if($.smkEqualPass('#form #password', '#form #repassword')){}
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -345,9 +345,9 @@ $.smkEqualPass = function(password, repassword) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Clear form
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.fn.smkClear = function(options) {
 	// Variables default
@@ -393,18 +393,18 @@ $.fn.smkClear = function(options) {
 				break;
 			}
 			/*
-			|---------------------------------------------------------------------
+			|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 			|	FALTAN INPUTS POR LIMPIAR
-			|---------------------------------------------------------------------
+			|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 			*/		}
 	});
 	//$(this)[0].reset();
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	$('#form').smkClear({noClear: 'email,radio,...'});
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -413,9 +413,9 @@ $.fn.smkClear = function(options) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Se crea el método que agrega el mensaje de error
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkAddError = function (obj, text)
 {
@@ -464,9 +464,9 @@ $.smkAddError = function (obj, text)
 	return false;
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Se crea el método que remueve el mensaje de error
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkRemoveError = function(obj)
 {
@@ -480,9 +480,9 @@ $.smkRemoveError = function(obj)
 	return false;
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Se crea el método que personaliza los mensaje de error
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smokeCustomizeText = function(text, arrayText){
 	var customText = '';
@@ -503,9 +503,9 @@ $.smokeCustomizeText = function(text, arrayText){
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Alerts
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 var smkAlertInizialize = 0;
 // Se crea la funcion smkAlert
@@ -587,10 +587,10 @@ $.smkAlert = function(options) {
 
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |   $.smkAlert({ text: 'Hello world', type: 'success', time: 5 });
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -599,9 +599,9 @@ $.smkAlert = function(options) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Confirmation
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkConfirm = function(options, callback) {
 	// Variables default
@@ -645,12 +645,12 @@ $.smkConfirm = function(options, callback) {
 	}
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |   $.smkConfirm({text: 'are you sure?', accept: 'Accept', cancel: 'Cancel'}, function(e){if(e){
 |	  // Code here
 |   }});
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -660,9 +660,9 @@ $.smkConfirm = function(options, callback) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Currency
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkCurrency = function(number, prefix) {
 	var num = number.replace(',', '');
@@ -685,10 +685,10 @@ $.smkCurrency = function(number, prefix) {
 	}
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	var currency = $.smkCurrency(10000, '$');
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -697,9 +697,9 @@ $.smkCurrency = function(number, prefix) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   GetURL
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkGetURL = function(folder) {
 	//Se obtiene el protocolo http o https
@@ -732,10 +732,10 @@ $.smkGetURL = function(folder) {
 	return url;
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	var url = $.smkGetURL(1);
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -743,9 +743,9 @@ $.smkGetURL = function(folder) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   DatePicker
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkDatePicker = function(date) {
 
@@ -766,10 +766,10 @@ $.smkDatePicker = function(date) {
 	return result;
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	var date = $.smkDatePicker( $('.datepicker').datepicker('getDate') );
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -778,9 +778,9 @@ $.smkDatePicker = function(date) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Date
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkDate = function(options) {
 	var today = $.smkDatePicker( new Date() );
@@ -870,10 +870,10 @@ $.smkDate = function(options) {
 	return result;
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	var date = $.smkDate({date:new Date(), format:'yyyy-mm-dd', lang: 'es' });
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -882,9 +882,9 @@ $.smkDate = function(options) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   DateDiff
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkDateDiff = function(options) {
 	//Variables default
@@ -922,10 +922,10 @@ $.smkDateDiff = function(options) {
 	}
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	var dif = $.smkDateDiff({fromDate:'01/01/2013 12:00:00', toDate:'12/31/2014 12:30:00', interval:'days'});
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -934,9 +934,9 @@ $.smkDateDiff = function(options) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Scrolling
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkScrolling = function(options) {
 	//Variables default
@@ -957,10 +957,10 @@ $.smkScrolling = function(options) {
 	});
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	$.smkScrolling({speed:1000});
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 
@@ -968,9 +968,9 @@ $.smkScrolling = function(options) {
 
 
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   ProgressBar
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 $.smkProgressBar = function(options) {
 	//Variables default
@@ -1009,10 +1009,173 @@ $.smkProgressBar = function(options) {
 
 };
 /*
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |	$.smkProgressBar({element:'body', status:'start'});
-|---------------------------------------------------------------------
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+
+
+
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Fullscreen
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+$.fn.smkFullscreen = function() {
+
+	// Se crea el boton fullscreen
+	var btnFullscreen = '<a class="btn smk-fullscreen" href="#" data-toggle="tooltip" data-placement="bottom" title="Fullscreen"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>';
+
+	// Se agrega el boton fullscreen en el elemento
+	$(this).append(btnFullscreen);
+
+	// Evento del boton fullscreen
+	$('.smk-fullscreen').click(function(event) {
+	    event.preventDefault();
+	    toggleFullScreen();
+	});
+
+	// Se crea el metodo que dispara el fullscreen
+	function toggleFullScreen() {
+	  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+	    if (document.documentElement.requestFullscreen) {
+	      document.documentElement.requestFullscreen();
+	    } else if (document.documentElement.msRequestFullscreen) {
+	      document.documentElement.msRequestFullscreen();
+	    } else if (document.documentElement.mozRequestFullScreen) {
+	      document.documentElement.mozRequestFullScreen();
+	    } else if (document.documentElement.webkitRequestFullscreen) {
+	      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+	    }
+	  } else {
+	    if (document.exitFullscreen) {
+	      document.exitFullscreen();
+	    } else if (document.msExitFullscreen) {
+	      document.msExitFullscreen();
+	    } else if (document.mozCancelFullScreen) {
+	      document.mozCancelFullScreen();
+	    } else if (document.webkitExitFullscreen) {
+	      document.webkitExitFullscreen();
+	    }
+	  }
+	}
+
+	// Se crea el metodo que cambia el icono del boton
+	var changeFullscreen = function(){
+	    $('.smk-fullscreen').children('.glyphicon').toggleClass('glyphicon-fullscreen').toggleClass('glyphicon-resize-small');
+	};
+
+	// Se escuchan los cambios del fullscreen
+	document.addEventListener("fullscreenchange", changeFullscreen, false);
+	document.addEventListener("msfullscreenchange", changeFullscreen, false);
+	document.addEventListener("mozfullscreenchange", changeFullscreen, false);
+	document.addEventListener("webkitfullscreenchange", changeFullscreen, false);
+};
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Usage
+|	$('div').smkFullscreen();
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Panel config
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+$.fn.smkPanelConfig = function(options) {
+	// Variables default
+	var settings = $.extend({
+		hide: '',
+		class: ''
+	}, options);
+
+	// Se eliminan los espacios en blanco de la variable settings.hide
+	var hideSinEspacios = settings.hide.replace(/\s/g, '');
+	// Se quiebra la variable hideSinEspacios para obtener sus valores y se agregan en el array arrayHide
+	var arrayHide = hideSinEspacios.split(',');
+	// Se crea el btn-group
+	var btnGroup = '<div class="btn-group btn-group-sm pull-right ' + settings.class + '" role="group">';
+	// Se valida que no exista en el array el boton min para poder agregarlo dentro de btnGroup
+	if($.inArray('min', arrayHide) == -1){
+		btnGroup += '<a class="btn smk-min" href="#"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
+	}
+	// Se valida que no exista en el array el boton remove para poder agregarlo dentro de btnGroup
+	if($.inArray('remove', arrayHide) == -1){
+		btnGroup += '<a class="btn smk-remove" href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>';
+	}
+	// Se valida que no exista en el array el boton full para poder agregarlo dentro de btnGroup
+	if($.inArray('full', arrayHide) == -1){
+		btnGroup += '<a class="btn smk-full" href="#"><span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span></a>';
+	}
+	btnGroup += '</div>';
+	// Se obtiene el .panel-title de cada panel
+	var panelHeading = $(this).children('.panel-heading').children('.panel-title');
+	// Se inserta despues del .panel-title
+	$(panelHeading).after( btnGroup );
+
+	// Evento del boton Min
+    $('.smk-min').click(function(event) {
+    	event.preventDefault();
+        var body = $(this).parents('.panel-heading').siblings('.panel-body');
+        var footer = $(this).parents('.panel-heading').siblings('.panel-footer');
+        var icon = $(this).children('.glyphicon');
+        $(footer).slideToggle('fast');
+        $(body).slideToggle('fast', function(){
+            icon.toggleClass('glyphicon-minus').toggleClass('glyphicon-plus');
+        });
+
+    });
+    // Evento del boton Remove
+    $('.smk-remove').click(function(event) {
+    	event.preventDefault();
+        var panel = $(this).parents('.panel');
+        panel.fadeOut(400, function(){
+            //this.remove();
+        });
+    });
+    // Evento del boton Full
+    $('.smk-full').click(function(event) {
+    	event.preventDefault();
+        var panel = $(this).parents('.panel');
+        var body = $(this).parents('.panel-heading').siblings('.panel-body');
+        var icon = $(this).children('.glyphicon');
+        var iconPlus = $(this).siblings('.btn').children('.glyphicon-plus');
+
+        if(panel.hasClass('panel-full')){
+            panel.removeClass('panel-full');
+            $('.container-fluid').css({'display':'block'});
+            $('#content').css({'position':'fixed'});
+            $('body').css({'overflow':'auto'});
+            $(this).siblings('.btn').show();
+            if(iconPlus.length == 1){
+            	body.hide();
+            }
+        }else{
+            panel.addClass('panel-full');
+            $('.container-fluid').css({'display':'initial'});
+            $('#content').css({'position':'initial'});
+            $('body').css({'overflow':'hidden'});
+            $(this).siblings('.btn').hide();
+            if(iconPlus.length == 1){
+            	body.show();
+            }
+        }
+        icon.toggleClass('glyphicon-resize-full').toggleClass('glyphicon-resize-small');
+    });
+};
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Usage
+|	$('.panel').smkPanelConfig({hide: 'min,remove,full', class: 'name-class'});
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 

@@ -20,10 +20,11 @@ Para empezar, echa un vistazo a [http://alfredobarron.github.io/smoke](http://al
 
 ## Inicio
 
-Existen dos opciones disponibles para iniciar:
+Existen tres opciones disponibles para iniciar:
 
 - [Descarga la versión más reciente.](https://github.com/alfredobarron/smoke/archive/master.zip)
 - Clona el repositorio: `git clone https://github.com/alfredobarron/smoke.git`.
+- Instalar con [Bower](http://bower.io/): bower install smoke.
 
 Lee la página de [primeros pasos](http://alfredobarron.github.io/smoke/getting-started.html) para obtener más información sobre el contenido.
 
