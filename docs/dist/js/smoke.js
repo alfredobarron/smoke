@@ -1087,22 +1087,30 @@ $.fn.smkFullscreen = function() {
 
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-|   Panel config
+|   Panel
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
-$.fn.smkPanelConfig = function(options) {
+$.fn.smkPanel = function(options) {
 	// Variables default
 	var settings = $.extend({
-		hide: '',
-		class: ''
+		hide: ''
 	}, options);
 
 	// Se eliminan los espacios en blanco de la variable settings.hide
 	var hideSinEspacios = settings.hide.replace(/\s/g, '');
 	// Se quiebra la variable hideSinEspacios para obtener sus valores y se agregan en el array arrayHide
 	var arrayHide = hideSinEspacios.split(',');
+	// Se obtiene el .panel-title de cada panel
+	var panelHeading = $(this).children('.panel-heading').children('.panel-title');
+	var smkBtnGroupPanel = '';
+	if(panelHeading.length > 0){
+		smkBtnGroupPanel = 'smk-btn-group-panel-title';
+	}else{
+		smkBtnGroupPanel = 'smk-btn-group-panel';
+	}
+
 	// Se crea el btn-group
-	var btnGroup = '<div class="btn-group btn-group-sm pull-right ' + settings.class + '" role="group">';
+	var btnGroup = '<div class="btn-group btn-group-sm pull-right ' + smkBtnGroupPanel + '" role="group">';
 	// Se valida que no exista en el array el boton min para poder agregarlo dentro de btnGroup
 	if($.inArray('min', arrayHide) == -1){
 		btnGroup += '<a class="btn smk-min" href="#"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
@@ -1116,10 +1124,9 @@ $.fn.smkPanelConfig = function(options) {
 		btnGroup += '<a class="btn smk-full" href="#"><span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span></a>';
 	}
 	btnGroup += '</div>';
-	// Se obtiene el .panel-title de cada panel
-	var panelHeading = $(this).children('.panel-heading').children('.panel-title');
-	// Se inserta despues del .panel-title
-	$(panelHeading).after( btnGroup );
+
+	// Se inserta dentro de .panel-heading
+	$(this).children('.panel-heading').append( btnGroup );
 
 	// Evento del boton Min
     $('.smk-min').click(function(event) {
@@ -1151,22 +1158,22 @@ $.fn.smkPanelConfig = function(options) {
 
         if(panel.hasClass('panel-full')){
             panel.removeClass('panel-full');
-            $('.container-fluid').css({'display':'block'});
-            $('#content').css({'position':'fixed'});
-            $('body').css({'overflow':'auto'});
             $(this).siblings('.btn').show();
             if(iconPlus.length == 1){
             	body.hide();
             }
+            $('body').css({'overflow':'auto'});
+            // $('.container-fluid').css({'display':'block'});
+            // $('#content').css({'position':'fixed'});
         }else{
             panel.addClass('panel-full');
-            $('.container-fluid').css({'display':'initial'});
-            $('#content').css({'position':'initial'});
-            $('body').css({'overflow':'hidden'});
             $(this).siblings('.btn').hide();
             if(iconPlus.length == 1){
             	body.show();
             }
+            $('body').css({'overflow':'hidden'});
+            // $('.container-fluid').css({'display':'initial'});
+            // $('#content').css({'position':'initial'});
         }
         icon.toggleClass('glyphicon-resize-full').toggleClass('glyphicon-resize-small');
     });
@@ -1174,7 +1181,7 @@ $.fn.smkPanelConfig = function(options) {
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
-|	$('.panel').smkPanelConfig({hide: 'min,remove,full', class: 'name-class'});
+|	$('.panel').smkPanel({hide: 'min,remove,full', class: 'name-class'});
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
