@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smock | Validar</title>
+    <meta name="description" content="WEB DESIGNER & DEVELOPER" />
+    <meta name="keywords" content="JQuery, plugin, smock, validate, validar, form, formulario, alert, confirm, alerta, confirmacion, moneda, currency, fecha, date, URL, alfredobarron, alfredo barron, alfredo, barron" />
+    <meta name="robots" content="index,follow,archive">
+    <meta name="author" content="Lic. Alfredo Barrón" />
+    <link rel="shortcut icon" href="../images/favicon.png"> 
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Smock -->
+    <link href="smock/css/smock.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Smock</a>
+        </div><!-- /.navbar-header -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="primeros-pasos.html">Primeros pasos</a></li>
+            <li class="active"><a href="validar.html">Validar</a></li>
+            <li><a href="alertas-confirmacion.html">Alertas  & Confirmación</a></li>
+            <li><a href="extras.html">Extras</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Validar formulario</h1>
+        <p class="lead">Hace que la validación de formularios del lado del cliente sea fácil y simple, mientras que todavía ofrece un montón de opciones de personalización.</p>
+      </div>
+    </div><!-- /.smock -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="list-group" data-spy="affix" data-offset-top="260">
+              <ul class="nav">
+              <a href="#campo-vacio" class="list-group-item">Campo vacío</a>
+              <a href="#campo-email" class="list-group-item">Campo email</a>
+              <a href="#campo-password" class="list-group-item">Campo password</a>
+              <a href="#campo-numerico" class="list-group-item">Campo numérico</a>
+              <a href="#campo-alfanumerico" class="list-group-item">Campo alfanumérico</a>
+              <a href="#campo-numero-de-caracteres" class="list-group-item">Campo número de carcateres</a>
+              <a href="#campo-rango-de-caracteres" class="list-group-item">Campo rango de carcateres</a>
+              <a href="#contrasenias-iguales" class="list-group-item">Contraseñas iguales</a>
+              <a href="#contrasenia-igual-variable" class="list-group-item">Contraseña igual a variable</a>
+              <a href="#limpiar-formulario" class="list-group-item">Limpiar formulario</a>
+              </ul>
+          </div>
+        </div>
+        <div class="col-lg-9">
+
+          <section id="campo-vacio">
+            <h1>Campo vacío</h1><hr>
+            <p>Para validar uno o varios campos vacios de un formulario solo tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. Los tipos de campos soportados hasta el momento son <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> y <code>checkbox</code>. La función javascript es <span class="text-success">smockValidateForm</span></p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formVacio">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Texto</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Introducir texto" id="text" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"text"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateForm</span>()){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+            <h3>Personalizar mensaje</h3>
+            <p>Personaliza el mensaje añadiendo el atributo <code>title</code></p>
+            <div class="panel panel-default">
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"text"</span> <span class="text-primary">title=</span><span class="text-danger">&quot;Introduce un texto&quot;</span> <span class="text-danger">required</span><span class="text-info">&gt;</span>
+                  </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="campo-email">
+            <h1>Campo email</h1><hr>
+            <p>Para validar un correo electrónico válido y que cumpla con el formato necesario, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> y el tipo de campo debe ser <code>email</code>.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formEmail">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" placeholder="Introducir email" id="text" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"email"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateForm</span>()){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="campo-password">
+            <h1>Campo password</h1><hr>
+            <p>Para validar que la contraseña sea fuerte, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>, agregar el atributo <code>alt</code> y dentro de este el texto <span class="text-primary">strongPass</span> y por último el tipo de campo debe ser <code>password</code>.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formPass">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" placeholder="Introducir password" id="text" alt="strongPass" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"password"</span> <span class="text-primary">alt=</span><span class="text-danger">"strongPass"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateForm</span>()){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="campo-numerico">
+            <h1>Campo numérico</h1><hr>
+            <p>Para validar que lo que se está introduciendo en el campo sean solo números, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>, agregar el atributo <code>alt</code> y dentro de este el texto <span class="text-primary">number</span> y por último el tipo de campo debe ser <code>text</code>.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formNumber">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Numero</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Introducir numero" id="text" alt="number" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"text"</span> <span class="text-primary">alt=</span><span class="text-danger">"number"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateForm</span>()){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="campo-alfanumerico">
+            <h1>Campo alfanumérico</h1><hr>
+            <p>Para validar que lo que se está introduciendo en el campo sean solo números o letras, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>, agregar el atributo <code>alt</code> y dentro de este el texto <span class="text-primary">alphanumeric</span> y por último el tipo de campo debe ser <code>text</code>.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formAlphanumeric">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Números o letras</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Introducir números o letras" id="text" alt="alphanumeric" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"text"</span> <span class="text-primary">alt=</span><span class="text-danger">"alphanumeric"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateForm</span>()){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="campo-numero-de-caracteres">
+            <h1>Campo número de caracteres</h1><hr>
+            <p>Para validar el número de caracteres que acepte el campo, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>, agregar los atributos <code>minlength</code> y <code>maxlength</code> y dentro de estos el número de caracteres (debe ser igual) y por último el tipo de campo debe ser <code>text</code>.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formNumCaracteres">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Número de caracteres</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Introducir texto" id="text" minlength="8" maxlength="8" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"text"</span> <span class="text-primary">minlength=</span><span class="text-danger">"8"</span> <span class="text-primary">maxlength=</span><span class="text-danger">"8"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateForm</span>()){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="campo-rango-de-caracteres">
+            <h1>Campo rango de caracteres</h1><hr>
+            <p>Para validar el rango de caracteres que acepte el campo, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>, agregar los atributos <code>minlength</code> y <code>maxlength</code> y dentro de estos el número de caracteres y por último el tipo de campo debe ser <code>text</code>.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formRangoCaracteres">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Rango de caracteres</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Introducir texto" id="text" minlength="4" maxlength="8" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"text"</span> <span class="text-primary">minlength=</span><span class="text-danger">"4"</span> <span class="text-primary">maxlength=</span><span class="text-danger">"8"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateForm</span>()){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="contrasenias-iguales">
+            <h1>Contraseñas iguales</h1><hr>
+            <p>Para validar que el texto de dos campos sean iguales, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> en el segundo campo. La función javascript es <span class="text-success">smockValidateEqualPass</span></p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formEqualPass">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Contraseña</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" placeholder="Introducir contraseña" id="text">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text2" class="col-sm-2 control-label">Confirma la contraseña</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" placeholder="Confirma la contraseña" id="text2" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"password"</span> <span class="text-primary">id=</span><span class="text-danger">"pass1"</span><span class="text-info">&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"password"</span> <span class="text-primary">id=</span><span class="text-danger">"pass2"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateEqualPass</span>(<span class="text-danger">'form #pass1'</span>, <span class="text-danger">'form #pass2'</span>)){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="contrasenia-igual-variable">
+            <h1>Contraseña igual a variable</h1><hr>
+            <p>Para validar que el texto del campo sea igual al de una variable Javascript, tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. La función javascript es <span class="text-success">smockValidateEqualPassVar</span></p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formEqualVarPass">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Contraseña</label>
+                    <div class="col-sm-10">
+                      <p class="form-control-static">Smock1</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Confirma la contraseña</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" placeholder="Confirma la contraseña" id="text" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Submit</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"password"</span> <span class="text-primary">id=</span><span class="text-danger">"pass"</span> <span class="text-danger">required</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"submit"</span><span class="text-info">&gt;</span>Submit<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+<span class="text-info">var</span> passwordActual <span class="text-info">=</span> <span class="text-danger">'Smock1'</span><span class="text-info">;</span>
+
+if($(<span class="text-danger">'form'</span>).<span class="text-success">smockValidateEqualPassVar</span>(<span class="text-danger">passwordActual</span>, <span class="text-danger">'form #pass'</span>)){
+  <span class="text-muted">// hacer algo ...</span>
+}
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="limpiar-formulario">
+            <h1>Limpiar formulario</h1><hr>
+            <p>Para limpiar formularios se usa la función javascript <span class="text-success">smockClearForm</span>. Para no limpiar uno o más tipos de campos se usa la opción <span class="text-primary">noClear</span> dentro de la función.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formClear">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Introducir nombre">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Correo elecrónico</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" placeholder="Introducir email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Contraseña</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" placeholder="Introducir contraseña">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Recordarme
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="#" class="btn btn-default" id="btn">Limpiar</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">HTML
+                <pre><code>
+<span class="text-info">&lt;form&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"text"</span><span class="text-info">&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"email"</span><span class="text-info">&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"password"</span><span class="text-info">&gt;
+  &lt;input</span> <span class="text-primary">type=</span><span class="text-danger">"checkbox"</span><span class="text-info">&gt;
+  &lt;button</span> <span class="text-primary">type=</span><span class="text-danger">"button"</span><span class="text-info">&gt;</span>Limpiar<span class="text-info">&lt;/button&gt;</span>
+<span class="text-info">&lt;/form&gt;</span>
+                  </code></pre>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+
+$(<span class="text-danger">'form'</span>).<span class="text-success">smockClearForm</span>({<span class="text-primary">noClear:</span> <span class="text-danger">'email, checkbox'</span>});
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+        </div><!--/.col-lg-9 -->
+      </div><!--/.row -->
+    </div><!-- /.container -->
+    <footer>
+      <div class="container">
+      <hr>
+        <div class="follow">
+          <ul class="list-inline">
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&repo=smock&type=watch&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&repo=smock&type=fork&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe></li>
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&type=follow&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
+            <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="AlfredoBarronC" data-url="http://ww.alfredobarron.com/smock" data-lang="en">Tweet</a></li>
+            <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://ww.alfredobarron.com/smock"></div></li>
+            <li><div class="fb-share-button" data-href="http://ww.alfredobarron.com/smock" data-type="button_count"></div></li>
+          </ul>
+          <p>Diseñado y desarrollado con ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
+        </div>
+      </div>
+    </footer>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <!-- Smock -->
+    <script src="smock/js/smock.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- Google + -->
+    <script type="text/javascript">
+      window.___gcfg = {lang: 'es-419'};
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <!-- Twitter -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=521651221243058";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+  </body>
+</html>

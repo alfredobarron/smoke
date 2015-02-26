@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smock | Alertas & Confirmación</title>
+    <meta name="description" content="WEB DESIGNER & DEVELOPER" />
+    <meta name="keywords" content="JQuery, plugin, smock, validate, validar, form, formulario, alert, confirm, alerta, confirmacion, moneda, currency, fecha, date, URL, alfredobarron, alfredo barron, alfredo, barron" />
+    <meta name="robots" content="index,follow,archive">
+    <meta name="author" content="Lic. Alfredo Barrón" />
+    <link rel="shortcut icon" href="../images/favicon.png"> 
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Smock -->
+    <link href="smock/css/smock.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Smock</a>
+        </div><!-- /.navbar-header -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="primeros-pasos.html">Primeros pasos</a></li>
+            <li><a href="validar.html">Validar</a></li>
+            <li class="active"><a href="alertas-confirmacion.html">Alertas & Confirmación</a></li>
+            <li><a href="extras.html">Extras</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Alertas y Confirmación</h1>
+        <p class="lead">Permite reemplazar a los tradicionales Alert y Confirm por mensajes de diálogos más vistosos y funcionales para nuestro sitio web. y su uso es tan sencillo como los nativos de javascript.</p>
+      </div>
+
+    </div><!-- /.smock -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="list-group" data-spy="affix" data-offset-top="260">
+              <ul class="nav">
+                <a href="#alerta" class="list-group-item">Alerta</a>
+                <a href="#confirmacion" class="list-group-item">Confirmación</a>
+              </ul>
+          </div>
+        </div>
+        <div class="col-lg-9">
+
+          <section id="alerta">
+            <h1>Alerta</h1><hr>
+            <p class="lead">Proporciona mensajes de alerta para las acciones típicas de usuario al momento de invocar un evento.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <a href="#" class="btn btn-default" id="btnAlert">Alerta</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockAlert</span>({<span class="text-danger">'hola mundo'</span>});
+                </code></pre>
+              </div>
+            </div>
+            <h3>Opciones</h3>
+            <p>Personaliza las alertas, cambiando el tiempo de duración con la opción <span class="text-primary">time</span> y el color con la opción <span class="text-primary">type</span>.</p>
+            <p>El tiempo y el color por default es de 5 segundos y el color es transparente.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <a href="#" class="btn btn-success" id="btnAlertSuccess">Success</a>
+                      <a href="#" class="btn btn-info" id="btnAlertInfo">Info</a>
+                      <a href="#" class="btn btn-warning" id="btnAlertWarning">Warning</a>
+                      <a href="#" class="btn btn-danger" id="btnAlertDanger">Danger</a>
+                      <a href="#" class="btn btn-default" id="btnAlertTime">10 Segundos</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockAlert</span>(<span class="text-danger">'Alert type "success"'</span>, {<span class="text-primary">type:</span> <span class="text-danger">'success'</span>});
+$.<span class="text-success">smockAlert</span>(<span class="text-danger">'Alert type "info"'</span>, {<span class="text-primary">type:</span> <span class="text-danger">'info'</span>});
+$.<span class="text-success">smockAlert</span>(<span class="text-danger">'Alert type "warning"'</span>, {<span class="text-primary">type:</span> <span class="text-danger">'warning'</span>});
+$.<span class="text-success">smockAlert</span>(<span class="text-danger">'Alert type "danger"'</span>, {<span class="text-primary">type:</span> <span class="text-danger">'danger'</span>});
+$.<span class="text-success">smockAlert</span>(<span class="text-danger">'Alert type "success" time 10 segundos'</span>, {<span class="text-primary">type:</span> <span class="text-danger">'success'</span>, <span class="text-primary">time:</span> <span class="text-danger">10000</span>});
+                  </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="confirmacion">
+            <h1>Confirmación</h1><hr>
+            <p class="lead">Proporciona mensajes de confirmación para las acciones típicas de usuario al momento de invocar un evento.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <a href="#" class="btn btn-default" id="btnConfirm">Confirmación</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockConfirm</span>(<span class="text-danger">'Mensaje de confirmación', </span>function(e){
+  if(e){
+    <span class="text-muted">// hacer algo ...</span>
+  }
+});
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          
+
+        </div><!--/.col-lg-9 -->
+      </div><!--/.row -->
+    </div><!-- /.container -->
+    <footer>
+      <div class="container">
+      <hr>
+        <div class="follow">
+          <ul class="list-inline">
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&repo=smock&type=watch&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&repo=smock&type=fork&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe></li>
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&type=follow&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
+            <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="AlfredoBarronC" data-url="http://ww.alfredobarron.com/smock" data-lang="en">Tweet</a></li>
+            <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://ww.alfredobarron.com/smock"></div></li>
+            <li><div class="fb-share-button" data-href="http://ww.alfredobarron.com/smock" data-type="button_count"></div></li>
+          </ul>
+          <p>Diseñado y desarrollado con ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <!-- Smock -->
+    <script src="smock/js/smock.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- Google + -->
+    <script type="text/javascript">
+      window.___gcfg = {lang: 'es-419'};
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <!-- Twitter -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=521651221243058";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+  </body>
+</html>

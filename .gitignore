@@ -1,5 +1,6 @@
-# Extension to ognore
-*.zip
-
 # Folders to ignore
 node_modules
+.grunt
+
+# Extension to ognore
+*.zip

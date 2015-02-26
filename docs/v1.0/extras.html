@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smock | Extras</title>
+    <meta name="description" content="WEB DESIGNER & DEVELOPER" />
+    <meta name="keywords" content="JQuery, plugin, smock, validate, validar, form, formulario, alert, confirm, alerta, confirmacion, moneda, currency, fecha, date, URL, alfredobarron, alfredo barron, alfredo, barron" />
+    <meta name="robots" content="index,follow,archive">
+    <meta name="author" content="Lic. Alfredo Barrón" />
+    <link rel="shortcut icon" href="../images/favicon.png"> 
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Smock -->
+    <link href="smock/css/smock.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Smock</a>
+        </div><!-- /.navbar-header -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="primeros-pasos.html">Primeros pasos</a></li>
+            <li><a href="validar.html">Validar</a></li>
+            <li><a href="alertas-confirmacion.html">Alertas & Confirmación</a></li>
+            <li class="active"><a href="extras.html">Extras</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Extras</h1>
+        <p class="lead">Colección de funciones que ayudan a la hora de programar.</p>
+      </div>
+
+    </div><!-- /.smock -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="list-group" data-spy="affix" data-offset-top="260">
+              <ul class="nav">
+                <a href="#moneda" class="list-group-item">Moneda</a>
+                <a href="#URL" class="list-group-item">URL</a>
+                <a href="#fecha" class="list-group-item">Fecha</a>
+                <a href="#diferencia-fechas" class="list-group-item">Diferencia entre fechas</a>
+              </ul>
+          </div>
+        </div>
+        <div class="col-lg-9">
+
+          <section id="moneda">
+            <h1>Moneda</h1><hr>
+            <p class="lead">Convierte un número a formato de moneda.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formCurrency">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Número</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Introducir numero" id="text" alt="number" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Convertir</a>
+                    </div>
+                    <div class="col-sm-6" id="result">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockFormatCurrency</span>(<span class="text-danger">10000, '$'</span>);
+                </code></pre>
+              </div>
+            </div>
+            <div class="alert alert-info">Esta función recibe dos parámetros el primero es el número que se va a formatear y el segundo es el prefijo o el tipo de moneda.</div>
+          </section>
+
+          <section id="URL">
+            <h1>URL</h1><hr>
+            <p class="lead">Obtiene la URL.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formURL">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Obtener URL</a>
+                    </div>
+                    <div class="col-sm-8" id="result">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockGetURL</span>();
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="fecha">
+            <h1>Fecha</h1><hr>
+            <p class="lead">Con esta función puedes obtener, formatear, traducir y personalizar las fechas.</p>
+            <h3>Obtener Fecha</h3>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formFormatDate">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Fecha y hora actual</a>
+                    </div>
+                    <div class="col-sm-8" id="result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockDateFormat</span>();
+                </code></pre>
+              </div>
+            </div>
+            <h3>Convertir Fecha</h3>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formFormatDate1">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Fecha</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Convertir</a>
+                    </div>
+                    <div class="col-sm-6" id="result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockDateFormat</span>({<span class="text-info">date:</span><span class="text-danger">'12/31/2014'</span>});
+                </code></pre>
+              </div>
+            </div>
+            <h3>Formatear Fecha</h3>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formFormatDate2">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Formatear fecha</a>
+                    </div>
+                    <div class="col-sm-8" id="result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockDateFormat</span>({<span class="text-info">format:</span> <span class="text-danger">'ddMMyyyy'</span>});
+                </code></pre>
+              </div>
+            </div>
+            <p>Formatos soportados</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Format</th>
+                  <th>Resultado</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>yyyymmdd hhmmss</td>
+                    <td>2014-12-31 12:30:60</td>
+                  </tr>
+                  <tr>
+                    <td>yyyymmdd</td>
+                    <td>2014-12-31</td>
+                  </tr>
+                  <tr>
+                    <td>yyyyMMdd</td>
+                    <td>2014-Diciembre-31</td>
+                  </tr>
+                  <tr>
+                    <td>yyyyMdd</td>
+                    <td>2014-Dic-31</td>
+                  </tr>
+                  <tr>
+                    <td>yymmdd</td>
+                    <td>14-12-31</td>
+                  </tr>
+                  <tr>
+                    <td>yyMMdd</td>
+                    <td>14-Diciembre-31</td>
+                  </tr>
+                  <tr>
+                    <td>yyMdd</td>
+                    <td>14-Dic-31</td>
+                  </tr>
+                  <tr>
+                    <td>ddmmyyyy</td>
+                    <td>31-12-2014</td>
+                  </tr>
+                  <tr>
+                    <td>ddMMyyyy</td>
+                    <td>31-Diciembre-2014</td>
+                  </tr>
+                  <tr>
+                    <td>ddMyyyy</td>
+                    <td>31-Dic-2014</td>
+                  </tr>
+                  <tr>
+                    <td>ddmmyy</td>
+                    <td>31-12-14</td>
+                  </tr>
+                  <tr>
+                    <td>ddMMyy</td>
+                    <td>31-Diciembre-14</td>
+                  </tr>
+                  <tr>
+                    <td>ddMyy</td>
+                    <td>31-Dic-14</td>
+                  </tr>
+              </tbody>
+            </table>
+            <h3>Lenguaje</h3>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formFormatDate3">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Traducir fecha</a>
+                    </div>
+                    <div class="col-sm-8" id="result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockDateFormat</span>({<span class="text-info">format:</span> <span class="text-danger">'ddMyyyy'</span>, <span class="text-info">lang:</span> <span class="text-danger">'en'</span>});
+                </code></pre>
+              </div>
+            </div>
+            <p>Lenguajes soportados</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Lang</th>
+                  <th>Lenguaje</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>es</td>
+                    <td>Español</td>
+                  </tr>
+                  <tr>
+                    <td>en</td>
+                    <td>Ingles</td>
+                  </tr>
+              </tbody>
+            </table>
+            <h3>Personalizar separadores</h3>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formFormatDate4">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Personalizar</a>
+                    </div>
+                    <div class="col-sm-8" id="result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockDateFormat</span>({<span class="text-info">separatorDate:</span> <span class="text-danger">'/'</span>, <span class="text-info">separatorTime:</span> <span class="text-danger">':'</span>});
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="diferencia-fechas">
+            <h1>Diferencia de Fecha</h1><hr>
+            <p class="lead">Obtén la diferencia que existe entre dos fechas.</p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-muted"><small>EJEMPLO</small></p>
+                <form class="form-horizontal" role="form" id="formDateDiff">
+                  <div class="form-group">
+                    <label for="date" class="col-sm-2 control-label">Fecha 1</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="date2" class="col-sm-2 control-label">Fecha 2</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="date2" placeholder="mm/dd/aaaa">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-4">
+                      <a href="#" class="btn btn-default" id="btn">Diferencia</a>
+                    </div>
+                    <div class="col-sm-6" id="result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-footer">Javascript
+                <pre><code>
+$.<span class="text-success">smockDateDiff</span>({<span class="text-info">fromDate:</span><span class="text-danger">'12/31/2013'</span>, <span class="text-info">toDate:</span><span class="text-danger">'12/31/2014'</span>, <span class="text-info">interval:</span><span class="text-danger">'days'</span>});
+                </code></pre>
+              </div>
+            </div>
+            <p>Intervalos soportados</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Interval</th>
+                  <th>Intervalo</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>years</td>
+                    <td>Años</td>
+                  </tr>
+                  <tr>
+                    <td>months</td>
+                    <td>Meses</td>
+                  </tr>
+                  <tr>
+                    <td>weeks</td>
+                    <td>Semanas</td>
+                  </tr>
+                  <tr>
+                    <td>days</td>
+                    <td>Dias</td>
+                  </tr>
+                  <tr>
+                    <td>hours</td>
+                    <td>Horas</td>
+                  </tr>
+                  <tr>
+                    <td>minutes</td>
+                    <td>Minutos</td>
+                  </tr>
+                  <tr>
+                    <td>seconds</td>
+                    <td>Segundos</td>
+                  </tr>
+              </tbody>
+            </table>
+          </section>
+
+        </div><!--/.col-lg-9 -->
+      </div><!--/.row -->
+    </div><!-- /.container -->
+    <footer>
+      <div class="container">
+      <hr>
+        <div class="follow">
+          <ul class="list-inline">
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&repo=smock&type=watch&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&repo=smock&type=fork&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe></li>
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=alfredobarron&type=follow&count=true"
+    allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
+            <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="AlfredoBarronC" data-url="http://ww.alfredobarron.com/smock" data-lang="en">Tweet</a></li>
+            <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://ww.alfredobarron.com/smock"></div></li>
+            <li><div class="fb-share-button" data-href="http://ww.alfredobarron.com/smock" data-type="button_count"></div></li>
+          </ul>
+          <p>Diseñado y desarrollado con ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <!-- Smock -->
+    <script src="smock/js/smock.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- Google + -->
+    <script type="text/javascript">
+      window.___gcfg = {lang: 'es-419'};
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <!-- Twitter -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=521651221243058";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+  </body>
+</html>

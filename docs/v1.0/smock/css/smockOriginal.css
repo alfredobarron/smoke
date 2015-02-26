@@ -1,0 +1,188 @@
+/*
+*	========================================================================
+*	smock.css
+*	========================================================================
+*	Copyright (c) Alfredo Barron   2014. All rights reserved
+*	Version       1.1
+*	Created       03/10/2013
+*	Last modified 12/11/2013
+*	Email         contacto@alfredobarron.com
+*	Web           http://www.alfredobarron.com
+*	========================================================================
+*/
+
+
+
+
+/*  VALIDATE FORM SMOCK
+	======================================================================== */
+.validate-smock {
+	position: absolute;
+	padding: 6px 8px;
+	background: #fff;
+	font-size: 14px;
+	text-align: left;
+	color: #555;
+	border-radius: 4px;
+	margin-left: 0px;
+	margin-top: 5px; /* editar dependiendo del height del campo */
+	box-shadow:         1px 1px 10px #333;
+	-webkit-box-shadow: 1px 1px 10px #333; /* Chrome & Safari */
+	-moz-box-shadow:    1px 1px 10px #333; /* Firefox */
+	animation:         validate-smock-move 0.1s;
+	-webkit-animation: validate-smock-move 0.1s; /* Chrome & Safari */
+	-moz-animation:    validate-smock-move 0.1s; /* Firefox */
+	-o-animation:      validate-smock-move 0.1s; /* Opera */
+	-ms-animation:     validate-smock-move 0.1s; /* IE 9 */
+	z-index: 10000000 !important;
+}
+.validate-smock:after, .validate-smock:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid;
+	left: 20px;
+}
+.validate-smock:after {
+	top: -18px;
+	border-color: transparent transparent #fff transparent;
+}
+.validate-smock:before {
+	top: -20px;
+	border-color: transparent transparent #ccc transparent;
+}
+.validate-smock span{
+	margin-right: 8px;
+	color: #ec971f; /*#ec971f  #f0ad4e*/
+}
+@keyframes validate-smock-move{
+	from {margin-top: 0px;}
+	to   {margin-top: 5px;}
+}
+@-webkit-keyframes validate-smock-move { /* Chrome and Safari */
+	from {margin-top: 0px;}
+	to   {margin-top: 5px;}
+}
+@-moz-keyframes validate-smock-move { /* Firefox */
+	from {margin-top: 0px;}
+	to   {margin-top: 5px;}
+}
+@-o-keyframes validate-smock-move{ /* Opera */
+	from {margin-top: 0px;}
+	to   {margin-top: 5px;}
+}
+@-ms-keyframes validate-smock-move { /* IE 9 */
+	from {margin-top: 0px;}
+	to   {margin-top: 5px;}
+}
+
+
+
+
+
+
+/*  CONFIRM SMOCK
+	======================================================================== */
+.back-confirmSmock{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1030;
+}
+.confirmSmock{
+	position: absolute;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	top: -500px;
+	right: 0;
+	left: 0;
+	margin: auto;
+	max-width: 440px;
+	z-index: 2060;
+	box-shadow:         0px 5px 25px #333;
+	-webkit-box-shadow: 0px 5px 25px #333; /* Chrome & Safari */
+	-moz-box-shadow:    0px 5px 25px #333; /* Firefox */
+}
+
+
+
+
+
+/*  ALERTS SMOCK
+	======================================================================== */
+.alertSmock{
+	position:fixed;
+	max-width: 330px;
+	bottom: 20px;
+	right: -340px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: 2060;
+	box-shadow:         0px 2px 10px #ccc;
+	-webkit-box-shadow: 0px 2px 10px #ccc; /* Chrome & Safari */
+	-moz-box-shadow:    0px 2px 10px #ccc; /* Firefox */
+}
+
+
+
+
+
+/*  ELIMINA LOS SPIN DE LOS INPUT TYPE NUMBER
+	======================================================================== */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+
+
+
+
+
+
+/*  HELPER STYLES
+	======================================================================== */
+.shadow-smock {
+	box-shadow:         3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Chrome & Safari */
+	-moz-box-shadow:    3px 3px 5px 6px #ccc; /* Firefox */
+}
+/* ROTATE */
+.rotate-smock{
+	transform:         rotate(7deg);
+	-webkit-transform: rotate(7deg); /* Chrome & Safari */
+	-moz-transition:   rotate(7deg); /* Firefox */
+	-o-transition:     rotate(7deg); /** Opera **/
+	-ms-transform:     rotate(7deg); /* IE 9 */
+	
+}
+/* TRANSLATE */
+.translate-smock{
+	transform:         translate(50px,100px);
+	-webkit-transform: translate(50px,100px); /* Chrome & Safari */
+	-moz-transform:    translate(50px,100px); /* Firefox */
+	-o-transform:      translate(50px,100px); /* Opera */
+	-ms-transform:     translate(50px,100px); /* IE 9 */
+}
+/* TRANSITION */
+.transition-smock {
+	transition:         all 2s ease-in-out;
+	-webkit-transition: all 2s ease-in-out; /* Chrome & Safari */
+	-moz-transition:    all 2s ease-in-out; /* Firefox */
+	-o-transition:      all 2s ease-in-out; /** Opera **/
+	-ms-transition:     all 2s ease-in-out; /* IE 9 */
+}
+/* ANIMATION */
+.animation-smok{
+	animation:         fadeOut 3.5s;
+	-webkit-animation: fadeOut 3.5s; /* Chrome & Safari */
+	-moz-animation:    fadeOut 3.5s; /* Firefox */
+	-o-animation:      fadeOut 3.5s; /* Opera */
+	-ms-animation:     fadeOut 3.5s; /* IE 9 */
+}
