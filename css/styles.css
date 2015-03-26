@@ -21,12 +21,12 @@
 	font-family: 'Poiret One', Arial !important;
 }
 .black h1{
-	font-size: 95px;
+	font-size: 110px;
 	margin-bottom: 25px
 }
 .black .lead{
 	padding: 0 10%;
-	font-size: 30px;
+	font-size: 35px;
 	margin-bottom: 50px;
 	color: #ddd;
 }
@@ -79,11 +79,11 @@
 }
 .white .col-xs-12 a:hover span{
 	font-size: 110px;
-	margin-bottom: 35px;
+	margin-bottom: 10px;
 }
 .white .col-xs-12 span{
 	font-size: 100px;
-	margin-bottom: 55px;
+	/*margin-bottom: 55px;*/
 	margin-top: 20%;
 	transition:all .2s ease-in-out;
 	-webkit-transition:all .2s ease-in-out; /* Chrome & Safari */

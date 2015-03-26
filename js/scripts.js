@@ -29,16 +29,22 @@ $(document).ready(function(){
 			$.smkAlert({text: $('#formEmail input').val(), type: 'success'});
 		}
 	});
+	// Validate Alphanumeric
+	$('#formAlphanumeric button').click(function(){
+		if($('#formAlphanumeric').smkValidate()){
+			$.smkAlert({text: $('#formAlphanumeric input').val(), type: 'success'});
+		}
+	});
 	// Validate Number
 	$('#formNumber button').click(function(){
 		if($('#formNumber').smkValidate()){
 			$.smkAlert({text: $('#formNumber input').val(), type: 'success'});
 		}
 	});
-	// Validate Alphanumeric
-	$('#formAlphanumeric button').click(function(){
-		if($('#formAlphanumeric').smkValidate()){
-			$.smkAlert({text: $('#formAlphanumeric input').val(), type: 'success'});
+	// Validate Decimal
+	$('#formDecimal button').click(function(){
+		if($('#formDecimal').smkValidate()){
+			$.smkAlert({text: $('#formDecimal input').val(), type: 'success'});
 		}
 	});
 	// Validate Currency
@@ -177,6 +183,23 @@ $(document).ready(function(){
 
 
 
+
+	/*
+	|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	|	Float
+	|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	*/
+	$('#formFloatConv button').click(function(){
+		if($('#formFloatConv').smkValidate()){
+			var mumber = $.smkFloat($('#formFloatConv input').val());
+			$.smkAlert({text: mumber, type:'success'});
+		}
+	});
+
+
+
+
+
 	/*
 	|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	|	Currency
@@ -188,6 +211,8 @@ $(document).ready(function(){
 			$.smkAlert({text: currency, type:'success'});
 		}
 	});
+
+
 
 
 

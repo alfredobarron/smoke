@@ -36,10 +36,12 @@ $.fn.smkValidate = function(options) {
 			textEmpty        : 'Campo requerido',
 			// Mensaje de error para el input email
 			textEmail        : 'Ingresa una cuenta de correo válida',
-			// Mensaje de error para el input number
-			textNumber       : 'Solo se admiten números',
 			// Mensaje de error para el input alphanumeric
 			textAlphanumeric : 'Solo se admiten números y/o letras',
+			// Mensaje de error para el input number
+			textNumber       : 'Solo se admiten números',
+			// Mensaje de error para el input decimal
+			textDecimal      : 'Solo se admiten números decimales',
 			// Mensaje de error para el input currency
 			textCurrency     : 'Ingresa una cantidad monetaria válida',
 			// Mensaje de error para el input select
@@ -187,20 +189,6 @@ $.fn.smkValidate = function(options) {
 				}
 			}
 
-			// Se valida el input NUMBER
-			if (smkType === 'number') {
-				// Se crea la expresión regular para el input number
-				var numberRegex = /^([0-9])*$/;
-				// Se valida que el value del input cumpla con la expresión regular
-				if (!numberRegex.test(value)) {
-					// Se agrega el mensaje de error
-					result = $.smkAddError(self, languaje[settings.lang].textNumber);
-					return false;
-				} else {
-					result = true;
-				}
-			}
-
 			// Se valida el input ALPHANUMERIC
 			if (smkType === 'alphanumeric') {
 				// Se crea la expresión regular para el input alphanumeric
@@ -215,12 +203,40 @@ $.fn.smkValidate = function(options) {
 				}
 			}
 
+			// Se valida el input NUMBER
+			if (smkType === 'number') {
+				// Se crea la expresión regular para el input number
+				var numberRegex = /^\d+$/;
+				// Se valida que el value del input cumpla con la expresión regular
+				if (!numberRegex.test(value)) {
+					// Se agrega el mensaje de error
+					result = $.smkAddError(self, languaje[settings.lang].textNumber);
+					return false;
+				} else {
+					result = true;
+				}
+			}
+
+			// Se valida el input DECIMAL
+			if (smkType === 'decimal') {
+				// Se crea la expresión regular para el input decimal
+				var decimalRegex = /^\d+(?:\.\d{1,4})?$/;
+				// Se valida que el value del input cumpla con la expresión regular
+				if (!decimalRegex.test(value)) {
+					// Se agrega el mensaje de error
+					result = $.smkAddError(self, languaje[settings.lang].textDecimal);
+					return false;
+				} else {
+					result = true;
+				}
+			}
+
 			// Se valida el input CURRENCY
 			if (smkType === 'currency') {
 				// Se crea la expresión regular para el input currency con $ al inicio
 				//var currencyRegex = /^\$?(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
 				// Se crea la expresión regular para el input currency
-				var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
+				var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/;
 				// Se valida que el value del input cumpla con la expresión regular
 				if (!currencyRegex.test(value)) {
 					// Se agrega el mensaje de error
@@ -654,6 +670,25 @@ $.smkConfirm = function(options, callback) {
 */
 
 
+
+
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Float
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+$.smkFloat = function(number) {
+	var num = number.replace(',', '');
+	return parseFloat(num);
+};
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Usage
+|	var float = $.smkFloat('1,0000.00');
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
 
 
 
