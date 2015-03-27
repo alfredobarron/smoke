@@ -1,6 +1,6 @@
 #[Smoke](http://alfredobarron.github.io/smoke)
 
-Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación, Barra de progreso y Mas.
+Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3
 
 
 
@@ -24,7 +24,7 @@ Existen tres opciones disponibles para iniciar:
 
 - [Descarga la versión más reciente.](https://github.com/alfredobarron/smoke/archive/master.zip)
 - Clona el repositorio: `git clone https://github.com/alfredobarron/smoke.git`.
-- Instalar con [Bower](http://bower.io/): bower install smoke.
+- Instalar con [Bower](http://bower.io/): `bower install smoke`.
 
 Lee la página de [primeros pasos](http://alfredobarron.github.io/smoke/getting-started.html) para obtener más información sobre el contenido.
 

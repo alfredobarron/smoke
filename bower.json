@@ -1,11 +1,11 @@
 {
   "name": "smoke",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "homepage": "https://github.com/alfredobarron/smoke",
   "authors": [
     "Alfredo Barron <alfredobarronc@gmail.com>"
   ],
-  "description": "Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación, Barra de progreso y Mas.",
+  "description": "Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3",
   "license": "GPLv3",
   "main": [
     "dist/css/smoke.css",

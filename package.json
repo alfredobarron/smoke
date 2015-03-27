@@ -1,7 +1,7 @@
 {
   "name": "smoke",
-  "version": "2.1.0",
-  "description": "Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación, Barra de progreso y Mas.",
+  "version": "2.1.1",
+  "description": "Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
