@@ -6,8 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Smoke . Validación</title>
-		<meta name="description" content="Jquery Plugin diseñado para usarse en Bootstrap 3. Validación de formularios, Notificaciones, Alertas, Mensajes de Confirmación, Barra de progreso y Mas" />
-		<meta name="keywords" content="HTML, CSS, JS, JavaScript, JQuery, plugin, bootstrap, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, notificacion, notificaciones, alert, confirmacion, confirm, progressbar, alfredobarron, alfredo barron, alfredo, barron" />
+		<meta name="description" content="Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3" />
+		<meta name="keywords" content="HTML, CSS, JS, JavaScript, JQuery, plugin, bootstrap, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, alert, notificacion, notificaciones, confirmacion, confirm, progressbar, barra de progreso, panel, paneles, pantalla completa, fullscreen, helpers, alfredobarron, alfredo barron, alfredo, barron" />
 		<meta name="robots" content="index,follow,archive">
 		<meta name="author" content="Alfredo Barron" />
 		<link rel="shortcut icon" href="images/favicon.png">
@@ -68,9 +68,10 @@
 						<ul class="nav">
 							<a href="#input-empty" class="list-group-item">Campo vacío</a>
 							<a href="#input-email" class="list-group-item">Campo email</a>
-							<a href="#input-number" class="list-group-item">Campo numérico</a>
 							<a href="#input-alphanumeric" class="list-group-item">Campo alfanumérico</a>
-							<a href="#input-currency" class="list-group-item">Campo Moneda</a>
+							<a href="#input-number" class="list-group-item">Campo numérico</a>
+							<a href="#input-decimal" class="list-group-item">Campo decimal</a>
+							<a href="#input-currency" class="list-group-item">Campo moneda</a>
 							<a href="#number-character" class="list-group-item">Numero de caracteres</a>
 							<a href="#range-character" class="list-group-item">Rango de caracteres</a>
 							<a href="#strong-password" class="list-group-item">Contraseña fuerte</a>
@@ -182,36 +183,6 @@
 
 					</section>
 
-					<section id="input-number">
-
-						<h1>Campo numérico</h1><hr>
-						<p>Para validar que en el campo solo se ingresen números, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>number</code>.</p>
-
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formNumber">
-									<div class="form-group">
-										<label for="text">Number</label>
-										<input type="text" class="form-control" placeholder="Enter number" smk-type="number" required>
-									</div>
-									<button type="button" class="btn btn-default">Submit</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>HTML</small></p>
-								<script src="https://gist.github.com/alfredobarron/3190da6e2750e8b6e153.js"></script>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
-							</div>
-						</div>
-
-						<p data-height="320" data-theme-id="8624" data-slug-hash="VYLMjR" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/VYLMjR/'>Smoke Validate Number</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-
-					</section>
-
 					<section id="input-alphanumeric">
 
 						<h1>Campo alfanumérico</h1><hr>
@@ -242,6 +213,66 @@
 
 					</section>
 
+					<section id="input-number">
+
+						<h1>Campo numérico</h1><hr>
+						<p>Para validar que en el campo solo se ingresen números, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>number</code>.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formNumber">
+									<div class="form-group">
+										<label for="text">Number</label>
+										<input type="text" class="form-control" placeholder="Enter number" smk-type="number" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/3190da6e2750e8b6e153.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="VYLMjR" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/VYLMjR/'>Smoke Validate Number</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="input-decimal">
+
+						<h1>Campo decimal</h1><hr>
+						<p>Para validar que en el campo solo se ingresen números decimales, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>decimal</code>.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formDecimal">
+									<div class="form-group">
+										<label for="text">Decimal</label>
+										<input type="text" class="form-control" placeholder="Enter decimal" smk-type="decimal" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/2541fd89e958580718de.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="KwEKbV" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/KwEKbV/'>Smoke Validate Decimal</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
 					<section id="input-currency">
 
 						<h1>Campo Moneda</h1><hr>
@@ -260,7 +291,7 @@
 							</div>
 							<div class="panel-footer">
 								<p class="text-muted"><small>HTML</small></p>
-								<script src="https://gist.github.com/alfredobarron/7a4eb0150a2f1be4b544.js"></script>
+								<script src="https://gist.github.com/alfredobarron/8d3381f4a98cb1e39cae.js"></script>
 							</div>
 							<div class="panel-footer">
 								<p class="text-muted"><small>CODE</small></p>
@@ -268,7 +299,7 @@
 							</div>
 						</div>
 
-						<p data-height="320" data-theme-id="8624" data-slug-hash="GgJMNK" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/GgJMNK/'>Smoke Validate Alphanumeric</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+						<p data-height="320" data-theme-id="8624" data-slug-hash="raRBYg" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/raRBYg/'>Smoke Validate Currency</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 					</section>
 

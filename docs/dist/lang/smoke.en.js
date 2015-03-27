@@ -5,10 +5,12 @@
 			textEmpty        : 'Required field',
 			// Mensaje de error para el input email
 			textEmail        : 'Enter a valid email',
-			// Mensaje de error para el input number
-			textNumber       : 'Only numbers are allowed',
 			// Mensaje de error para el input alphanumeric
 			textAlphanumeric : 'Only numbers and/or letters allowed',
+			// Mensaje de error para el input number
+			textNumber       : 'Only numbers are allowed',
+			// Mensaje de error para el input decimal
+			textDecimal      : 'Only decimal numbers are allowed',
 			// Mensaje de error para el input currency
 			textCurrency     : 'Please enter a valid monetary amount',
 			// Mensaje de error para el input select
