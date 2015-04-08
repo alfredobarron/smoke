@@ -70,6 +70,7 @@
 							<a href="#input-email" class="list-group-item">Campo email</a>
 							<a href="#input-alphanumeric" class="list-group-item">Campo alfanumérico</a>
 							<a href="#input-number" class="list-group-item">Campo numérico</a>
+							<a href="#input-numberRange" class="list-group-item">Campo rango numérico</a>
 							<a href="#input-decimal" class="list-group-item">Campo decimal</a>
 							<a href="#input-currency" class="list-group-item">Campo moneda</a>
 							<a href="#number-character" class="list-group-item">Numero de caracteres</a>
@@ -240,6 +241,36 @@
 						</div>
 
 						<p data-height="320" data-theme-id="8624" data-slug-hash="VYLMjR" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/VYLMjR/'>Smoke Validate Number</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+					</section>
+
+					<section id="input-numberRange">
+
+						<h1>Campo rango numérico</h1><hr>
+						<p>Para validar que en el campo solo se ingresen números y corresponda a un rango numérico, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>number</code> también agregar los atributos <code>smk-min</code> y <code>smk-max</code> y dentro de estos el rango numérico permitido.</p>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="text-muted"><small>EXAMPLE</small></p>
+								<form role="form" id="formNumberRange">
+									<div class="form-group">
+										<label for="text">Number</label>
+										<input type="text" class="form-control" placeholder="Enter number" smk-type="number" smk-min="2015" smk-max="2020" required>
+									</div>
+									<button type="button" class="btn btn-default">Submit</button>
+								</form>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>HTML</small></p>
+								<script src="https://gist.github.com/alfredobarron/31532583c5b2349a8af6.js"></script>
+							</div>
+							<div class="panel-footer">
+								<p class="text-muted"><small>CODE</small></p>
+								<script src="https://gist.github.com/alfredobarron/4d7a4b82a6da7638746c.js"></script>
+							</div>
+						</div>
+
+						<p data-height="320" data-theme-id="8624" data-slug-hash="PwvgXv" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/PwvgXv/'>Smoke Validate Number Range</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 					</section>
 
