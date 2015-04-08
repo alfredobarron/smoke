@@ -1,6 +1,6 @@
 {
   "name": "smoke",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3",
   "main": "index.js",
   "scripts": {
