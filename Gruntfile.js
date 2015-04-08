@@ -7,7 +7,8 @@ module.exports = function(grunt){
         uglify: {
             js: {
                 files: {
-                    'docs/dist/js/smoke.min.js': ['docs/dist/js/smoke.js']
+                    'docs/dist/js/smoke.min.js': ['docs/dist/js/smoke.js'],
+                    'docs/dist/lang/smoke.en.min.js': ['docs/dist/lang/smoke.en.js']
                 }
             }
         },
@@ -29,7 +30,7 @@ module.exports = function(grunt){
         compress: {
           main: {
             options: {
-              archive: 'smoke-v2.1.1.zip'
+              archive: 'smoke-v2.1.2.zip'
             },
             files: [
               //{src: ['path/*'], dest: 'internal_folder/', filter: 'isFile'}, // includes files in path
