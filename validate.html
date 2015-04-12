@@ -89,7 +89,10 @@
 					<section id="input-empty">
 
 						<h1>Campo vacío</h1><hr>
-						<p>Para validar que un campo no sea enviado vació de un formulario solo tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. Los tipos de campos soportados hasta el momento son <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> y <code>checkbox</code>. La función que se utiliza es <span class="text-success">smkValidate()</span>.</p>
+						<p>Para validar que un campo de un formulario sea requerido solo tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. Los tipos de campos soportados hasta el momento son <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> y <code>checkbox</code>. La función que se utiliza para validar es <span class="text-success">smkValidate()</span>.</p>
+
+						<div class="alert alert-info">
+						Es necesario que el <code>input</code> a validar este dentro de un <code>div</code> con la clase <code>form-group</code></div>
 
 						<div class="panel panel-default">
 							<div class="panel-body">
@@ -156,7 +159,7 @@
 					<section id="input-email">
 
 						<h1>Campo email</h1><hr>
-						<p>Para validar una cuenta de correo electrónico valida, el campo debe ser de tipo <code>email</code> y agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>.</p>
+						<p>Para validar una cuenta de correo electrónico, el campo debe ser de tipo <code>email</code> y agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>.</p>
 
 						<div class="panel panel-default">
 							<div class="panel-body">

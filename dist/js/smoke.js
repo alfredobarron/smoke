@@ -472,7 +472,7 @@ $.smkAddError = function (obj, text)
         smkText = text;
     }
 
-    // Se type es indefinido se asigna el nombre del tag
+    // Si type es indefinido se asigna el nombre del tag
     if(type === undefined){
         type = tag;
     }
