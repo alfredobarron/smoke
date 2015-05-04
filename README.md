@@ -34,7 +34,7 @@ Para que funcione el plugin Smoke se requiere de la librería [Jquery](http://jq
 
 ##Documentación
 
-La documentación la puedes consultar en [http://alfredobarron.github.io/smoke/#/getting-started](http://alfredobarron.com/smoke/#/getting-started)
+La documentación la puedes consultar en [http://alfredobarron.github.io/smoke/#/getting-started](http://alfredobarron.github.io/smoke/#/getting-started)
 
 
 ##Comunidad
