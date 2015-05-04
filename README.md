@@ -1,8 +1,7 @@
 #[Smoke](http://alfredobarron.github.io/smoke)
 
-
-![Version](https://img.shields.io/github/bower/v/smoke.svg)
-![Licencia](https://img.shields.io/github/packagist/l/alfredobarron/smoke.svg)
+![Version](https://img.shields.io/bower/v/smoke.svg)
+![Licencia](https://img.shields.io/packagist/l/alfredobarron/smoke.svg)
 ![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/latest/total.svg)
 
 
