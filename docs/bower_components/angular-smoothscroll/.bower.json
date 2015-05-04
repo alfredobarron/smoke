@@ -1,0 +1,38 @@
+{
+  "name": "angular-smoothscroll",
+  "version": "1.1.1",
+  "main": "dist/scripts/bb15da28.scripts.js",
+  "dependencies": {
+    "jquery": "^1.9.1",
+    "angular": "^1.2.6",
+    "es5-shim": "^2.1.0",
+    "json3": "^3.2.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.0.7",
+    "angular-scenario": "^1.0.7"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/",
+    "dist/components",
+    "test/",
+    "**/*.txt",
+    "karma-e2e.conf.js",
+    "karma.conf.js",
+    "package.json",
+    "Gruntfile.js"
+  ],
+  "homepage": "https://github.com/arnaudbreton/angular-smoothscroll",
+  "_release": "1.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.1",
+    "commit": "6973190ee328a0ef517fd1c005c68a9625ea10a4"
+  },
+  "_source": "git://github.com/arnaudbreton/angular-smoothscroll.git",
+  "_target": "~1.1.1",
+  "_originalSource": "angular-smoothscroll",
+  "_direct": true
+}

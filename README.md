@@ -1,6 +1,6 @@
 #[Smoke](http://alfredobarron.github.io/smoke)
 
-Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3
+Smoke es el Plugin Jquery mas completo y ligero diseñado para usarse en Bootstrap 3
 
 
 
@@ -26,7 +26,7 @@ Existen tres opciones disponibles para iniciar:
 - Clona el repositorio: `git clone https://github.com/alfredobarron/smoke.git`.
 - Instalar con [Bower](http://bower.io/): `bower install smoke`.
 
-Lee la página de [primeros pasos](http://alfredobarron.github.io/smoke/getting-started.html) para obtener más información sobre el contenido.
+Lee la página de [primeros pasos](http://alfredobarron.github.io/smoke/#/getting-started) para obtener más información sobre el contenido.
 
 ##Requiere
 
@@ -34,7 +34,7 @@ Para que funcione el plugin Smoke se requiere de la librería [Jquery](http://jq
 
 ##Documentación
 
-La documentación la puedes consultar en [http://alfredobarron.github.io/smoke/getting-started.html](http://alfredobarron.com/smoke/getting-started.html)
+La documentación la puedes consultar en [http://alfredobarron.github.io/smoke/#/getting-started](http://alfredobarron.com/smoke/#/getting-started)
 
 
 ##Comunidad
