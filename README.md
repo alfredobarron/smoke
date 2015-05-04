@@ -1,7 +1,10 @@
 #[Smoke](http://alfredobarron.github.io/smoke)
 
-![Starts](https://img.shields.io/github/stars/alfredobarron/smoke.svg)
+
+![Version](https://img.shields.io/github/bower/v/smoke.svg)
+![Licencia](https://img.shields.io/github/packagist/l/alfredobarron/smoke.svg)
 ![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/latest/total.svg)
+
 
 Smoke es el Plugin Jquery mas completo y ligero diseñado para usarse en Bootstrap 3
 
