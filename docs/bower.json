@@ -5,8 +5,8 @@
   "authors": [
     "Alfredo Barron <alfredobarronc@gmail.com>"
   ],
-  "description": "documentacion de plugin smoke",
-  "license": "MIT",
+  "description": "Docs plugin smoke",
+  "license": "GPLv3",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -31,13 +31,15 @@
 
     "DOWNLOAD-DESC": "Descarga Smoke y agregalo a tu proyecto, usarlo es fácil y rápido.",
 
+    "INSTALL": "Instala con",
+
     "WHATS-INCLUDED": "Que incluye",
     "WHATS-INCLUDED-DESC": "Una vez descargado el archivo, descomprime el .zip para ver la estructura de Smoke. Verás algo como esto:",
 
     "REQUIRED": "Requerimientos",
     "REQUIRED-DESC": "El plugin Smoke requiere que se incluyan estas dos librerías para su funcionamiento.",
-    "REQUIRED-JQUERY": "Ten en cuenta que el plugin Smoke requiere que se incluya la librería jQuery.",
-    "REQUIRED-BOOTSTRAP": "Ten en cuenta que el plugin Smoke requiere que se incluya el framework Bootstrap 3.",
+    "REQUIRED-JQUERY": "Ten en cuenta que el plugin Smoke requiere que se incluya la librería",
+    "REQUIRED-BOOTSTRAP": "Ten en cuenta que el plugin Smoke requiere que se incluya el framework",
 
     "BASIC-TEMPLATE": "Plantilla básica",
     "BASIC-TEMPLATE-DESC": "Comienza con esta plantilla de HTML o modifícala a tus necesidades.",

@@ -28,7 +28,7 @@ Existen tres opciones disponibles para iniciar:
 
 - [Descarga la versión más reciente.](https://github.com/alfredobarron/smoke/archive/master.zip)
 - Clona el repositorio: `git clone https://github.com/alfredobarron/smoke.git`.
-- Instalar con [Bower](http://bower.io/): `bower install smoke`.
+- Instala con [Bower](http://bower.io/): `bower install smoke`.
 
 Lee la página de [primeros pasos](http://alfredobarron.github.io/smoke/#/getting-started) para obtener más información sobre el contenido.
 
@@ -56,4 +56,4 @@ Alfredo Barron
 
 ##Derechos de autor y licencias
 
-Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la [licencia GPL v3.](https://github.com/alfredobarron/smoke/blob/master/LICENCIA)
+Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la [licencia GPL v3.](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
