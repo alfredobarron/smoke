@@ -1,0 +1,76 @@
+<html ng-app="app" >
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<base>
+  	<title></title>
+		<style>
+			body {
+				margin: 0;
+			}
+
+			.gutter {
+				width: 100%;
+				height: 70px;
+			}
+
+			.header {
+				background-color: #999;
+				text-align: center;
+				padding: 10px;
+			}
+
+			.affix {
+				height: 41px;
+			}
+
+			.affix .header {
+				position: fixed;
+				top: 0; left: 0; right: 0;
+			}
+
+			.footer {
+				background-color: #999;
+				text-align: center;
+				padding: 10px;
+			}
+
+			.affix .footer {
+				position: fixed;
+				bottom: 0; left: 0; right: 0;
+			}
+
+			.thecontent {
+				width: 100%;
+				height: 500px;
+				background-color: #ddd;
+				margin: 30px 0;
+			}
+		</style>
+	</head>
+	<body ng-cloak>
+		<main>
+			<div class="gutter">
+			</div>
+			<div affix>
+				<div class="header">
+					The Header
+				</div>
+			</div>
+			<div class="thecontent">
+			</div>
+			<div affix="bottom">
+				<div class="footer">
+					The Footer
+				</div>
+			</div>
+			<div class="gutter">
+			</div>
+		</main>
+		<script src="../bower_components/angular/angular.js" type="text/javascript"></script>
+		<script src="../dist/ngScrollSpy.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			angular.module( 'app', ['ngScrollSpy']);
+		</script>
+	</body>
+</html>

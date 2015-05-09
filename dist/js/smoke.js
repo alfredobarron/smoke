@@ -27,45 +27,45 @@
 $.fn.smkValidate = function(options) {
 
     var settings = $.extend({
-        lang: 'es'
+        lang: 'en'
     }, $.fn.smkValidate.Languaje, options);
 
     var languaje =  {
-        es: {
+        en: {
             // Mensaje de error para los input vacíos
-            textEmpty        : 'Campo requerido',
+            textEmpty        : 'Required field',
             // Mensaje de error para el input email
-            textEmail        : 'Ingresa una cuenta de correo válida',
+            textEmail        : 'Enter a valid email',
             // Mensaje de error para el input alphanumeric
-            textAlphanumeric : 'Solo se admiten números y/o letras',
+            textAlphanumeric : 'Only numbers and/or letters allowed',
             // Mensaje de error para el input number
-            textNumber       : 'Solo se admiten números',
+            textNumber       : 'Only numbers are allowed',
             // Mensaje de error para el input number range
-            textNumberRange  : 'El numero debe ser mayor a <b> {@} </b> y menor a <b> {@} </b>',
+            textNumberRange  : 'The numerical range must be greater than <b> {@} </b> and less than <b> {@} </b>',
             // Mensaje de error para el input decimal
-            textDecimal      : 'Solo se admiten números decimales',
+            textDecimal      : 'Only decimal numbers are allowed',
             // Mensaje de error para el input currency
-            textCurrency     : 'Ingresa una cantidad monetaria válida',
+            textCurrency     : 'Please enter a valid monetary amount',
             // Mensaje de error para el input select
-            textSelect       : 'Es necesario que selecciones una opción',
+            textSelect       : 'It is necessary that you select an option',
             // Mensaje de error para el input checkbox y radio
-            textCheckbox     : 'Es necesario que selecciones una opción',
+            textCheckbox     : 'It is necessary that you select an option',
             // Mensaje de error para longitud de caracteres
-            textLength       : 'El número de caracteres debe ser igual a <b> {@} </b>',
+            textLength       : 'The number of characters is equal to <b> {@} </b>',
             // Mensaje de error para rango de caracteres
-            textRange        : 'El número de caracteres debe ser mayor a <b> {@} </b> y menor a <b> {@} </b>',
+            textRange        : 'The number of characters must be greater than <b> {@} </b> and less than <b> {@} </b>',
             // Mensaje de error para strongPass Default
-            textSPassDefault : 'Mínimo 4 caracteres',
+            textSPassDefault : 'Minimum 4 characters',
             // Mensaje de error para strongPass Weak
-            textSPassWeak    : 'Mínimo 6 caracteres',
+            textSPassWeak    : 'Minimum 6 characters',
             // Mensaje de error para strongPass Madium
-            textSPassMedium  : 'Mínimo 6 caracteres y un número',
+            textSPassMedium  : 'Minimum 6 characters and a number',
             // Mensaje de error para strongPass Strong
-            textSPassStrong  : 'Mínimo 6 caracteres un número y una mayúscula'
+            textSPassStrong  : 'Minimum 6 characters a number and a capital'
         }
     };
 
-    if(settings.lang != 'es'){
+    if(settings.lang != 'en'){
         languaje = $.fn.smkValidate.Languaje;
     }
 
@@ -326,7 +326,7 @@ $.fn.smkValidate = function(options) {
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
-|   if($('#form').smkValidate({lang:'en'})){}
+|   if($('#form').smkValidate({lang:'es'})){}
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
@@ -847,16 +847,15 @@ $.smkDate = function(options) {
     var settings = $.extend({
         date: today,
         format: 'yyyy-mm-dd',
-        lang: 'es',
+        lang: 'en',
     }, $.smkDate.Languaje, options);
 
     var languaje =  {
-        es: {
-            shortMonthNames : ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-            monthNames : ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        en: {
+            shortMonthNames : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            monthNames : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         }
     };
-
     //Se obtienen los separadores
     var validDate = /\d+|[a-zA-z]/g;
     var separator = settings.date.replace(validDate, '\0').split('\0');
@@ -864,6 +863,7 @@ $.smkDate = function(options) {
     var splitDate = settings.date.match(validDate);
 
     if(settings.lang == 'es'){
+        languaje = $.smkDate.Languaje;
         // Se formatea la fecha (yyyy,mm,dd) para poder instanciar el método new Date()
         if(splitDate[0].length == 4){
             // Formato yyyy-mm-dd => yyyy,mm,dd
@@ -873,7 +873,6 @@ $.smkDate = function(options) {
             settings.date = new Date(splitDate[2],(splitDate[1]-1),splitDate[0]);
         }
     }else{
-        languaje = $.smkDate.Languaje;
         // Se formatea la fecha (yyyy,mm,dd) para poder instanciar el método new Date()
         if(splitDate[0].length == 4){
             // Formato yyyy-dd-mm => yyyy,mm,dd
