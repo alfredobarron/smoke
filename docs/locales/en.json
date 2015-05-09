@@ -31,6 +31,8 @@
 
     "DOWNLOAD-DESC": "Download Smoke and add it to your proyect, It's simple and quick of use.",
 
+    "INSTALL": "Install with",
+
     "WHATS-INCLUDED": "Whats included",
     "WHATS-INCLUDED-DESC": "Once downloaded, unzip the .zip file to see the structure of Smoke. You will see something like this:",
 
@@ -123,7 +125,7 @@
     "NOTIFICATIONS-DESC": "Create funcional and coloful Alert or confirmations messages and its use is as simple as the natives of javascript.",
 
     "ALERTS": "Alerts",
-    "ALERTS-DESC": "It provides alert messages for the typical user actions when invoking an event." 
+    "ALERTS-DESC": "It provides alert messages for the typical user actions when invoking an event.",
     "ALERTS-TB": {
         "DESC": "Customize alerts, changing the message, color, duration or if the alert will be permanent.",
         "DESCS": {
