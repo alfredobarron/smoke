@@ -46,7 +46,7 @@
 
 
 
-    "VALIDATE": "Validation form",
+    "VALIDATE": "Form Validation",
     "VALIDATE-DESC": "It makes the form validation on client side easy, simple and safer.",
 
     "INPUT-EMPTY": "Empty input",
