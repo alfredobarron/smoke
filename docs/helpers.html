@@ -1,464 +1,347 @@
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Smoke . Helpers</title>
-		<meta name="description" content="Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3" />
-		<meta name="keywords" content="HTML, CSS, JS, JavaScript, JQuery, plugin, bootstrap, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, alert, notificacion, notificaciones, confirmacion, confirm, progressbar, barra de progreso, panel, paneles, pantalla completa, fullscreen, helpers, alfredobarron, alfredo barron, alfredo, barron" />
-		<meta name="robots" content="index,follow,archive">
-		<meta name="author" content="Alfredo Barron" />
-		<link rel="shortcut icon" href="images/favicon.png">
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{'HELPERS' | translate}}</h1>
+    <p class="lead">{{'HELPERS-DESC' | translate}}</p>
+  </div>
 
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-		<!-- Smoke -->
-		<link href="dist/css/smoke.css" rel="stylesheet">
-		<!-- Styles -->
-		<link href="css/styles.css" rel="stylesheet">
+</div>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
+<div class="container">
 
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">Smoke</a>
-				</div><!-- /.navbar-header -->
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="getting-started.html">Primeros pasos</a></li>
-						<li><a href="validate.html">Validación</a></li>
-						<li><a href="notifications.html">Notificaciones</a></li>
-						<li><a href="progressbar.html">Barra de Progreso</a></li>
-						<li><a href="fullscreen.html">Pantalla Completa</a></li>
-						<li><a href="panel.html">Panel</a></li>
-						<li class="active"><a href="helpers.html">Helpers</a></li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container -->
-		</nav>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="list-group" affix>
+          <ul class="nav">
+            <a href="" smooth-scroll target="string-float" offset="80" class="list-group-item">{{'STRING-FLOAT' | translate}}</a>
+            <a href=""  smooth-scroll target="number-currency" offset="80"class="list-group-item">{{'NUMBER-CURRENCY' | translate}}</a>
+            <a href="" smooth-scroll target="URL" offset="80" class="list-group-item">URL</a>
+            <a href="" smooth-scroll target="date" offset="80" class="list-group-item">{{'DATE' | translate}}</a>
+            <a href="" smooth-scroll target="date-difference" offset="80" class="list-group-item">{{'DATE-DIFF' | translate}}</a>
+          </ul>
+      </div>
+    </div>
 
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Helpers</h1>
-				<p class="lead">Colección de funciones de ayuda.</p>
-			</div>
+    <div class="col-lg-9">
 
-		</div>
+      <section id="string-float">
 
-		<div class="container">
+        <h1>{{'STRING-FLOAT' | translate}}</h1><hr>
+        <p class="lead">{{'STRING-FLOAT-DESC' | translate}}</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formFloatConv">
+              <div class="form-group">
+                <label for="text">Number</label>
+                  <input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="float()">Convert</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="e5b4156c2de3acb291fb"></gist>
+          </div>
+        </div>
 
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="list-group" data-spy="affix" data-offset-top="260">
-							<ul class="nav">
-								<a href="#float" class="list-group-item">Float</a>
-								<a href="#currency" class="list-group-item">Moneda</a>
-								<a href="#URL" class="list-group-item">URL</a>
-								<a href="#date" class="list-group-item">Fecha</a>
-								<a href="#date-difference" class="list-group-item">Diferencia de Fecha</a>
-							</ul>
-					</div>
-				</div>
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/bNZGmX/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/bNZGmX/'>Smoke Float</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
 
-				<div class="col-lg-9">
+      </section>
 
-					<section id="float">
+      <section id="number-currency">
 
-						<h1>Float</h1><hr>
-						<p class="lead">Convierte un string a float.</p>
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formFloatConv">
-									<div class="form-group">
-										<label for="text">Number</label>
-											<input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
-									</div>
-									<button type="button" class="btn btn-default">Convert</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/e5b4156c2de3acb291fb.js"></script>
-							</div>
-						</div>
+        <h1>{{'NUMBER-CURRENCY' | translate}}</h1><hr>
+        <p class="lead">{{'NUMBER-CURRENCY-DESC' | translate}}</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formCurrencyConv">
+              <div class="form-group">
+                <label for="text">Number</label>
+                  <input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="currency()">Convert</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="2a12806211ee011bdf10"></gist>
+          </div>
+        </div>
 
-						<p data-height="320" data-theme-id="8624" data-slug-hash="bNZGmX" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/bNZGmX/'>Smoke Float</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <div class="alert alert-info">{{'NUMBER-CURRENCY-NOTE' | translate}}</div>
 
-					</section>
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/diCzs/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/diCzs/'>Smoke Currency</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
 
-					<section id="currency">
+      </section>
 
-						<h1>Moneda</h1><hr>
-						<p class="lead">Convierte un número a formato de moneda.</p>
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formCurrencyConv">
-									<div class="form-group">
-										<label for="text">Number</label>
-											<input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
-									</div>
-									<button type="button" class="btn btn-default">Convert</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/2a12806211ee011bdf10.js"></script>
-							</div>
-						</div>
+      <section id="URL">
 
-						<div class="alert alert-info">
-							Esta función recibe dos parámetros el primero es el número que se va a formatear y el segundo es el prefijo o el tipo de moneda.
-						</div>
+        <h1>URL</h1><hr>
+        <p class="lead">{{'URL-DESC' | translate}}</p>
 
-						<p data-height="320" data-theme-id="8624" data-slug-hash="diCzs" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/diCzs/'>diCzs</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formURL">
+              <button type="button" class="btn btn-default" ng-click="getUrl()">Get URL</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="24f147b3df83ebefdb62"></gist>
+          </div>
+        </div>
 
-					</section>
+        <div class="alert alert-info">{{'URL-NOTE' | translate}}</div>
 
-					<section id="URL">
+        <iframe height='250' scrolling='no' src='//codepen.io/alfredobarron/embed/qAKLF/?height=250&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/qAKLF/'>Smoke Get URL</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
 
-						<h1>URL</h1><hr>
-						<p class="lead">Obtiene la URL.</p>
+      </section>
 
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formURL">
-									<button type="button" class="btn btn-default">Get URL</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/24f147b3df83ebefdb62.js"></script>
-							</div>
-						</div>
+      <section id="date">
 
-						<div class="alert alert-info">
-							Esta función recibe un parámetro (opcional) es el número de carpetas para obener después de la URL.
-						</div>
+        <h1>{{'DATE' | translate}}</h1><hr>
+        <p class="lead">{{'DATE-DESC' | translate}}</p>
 
-						<p data-height="260" data-theme-id="8624" data-slug-hash="qAKLF" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/qAKLF/'>Smoke Get URL</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formDate">
+              <button type="button" class="btn btn-default" ng-click="date()">Current date</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="9d5dd2fc65aef5c58686"></gist>
+          </div>
+        </div>
 
-					</section>
+        <iframe height='250' scrolling='no' src='//codepen.io/alfredobarron/embed/vBlEs/?height=250&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/vBlEs/'>Smoke Date</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
 
-					<section id="date">
+        <h3>{{'OPTIONS' | translate}}</h3>
 
-						<h1>Fecha</h1><hr>
-						<p class="lead">Con esta función puedes obtener, formatear, traducir y personalizar las fechas.</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>date</code></td>
+              <td>Date | String</td>
+              <td>{{'DATE-TB.DEFAULT.DATE' | translate}}</td>
+              <td>{{'DATE-TB.DESCS.DATE' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>format</code></td>
+              <td>String</td>
+              <td>yyyy-mm-dd</td>
+              <td>{{'DATE-TB.DESCS.FORMAT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>lang</code></td>
+              <td>String: {en | es}</td>
+              <td>en</td>
+              <td>{{'DATE-TB.DESCS.LANG' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
 
-						<h3>Obtener Fecha</h3>
+        <h4>{{'DATE-TB2.DESC' | translate}}</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'DATE-TB2.TITLE' | translate}}</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>d</td>
+                <td>{{'DATE-TB2.DESCS.d' | translate}}</td>
+              </tr>
+              <tr>
+                <td>dd</td>
+                <td>{{'DATE-TB2.DESCS.dd' | translate}}</td>
+              </tr>
+              <tr>
+                <td>m</td>
+                <td>{{'DATE-TB2.DESCS.m' | translate}}</td>
+              </tr>
+              <tr>
+                <td>mm</td>
+                <td>{{'DATE-TB2.DESCS.mm' | translate}}</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>{{'DATE-TB2.DESCS.M' | translate}}</td>
+              </tr>
+              <tr>
+                <td>MM</td>
+                <td>{{'DATE-TB2.DESCS.MM' | translate}}</td>
+              </tr>
+              <tr>
+                <td>yy</td>
+                <td>{{'DATE-TB2.DESCS.yy' | translate}}</td>
+              </tr>
+              <tr>
+                <td>yyyy</td>
+                <td>{{'DATE-TB2.DESCS.yyyy' | translate}}</td>
+              </tr>
+          </tbody>
+        </table>
 
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formDate">
-									<button type="button" class="btn btn-default">Current date</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/9d5dd2fc65aef5c58686.js"></script>
-							</div>
-						</div>
+        <h4>{{'LANGUAGE-TB.TITLE' | translate}}</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><code>lang</code></th>
+              <th>{{'LANGUAGE-TB.LANGUAGE' | translate}}</th>
+              <th>{{'LANGUAGE-TB.ARCHIVE' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>en</td>
+                <td>{{'LANGUAGE-TB.LANGUAGES.ENGLISH' | translate}}</td>
+                <td>Default</td>
+              </tr>
+              <tr>
+                <td>es</td>
+                <td>{{'LANGUAGE-TB.LANGUAGES.SPANISH' | translate}}</td>
+                <td>smoke.en.js</td>
+              </tr>
+          </tbody>
+        </table>
 
-						<p data-height="260" data-theme-id="8624" data-slug-hash="vBlEs" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/vBlEs/'>vBlEs</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <div class="alert alert-info">{{'DATE-NOTE' | translate}}</div>
 
-						<h3>Opciones</h3>
+        <gist id="71df7c95c90ed5bb7c61"></gist>
 
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th>Opción</th>
-									<th>Tipo</th>
-									<th>Default</th>
-									<th>Descripción</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>date</td>
-									<td>date</td>
-									<td>Fecha actual</td>
-									<td>Fecha numérica</td>
-								</tr>
-								<tr>
-									<td>format</td>
-									<td>string</td>
-									<td>yyyy-mm-dd</td>
-									<td>Formato</td>
-								</tr>
-								<tr>
-									<td>lang</td>
-									<td>en | es</td>
-									<td>en</td>
-									<td>Lenguaje de la fecha</td>
-								</tr>
-							</tbody>
-						</table>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formDateCustomize">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="text">Date</label>
+                    <input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa" value="30-12-2014">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="format">Format</label>
+                    <input type="text" class="form-control" id="format" placeholder="dd/MM/yyyy" value="dd/MM/yyyy">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="lang">Language</label>
+                    <input type="text" class="form-control" id="lang" placeholder="es" value="es">
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="dateCustomize()">Customize</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="e62cec2a0a629de77cbc"></gist>
+          </div>
+        </div>
 
-						<h4>Formatos</h4>
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th>Format</th>
-									<th>Descripción</th>
-								</tr>
-							</thead>
-							<tbody>
-									<tr>
-										<td>d</td>
-										<td>Día sin cero</td>
-									</tr>
-									<tr>
-										<td>dd</td>
-										<td>Día con cero</td>
-									</tr>
-									<tr>
-										<td>m</td>
-										<td>Mes numérico sin cero</td>
-									</tr>
-									<tr>
-										<td>mm</td>
-										<td>Mes numérico con cero</td>
-									</tr>
-									<tr>
-										<td>M</td>
-										<td>Nombre del mes abreviado</td>
-									</tr>
-									<tr>
-										<td>MM</td>
-										<td>Nombre del mes completo</td>
-									</tr>
-									<tr>
-										<td>yy</td>
-										<td>Año 2 dígitos</td>
-									</tr>
-									<tr>
-										<td>yyyy</td>
-										<td>Año 4 dígitos</td>
-									</tr>
-							</tbody>
-						</table>
-
-						<h4>Lenguaje</h4>
-
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th>Lang</th>
-									<th>Language</th>
-								</tr>
-							</thead>
-							<tbody>
-									<tr>
-										<td>es</td>
-										<td>Spanish</td>
-									</tr>
-									<tr>
-										<td>en</td>
-										<td>English</td>
-									</tr>
-							</tbody>
-						</table>
-
-						<div class="alert alert-info">
-							Para cambiar el lenguaje de la fecha, se agrega el archivo de lenguaje dentro del html.
-						</div>
-
-						<script src="https://gist.github.com/alfredobarron/71df7c95c90ed5bb7c61.js"></script>
-
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formDateCustomize">
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="text">Date</label>
-												<input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa" value="30-12-2014">
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="format">Format</label>
-												<input type="text" class="form-control" id="format" placeholder="dd/MM/yyyy" value="dd/MM/yyyy">
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="lang">Language</label>
-												<input type="text" class="form-control" id="lang" placeholder="es" value="es">
-											</div>
-										</div>
-									</div>
-									<button type="button" class="btn btn-default">Customize</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/e62cec2a0a629de77cbc.js"></script>
-							</div>
-						</div>
-
-						<p data-height="330" data-theme-id="8624" data-slug-hash="eBgmD" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/eBgmD/'>eBgmD</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/eBgmD/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/eBgmD/'>Smoke Date Format</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
 
 
-					</section>
+      </section>
 
-					<section id="date-difference">
+      <section id="date-difference">
 
-						<h1>Diferencia de Fecha</h1><hr>
-						<p class="lead">Obtén la diferencia que existe entre dos fechas.</p>
+        <h1>{{'DATE-DIFF' | translate}}</h1><hr>
+        <p class="lead">{{'DATE-DIFF-DESC' | translate}}</p>
 
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<p class="text-muted"><small>EXAMPLE</small></p>
-								<form role="form" id="formDateDiff">
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="date1">Date 1</label>
-												<input type="text" class="form-control" id="date1" placeholder="mm/dd/aaaa" value="09/25/2014">
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="date2">Date 2</label>
-												<input type="text" class="form-control" id="date2" placeholder="mm/dd/aaaa" value="09/30/2014">
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<label for="interval">Interval</label>
-												<input type="text" class="form-control" id="interval" placeholder="Interval" value="days">
-											</div>
-										</div>
-									</div>
-									<button type="button" class="btn btn-default">Difference</button>
-								</form>
-							</div>
-							<div class="panel-footer">
-								<p class="text-muted"><small>CODE</small></p>
-								<script src="https://gist.github.com/alfredobarron/692922050788e320b46a.js"></script>
-							</div>
-						</div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formDateDiff">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="date1">Date 1</label>
+                    <input type="text" class="form-control" id="date1" placeholder="mm/dd/aaaa" value="09/25/2014">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="date2">Date 2</label>
+                    <input type="text" class="form-control" id="date2" placeholder="mm/dd/aaaa" value="09/30/2014">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="interval">Interval</label>
+                    <input type="text" class="form-control" id="interval" placeholder="Interval" value="days">
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="dateDiff()">Difference</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="692922050788e320b46a"></gist>
+          </div>
+        </div>
 
-						<h3>Opciones</h3>
+        <h3>{{'OPTIONS' | translate}}</h3>
 
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th>Opción</th>
-									<th>Tipo</th>
-									<th>Default</th>
-									<th>Descripción</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>fromDate</td>
-									<td>date</td>
-									<td>Fecha actual</td>
-									<td>Fecha a comparar</td>
-								</tr>
-								<tr>
-									<td>toDate</td>
-									<td>date</td>
-									<td>Fecha actual</td>
-									<td>Fecha a comparar</td>
-								</tr>
-								<tr>
-									<td>interval</td>
-									<td>seconds | minutes | hours | days | weeks | months | years</td>
-									<td>days</td>
-									<td>Intervalo</td>
-								</tr>
-							</tbody>
-						</table>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>fromDate</code></td>
+              <td>String: {date}</td>
+              <td>{{'DATE-DIFF-TB.DEFAULT.DATE' | translate}}</td>
+              <td>{{'DATE-DIFF-TB.DESCS.DATE' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>toDate</code></td>
+              <td>String: {date}</td>
+              <td>{{'DATE-DIFF-TB.DEFAULT.DATE' | translate}}</td>
+              <td>{{'DATE-DIFF-TB.DESCS.DATE' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>interval</code></td>
+              <td>String: {seconds | minutes | hours | days | weeks | months | years}</td>
+              <td>{{'DATE-DIFF-TB.DEFAULT.INTERVAL' | translate}}</td>
+              <td>{{'DATE-DIFF-TB.DESCS.INTERVAL' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
 
-						<p data-height="330" data-theme-id="8624" data-slug-hash="ksyfw" data-default-tab="result" data-user="alfredobarron" class='codepen'>See the Pen <a href='http://codepen.io/alfredobarron/pen/ksyfw/'>Smoke Date difference</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/ksyfw/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/ksyfw/'>Smoke Date difference</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
 
-					</section>
+      </section>
 
-					<footer class="follow">
-						<hr>
-						<ul class="list-inline">
-							<li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://alfredobarron.github.io/smoke"></div></li>
-
-							<li><div class="fb-share-button" data-href="http://alfredobarron.github.io/smoke" data-layout="button_count"></div></li>
-
-							<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://alfredobarron.github.io/smoke" data-via="AlfredoBarronC" data-hashtags="Smoke">Tweet</a></li>
-						</ul>
-						<p>Diseñado y Desarrollado con muchas ganas por <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a></p>
-
-						<p>Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la <a href="https://github.com/alfredobarron/smoke/blob/master/LICENCIA">licencia GPL v3.</a></p>
-
-						<p><a href="https://github.com/alfredobarron/smoke" target="_blank">GitHub</a> . <a href="http://alfredobarron.github.io/smoke/v1.0/" target="_blank">Smock v1.0</a> . <a href="https://github.com/alfredobarron/smoke/issues" target="_blank">Preguntas</a> . <a href="https://github.com/alfredobarron/smoke/releases" target="_blank">Versiones</a></p>
-					</footer>
-
-				</div><!--/.col-lg-9 -->
-			</div><!--/.row -->
-		</div><!-- /.container -->
-
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<!-- Botstrap -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<!-- Smoke -->
-		<script src="dist/js/smoke.js"></script>
-		<script src="dist/lang/smoke.en.js"></script>
-		<!-- Scripts -->
-		<script src="js/scripts.js"></script>
-		<!-- CodePen-->
-		<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-		<!-- Twitter -->
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-		<!-- Google + -->
-		<script src="https://apis.google.com/js/platform.js" async defer>
-		  {lang: 'es'}
-		</script>
-
-		<!-- Facebook -->
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=521651221243058&version=v2.0";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
-		<!-- Analytics -->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-56460444-2', 'auto');
-		  ga('send', 'pageview');
-		</script>
-
-	</body>
-</html>
+    </div><!--/.col-lg-9 -->
+  </div><!--/.row -->
+</div><!-- /.container -->

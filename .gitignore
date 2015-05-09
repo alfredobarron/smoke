@@ -1,6 +1,7 @@
 # Folders to ignore
-node_modules
 .grunt
+node_modules
+docsHTML
 
 # Extension to ognore
 *.zip

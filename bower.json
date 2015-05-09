@@ -1,23 +1,37 @@
 {
   "name": "smoke",
-  "version": "2.1.2",
-  "homepage": "https://github.com/alfredobarron/smoke",
+  "version": "2.1.3",
+  "description": "Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3",
+  "license": "GPLv3",
   "authors": [
     "Alfredo Barron <alfredobarronc@gmail.com>"
   ],
-  "description": "Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3",
-  "license": "GPLv3",
+  "homepage": "https://github.com/alfredobarron/smoke",
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "JavaScript",
+    "JQuery",
+    "plugin",
+    "bootstrap",
+    "front-end",
+    "web"
+  ],
   "main": [
     "dist/css/smoke.css",
     "dist/js/smoke.js"
   ],
   "ignore": [
     "**/.*",
+    "**/.js",
+    "**/.json",
     "node_modules",
     "bower_components",
     "test",
     "tests",
-    "docs"
+    "docs",
+    "docsHTML"
   ],
   "dependencies": {
     "jquery": ">= 1.9.1",

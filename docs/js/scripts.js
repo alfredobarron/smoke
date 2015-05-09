@@ -1,102 +1,178 @@
-$(document).ready(function(){
+(function(){
+'use strict';
 
-    // smkScrolling
-    $.smkScrolling({speed:200});
-    // Scroll se activa el menú según la sección en la que se este
-    $('body').scrollspy({ target: '.list-group' });
-    // Se activa el menú al click
-    $('.list-group a').click(function(){
-        $('.list-group-item').removeClass('active');
-        $(this).addClass('active');
+angular
+    .module('appSmoke', [
+        'ui.router',
+        'pascalprecht.translate',
+        'angularSmoothscroll',
+        'gist',
+        'ngScrollSpy',
+        'ngSanitize'
+    ])
+    .config(configure)
+    .run(run)
+    .controller('MainCtrl', MainCtrl)
+    .directive('fullScreen', fullScreen)
+    .directive('panel', panel);
+
+configure.$inject = ['$stateProvider', '$urlRouterProvider', '$translateProvider'];
+function configure($stateProvider, $urlRouterProvider, $translateProvider) {
+
+    $translateProvider.useStaticFilesLoader({prefix: 'locales/', suffix: '.json'});
+    $translateProvider.preferredLanguage('en');
+
+    $urlRouterProvider.otherwise("/404");
+
+    $stateProvider
+        .state('404', {
+            url: "/404",
+            templateUrl: "404.html"
+        })
+        .state('home', {
+            url: "/",
+            templateUrl: "home.html"
+        })
+        .state('validate', {
+            url: "/validate",
+            templateUrl: 'validate.html'
+        })
+        .state('getting-started', {
+            url: "/getting-started",
+            templateUrl: 'getting-started.html'
+        })
+        .state('notifications', {
+            url: "/notifications",
+            templateUrl: 'notifications.html'
+        })
+        .state('progressbar', {
+            url: "/progressbar",
+            templateUrl: 'progressbar.html'
+        })
+        .state('fullscreen', {
+            url: "/fullscreen",
+            templateUrl: 'fullscreen.html'
+        })
+        .state('panel', {
+            url: "/panel",
+            templateUrl: 'panel.html'
+        })
+        .state('helpers', {
+            url: "/helpers",
+            templateUrl: 'helpers.html'
+        });
+
+}
+run.$inject = ['$rootScope'];
+function run($rootScope){
+
+    $rootScope.$on('$stateChangeStart', function(){
+        $.smkProgressBar({element:'body', status:'start'});
     });
+    $rootScope.$on('$stateChangeSuccess', function() {
+        $.smkProgressBar({element:'body', status:'end'});
+    });
+}
+MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
+function MainCtrl($scope, $translate, $sanitize){
 
+    $scope.version = 'v2.1.3';
+    $scope.lang = 'English';
 
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+        if(langKey == 'en'){
+            $scope.lang = 'English';
+        }else{
+            $scope.lang = 'Español';
+        }
+    };
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     |   Validate
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     // Validate Empty
-    $('#formEmpty button').click(function(){
+    $scope.validateEmpty = function(){
         if($('#formEmpty').smkValidate()){
             $.smkAlert({text: 'Validate!!' , type: 'success'});
         }
-    });
+    };
     // Validate Email
-    $('#formEmail button').click(function(){
+    $scope.validateEmail = function(){
         if($('#formEmail').smkValidate()){
             $.smkAlert({text: $('#formEmail input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Alphanumeric
-    $('#formAlphanumeric button').click(function(){
+    $scope.validateAlphanumeric = function(){
         if($('#formAlphanumeric').smkValidate()){
             $.smkAlert({text: $('#formAlphanumeric input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Number
-    $('#formNumber button').click(function(){
+    $scope.validateNumber = function(){
         if($('#formNumber').smkValidate()){
             $.smkAlert({text: $('#formNumber input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Number Range
-    $('#formNumberRange button').click(function(){
+    $scope.validateNumberRange = function(){
         if($('#formNumberRange').smkValidate()){
             $.smkAlert({text: $('#formNumberRange input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Decimal
-    $('#formDecimal button').click(function(){
+    $scope.validateDecimal = function(){
         if($('#formDecimal').smkValidate()){
             $.smkAlert({text: $('#formDecimal input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Currency
-    $('#formCurrency button').click(function(){
+    $scope.validateCurrency = function(){
         if($('#formCurrency').smkValidate()){
             $.smkAlert({text: $('#formCurrency input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Number Character
-    $('#formNumberChar button').click(function(){
+    $scope.validateNumberChar = function(){
         if($('#formNumberChar').smkValidate()){
             $.smkAlert({text: $('#formNumberChar input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Range character
-    $('#formRangeChar button').click(function(e){
+    $scope.validateRangeChar = function(){
         if($('#formRangeChar').smkValidate()){
             $.smkAlert({text: $('#formRangeChar input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Strong password
-    $('#formStrongPassword button').click(function(){
+    $scope.validateStrongPass = function(){
         if($('#formStrongPass').smkValidate()){
             $.smkAlert({text: $('#formStrongPass input').val(), type: 'success'});
         }
-    });
+    };
     // Validate Equal password
-    $('#formEqualPass button').click(function(){
+    $scope.validateEqualPass = function(){
         if($('#formEqualPass').smkValidate()){
             if($.smkEqualPass('#formEqualPass #pass1', '#formEqualPass #pass2')){
                 $.smkAlert({text: $('#formEqualPass #pass1').val(), type: 'success'});
             }
         }
-    });
+    };
     // Validate Equal password vs var
     var smkPassword = 'Smoke1';
-    $('#formEqualPassVar button').click(function(){
+    $scope.validateEqualPassVar = function(){
         if($('#formEqualPassVar').smkValidate()){
             if($.smkEqualPass(smkPassword, '#formEqualPassVar #pass')){
                 $.smkAlert({text: $('#formEqualPassVar #pass').val(), type: 'success'});
             }
         }
-    });
+    };
     // Clear form
-    $('#formClear button').click(function(){
+    $scope.clear = function(){
         $('#formClear').smkClear();
-    });
+    };
 
 
 
@@ -106,31 +182,22 @@ $(document).ready(function(){
     |   Alert
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    // Alert Default
-    $('#btnAlert').click(function(e){
-        e.preventDefault();
-        $.smkAlert();
-    });
     // Alert Warning
-    $('#btnAlertWarning').click(function(e){
-        e.preventDefault();
+    $scope.alertWarning = function(){
         $.smkAlert({text:'Alert type "warning"', type:'warning'});
-    });
+    };
     // Alert Success
-    $('#btnAlertSuccess').click(function(e){
-        e.preventDefault();
+    $scope.alertSuccess = function(){
         $.smkAlert({text:'Alert type "success"', type:'success'});
-    });
+    };
     // Alert Danger 10 seconds
-    $('#btnAlertDanger').click(function(e){
-        e.preventDefault();
+    $scope.alertDanger = function(){
         $.smkAlert({text:'Alert type "danger" time 10 seconds', type:'danger', time: 10});
-    });
+    };
     // Alert Info permanent
-    $('#btnAlertInfo').click(function(e){
-        e.preventDefault();
+    $scope.alertInfo = function(){
         $.smkAlert({text:'Alert type "info" permanent', type:'info', permanent: true});
-    });
+    };
 
 
 
@@ -140,25 +207,23 @@ $(document).ready(function(){
     |   Confirmation
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#btnConfirm').click(function(e){
-        e.preventDefault();
+    $scope.confirm = function(){
         $.smkConfirm({text:'Are you sure?', accept:'Accept', cancel:'Cancel'}, function(e){if(e){
             $.smkAlert({text: 'Confirm!!', type:'success'});
         }});
-    });
+    };
 
 
 
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    |   ProgressBar
+    |   Progressbar
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#btnProgressBar').click(function(event) {
-        event.preventDefault();
+    $scope.progressbar = function(){
         $.smkProgressBar({element:'body', status:'start'});
         setTimeout(function(){ $.smkProgressBar({element:'body', status:'end'}); }, 1000);
-    });
+    };
 
 
 
@@ -170,8 +235,7 @@ $(document).ready(function(){
     |   Fullscreen
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#fullscreen').smkFullscreen();
-
+    // $('#fullscreenExample').smkFullscreen();
 
 
 
@@ -182,7 +246,7 @@ $(document).ready(function(){
     |   Panel
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#panel').smkPanel();
+    //$('#panelExample').smkPanel();
 
 
 
@@ -194,12 +258,12 @@ $(document).ready(function(){
     |   Float
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#formFloatConv button').click(function(){
+    $scope.float = function(){
         if($('#formFloatConv').smkValidate()){
             var mumber = $.smkFloat($('#formFloatConv input').val());
             $.smkAlert({text: mumber, type:'success'});
         }
-    });
+    };
 
 
 
@@ -210,12 +274,12 @@ $(document).ready(function(){
     |   Currency
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#formCurrencyConv button').click(function(){
+    $scope.currency = function(){
         if($('#formCurrencyConv').smkValidate()){
             var currency = $.smkCurrency($('#formCurrencyConv input').val(), '$');
             $.smkAlert({text: currency, type:'success'});
         }
-    });
+    };
 
 
 
@@ -227,10 +291,10 @@ $(document).ready(function(){
     |   GetURL
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#formURL button').click(function(){
+    $scope.getUrl = function(){
         var url = $.smkGetURL();
         $.smkAlert({text: url, type:'success'});
-    });
+    };
 
 
 
@@ -241,20 +305,20 @@ $(document).ready(function(){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     // Date Get
-    $('#formDate button').click(function(){
+    $scope.date = function(){
         var date = $.smkDate();
         $.smkAlert({text: date, type:'success'});
-    });
+    };
 
     // Date Customize
-    $('#formDateCustomize button').click(function(){
+    $scope.dateCustomize = function(){
         var date = $.smkDate({
             date: $('#formDateCustomize #date').val(),
             format: $('#formDateCustomize #format').val(),
             lang: $('#formDateCustomize #lang').val()
         });
         $.smkAlert({text: date, type:'success'});
-    });
+    };
 
 
 
@@ -264,7 +328,7 @@ $(document).ready(function(){
     |   Date Diff
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    $('#formDateDiff button').click(function(){
+    $scope.dateDiff = function(){
         var interval = $('#formDateDiff #interval').val();
         var date = $.smkDateDiff({
             fromDate: $('#formDateDiff #date1').val(),
@@ -272,6 +336,54 @@ $(document).ready(function(){
             interval: interval
         });
         $.smkAlert({text: date + ' ' + interval, type:'success'});
-    });
+    };
+}
 
-});
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Fullscreen
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+function fullScreen() {
+    return function($scope, elem, attrs) {
+        $(elem).smkFullscreen();
+    };
+}
+
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Panel
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+function panel() {
+    return function($scope, elem, attrs) {
+        $(elem).smkPanel();
+    };
+}
+
+// function stateLoadingIndicator($rootScope) {
+//   return {
+//     restrict: 'E',
+//     template: "<div ng-show='isStateLoading' class='loading'>" +
+//     "<p class='loading-title'>Loading...</p>" +
+//     "<div class='spinner'><chasing-dots-spinner></chasing-dots-spinner></div>" +
+//     "</div>",
+//     replace: true,
+//     link: function(scope, elem, attrs) {
+//       scope.isStateLoading = false;
+
+//       $rootScope.$on('$stateChangeStart', function() {
+//         scope.isStateLoading = true;
+//       });
+//       $rootScope.$on('$stateChangeSuccess', function() {
+//         scope.isStateLoading = false;
+//       });
+//     }
+//   };
+// }
+
+}());

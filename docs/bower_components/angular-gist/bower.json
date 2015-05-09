@@ -1,0 +1,27 @@
+{
+  "name": "angular-gist",
+  "version": "0.1.3",
+  "homepage": "https://github.com/scottcorgan/angular-gist",
+  "authors": [
+    "Scott Corgan <scottcorgan@gmail.com>",
+    "Darío Cravero <dario@contentkingdom.co>"
+  ],
+  "description": "AngularJS directive for embedding Github gists",
+  "main": "angular-gist.min.js",
+  "keywords": [
+    "angular",
+    "github",
+    "gist"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gruntfile.js",
+    ".gitignore",
+    "package.json"
+  ]
+}

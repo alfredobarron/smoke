@@ -1,0 +1,12 @@
+{
+  "name": "ngScrollSpy",
+  "version": "1.0.0",
+  "description": "An implementation of Bootstrap's scollspy and affix for AngularJS",
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "main":"./dist/ngScrollSpy.js",
+  "devDependencies": {
+    "angular-mocks": "~1.2.0"
+  }
+}

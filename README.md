@@ -1,6 +1,10 @@
 #[Smoke](http://alfredobarron.github.io/smoke)
 
-Smoke es el Jquery Plugin mas completo y ligero diseñado para usarse en Bootstrap 3
+![Version](https://img.shields.io/bower/v/smoke.svg)
+![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/latest/total.svg)
+
+
+Smoke es el Plugin Jquery mas completo y ligero diseñado para usarse en Bootstrap 3
 
 
 
@@ -24,9 +28,9 @@ Existen tres opciones disponibles para iniciar:
 
 - [Descarga la versión más reciente.](https://github.com/alfredobarron/smoke/archive/master.zip)
 - Clona el repositorio: `git clone https://github.com/alfredobarron/smoke.git`.
-- Instalar con [Bower](http://bower.io/): `bower install smoke`.
+- Instala con [Bower](http://bower.io/): `bower install smoke`.
 
-Lee la página de [primeros pasos](http://alfredobarron.github.io/smoke/getting-started.html) para obtener más información sobre el contenido.
+Lee la página de [primeros pasos](http://alfredobarron.github.io/smoke/#/getting-started) para obtener más información sobre el contenido.
 
 ##Requiere
 
@@ -34,7 +38,7 @@ Para que funcione el plugin Smoke se requiere de la librería [Jquery](http://jq
 
 ##Documentación
 
-La documentación la puedes consultar en [http://alfredobarron.github.io/smoke/getting-started.html](http://alfredobarron.com/smoke/getting-started.html)
+La documentación la puedes consultar en [http://alfredobarron.github.io/smoke/#/getting-started](http://alfredobarron.github.io/smoke/#/getting-started)
 
 
 ##Comunidad
@@ -52,4 +56,4 @@ Alfredo Barron
 
 ##Derechos de autor y licencias
 
-Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la [licencia GPL v3.](https://github.com/alfredobarron/smoke/blob/master/LICENCIA)
+Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la [licencia GPL v3.](https://github.com/alfredobarron/smoke/blob/master/LICENSE)

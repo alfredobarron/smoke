@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -8,7 +6,7 @@ module.exports = function(grunt){
             js: {
                 files: {
                     'docs/dist/js/smoke.min.js': ['docs/dist/js/smoke.js'],
-                    'docs/dist/lang/smoke.en.min.js': ['docs/dist/lang/smoke.en.js']
+                    'docs/dist/lang/smoke.es.min.js': ['docs/dist/lang/smoke.es.js']
                 }
             }
         },
@@ -30,7 +28,7 @@ module.exports = function(grunt){
         compress: {
           main: {
             options: {
-              archive: 'smoke-v2.1.2.zip'
+              archive: 'smoke-v2.1.3.zip'
             },
             files: [
               //{src: ['path/*'], dest: 'internal_folder/', filter: 'isFile'}, // includes files in path
