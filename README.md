@@ -8,7 +8,7 @@ Smoke es el Plugin Jquery mas completo y ligero diseñado para usarse en Bootstr
 
 
 
-Para empezar, echa un vistazo a [http://alfredobarron.github.io/smoke](http://alfredobarron.github.io/smoke)
+Para empezar, echa un vistazo a [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
 
 
 ## Tabla de contenidos
@@ -47,7 +47,7 @@ No pierdas de vista el desarrollo y noticias para la comunidad.
 
 - Sigueme [@AlfredoBarronC](https://twitter.com/AlfredoBarronC) en Twitter.
 - Lee y suscríbete en mi [FanPage](https://www.facebook.com/AlfredoBarronC) de Facebook.
-- Añademe a tus círculos en [Google+.](https://plus.google.com/+Alfredobarron)
+- Añademe a tus círculos en [Google+.](https://plus.google.com/+AlfredoBarronC)
 - Visita mi pagina oficial [www.alfredobarron.com](http://www.alfredobarron.com)
 
 ##Creador
