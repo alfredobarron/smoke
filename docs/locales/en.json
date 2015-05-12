@@ -155,7 +155,7 @@
     "PROGRESSBAR-TB": {
         "DESC": "Customize the element in which the progress bar will be added. Define when it starts and when it finishes.",
         "DESCS": {
-            "ELEMENT": "Elemento en el que se agregara el progressBar",
+            "ELEMENT": "Element which will add the progressBar",
             "STATUS": "When it starts and when finishes"
         }
     },
@@ -163,7 +163,7 @@
 
 
     "FULLSCREEN-DESC": "Add Fullscreen Functionality to your application.",
-    "FULLSCREEN-DESC2": "Para agregar el boton de pantalla completa solo es necesario indicarle a la funcion cual sera su contenedor.",
+    "FULLSCREEN-DESC2": "To add full-screen button is only necessary to indicate to the function which will be its container.",
 
 
 
@@ -178,17 +178,17 @@
 
 
 
-    "HELPERS-DESC": "Colección de funciones de ayuda.",
+    "HELPERS-DESC": "Collection of helper functions.",
 
     "STRING-FLOAT": "String to float",
-    "STRING-FLOAT-DESC": "Convierte una cadena de texto a un valor flotante.",
+    "STRING-FLOAT-DESC": "Converts a string to a float value.",
 
     "NUMBER-CURRENCY": "Currency format",
-    "NUMBER-CURRENCY-DESC": "Convierte un número a formato de moneda.",
-    "NUMBER-CURRENCY-NOTE": "Esta función recibe dos parámetros el primero es el número que se va a formatear y el segundo es el prefijo o el tipo de moneda.",
+    "NUMBER-CURRENCY-DESC": "Converts a number to currency format.",
+    "NUMBER-CURRENCY-NOTE": "This function takes two parameters, the first is the number to be formatted and the second is the prefix or the currency.",
 
     "URL-DESC": "Get URL.",
-    "URL-NOTE": "Esta función recibe un parámetro (opcional) es el número de carpetas para obener después de la URL.",
+    "URL-NOTE": "This function takes a parameter (optional) is the number of folders to get  the URL after.",
 
 
     "DATE": "Date",
