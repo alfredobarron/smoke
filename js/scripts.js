@@ -76,13 +76,15 @@ function run($rootScope){
 MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
 function MainCtrl($scope, $translate, $sanitize){
 
-    $scope.version = 'v2.1.3';
+    $scope.version = 'v2.1.4';
     $scope.lang = 'English';
 
     $scope.changeLanguage = function (langKey) {
         $translate.use(langKey);
         if(langKey == 'en'){
             $scope.lang = 'English';
+        }else if(langKey == 'de'){
+            $scope.lang = 'Deutsch';
         }else{
             $scope.lang = 'Español';
         }

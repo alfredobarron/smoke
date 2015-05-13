@@ -9,6 +9,7 @@
 
     "ENGLISH": "English",
     "SPANISH": "Spanish",
+    "DEUTSCH": "Deutsch",
 
     "SLOGAN": "Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3",
     "DOWNLOAD": "Download",
@@ -52,35 +53,35 @@
     "VALIDATE-DESC": "It makes the form validation on client side easy, simple and safer.",
 
     "INPUT-EMPTY": "Empty input",
-    "INPUT-EMPTY-DESC": "To validate a field that is mandatory only have to add the <code> required </ code> attribute within the <code> input </ code> . The field types supported so far are <code> text </ code>, <code> textarea </ code>, <code> email </ code>, <code> password </ code>, <code> select </ code>, <code> radio </ code> and <code> checkbox </ code>. The function used to validate is <span class = 'text-success'> smkValidate () </ span>.",
-    "INPUT-EMPTY-NOTE": "It is necessary that the <code> input </ code> to validate is inside a <code> div </ code> with the <code> form-group </ code> class",
+    "INPUT-EMPTY-DESC": "To validate a field that is mandatory only have to add the <code>required</code> attribute within the <code>input</code> . The field types supported so far are <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> and <code>checkbox</code>. The function used to validate is <span class = 'text-success'> smkValidate () </span>.",
+    "INPUT-EMPTY-NOTE": "It is necessary that the <code>input</code> to validate is inside a <code>div</code> with the <code>form-group</code> class",
 
     "INPUT-EMAIL": "Email input ",
-    "INPUT-EMAIL-DESC": "To validate an email account, the field must be of type <code> email </ code> and add <code> required </ code> attribute within the <code> input </ code>.",
+    "INPUT-EMAIL-DESC": "To validate an email account, the field must be of type <code>email</code> and add <code>required</code> attribute within the <code>input</code>.",
 
     "INPUT-ALPHANUMERIC": "Alphanumeric input ",
-    "INPUT-ALPHANUMERIC-DESC": "To validate a field that accepts only numbers and letters, the field must be of type text, add the required attribute within the input tag, likewise add the  smk-type attribute and within this  the alphanumeric property.",
+    "INPUT-ALPHANUMERIC-DESC": "To validate a field that accepts only numbers and letters, the field must be of type text, add the required attribute within the input tag, likewise add the <code>smk-type</code> attribute and within this  the alphanumeric property.",
 
     "INPUT-NUMBER": "Number input",
-    "INPUT-NUMBER-DESC": "To validate that a field only accepts numbers, the field must be of type <code> text </ code>, add the <code> required </ code> attribute in the <code> input </ code> tag. likewise add the <code> smk-type </ code>  attribute and within this, the <code> number </ code> attribute.",
+    "INPUT-NUMBER-DESC": "To validate that a field only accepts numbers, the field must be of type <code>text</code>, add the <code>required</code> attribute in the <code>input</code> tag. likewise add the <code>smk-type</code>  attribute and within this, the <code>number</code> attribute.",
 
     "INPUT-NUMBERRANGE": "Input number range",
-    "INPUT-NUMBERRANGE-DESC": "To validate a field that only accepts numbers and within in a range, the field must be of type <code> text </ code>, add the <code> required </ code> attribute within the  <code> input </ code> tag. In the same way add the <code> smk-type </ code> and within this, the <code> number </ code> attribute, also add the <code> smk-min </ code> and <code> smk-max </ code> attributes to indicate the range allowed.",
+    "INPUT-NUMBERRANGE-DESC": "To validate a field that only accepts numbers and within in a range, the field must be of type <code>text</code>, add the <code>required</code> attribute within the  <code>input</code> tag. In the same way add the <code>smk-type</code> and within this, the <code>number</code> attribute, also add the <code>smk-min</code> and <code>smk-max</code> attributes to indicate the range allowed.",
 
     "INPUT-DECIMAL": "Decimal input",
-    "INPUT-DECIMAL-DESC": "To validate a field that only accepts decimal numbers, that field must be of type <code> text </ code>, add the <code> required </ code> attribute in the <code> input </ code>. likewise,  add the <code> smk-type </ code> and within this, the <code> decimal </ code> attribute.",
+    "INPUT-DECIMAL-DESC": "To validate a field that only accepts decimal numbers, that field must be of type <code>text</code>, add the <code>required</code> attribute in the <code>input</code>. likewise,  add the <code>smk-type</code> and within this, the <code>decimal</code> attribute.",
 
     "INPUT-CURRENCY": "Input currency",
-    "INPUT-CURRENCY-DESC": "To validate a field that only accepts numbers, commas, dots, ie a currency format, the field must be of type <code> text </ code>, add the <code> required </ code> attribute within the <code> input </ code> tag. In the same way add the <code> smk-type </ code> attribute and within this, the <code> currency </ code> property.",
+    "INPUT-CURRENCY-DESC": "To validate a field that only accepts numbers, commas, dots, ie a currency format, the field must be of type <code>text</code>, add the <code>required</code> attribute within the <code>input</code> tag. In the same way add the <code>smk-type</code> attribute and within this, the <code>currency</code> property.",
 
     "NUMBER-CHARACTER": "Number character",
-    "NUMBER-CHARACTER-DESC": "To validate a field that only accept a certain number of characters, add the <code> required </ code> attribute within the <code> input </ code> tag. Likewise add the <code> minLength </ code > and <code> maxlength </ code> attributes and within these the number of characters allowed.",
+    "NUMBER-CHARACTER-DESC": "To validate a field that only accept a certain number of characters, add the <code>required</code> attribute within the <code>input</code> tag. Likewise add the <code>minLength</code> and <code>maxlength</code> attributes and within these the number of characters allowed.",
 
     "RANGE-CHARACTER": "Range character",
-    "RANGE-CHARACTER-DESC": "To validate a field that only accepts a range of a number of characters, add the <code> required </ code> attribute within the <code> input </ code> tag. Likewise add <code> minLength </ code> and <code> maxlength </ code> attributes, and within these, the range of number of characters allowed.",
+    "RANGE-CHARACTER-DESC": "To validate a field that only accepts a range of a number of characters, add the <code>required</code> attribute within the <code>input</code> tag. Likewise add <code>minLength</code> and <code>maxlength</code> attributes, and within these, the range of number of characters allowed.",
 
     "STRONG-PASSWORD": "Strong password",
-    "STRONG-PASSWORD-DESC": "To validate a field that accepts only a strong and secure password, the field must be of type <code> password </ code>, add the <code> required </ code> attribute in the <code> input </ code > tag and finally add the <code> smk-strongPass </ code> attribute and within this, the hard level required.",
+    "STRONG-PASSWORD-DESC": "To validate a field that accepts only a strong and secure password, the field must be of type <code>password</code>, add the <code>required</code> attribute in the <code>input </ code > tag and finally add the <code>smk-strongPass</code> attribute and within this, the hard level required.",
     "STRONG-PASSWORD-TB": {
         "DESC": "Description",
         "DESCS": {
@@ -92,26 +93,22 @@
     },
 
     "EQUAL-PASSWORD": "Equal password",
-    "EQUAL-PASSWORD-DESC": "To validate the texts contained in two fields are equal, Add the <code> required </ code> attribute within the etiquette <code> input </ code> in the first field. The function used is <span class = 'text-success'> $. SmkEqualPass () </ span>. ",
+    "EQUAL-PASSWORD-DESC": "To validate the texts contained in two fields are equal, Add the <code>required</code> attribute within the etiquette <code>input</code> in the first field. The function used is <span class='text-success'>$.smkEqualPass()</span>.",
 
     "EQUAL-PASSWORD-VAR": "Equal password var",
-    "EQUAL-PASSWORD-VAR-DESC": "To validate that the text content of a field is equal to the value of a JavaScript variable, add the <code> required </ code> attribute within the etiquette <code> input </ code> . The function used is <span class = 'text-success'> $. SmkEqualPass () </ span>. ",
+    "EQUAL-PASSWORD-VAR-DESC": "To validate that the text content of a field is equal to the value of a JavaScript variable, add the <code>required</code> attribute within the etiquette <code>input</code> . The function used is <span class='text-success'>$.smkEqualPass()</span>. ",
 
     "CLEAR-FORM": "Clear form",
-    "CLEAR-FORM-DESC": "To clean forms use the <span class = 'text-success'> smkClear () </ span> function. For not cleaning one or more types of fields, use the option <span class = 'text-primary'> noClear </ span> within the function. ",
+    "CLEAR-FORM-DESC": "To clean forms use the <span class='text-success'>smkClear()</span> function. For not cleaning one or more types of fields, use the option <span class='text-primary'>noClear</span> within the function. ",
 
     "CUSTOMIZE-MESSAGE": "Customize message",
-    "CUSTOMIZE-MESSAGE-DESC": "Customize the error message by adding the <code> smk-text </ code> within the etiquette <code> input </ code> ",
+    "CUSTOMIZE-MESSAGE-DESC": "Customize the error message by adding the <code>smk-text</code> within the etiquette <code>input</code> ",
 
     "LANGUAGE": "Language",
-    "LANGUAGE-DESC": "To change the language of validation messages, Add in the html the needed script and then, the language is passed into the <code> lang </ code> option in the <span class = 'text-success'> smkValidate () </ span>. funtion. ",
+    "LANGUAGE-DESC": "To change the language of validation messages, Add in the html the needed script and then, the language is passed into the <code>lang</code> option in the <span class='text-success'> smkValidate()</span> funtion.",
     "LANGUAGE-TB": {
-        "TITLE": "supported Languages",
+        "TITLE": "Supported languages",
         "LANGUAGE": "Language",
-        "LANGUAGES": {
-            "ENGLISH": "English",
-            "SPANISH": "Spanish"
-        },
         "ARCHIVE": "Archive"
     },
 
@@ -155,7 +152,7 @@
     "PROGRESSBAR-TB": {
         "DESC": "Customize the element in which the progress bar will be added. Define when it starts and when it finishes.",
         "DESCS": {
-            "ELEMENT": "Elemento en el que se agregara el progressBar",
+            "ELEMENT": "Element which will add the progressBar",
             "STATUS": "When it starts and when finishes"
         }
     },
@@ -163,7 +160,7 @@
 
 
     "FULLSCREEN-DESC": "Add Fullscreen Functionality to your application.",
-    "FULLSCREEN-DESC2": "Para agregar el boton de pantalla completa solo es necesario indicarle a la funcion cual sera su contenedor.",
+    "FULLSCREEN-DESC2": "To add full-screen button is only necessary to indicate to the function which will be its container.",
 
 
 
@@ -178,17 +175,17 @@
 
 
 
-    "HELPERS-DESC": "Colección de funciones de ayuda.",
+    "HELPERS-DESC": "Collection of helper functions.",
 
     "STRING-FLOAT": "String to float",
-    "STRING-FLOAT-DESC": "Convierte una cadena de texto a un valor flotante.",
+    "STRING-FLOAT-DESC": "Converts a string to a float value.",
 
     "NUMBER-CURRENCY": "Currency format",
-    "NUMBER-CURRENCY-DESC": "Convierte un número a formato de moneda.",
-    "NUMBER-CURRENCY-NOTE": "Esta función recibe dos parámetros el primero es el número que se va a formatear y el segundo es el prefijo o el tipo de moneda.",
+    "NUMBER-CURRENCY-DESC": "Converts a number to currency format.",
+    "NUMBER-CURRENCY-NOTE": "This function takes two parameters, the first is the number to be formatted and the second is the prefix or the currency.",
 
     "URL-DESC": "Get URL.",
-    "URL-NOTE": "Esta función recibe un parámetro (opcional) es el número de carpetas para obener después de la URL.",
+    "URL-NOTE": "This function takes a parameter (optional) is the number of folders to get  the URL after.",
 
 
     "DATE": "Date",

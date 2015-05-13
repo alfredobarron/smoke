@@ -9,6 +9,7 @@
 
     "ENGLISH": "Inglés",
     "SPANISH": "Español",
+    "DEUTSCH": "Alemán",
 
     "SLOGAN": "Smoke es el Plugin Jquery mas completo y ligero diseñado para usarse en Bootstrap 3",
     "DOWNLOAD": "Descargar",
@@ -60,7 +61,7 @@
     "INPUT-EMAIL-DESC": "Para validar una cuenta de correo electrónico, el campo debe ser de tipo <code>email</code> y agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>.",
 
     "INPUT-ALPHANUMERIC": "Campo alfanumérico",
-    "INPUT-ALPHANUMERIC-DESC": "Para validar que un campo solo acepte números y letras, el campo debe ser de tipo text , agregar el atributo required dentro de la etiqueta input de igual manera agregar el atributo smk-type y dentro de este la propiedad alphanumeric.",
+    "INPUT-ALPHANUMERIC-DESC": "Para validar que un campo solo acepte números y letras, el campo debe ser de tipo text , agregar el atributo required dentro de la etiqueta input de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad alphanumeric.",
 
     "INPUT-NUMBER": "Campo numérico",
     "INPUT-NUMBER-DESC": "Para validar que un campo solo acepte números, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>number</code>.",
@@ -106,14 +107,10 @@
     "CUSTOMIZE-MESSAGE-DESC": "Personaliza los mensaje de error añadiendo el atributo <code>smk-text</code> dentro de la etiqueta <code>input</code>",
 
     "LANGUAGE": "Lenguaje",
-    "LANGUAGE-DESC": "Para cambiar el lenguaje de los mensajes de validación primero se agrega el script dentro del html, después se pasa el lenguaje dentro de la opción <code>lang</code> en la función <span class='text-success'>smkValidate()</span>.",
+    "LANGUAGE-DESC": "Para cambiar el lenguaje de los mensajes de validación es necesario agregar el script del lenguaje deseado dentro del html, para la función <span class='text-success'>smkValidate()</span> se pasa el lenguaje dentro de la opción <code>lang</code>, en la función <span class='text-success'>$.smkEqualPass()</span> se pasa el lenguaje como tercer parámetro.",
     "LANGUAGE-TB": {
         "TITLE": "Lenguajes soportados",
         "LANGUAGE": "Lenguaje",
-        "LANGUAGES": {
-            "ENGLISH": "Inglés",
-            "SPANISH": "Español"
-        },
         "ARCHIVE": "Archivo"
     },
 
