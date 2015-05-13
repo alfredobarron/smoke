@@ -340,10 +340,23 @@ $.fn.smkValidate = function(options) {
 |   Validate Equal passwords
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
-$.smkEqualPass = function(password, repassword) {
+$.smkEqualPass = function(password, repassword, lang) {
 
     // Se crea el mensaje de error para el input repassword
-    var textEqualPass = 'Las contraseñas no coinciden';
+    var languaje = {
+        en: {
+            textEqualPass: 'Passwords do not match'
+        }
+    };
+
+    // Si esta lang es undefined
+    if(lang === undefined){
+        lang = 'en';
+    }
+    // Si lang es diferente de en
+    if(lang != 'en'){
+        languaje = $.smkEqualPass.Languaje;
+    }
 
     if($(password).val() !== undefined){
         password = $(password).val();
@@ -354,7 +367,7 @@ $.smkEqualPass = function(password, repassword) {
     // Si los password son diferentes se retorna false
     if (password !== $(repassword).val()) {
         // Se agrega el mensaje de error
-        return $.smkAddError($(repassword), textEqualPass);
+        return $.smkAddError($(repassword), languaje[lang].textEqualPass);
     // Si los passwords son iguales se retorna true
     } else {
         return true;
@@ -371,7 +384,7 @@ $.smkEqualPass = function(password, repassword) {
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
-|   if($.smkEqualPass('#form #password', '#form #repassword')){}
+|   if($.smkEqualPass('#password', '#repassword', 'es')){}
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 

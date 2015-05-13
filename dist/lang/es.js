@@ -34,6 +34,13 @@
         }
     };
 
+    $.smkEqualPass.Languaje = {
+        es: {
+            // Mensaje de error para el input repassword
+            textEqualPass    : 'Las contraseñas no coinciden'
+        }
+    };
+
     $.smkDate.Languaje = {
         es: {
             shortMonthNames : ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
