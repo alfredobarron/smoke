@@ -19,8 +19,11 @@ To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfre
  - [Quick start](#quick-start)
  - [Required](#required)
  - [Documentation](#documentation)
+ - [Community](#community)
  - [Creators](#creators)
+ - [Collaborators](#collaborators)
  - [Copyright and license](#copyright-and-license)
+
 
 
 
@@ -34,21 +37,37 @@ Several quick start options are available:
 
 Read the [Getting started page](http://alfredobarron.github.io/smoke/#/getting-started) for information on the plugin contents.
 
+
+
 ##Required
 
 Smoke plugin requires the [Jquery](http://jquery.com/) library and [Bootstrap 3.](http://getbootstrap.com/) framework.
+
+
 
 ##Documentation
 
 Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
 
 
+
+##Community
+
+- Join [the official Slack room](https://smokejs.slack.com).
+
 ##Creators
 
 [@AlfredoBarronC](https://twitter.com/AlfredoBarronC)
 
+
+
+##Collaborators
+
 [+MisaelRojas](https://plus.google.com/+MisaelRojas)
+[+mostrosonido](https://twitter.com/mostrosonido)
+
+
 
 ##Copyright and license
 
-Code and documentarion (c) Copyright 2015 Alfredo Barron. Code published under [licencia GPL v3.](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
+Code and documentarion (c) Copyright 2015 Alfredo Barron. Code published under [license LGPL](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
