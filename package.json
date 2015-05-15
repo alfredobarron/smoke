@@ -1,8 +1,8 @@
 {
   "name": "smoke",
-  "version": "2.1.3",
+  "version": "2.1.5",
   "description": "Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3",
-  "license": "GPLv3",
+  "license": "LGPL",
   "author": "Alfredo Barron",
   "homepage": "https://github.com/alfredobarron/smoke",
   "keywords": [

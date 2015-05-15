@@ -7,9 +7,10 @@
     "PANEL": "Panel",
     "HELPERS": "Helfer",
 
-    "ENGLISH": "English",
-    "SPANISH": "Spanish",
+    "ENGLISH": "Engels",
+    "SPANISH": "Spaans",
 	"DEUTSCH": "Deutsch",
+    "FRENCH" : "Frans",
 
     "SLOGAN": "Smoke ist das vollständigste jQuery Plugin, erstellt für die Nutzung mit Bootstrap 3",
     "DOWNLOAD": "Download",
