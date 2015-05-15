@@ -63,8 +63,8 @@ Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alf
 
 ##Collaborators
 
-[+MisaelRojas](https://plus.google.com/+MisaelRojas)
-[+mostrosonido](https://twitter.com/mostrosonido)
+- [+MisaelRojas](https://plus.google.com/+MisaelRojas)
+- [@mostrosonido](https://twitter.com/mostrosonido)
 
 
 
