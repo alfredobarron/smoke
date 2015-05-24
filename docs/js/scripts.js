@@ -85,9 +85,11 @@ function MainCtrl($scope, $translate, $sanitize){
             $scope.lang = 'English';
         }else if(langKey == 'de'){
             $scope.lang = 'Deutsch';
-        }else{
+        }else if(langKey == 'es'){
             $scope.lang = 'Español';
-        }
+        }else {
+			$scope.lang = 'Português Brasileiro'
+		}
     };
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
