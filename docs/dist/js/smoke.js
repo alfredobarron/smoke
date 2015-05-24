@@ -1167,7 +1167,7 @@ $.fn.smkPanel = function(options) {
     var settings = $.extend({
         hide: ''
     }, options);
-
+    var thisPanel = $(this);
     // Se eliminan los espacios en blanco de la variable settings.hide
     var hideSinEspacios = settings.hide.replace(/\s/g, '');
     // Se quiebra la variable hideSinEspacios para obtener sus valores y se agregan en el array arrayHide
@@ -1201,7 +1201,7 @@ $.fn.smkPanel = function(options) {
     $(this).children('.panel-heading').append( btnGroup );
 
     // Evento del boton Min
-    $('.smk-min').click(function(event) {
+    thisPanel.find('.smk-min').click(function(event) {
         event.preventDefault();
         var body = $(this).parents('.panel-heading').siblings('.panel-body');
         var footer = $(this).parents('.panel-heading').siblings('.panel-footer');
@@ -1213,7 +1213,7 @@ $.fn.smkPanel = function(options) {
 
     });
     // Evento del boton Remove
-    $('.smk-remove').click(function(event) {
+    thisPanel.find('.smk-remove').click(function(event) {
         event.preventDefault();
         var panel = $(this).parents('.panel');
         panel.fadeOut(400, function(){
@@ -1221,7 +1221,7 @@ $.fn.smkPanel = function(options) {
         });
     });
     // Evento del boton Full
-    $('.smk-full').click(function(event) {
+    thisPanel.find('.smk-full').click(function(event) {
         event.preventDefault();
         var panel = $(this).parents('.panel');
         var body = $(this).parents('.panel-heading').siblings('.panel-body');

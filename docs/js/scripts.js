@@ -76,19 +76,19 @@ function run($rootScope){
 MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
 function MainCtrl($scope, $translate, $sanitize){
 
-    $scope.version = 'v2.1.5';
+    $scope.version = 'v2.1.6';
     $scope.lang = 'English';
 
     $scope.changeLanguage = function (langKey) {
         $translate.use(langKey);
         if(langKey == 'en'){
             $scope.lang = 'English';
-        }else if(langKey == 'de'){
-            $scope.lang = 'Deutsch';
         }else if(langKey == 'es'){
             $scope.lang = 'Español';
+        }else if(langKey == 'de'){
+            $scope.lang = 'Deutsch';
         }else {
-			$scope.lang = 'Português Brasileiro'
+			$scope.lang = 'Português Brasileiro';
 		}
     };
     /*

@@ -55,6 +55,8 @@ Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alf
 ##Community
 
 - Join [the official Slack room](https://smokejs.slack.com).
+- Implementation help may be found at Stack Overflow (tagged [`smoke`](http://stackoverflow.com/questions/tagged/smoke)).
+
 
 ##Creators
 
@@ -66,6 +68,9 @@ Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alf
 
 - [+MisaelRojas](https://plus.google.com/+MisaelRojas)
 - [@mostrosonido](https://twitter.com/mostrosonido)
+- [@sdhp](https://github.com/sdhp)
+- [@LespiletteMaxime](https://github.com/LespiletteMaxime)
+- [@druzza](https://github.com/druzza)
 
 
 

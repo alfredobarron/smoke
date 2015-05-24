@@ -1,6 +1,6 @@
 (function($){
     $.fn.smkValidate.Languaje = {
-        pt-br: {
+        pt_br: {
             // Mensaje de error para los input vacíos
             textEmpty        : 'Campo requerido',
             // Mensaje de error para el input email
@@ -35,14 +35,14 @@
     };
 
     $.smkEqualPass.Languaje = {
-        pt-br: {
+        pt_br: {
             // Mensaje de error para el input repassword
             textEqualPass    : 'As senhas não coincidem'
         }
     };
 
     $.smkDate.Languaje = {
-        pt-br: {
+        pt_br: {
             shortMonthNames : ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
             monthNames : ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
         }
