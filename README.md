@@ -3,9 +3,7 @@
 ![Version](https://img.shields.io/github/release/alfredobarron/smoke.svg)
 ![Version](https://img.shields.io/bower/v/smoke.svg)
 ![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/latest/total.svg)
-![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/v2.1.4/total.svg)
-![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/v2.1.3/total.svg)
-![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/v2.1.2/total.svg)
+![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/v2.1.5/total.svg)
 
 
 Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3
@@ -55,6 +53,8 @@ Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alf
 ##Community
 
 - Join [the official Slack room](https://smokejs.slack.com).
+- Implementation help may be found at Stack Overflow (tagged [`smoke`](http://stackoverflow.com/questions/tagged/smoke)).
+
 
 ##Creators
 
@@ -66,6 +66,9 @@ Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alf
 
 - [+MisaelRojas](https://plus.google.com/+MisaelRojas)
 - [@mostrosonido](https://twitter.com/mostrosonido)
+- [@sdhp](https://github.com/sdhp)
+- [@LespiletteMaxime](https://github.com/LespiletteMaxime)
+- [@druzza](https://github.com/druzza)
 
 
 
