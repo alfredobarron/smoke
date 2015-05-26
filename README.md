@@ -52,15 +52,10 @@ Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alf
 
 All contributions are very welcome, We love it. There are several ways to help out:
 
-
--Create an issue on GitHub, if you have found a bug
-
--Write test cases for open bug issues
-
--Write patches for open bug/feature issues, preferably with test cases included
-
--Contribute to the documentation
-
+- Create an issue on GitHub, if you have found a bug
+- Write test cases for open bug issues
+- Write patches for open bug/feature issues, preferably with test cases included
+- Contribute to the documentation
 
 There are a few guidelines that we need contributors to follow so that we have a chance of keeping on top of things.
 
