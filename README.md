@@ -18,6 +18,7 @@ To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfre
  - [Quick start](#quick-start)
  - [Required](#required)
  - [Documentation](#documentation)
+ - [How to contribute](#how-to-contribute)
  - [Community](#community)
  - [Creators](#creators)
  - [Collaborators](#collaborators)
