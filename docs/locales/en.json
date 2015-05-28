@@ -36,7 +36,7 @@
 
     "INSTALL": "Install with",
 
-    "WHATS-INCLUDED": "Whats included",
+    "WHATS-INCLUDED": "What's included",
     "WHATS-INCLUDED-DESC": "Once downloaded, unzip the .zip file to see the structure of Smoke. You will see something like this:",
 
     "REQUIRED": "Required",
@@ -55,7 +55,7 @@
     "VALIDATE-DESC": "It makes the form validation on client side easy, simple and safer.",
 
     "INPUT-EMPTY": "Empty input",
-    "INPUT-EMPTY-DESC": "To validate a field that is mandatory only have to add the <code>required</code> attribute within the <code>input</code> . The field types supported so far are <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> and <code>checkbox</code>. The function used to validate is <span class = 'text-success'> smkValidate () </span>.",
+    "INPUT-EMPTY-DESC": "To validate a field that is mandatory, you only have to add the <code>required</code> attribute within the <code>input</code> . The field types supported so far are <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> and <code>checkbox</code>. The function used to validate is <span class = 'text-success'> smkValidate () </span>.",
     "INPUT-EMPTY-NOTE": "It is necessary that the <code>input</code> to validate is inside a <code>div</code> with the <code>form-group</code> class",
 
     "INPUT-EMAIL": "Email input ",
