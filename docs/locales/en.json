@@ -136,7 +136,7 @@
     },
 
     "CONFIRMATION": "Confirmation",
-    "CONFIRMATION-DESC": "It provides a confirmation message for the typical users actions when invoke an event..",
+    "CONFIRMATION-DESC": "It provides a confirmation message for the typical users actions when invoke an event.",
     "CONFIRMATION-TB": {
         "DESC": "Customize the confirmations, changing the message and the text on the buttons.",
         "DESCS": {
