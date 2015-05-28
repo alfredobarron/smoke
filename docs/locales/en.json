@@ -162,7 +162,7 @@
 
 
     "FULLSCREEN-DESC": "Add Fullscreen Functionality to your application.",
-    "FULLSCREEN-DESC2": "To add full-screen button is only necessary to indicate to the function which will be its container.",
+    "FULLSCREEN-DESC2": "Add a full-screen button, and the content will occupy the full space of its container.",
 
 
 
