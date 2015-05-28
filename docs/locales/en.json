@@ -40,9 +40,9 @@
     "WHATS-INCLUDED-DESC": "Once downloaded, unzip the .zip file to see the structure of Smoke. You will see something like this:",
 
     "REQUIRED": "Required",
-    "REQUIRED-DESC": "To work, Smoke plugin requires these two libraries",
-    "REQUIRED-JQUERY": "Note that the Smoke plugin requires the jQuery library included.",
-    "REQUIRED-BOOTSTRAP": "Note that the Smoke plugin requires the Bootstrap 3 framework included.",
+    "REQUIRED-DESC": "To work, Smoke plugin requires these two libraries:",
+    "REQUIRED-JQUERY": "Note that the Smoke plugin requires that the jQuery library is included.",
+    "REQUIRED-BOOTSTRAP": "Note that the Smoke plugin requires the Bootstrap 3 framework to be included.",
 
     "BASIC-TEMPLATE": "Basic template",
     "BASIC-TEMPLATE-DESC": "Start with this HTML basic template or modify it to your needs.",
