@@ -28,7 +28,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-app="appSmoke" ng-controller="MainCtrl">
+  <body ng-app="appSmoke" ng-controller="MainCtrl" class="load">
     <state-loading-indicator></state-loading-indicator>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -93,6 +93,10 @@
           <p><a href="https://github.com/alfredobarron/smoke" target="_blank">GitHub</a> . <a href="http://alfredobarron.github.io/smoke/v1.0/" target="_blank">Smock v1.0</a> . <a href="https://github.com/alfredobarron/smoke/issues" target="_blank">{{'ISSUES' | translate}}</a> . <a href="https://github.com/alfredobarron/smoke/releases" target="_blank">{{'RELEASES'| translate}}</a></p>
         </div>
     </footer>
+
+    <div class="loading">
+      <div class="loader">Loading...</div>
+    </div>
 
     <!-- bower:js -->
     <script src="bower_components/es5-shim/es5-shim.js"></script>
