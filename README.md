@@ -61,7 +61,7 @@ All contributions are very welcome, We love it. There are several ways to help o
 There are a few guidelines that we need contributors to follow so that we have a chance of keeping on top of things.
 
 
-If you want to making changes Better avoid working directly on the master branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/alfredobarron/smoke/tree/dev). 
+If you want to making changes Better avoid working directly on the master branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/alfredobarron/smoke/tree/dev).
 
 
 ##Community
@@ -88,4 +88,4 @@ If you want to making changes Better avoid working directly on the master branch
 
 ##Copyright and license
 
-Code and documentarion (c) Copyright 2015 Alfredo Barron. Code published under [license LGPL](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
+Code and documentation (c) Copyright 2015 Alfredo Barron. Code published under [license LGPL](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
