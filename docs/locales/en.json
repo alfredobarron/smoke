@@ -23,7 +23,7 @@
 
     "DESIGNED": "Designed and developed with love by",
     "TRANSLATED": "Translated by",
-    "LICENSE": "Code and documentarion (c) Copyright 2015 Alfredo Barron. Code published under ",
+    "LICENSE": "Code and documentation (c) Copyright 2015 Alfredo Barron. Code published under ",
     "ISSUES": "Issues",
     "RELEASES": "Releases",
 
@@ -32,17 +32,17 @@
 
     "GETTING-STARTED-DESC": "An overview of Smoke, how to download and use.",
 
-    "DOWNLOAD-DESC": "Download Smoke and add it to your proyect, It's simple and quick of use.",
+    "DOWNLOAD-DESC": "Download Smoke and add it to your project. It's simple and quick to use.",
 
     "INSTALL": "Install with",
 
-    "WHATS-INCLUDED": "Whats included",
+    "WHATS-INCLUDED": "What's included",
     "WHATS-INCLUDED-DESC": "Once downloaded, unzip the .zip file to see the structure of Smoke. You will see something like this:",
 
     "REQUIRED": "Required",
-    "REQUIRED-DESC": "To work, Smoke plugin requires these two libraries",
-    "REQUIRED-JQUERY": "Note that the Smoke plugin requires the jQuery library included.",
-    "REQUIRED-BOOTSTRAP": "Note that the Smoke plugin requires the Bootstrap 3 framework included.",
+    "REQUIRED-DESC": "To work, Smoke plugin requires these two libraries:",
+    "REQUIRED-JQUERY": "Note that the Smoke plugin requires that the jQuery library is included.",
+    "REQUIRED-BOOTSTRAP": "Note that the Smoke plugin requires the Bootstrap 3 framework to be included.",
 
     "BASIC-TEMPLATE": "Basic template",
     "BASIC-TEMPLATE-DESC": "Start with this HTML basic template or modify it to your needs.",
@@ -55,14 +55,14 @@
     "VALIDATE-DESC": "It makes the form validation on client side easy, simple and safer.",
 
     "INPUT-EMPTY": "Empty input",
-    "INPUT-EMPTY-DESC": "To validate a field that is mandatory only have to add the <code>required</code> attribute within the <code>input</code> . The field types supported so far are <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> and <code>checkbox</code>. The function used to validate is <span class = 'text-success'> smkValidate () </span>.",
-    "INPUT-EMPTY-NOTE": "It is necessary that the <code>input</code> to validate is inside a <code>div</code> with the <code>form-group</code> class",
+    "INPUT-EMPTY-DESC": "To validate a field that is mandatory, you only have to add the <code>required</code> attribute within the <code>input</code> . The field types supported so far are <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> and <code>checkbox</code>. The function used to validate is <span class = 'text-success'> smkValidate () </span>.",
+    "INPUT-EMPTY-NOTE": "It is necessary that the <code>input</code> to validate is inside a <code>div</code> with the <code>form-group</code> class.",
 
     "INPUT-EMAIL": "Email input ",
     "INPUT-EMAIL-DESC": "To validate an email account, the field must be of type <code>email</code> and add <code>required</code> attribute within the <code>input</code>.",
 
     "INPUT-ALPHANUMERIC": "Alphanumeric input ",
-    "INPUT-ALPHANUMERIC-DESC": "To validate a field that accepts only numbers and letters, the field must be of type text, add the required attribute within the input tag, likewise add the <code>smk-type</code> attribute and within this  the alphanumeric property.",
+    "INPUT-ALPHANUMERIC-DESC": "To validate a field that accepts only numbers and letters, the field must be of type <code>text</code>, add the <code>required</code> attribute within the input tag, likewise add the <code>smk-type</code> attribute and within this  the alphanumeric property.",
 
     "INPUT-NUMBER": "Number input",
     "INPUT-NUMBER-DESC": "To validate that a field only accepts numbers, the field must be of type <code>text</code>, add the <code>required</code> attribute in the <code>input</code> tag. likewise add the <code>smk-type</code>  attribute and within this, the <code>number</code> attribute.",
@@ -136,7 +136,7 @@
     },
 
     "CONFIRMATION": "Confirmation",
-    "CONFIRMATION-DESC": "It provides a confirmation message for the typical users actions when invoke an event..",
+    "CONFIRMATION-DESC": "It provides a confirmation message for the typical users actions when invoke an event.",
     "CONFIRMATION-TB": {
         "DESC": "Customize the confirmations, changing the message and the text on the buttons.",
         "DESCS": {
@@ -162,7 +162,7 @@
 
 
     "FULLSCREEN-DESC": "Add Fullscreen Functionality to your application.",
-    "FULLSCREEN-DESC2": "To add full-screen button is only necessary to indicate to the function which will be its container.",
+    "FULLSCREEN-DESC2": "Add a full-screen button, and the content will occupy the full space of its container.",
 
 
 
