@@ -66,6 +66,16 @@ function configure($stateProvider, $urlRouterProvider, $translateProvider) {
 run.$inject = ['$rootScope'];
 function run($rootScope){
 
+    /*
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    |   Loading
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    */
+    $(window).bind("load", function() {
+       $('body').removeClass('load');
+       $('.loading').fadeOut();
+    });
+
     $rootScope.$on('$stateChangeStart', function(){
         $.smkProgressBar({element:'body', status:'start'});
     });
@@ -91,6 +101,16 @@ function MainCtrl($scope, $translate, $sanitize){
 			$scope.lang = 'Português Brasileiro';
 		}
     };
+
+    /*
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    |   Analytis Events
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    */
+    $scope.download = function(){
+        ga('send', 'event', 'button', 'click', 'download');
+    };
+
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     |   Validate
