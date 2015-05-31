@@ -110,6 +110,30 @@ function MainCtrl($scope, $translate, $sanitize){
     $scope.download = function(){
         ga('send', 'event', 'button', 'click', 'download');
     };
+    $scope.github = function(){
+        ga('send', 'event', 'button', 'click', 'github');
+    };
+    $scope.gettingStarted = function(){
+        ga('send', 'event', 'button', 'click', 'getting-started');
+    };
+    $scope.validate = function(){
+        ga('send', 'event', 'button', 'click', 'validate');
+    };
+    $scope.notifications = function(){
+        ga('send', 'event', 'button', 'click', 'notifications');
+    };
+    $scope.progressbar = function(){
+        ga('send', 'event', 'button', 'click', 'progressbar');
+    };
+    $scope.fullscreen = function(){
+        ga('send', 'event', 'button', 'click', 'fullscreen');
+    };
+    $scope.panel = function(){
+        ga('send', 'event', 'button', 'click', 'panel');
+    };
+    $scope.helpers = function(){
+        ga('send', 'event', 'button', 'click', 'helpers');
+    };
 
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
