@@ -471,8 +471,10 @@ $.fn.smkClear = function(options) {
 */
 $.smkAddError = function (obj, text)
 {
+    // Se obtiene el elemento form-group
+    var formGroup = $(obj).parents('.form-group');
     // Se obtiene el elemento padre
-    var parent = $(obj).parents('.form-group');
+    var parent = $(obj).parent();
     // Se obtiene el type
     var type = $(obj).attr('type');
     // Se obtiene el tag
@@ -496,19 +498,20 @@ $.smkAddError = function (obj, text)
 
     if(type == 'select'){
         // Se agrega la clase de error
-        parent.addClass('has-feedback has-error smk-' + type);
+        formGroup.addClass('has-feedback has-error smk-' + type);
         // Se agrega el icono y el mensaje de error
         parent.append(icon + msj);
     }else if(type == 'checkbox' || type == 'radio'){
         // Se agrega la clase de error
-        parent.addClass('has-feedback has-error smk-' + type);
+        formGroup.addClass('has-feedback has-error smk-' + type);
         // Se agrega el icono y el mensaje de error
-        parent.append(msj);
+        parent.parent().parent().append(msj);
     }else{
         // Se agrega la clase de error
-        parent.addClass('has-feedback has-error');
+        formGroup.addClass('has-feedback has-error');
         // Se agrega el icono y el mensaje de error
         parent.append(icon + msj);
+
     }
     // Se posiciona el focus en el input
     obj.focus();
