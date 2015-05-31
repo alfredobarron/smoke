@@ -86,7 +86,7 @@ function run($rootScope){
 MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
 function MainCtrl($scope, $translate, $sanitize){
 
-    $scope.version = 'v2.1.6';
+    $scope.version = 'v2.2.0';
     $scope.lang = 'English';
 
     $scope.changeLanguage = function (langKey) {
