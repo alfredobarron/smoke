@@ -21,7 +21,7 @@
 |   Validate
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
-.smk-error-text{
+.has-feedback .smk-error-text{
     position: absolute;
     right: 0;
     font-size: 12px;
@@ -32,8 +32,20 @@
 .smk-select .smk-error-icon{
     right: 10px;
 }
-.smk-checkbox .smk-error-text, .smk-radio .smk-error-text{
-    margin-top: -12px
+.smk-checkbox .smk-error-text,
+.smk-radio .smk-error-text{
+    margin-top: -12px;
+}
+/* form-horizontal */
+.form-horizontal .has-feedback .smk-error-text {
+    right: 15px;
+}
+.form-horizontal .smk-select .smk-error-icon{
+    right: 25px;
+}
+.form-horizontal .smk-checkbox .smk-error-text,
+.form-horizontal .smk-radio .smk-error-text{
+    margin-top: 0;
 }
 
 

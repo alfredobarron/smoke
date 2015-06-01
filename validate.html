@@ -42,7 +42,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formEmpty">
+            <!-- <form role="form" id="formEmpty">
               <div class="form-group">
                 <label for="text">Text</label>
                 <input type="text" class="form-control" placeholder="Enter text" required>
@@ -85,7 +85,62 @@
                 </div>
               </div>
               <button type="button" class="btn btn-default" ng-click="validateEmpty()">Submit</button>
-            </form>
+            </form> -->
+            <form role="form" class="form-horizontal" id="formEmpty">
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Text</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Enter text" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Select</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" required>
+                        <option value="">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="col-sm-2 control-label">Textarea</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" rows="3" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="check" value="1" required> Checkbox
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="rad" value="option1" required> Option 1
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="rad" value="option2"> Option 2
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="button" class="btn btn-default" ng-click="validateEmpty()">Submit</button>
+                    </div>
+                  </div>
+                </form>
           </div>
           <div class="panel-footer">
             <p class="text-muted"><small>HTML</small></p>
