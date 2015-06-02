@@ -3,7 +3,6 @@
 ![Version](https://img.shields.io/github/release/alfredobarron/smoke.svg)
 ![Version](https://img.shields.io/bower/v/smoke.svg)
 ![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/latest/total.svg)
-![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/v2.1.6/total.svg)
 
 
 Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3
