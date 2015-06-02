@@ -5,7 +5,8 @@ module.exports = function(grunt){
         uglify: {
             js: {
                 files: {
-                    'docs/dist/js/smoke.min.js': ['docs/dist/js/smoke.js']
+                    'docs/dist/js/smoke.min.js': ['docs/dist/js/smoke.js'],
+                    'docs/js/scripts.min.js': ['docs/js/scripts.js']
                     //'docs/dist/lang/smoke.es.min.js': ['docs/dist/lang/smoke.es.js']
                 }
             },
@@ -22,7 +23,8 @@ module.exports = function(grunt){
         cssmin: {
             css: {
                 files: {
-                    'docs/dist/css/smoke.min.css': ['docs/dist/css/smoke.css']
+                    'docs/dist/css/smoke.min.css': ['docs/dist/css/smoke.css'],
+                    'docs/css/styles.min.css': ['docs/css/styles.css']
                 }
             }
         },
@@ -37,7 +39,7 @@ module.exports = function(grunt){
         compress: {
           main: {
             options: {
-              archive: 'smoke-v2.2.0.zip'
+              archive: 'smoke-v2.2.1.zip'
             },
             files: [
               //{src: ['path/*'], dest: 'internal_folder/', filter: 'isFile'}, // includes files in path

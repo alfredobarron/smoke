@@ -193,6 +193,7 @@ footer ul li .fb-share-button>span{
 
 
 
+
 .load{
     overflow: hidden;
 }
@@ -204,6 +205,9 @@ footer ul li .fb-share-button>span{
     right: 0;
     background-color: #000;
     z-index: 1234;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .loader {
@@ -213,7 +217,7 @@ footer ul li .fb-share-button>span{
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  margin: 22% auto;
+  /*margin: 22% auto;*/
   position: relative;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -293,7 +297,6 @@ footer ul li .fb-share-button>span{
     .error p{
         font-size: 1.5em
     }
-
 }
 @media (min-width: 1200px){
     .affix {
