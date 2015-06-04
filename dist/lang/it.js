@@ -14,7 +14,7 @@
             // Mensaje de error para el input decimal
             textDecimal      : 'Sono ammessi solo numeri decimali',
             // Mensaje de error para el input currency
-            textCurrency     : 'Inserire un numero di valuta valido',
+            textCurrency     : 'Inserire un importo valido',
             // Mensaje de error para el input select
             textSelect       : 'Selezione obbligatoria',
             // Mensaje de error para el input checkbox y radio
