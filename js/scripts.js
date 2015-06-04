@@ -86,7 +86,7 @@ function run($rootScope){
 MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
 function MainCtrl($scope, $translate, $sanitize){
 
-    $scope.version = 'v2.2.1';
+    $scope.version = 'v2.2.2';
     $scope.lang = 'English';
 
     $scope.changeLanguage = function (langKey) {
@@ -122,7 +122,7 @@ function MainCtrl($scope, $translate, $sanitize){
     $scope.notifications = function(){
         ga('send', 'event', 'button', 'click', 'notifications');
     };
-    $scope.progressbar = function(){
+    $scope.btnProgressbar = function(){
         ga('send', 'event', 'button', 'click', 'progressbar');
     };
     $scope.fullscreen = function(){
