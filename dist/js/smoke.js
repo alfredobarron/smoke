@@ -548,6 +548,7 @@ $.smokeCustomizeText = function(text, arrayText){
         $.each(arrayText, function(index, val) {
             customText += split[index] + val;
         });
+        customText += split[split.length - 1];
     }
     return customText;
 };
