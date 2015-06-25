@@ -39,7 +39,7 @@ module.exports = function(grunt){
         compress: {
           main: {
             options: {
-              archive: 'smoke-v2.2.3.zip'
+              archive: 'smoke-v2.2.4.zip'
             },
             files: [
               //{src: ['path/*'], dest: 'internal_folder/', filter: 'isFile'}, // includes files in path
