@@ -2,7 +2,6 @@
 
 ![Version](https://img.shields.io/github/release/alfredobarron/smoke.svg)
 ![Version](https://img.shields.io/bower/v/smoke.svg)
-![Downloads](https://img.shields.io/github/downloads/alfredobarron/smoke/latest/total.svg)
 
 
 Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3
@@ -33,6 +32,8 @@ Several quick start options are available:
 - [Download the latest release](https://github.com/alfredobarron/smoke/archive/master.zip)
 - Clone the repo: `git clone https://github.com/alfredobarron/smoke.git`.
 - Install with [Bower](http://bower.io/): `bower install smoke`.
+- Install with [npm](https://www.npmjs.com): `npm install smokejs`.
+
 
 Read the [Getting started page](http://alfredobarron.github.io/smoke/#/getting-started) for information on the plugin contents.
 

@@ -1,0 +1,27 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.7.0
+3 info using node@v0.12.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/abarron/Documents/projects/smoke/docs/dist',
+7 silly cache add   type: 'local' }
+8 error addLocal Could not install /Users/abarron/Documents/projects/smoke/docs/dist
+9 verbose stack Error: EISDIR, read
+9 verbose stack     at Error (native)
+10 verbose cwd /Users/abarron/Documents/projects/smoke/docs/dist
+11 error Darwin 14.3.0
+12 error argv "node" "/usr/local/bin/npm" "publish"
+13 error node v0.12.0
+14 error npm  v2.7.0
+15 error code EISDIR
+16 error errno -21
+17 error EISDIR, read
+18 error If you need help, you may report this error at:
+18 error     <http://github.com/npm/npm/issues>
+19 verbose exit [ -21, true ]
