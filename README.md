@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/github/release/alfredobarron/smoke.svg)
 ![Version](https://img.shields.io/bower/v/smoke.svg)
-![Version](https://img.shields.io/npm/v/smoke.svg)
+![Version](https://img.shields.io/npm/v/smokejs.svg)
 
 
 
