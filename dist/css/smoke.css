@@ -21,20 +21,15 @@
 |   Validate
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
-.has-feedback .smk-error-text{
-    position: absolute;
-    right: 0;
-    font-size: 12px;
-    color: #EE4124;
-    /*float: right;*/
-
-}
 .smk-select .smk-error-icon{
     right: 10px;
 }
 .smk-checkbox .smk-error-text,
 .smk-radio .smk-error-text{
     margin-top: -12px;
+}
+.smk-error-text + .smk-error-text {
+	margin-top: -10px;
 }
 /* form-horizontal */
 .form-horizontal .has-feedback .smk-error-text {
