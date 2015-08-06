@@ -27,13 +27,16 @@
 $.fn.smkValidate = function(options) {
 
     var settings = $.extend({
-        lang: 'en'
+        lang: 'en',
+        icon: 'glyphicon-remove-sign'
     }, $.fn.smkValidate.Languaje, options);
 
     var languaje =  {
         en: {
             // Mensaje de error para los input vacíos
             textEmpty        : 'Required field',
+            // Mensaje de error genérico
+            textNotValid	 : 'Please enter a valid value',
             // Mensaje de error para el input email
             textEmail        : 'Enter a valid email',
             // Mensaje de error para el input alphanumeric
@@ -41,7 +44,9 @@ $.fn.smkValidate = function(options) {
             // Mensaje de error para el input number
             textNumber       : 'Only numbers are allowed',
             // Mensaje de error para el input number range
-            textNumberRange  : 'The numerical range must be greater than <b> {@} </b> and less than <b> {@} </b>',
+            textRange  		 : 'The value must be greater than or equal <b> {@} </b> and less than or equal <b> {@} </b>',
+            textGreaterThan  : 'The value must be greater than or equal <b> {@} </b>',
+            textLessThan	 : 'The value must be less than or equal <b> {@} </b>',
             // Mensaje de error para el input decimal
             textDecimal      : 'Only decimal numbers are allowed',
             // Mensaje de error para el input currency
@@ -53,7 +58,9 @@ $.fn.smkValidate = function(options) {
             // Mensaje de error para longitud de caracteres
             textLength       : 'The number of characters is equal to <b> {@} </b>',
             // Mensaje de error para rango de caracteres
-            textRange        : 'The number of characters must be greater than <b> {@} </b> and less than <b> {@} </b>',
+            textLengthRange  : 'The number of characters must be greater than <b> {@} </b> and less than <b> {@} </b>',
+            textLengthGreaterThan : 'The number of characters must be greater than or equal <b> {@} </b>',
+            textLengthLessThan  : 'The number of characters must be less than or equal <b> {@} </b>',
             // Mensaje de error para strongPass Default
             textSPassDefault : 'Minimum 4 characters',
             // Mensaje de error para strongPass Weak
@@ -61,7 +68,19 @@ $.fn.smkValidate = function(options) {
             // Mensaje de error para strongPass Madium
             textSPassMedium  : 'Minimum 6 characters and a number',
             // Mensaje de error para strongPass Strong
-            textSPassStrong  : 'Minimum 6 characters a number and a capital'
+            textSPassStrong  : 'Minimum 6 characters a number and a capital',
+            textEqualTo		 : 'This value should be the same of <b> {@} </b>',
+            textCheckedRange : 'The number of options checked must be greater than <b> {@} </b> and less than <b> {@} </b>',
+            textCheckedMax	 : 'Too many options checked, maximum of <b> {@} </b> required',
+            textCheckedMin	 : 'Not enough options checked, minimum of <b> {@} </b> required',
+            textTel			 : 'Please enter a valid phone number',
+            textColor        : 'Please enter a valid hex color',
+            textUrl			 : 'Please enter a valid url',
+            textDate		 : 'Please enter a valid date',
+            textDatetime	 : 'Please enter a valid date and time',
+            textMonth		 : 'Please enter a valid month',
+            textWeek		 : 'Please enter a valid week',
+            textTime		 : 'Please enter a valid time'
         }
     };
 
@@ -72,10 +91,14 @@ $.fn.smkValidate = function(options) {
     // Se inicializan las variables globales
     var self = '';
     var father = '';
-    var result = false;
+    var result = true;
+    
+    var inputs = (this.is(':input')) ? $(this) : $(':input:not(:button):not(:disabled):not(.novalidate)', this);
+    
+    if (this.is('form')) this.attr('novalidate', 'novalidate');
 
-    // Se recorren todos los inputs del formulario
-    $(':input', this).each(function(k,v) {
+    // Se recorren todos los inputs del formulario 
+    inputs.each(function(k,v) {
 
         if($(v).attr('type') != 'button'){
             // Se obtiene el objeto input
@@ -89,7 +112,9 @@ $.fn.smkValidate = function(options) {
             // Se obtiene el type
             var type = $(v).attr('type');
             // Se obtiene el type smk
-            var smkType = $(v).attr('smk-type');
+            var smkType = $(v).attr('data-smk-type') || type;
+            // Se obtiene el pattern de una expresión regular
+            var smkPattern = $(v).attr('pattern');
             // Se obtiene el tag
             var tag = v.tagName.toLowerCase();
             // Se obtiene el requerido
@@ -97,205 +122,380 @@ $.fn.smkValidate = function(options) {
             // Se obtiene el mensaje de error
             //var smkText = $(v).attr('smk-text');
             // Se obtiene el nivel de la fuerza de la contraseña 1, 2, 3
-            var smkStrongPass = $(v).attr('smk-strongPass');
+            var smkStrongPass = $(v).attr('data-smk-strong-pass');
             // Se obtiene el valor de longitud menor aceptada
-            var minlength = $(v).attr('minlength');
+            var minlength = ($(v).attr('minlength') !== undefined) ? $(v).attr('minlength') : $(v).attr('data-smk-minlength');
             // Se obtiene el valor de longitud mayor aceptada
-            var maxlength = $(v).attr('maxlength');
-            // Se obtiene el valor de longitud menor aceptada
-            var smkMin = $(v).attr('smk-min');
-            // Se obtiene el valor de longitud mayor aceptada
-            var smkMax = $(v).attr('smk-max');
+            var maxlength = ($(v).attr('maxlength') !== undefined) ? $(v).attr('maxlength') : $(v).attr('data-smk-maxlength');
+            // Se obtiene el valor menor
+            var smkMin = ($(v).attr('min') !== undefined) ? $(v).attr('min') : $(v).attr('data-smk-min');
+            // Se obtiene el valor mayor
+            var smkMax = ($(v).attr('max') !== undefined) ? $(v).attr('max') : $(v).attr('data-smk-max');
+            // Se obtiene la referencia
+            var smkEqualTo = $(v).attr('data-smk-equalto');
+            var smkMinChecked = $(v).parents("form").find('input:checkbox[name="' + $(v).attr('name') + '"]:first').attr('data-smk-minchecked');
+            var smkMaxChecked = $(v).parents("form").find('input:checkbox[name="' + $(v).attr('name') + '"]:first').attr('data-smk-maxchecked');
+            var smkRemote = $(v).attr('data-smk-remote');
 
             // Se remueve el mensaje de error
             $.smkRemoveError(self);
 
             // Se validan los INPUTS que son requeridos
-            if (required === 'required' && (type === 'text' || tag === 'textarea' || type === 'password' || type === 'email')) {
+            if (required === 'required') {
+	            // Se valida el input SELECT required
+				if (tag === 'select') {
+	                // Se valida que el value del select no este vació
+    	            if (value === '') {
+        	            // Se agrega el mensaje de error
+            	        result = $.smkAddError(self, languaje[settings.lang].textSelect, settings.icon);
+                	}
+				// Se validan los input RADIO y/o CHECKBOX
+				} else if (type === 'radio' || type === 'checkbox') {
+					var check = $("input[name=" + name + "]:checked").val();
+					//var check = self.is(':checked');
+					// Se valida que el value del input este ckecked
+					if (check === undefined) {
+					//if (check === false) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textCheckbox, settings.icon);
+					}
                 // Se valida que el value del input no este vació
-                if (value === '') {
-                    // Se agrega el mensaje de error
-                    result =  $.smkAddError(self, languaje[settings.lang].textEmpty);
-                    return false;
                 } else {
-                    result = true;
+                	if (value === '') {
+                    	// Se agrega el mensaje de error
+                    	result =  $.smkAddError(self, languaje[settings.lang].textEmpty, settings.icon);
+                	}
                 }
             }
 
-            // Se valida el input EMAIL
-            if (required === 'required' && type === 'email') {
-                //Se crea la expresión regular para el input mail
-                var emailRegex = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-                // Se valida que el value del input cumpla con la expresión regular
-                if (!emailRegex.test(value)) {
-                    // Se agrega el mensaje de error
-                    result =  $.smkAddError(self, languaje[settings.lang].textEmail);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+			// Other validations only if value isn't blank
+			if (value !== '') {
 
-            // Se valida el input PASSWORD
-            if (required === 'required' && type === 'password') {
-                var strongPassRegex = '';
-                var textPass = '';
-                // Se obtiene el nivel de fuerza de la contraseña
-                switch (smkStrongPass) {
-                    case ('weak'):// Debe contener al menos 4 caracteres
-                        strongPassRegex = /^(?=.*[a-z0-9])\w{6,}$/;
-                        textPass = languaje[settings.lang].textSPassWeak;
-                    break;
-                    case ('medium'):// Debe contener al menos 6 caracteres y un numero
-                        strongPassRegex = /^(?=.*\d)(?=.*[a-z])\w{6,}$/;
-                        textPass = languaje[settings.lang].textSPassMedium;
-                    break;
-                    case ('strong'):// Debe contener al menos 6 caracteres, un numero y una mayúscula
-                        strongPassRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
-                        textPass = languaje[settings.lang].textSPassStrong;
-                    break;
-                    default:// Debe contener al menos 4 caracteres
-                        strongPassRegex = /^(?=.*[a-z0-9])\w{4,}$/;
-                        textPass = languaje[settings.lang].textSPassDefault;
-                }
-                // Se valida que el value del input cumpla con la expresión regular
-                if (!strongPassRegex.test(value)) {
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, textPass);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input EMAIL
+				if (type === 'email') {
+					//Se crea la expresión regular para el input mail
+					var emailRegex = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!emailRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result =  $.smkAddError(self, languaje[settings.lang].textEmail, settings.icon);
+					}
+				}
 
-            // Se valida el input SELECT
-            if (required === 'required' && tag === 'select') {
-                // Se valida que el value del select no este vació
-                if (value === '') {
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, languaje[settings.lang].textSelect);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input PASSWORD
+				if (type === 'password') {
+					var strongPassRegex = '';
+					var textPass = '';
+					// Se obtiene el nivel de fuerza de la contraseña
+					switch (smkStrongPass) {
+						case ('weak'):// Debe contener al menos 4 caracteres
+							strongPassRegex = /^(?=.*[a-z0-9])\w{6,}$/;
+							textPass = languaje[settings.lang].textSPassWeak;
+						break;
+						case ('medium'):// Debe contener al menos 6 caracteres y un numero
+							strongPassRegex = /^(?=.*\d)(?=.*[a-z])\w{6,}$/;
+							textPass = languaje[settings.lang].textSPassMedium;
+						break;
+						case ('strong'):// Debe contener al menos 6 caracteres, un numero y una mayúscula
+							strongPassRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
+							textPass = languaje[settings.lang].textSPassStrong;
+						break;
+						default:// Debe contener al menos 4 caracteres
+							strongPassRegex = /^(?=.*[a-z0-9])\w{4,}$/;
+							textPass = languaje[settings.lang].textSPassDefault;
+					}
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!strongPassRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textPass, settings.icon);
+					}
+				}
 
-            // Se validan los input RADIO y/o CHECKBOX
-            if (required === 'required' && (type === 'radio' || type === 'checkbox')) {
-                var check = $("input[name=" + name + "]:checked").val();
-                //var check = self.is(':checked');
-                // Se valida que el value del input este ckecked
-                if (check === undefined) {
-                //if (check === false) {
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, languaje[settings.lang].textCheckbox);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input ALPHANUMERIC
+				if (smkType === 'alphanumeric') {
+					// Se crea la expresión regular para el input alphanumeric
+					var alphanumericRegex = /^[a-z0-9]+$/i;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!alphanumericRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textAlphanumeric, settings.icon);
+					}
+				}
 
-            // Se valida el input ALPHANUMERIC
-            if (smkType === 'alphanumeric') {
-                // Se crea la expresión regular para el input alphanumeric
-                var alphanumericRegex = /^[a-z0-9]+$/i;
-                // Se valida que el value del input cumpla con la expresión regular
-                if (!alphanumericRegex.test(value)) {
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, languaje[settings.lang].textAlphanumeric);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input NUMBER
+				if (smkType === 'number') {
+					// Se crea la expresión regular para el input number
+					var numberRegex = /^\d+$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!numberRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textNumber, settings.icon);
+					}
+				}
 
-            // Se valida el input NUMBER
-            if (smkType === 'number') {
-                // Se crea la expresión regular para el input number
-                var numberRegex = /^\d+$/;
-                // Se valida que el value del input cumpla con la expresión regular
-                if (!numberRegex.test(value)) {
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, languaje[settings.lang].textNumber);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input DECIMAL
+				if (smkType === 'decimal') {
+					// Se crea la expresión regular para el input decimal
+					var decimalRegex = /^\d+(?:\.\d{1,4})?$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!decimalRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textDecimal, settings.icon);
+					}
+				}
 
-            // Se valida el input DECIMAL
-            if (smkType === 'decimal') {
-                // Se crea la expresión regular para el input decimal
-                var decimalRegex = /^\d+(?:\.\d{1,4})?$/;
-                // Se valida que el value del input cumpla con la expresión regular
-                if (!decimalRegex.test(value)) {
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, languaje[settings.lang].textDecimal);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input CURRENCY
+				if (smkType === 'currency') {
+					// Se crea la expresión regular para el input currency con $ al inicio
+					//var currencyRegex = /^\$?(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
+					// Se crea la expresión regular para el input currency
+					var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!currencyRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textCurrency, settings.icon);
+					}
+				}
 
-            // Se valida el input CURRENCY
-            if (smkType === 'currency') {
-                // Se crea la expresión regular para el input currency con $ al inicio
-                //var currencyRegex = /^\$?(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
-                // Se crea la expresión regular para el input currency
-                var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/;
-                // Se valida que el value del input cumpla con la expresión regular
-                if (!currencyRegex.test(value)) {
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, languaje[settings.lang].textCurrency);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input COLOR
+				if (smkType === 'color') {
+					// Se crea la expresión regular para el input color (hex)
+					var colorRegex = /^#([0-9a-f]{3}){1,2}$/i;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!colorRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textColor, settings.icon);
+					}
+				}
 
-            // Se valida el input longitud o rango de caracteres MINLENGTH o MAXLENGTH
-            if ((typeof(minlength) !== 'undefined' || typeof(maxlength) !== 'undefined')) {
-                // Si contiene ambos y son iguales
-                if (minlength === maxlength) {
-                    if ((value.length != minlength) && (value.length != maxlength)) {
-                        // Se personaliza el mensaje de error
-                        var textLength = $.smokeCustomizeText(languaje[settings.lang].textLength, maxlength);
-                        // Se agrega el mensaje de error
-                        result = $.smkAddError(self, textLength);
-                        return false;
-                    } else {
-                        result = true;
-                    }
-                // Si contiene ambos y son diferentes
-                } else if (minlength !== maxlength) {
-                    if ((value.length < minlength) || (value.length > maxlength)) {
-                        var arrayTextRange = [];
-                        arrayTextRange[0] = parseInt(minlength-1);
-                        arrayTextRange[1] = parseInt(maxlength)+1;
-                        // Se personaliza el mensaje de error
-                        var textRange = $.smokeCustomizeText(languaje[settings.lang].textRange, arrayTextRange);
-                        // Se agrega el mensaje de error
-                        result = $.smkAddError(self, textRange);
-                        return false;
-                    } else {
-                        result = true;
-                    }
-                }
-            }
-            // Se valida el input numero rango
-            if ((typeof(smkMin) !== 'undefined' || typeof(smkMax) !== 'undefined')) {
-                if((value < smkMin) || (value > smkMax)){
-                    var arrayTextNumberRange = [];
-                    arrayTextNumberRange[0] = parseInt(smkMin-1);
-                    arrayTextNumberRange[1] = parseInt(smkMax)+1;
-                    var textNumberRange = $.smokeCustomizeText(languaje[settings.lang].textNumberRange, arrayTextNumberRange);
-                    // Se agrega el mensaje de error
-                    result = $.smkAddError(self, textNumberRange);
-                    return false;
-                } else {
-                    result = true;
-                }
-            }
+				// Se valida el input URL
+				if (smkType === 'url') {
+					// Se crea la expresión regular para el input url
+					var urlRegex = /^(http|ftp|https):\/\/[\w-]+(\.[\w-]+)*([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!urlRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textUrl, settings.icon);
+					}
+				}
+			
+				// Se valida el input TEL
+				if (smkType === 'tel') {
+					// Se crea la expresión regular para el input url
+					var telRegex = /^(\+?)\d{10,15}$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!telRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textTel, settings.icon);
+					}
+				}
+				
+				// Se valida el input DATE
+				if (smkType === 'date') {
+					// Se crea la expresión regular para el input time
+					var dateRegex = /^([0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!dateRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textDate, settings.icon);
+					}
+				}
+
+				// Se valida el input DATETIME
+				if (smkType === 'datetime') {
+					// Se crea la expresión regular para el input time
+					var datetimeRegex = /^([0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!datetimeRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textDatetime, settings.icon);
+					}
+				}
+
+				// Se valida el input MONTH
+				if (smkType === 'month') {
+					// Se crea la expresión regular para el input time
+					var monthRegex = /^([0-9]{4})-(1[0-2]|0[1-9])$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!monthRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textMonth, settings.icon);
+					}
+				}
+				
+				// Se valida el input WEEK
+				if (smkType === 'week') {
+					// Se crea la expresión regular para el input time
+					var weekRegex = /^([0-9]{4})-?W(5[0-3]|[1-4][0-9]|0[1-9])$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!weekRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textWeek, settings.icon);
+					}
+				}
+				
+				// Se valida el input TIME
+				if (smkType === 'time') {
+					// Se crea la expresión regular para el input time
+					var timeRegex = /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])(:([0-5]?[0-9]))?$/;
+					// Se valida que el value del input cumpla con la expresión regular
+					if (!timeRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textTime, settings.icon);
+					}
+				}
+			
+				// Se valida el pattern de una expresión regular
+				if (smkPattern !== '' && smkPattern !== undefined && (smkType === 'text' || smkType === 'search' || smkType === 'url' || smkType === 'tel' || smkType === 'email' || smkType === 'password')) {
+					// Se valida que el value del input cumpla con la expresión regular
+					var patternRegex = new RegExp('^(?:' + smkPattern + ')$');
+					if (!patternRegex.test(value)) {
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, languaje[settings.lang].textNotValid, settings.icon);
+					}
+				}
+			
+				if (typeof(smkEqualTo) !== 'undefined' && $(smkEqualTo).length) {
+					if (value !== $(smkEqualTo).val()) {
+						var $lbl_equal_to = $(smkEqualTo).parents('.form-group').first().find('label');
+						var lbl_equal_to = ($lbl_equal_to.length) ? $lbl_equal_to.clone().children().remove().end().text() : $(smkEqualTo).attr('name').replace(/_/g, ' ');
+						// Se personaliza el mensaje de error
+						var textEqualTo = $.smokeCustomizeText(languaje[settings.lang].textEqualTo, String(lbl_equal_to));
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textEqualTo, settings.icon);
+					}
+				}
+			
+				// Se valida el input longitud o rango de caracteres MINLENGTH o MAXLENGTH
+				if ((typeof(minlength) !== 'undefined' || typeof(maxlength) !== 'undefined') && (smkType === 'text' || smkType === 'search' || smkType === 'url' || smkType === 'tel' || smkType === 'email' || smkType === 'password')) {
+					// Si contiene ambos y son iguales
+					if (minlength === maxlength) {
+						if ((value.length != minlength) && (value.length != maxlength)) {
+							// Se personaliza el mensaje de error
+							var textLength = $.smokeCustomizeText(languaje[settings.lang].textLength, maxlength);
+							// Se agrega el mensaje de error
+							result = $.smkAddError(self, textLength, settings.icon);
+						}
+					// Si contiene ambos y son diferentes
+					} else if (typeof(minlength) !== 'undefined' && typeof(maxlength) !== 'undefined' && minlength !== maxlength) {
+						if ((value.length < minlength) || (value.length > maxlength)) {
+							var arrayTextRange = [];
+							arrayTextRange[0] = parseInt(minlength-1);
+							arrayTextRange[1] = parseInt(maxlength)+1;
+							// Se personaliza el mensaje de error
+							var textLengthRange = $.smokeCustomizeText(languaje[settings.lang].textLengthRange, arrayTextRange);
+							// Se agrega el mensaje de error
+							result = $.smkAddError(self, textLengthRange, settings.icon);
+						}
+					} else if(typeof(minlength) !== 'undefined' && value.length < minlength){
+						var textLengthGreaterThan = $.smokeCustomizeText(languaje[settings.lang].textLengthGreaterThan, String(minlength));
+						result = $.smkAddError(self, textLengthGreaterThan, settings.icon);						
+					} else if(typeof(maxlength) !== 'undefined' && value.length > maxlength){
+						var textLengthLessThan = $.smokeCustomizeText(languaje[settings.lang].textLengthLessThan, String(maxlength));
+						result = $.smkAddError(self, textLengthLessThan, settings.icon);						
+					}
+				}
+				
+				// Se valida el input numero rango MIN o MAX
+				if ((typeof(smkMin) !== 'undefined' || typeof(smkMax) !== 'undefined') && (smkType === 'text' || smkType === 'time' || smkType === 'datetime' || smkType === 'date' || smkType === 'month' || smkType === 'week' || smkType === 'datetime-local' || smkType === 'number' || smkType === 'range')) {
+					if (smkType === 'datetime' || smkType === 'date' || smkType === 'month') {
+						var chkValue = new Date(value);
+						var chkMin = new Date(smkMin);
+						var chkMax = new Date(smkMax);
+					} else if (smkType === 'week'){
+						var t = value.split('-W');
+						var chkValue = (+t[0]) * ((+t[0] % 400 == 0 || (+t[0] % 100 != 0 && +t[0] % 4 == 0)) ? 366 : 365) + (+t[1]) * 7;
+						t = smkMin.split('-W');
+						var chkMin = (+t[0]) * ((+t[0] % 400 == 0 || (+t[0] % 100 != 0 && +t[0] % 4 == 0)) ? 366 : 365) + (+t[1]) * 7; 
+						t = smkMax.split('-W');
+						var chkMax = (+t[0]) * ((+t[0] % 400 == 0 || (+t[0] % 100 != 0 && +t[0] % 4 == 0)) ? 366 : 365) + (+t[1]) * 7;
+					} else if (smkType === 'time'){
+						var t = value.split(':');
+						var chkValue = (+t[0]) * 60 * 60 + (+t[1]) * 60 + (+t[2] || 0);
+						t = smkMin.split(':');
+						var chkMin = (+t[0]) * 60 * 60 + (+t[1]) * 60 + (+t[2] || 0); 
+						t = smkMax.split(':');
+						var chkMax = (+t[0]) * 60 * 60 + (+t[1]) * 60 + (+t[2] || 0);
+					} else {
+						var chkValue = parseInt(value);
+						var chkMin = parseInt(smkMin);
+						var chkMax = parseInt(smkMax);
+					}
+					if(typeof(smkMin) !== 'undefined' && typeof(smkMax) !== 'undefined' && ((chkValue < chkMin) || (chkValue > chkMax))){
+						var arrayTextRange = [];
+						arrayTextRange[0] = smkMin;
+						arrayTextRange[1] = smkMax;
+						var textRange = $.smokeCustomizeText(languaje[settings.lang].textRange, arrayTextRange);
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textRange, settings.icon);
+					} else if(typeof(smkMin) !== 'undefined' && chkValue < chkMin){
+					    var minVal = String(smkMin);
+						var textGreaterThan = $.smokeCustomizeText(languaje[settings.lang].textGreaterThan, minVal);
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textGreaterThan, settings.icon);
+					} else if(typeof(smkMax) !== 'undefined' && chkValue > chkMax){
+					    var maxVal = String(smkMax);
+						var textLessThan = $.smokeCustomizeText(languaje[settings.lang].textLessThan, maxVal);
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textLessThan, settings.icon);
+					}
+				}
+				
+				if ((typeof(smkMinChecked) !== 'undefined' || typeof(smkMaxChecked) !== 'undefined') && type === 'checkbox') {
+					var chkMinChecked = parseInt(smkMinChecked);
+					var chkMaxChecked = parseInt(smkMaxChecked);
+					var chkNumber = $(v).parents("form").first().find('input[type="checkbox"][name="' + name + '"]:checked').length;
+					if(typeof(smkMinChecked) !== 'undefined' && typeof(smkMaxChecked) !== 'undefined' && ((chkNumber < chkMinChecked) || (chkNumber > chkMaxChecked))){
+						var arrayTextRange = [];
+						arrayTextRange[0] = chkMinChecked;
+						arrayTextRange[1] = chkMaxChecked;
+						var textRange = $.smokeCustomizeText(languaje[settings.lang].textCheckedRange, arrayTextRange);
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textRange, settings.icon);
+					} else if(typeof(smkMinChecked) !== 'undefined' && chkNumber < chkMinChecked){
+					    var minVal = String(chkMinChecked);
+						var textGreaterThan = $.smokeCustomizeText(languaje[settings.lang].textCheckedMin, minVal);
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textGreaterThan, settings.icon);
+					} else if(typeof(smkMaxChecked) !== 'undefined' && chkNumber > chkMaxChecked){
+					    var maxVal = String(chkMaxChecked);
+						var textLessThan = $.smokeCustomizeText(languaje[settings.lang].textCheckedMax, maxVal);
+						// Se agrega el mensaje de error
+						result = $.smkAddError(self, textLessThan, settings.icon);
+					}
+				}
+				
+				if (typeof(smkRemote) !== 'undefined' && smkRemote !== '') {
+					$.ajax({
+                    	url: smkRemote,
+                    	data: name + "=" + encodeURIComponent(value),
+                    	dataType: "json",
+                        success: function (data) {
+                        	if (!data.valid){
+								result = (data.text) ? data.text : $.smkAddError(self, languaje[settings.lang].textNotValid, settings.icon);
+                        	}
+                        },
+                        failure: function () {
+                        	result = $.smkAddError(self, languaje[settings.lang].textNotValid, settings.icon);
+                        }
+                    });				
+				}
+				
+				
+			} // End if (value)
+			
+			if (type === 'checkbox' || type === 'radio') {
+				// Only to extend the listeners to all items
+				self = $(v).parents("form").first().find(':input[name="' + name + '"]');
+			}
+
+			$(self)
+				.off('.validation') // remove all events in namespace validation
+  				.on('keyup.validation change.validation click.validation', function(e) {
+  					// Check for validation
+					$(this).smkValidate(options);
+      			});
+
             /*
             |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
             |   FALTAN INPUTS POR VALIDAR
@@ -304,22 +504,8 @@ $.fn.smkValidate = function(options) {
         }
     });
 
-    // Si se teclea algo en el input se remueven los mensajes de error
-    $(self).keyup(function() {
-        // Se valida que el value del input no este vació
-        if (self.val() !== '') {
-            // Se remueve el mensaje de error
-            $.smkRemoveError(self);
-        }
-    });
-    // Si cambia el input select se remueven los mensajes de error
-    $(self).change(function() {
-        // Se valida que el value del input no este vació
-        if (self.val() !== '') {
-            // Se remueve el mensaje de error
-            $.smkRemoveError(self);
-        }
-    });
+    if (!result) this.find('.form-group.has-feedback.has-error').first().find(':input:not(:button):not(:disabled):not(.novalidate)').first().focus();
+    
     //Se retorna el resultado
     return result;
 };
@@ -327,6 +513,41 @@ $.fn.smkValidate = function(options) {
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
 |   if($('#form').smkValidate({lang:'es'})){}
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+
+
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Validation auto-binding
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+$(function () {
+	if ($('[data-smk-validate]').length) {
+		$('[data-smk-validate]').each(function(){
+			var _settings = [];
+			if ($(this).attr('data-smk-validate-lang') !== '') _settings['lang'] = $(this).attr('data-smk-validate-lang');
+			if ($(this).attr('data-smk-validate-icon') !== '') _settings['icon'] = $(this).attr('data-smk-validate-icon');
+			if ($(this).is('form')) {
+				$(this).attr('novalidate', 'novalidate');
+				$(this).on('submit.validation', function(e) {
+					return ($(this).smkValidate(_settings));
+				});
+			} else {
+				$(this).on('keyup.validation change.validation click.validation', function(e) {
+					return ($(this).smkValidate(_settings));
+				});
+			}
+		});
+    }
+});
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Usage
+|   <form ... data-smk-validate>...
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
@@ -367,7 +588,7 @@ $.smkEqualPass = function(password, repassword, lang) {
     // Si los password son diferentes se retorna false
     if (password !== $(repassword).val()) {
         // Se agrega el mensaje de error
-        return $.smkAddError($(repassword), languaje[lang].textEqualPass);
+        return $.smkAddError($(repassword), languaje[lang].textEqualPass, settings.icon);
     // Si los passwords son iguales se retorna true
     } else {
         return true;
@@ -463,13 +684,12 @@ $.fn.smkClear = function(options) {
 
 
 
-
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Se crea el método que agrega el mensaje de error
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
-$.smkAddError = function (obj, text)
+$.smkAddError = function (obj, text, icon)
 {
     // Se obtiene el elemento form-group
     var formGroup = $(obj).parents('.form-group');
@@ -480,39 +700,55 @@ $.smkAddError = function (obj, text)
     // Se obtiene el tag
     var tag = $(obj).prop('tagName').toLowerCase();
     // Se obtiene el mensaje de error
-    var smkText = $(obj).attr('smk-text');
+    var smkText = $(obj).attr('data-smk-text');
+    // Se obtiene el id de mensaje
+    var id_help_block = $(obj).attr('name') + '_help_block';
+    $(obj).attr('aria-describedby', id_help_block);
 
+	// Add or not message
+	var addMsg = true;
+	
     // Si el input no contiene mensaje de error se asigna uno
     if (smkText === '' || smkText === undefined) {
         smkText = text;
+    } else {
+    	// If smk-text is defined, add message once
+    	if (formGroup.find('.help-block.smk-error-text').length) {
+    		addMsg = false;
+    	}    		
     }
 
-    // Si type es indefinido se asigna el nombre del tag
-    if(type === undefined){
-        type = tag;
-    }
+	if (addMsg) {
 
-    // Se crea el template del mensaje de error
-    var icon = '<span class="glyphicon glyphicon-remove-sign form-control-feedback smk-error-icon"></span>';
-    var msj = '<span class="smk-error-text">' + smkText + '</span>';
+		// Si type es indefinido se asigna el nombre del tag
+		if(type === undefined){
+			type = tag;
+		}
 
-    if(type == 'select'){
-        // Se agrega la clase de error
-        formGroup.addClass('has-feedback has-error smk-' + type);
-        // Se agrega el icono y el mensaje de error
-        parent.append(icon + msj);
-    }else if(type == 'checkbox' || type == 'radio'){
-        // Se agrega la clase de error
-        formGroup.addClass('has-feedback has-error smk-' + type);
-        // Se agrega el icono y el mensaje de error
-        parent.parent().parent().append(msj);
-    }else{
-        // Se agrega la clase de error
-        formGroup.addClass('has-feedback has-error');
-        // Se agrega el icono y el mensaje de error
-        parent.append(icon + msj);
+		// Se crea el template del mensaje de error
+		var icon = (icon !== 'none' && !formGroup.find('.form-control-feedback.smk-error-icon').length) ? '<span class="glyphicon ' + icon + ' form-control-feedback smk-error-icon" aria-hidden="true"></span>' : '';
+		var msj = '<small id="' + id_help_block + '" class="help-block smk-error-text">' + smkText + '</small>';
 
-    }
+		if(type == 'select'){
+			// Se agrega la clase de error
+			formGroup.addClass('has-error smk-' + type);
+			// Se agrega el icono y el mensaje de error
+			parent.append(icon + msj);
+		}else if(type == 'checkbox' || type == 'radio'){
+			// Se agrega la clase de error
+			formGroup.addClass('has-error smk-' + type);
+			// Se agrega el icono y el mensaje de error
+			parent.parent().parent().append(msj);
+		}else{
+			// Se agrega la clase de error
+			formGroup.addClass('has-error');
+			// Se agrega el icono y el mensaje de error
+			parent.append(icon + msj);
+
+		}
+		if (icon !== '') formGroup.addClass('has-feedback');
+	
+	}
     // Se posiciona el focus en el input
     obj.focus();
     // Se retorna false
