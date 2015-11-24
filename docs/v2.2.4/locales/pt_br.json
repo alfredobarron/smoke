@@ -1,0 +1,237 @@
+{
+    "GETTING-STARTED": "Primeiros passos",
+    "VALIDATE": "Validação",
+    "NOTIFICATIONS": "Notificações",
+    "PROGRESSBAR": "Barra de progresso",
+    "FULLSCREEN": "Tela inteira",
+    "PANEL": "Panel",
+    "HELPERS": "Helpers",
+
+    "BRAZILIANPORTUGUESE":"Português Brasileiro",
+    "DEUTSCH": "Alemão",
+    "ENGLISH": "Inglês",
+    "FRENCH" : "Francês",
+    "ITALIAN" : "Italiano",
+    "JAPANESE": "Japonês",
+    "SPANISH": "Espanhol",
+
+	"SLOGAN": "Smoke é o Plugin jQuery mais completo e elaborado para se utilizar com Bootstrap 3",
+    "DOWNLOAD": "Baixar",
+
+    "FEATURES": "FUNCIONALIDADES",
+
+    "GITHUB": "Smoke é open source. É hospedado, desenvolvido, e mantido no GitHub.",
+    "VIEW-IN": "Visualizar no",
+
+    "DESIGNED": "Elaborado e desenvolvido com amor por",
+    "TRANSLATED": "Traduzido por",
+    "LICENSE": "Código e documentação (c) Copyright 2015 Alfredo Barron. Código publicado sob",
+    "ISSUES": "Assuntos",
+    "RELEASES": "Versões",
+
+
+
+
+	"GETTING-STARTED-DESC": "Uma visão geral do Smoke, como baixar e utilizar.",
+
+	"DOWNLOAD-DESC": "Baixe o Smoke e adicione em seu projeto, É simples e rápido.",
+
+    "INSTALL": "Instale com",
+
+    "WHATS-INCLUDED": "Conteúdo",
+    "WHATS-INCLUDED-DESC": "Uma vez baixado, descompacte o arquivo .zip para visualizar a estrutura de pastas do Smoke. Você visualizará conforme abaixo:",
+
+    "REQUIRED": "Dependências",
+    "REQUIRED-DESC": "Para utilizar o Smoke, essas duas dependências são necessárias",
+	"REQUIRED-JQUERY": "Note que o plugin Smoke depende da biblioteca jQuery inclusa.",
+	"REQUIRED-BOOTSTRAP": "Note que o plugin Smoke depende do framework Bootstrap 3 incluso.",
+
+    "BASIC-TEMPLATE": "Modelo básico",
+	"BASIC-TEMPLATE-DESC": "Inicie com este modelo básico em HTML ou modifique de acordo com suas necessidades.",
+	"BASIC-TEMPLATE-DESC2": "Copie o código HTML abaixo para iniciar com os requerimentos mínimos do Smoke.",
+
+
+
+
+    "VALIDATE": "Validação de Formulário",
+	"VALIDATE-DESC": "Crie a validação de formulário do cliente de forma fácil, simples e segura.",
+
+    "INPUT-EMPTY": "Campo vazio",
+	"INPUT-EMPTY-DESC": "Para validar um campo obrigatório é necessário apenas incluir o atributo <code>required</code> no elemento <code>input</code> . Os tipos de campos suportados até o momento são <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> and <code>checkbox</code>. A função utilizada para validar é <span class = 'text-success'> smkValidate () </span>.",
+    "INPUT-EMPTY-NOTE": "É necessário que o <code>input</code> esteja dentro de uma <code>div</code> utilizando a classe <code>form-group</code>",
+
+    "INPUT-EMAIL": "Campo email",
+    "INPUT-EMAIL-DESC": "Para validar uma conta de email, o campo deve ser do tipo <code>email</code> e atributo <code>required</code> incluso dentro do elemento <code>input</code>.",
+
+    "INPUT-ALPHANUMERIC": "Campo alfanumérico",
+    "INPUT-ALPHANUMERIC-DESC": "Para validar um campo que aceita somente números e letras, o campo deve ser to tipo texto, inclua o atributo required no elemento input, e também inclua o atributo <code>smk-type</code> com a propriedade alphanumeric.",
+
+    "INPUT-NUMBER": "Campo número",
+    "INPUT-NUMBER-DESC": "Para validar um campo que aceita somente números, o campo deve ser do tipo <code>text</code>, inclua o atributo <code>required</code> no elemento <code>input</code>. e também inclua o atributo <code>smk-type</code> com o valor <code>number</code>.",
+
+    "INPUT-NUMBERRANGE": "Campo com intervalo numérico",
+    "INPUT-NUMBERRANGE-DESC": "Para validar um campo que aceita somente números e intervalo de números, o campo deve ser do tipo <code>text</code>, inclua o atributo <code>required</code> ao elemento  <code>input</code>. Da mesma maneira inclua o atributo <code>smk-type</code> com valor <code>number</code>, também inclua os atributos <code>smk-min</code> e <code>smk-max</code> informando o intervalo numérico desejado.",
+
+    "INPUT-DECIMAL": "Campo decimal",
+    "INPUT-DECIMAL-DESC": "Para validar um campo que aceita somente números decimais, o campo deve ser do tipo <code>text</code>, inclua o atributo <code>required</code> no elemento <code>input</code>. inclua também o atributo <code>smk-type</code> com valor <code>decimal</code>.",
+
+    "INPUT-CURRENCY": "Campo monetário",
+    "INPUT-CURRENCY-DESC": "Para validar um campo que aceita somente números, vírgulas, pontos, e formatos monetários, o campo deve ser do tipo <code>text</code>, inclua o atributo <code>required</code> dentro do elemento <code>input</code>. Da mesma maneira inclua o atributo <code>smk-type</code> com valor <code>currency</code>.",
+
+    "NUMBER-CHARACTER": "Caracterer numérico",
+    "NUMBER-CHARACTER-DESC": "Para validar um campo que aceita somente um número exato de caracteres, inclua o atributo <code>required</code> no elemento <code>input</code> . Também inclua os atributos <code>minLength</code> e <code>maxlength</code> com os valores permitidos.",
+
+    "RANGE-CHARACTER": "Intervalo de caracteres",
+    "RANGE-CHARACTER-DESC": "Para validar um campo que aceita somente um intervalo de caracteres numéricos, inclua o atributo <code>required</code> no elemento <code>input</code> . Também inclua os atributos <code>minLength</code> e <code>maxlength</code> com o valor do intervalo de números permitidos.",
+
+    "STRONG-PASSWORD": "Senha segura",
+    "STRONG-PASSWORD-DESC": "Para validar um campo que aceita somente senha forte e segura, o campo deve ser do tipo <code>password</code>, inclua o atributo <code>required</code> no elemento <code>input </ code > e finalmente inclua o atributo <code>smk-strongPass</code> com o valor de segurança obrigatório.",
+    "STRONG-PASSWORD-TB": {
+        "DESC": "Descrição",
+        "DESCS": {
+            "DEFAULT": "Mínimo 4 caracteres",
+            "WEAK": "Mínimo 6 caracteres",
+            "MEDIUM": "Mínimo 6 caracteres alfanuméricos e ao menos um deve ser numérico",
+            "STRONG": "Mínimo 6 caracteres, combinando números, letras maiúsculas e minúsculas."
+        }
+    },
+
+    "EQUAL-PASSWORD": "Equivalência de senha",
+    "EQUAL-PASSWORD-DESC": "Para validar se os textos contidos em dois campos são iguais, inclua o atributo <code>required</code> no primeiro elemento <code>input</code> . Utilize a função <span class='text-success'>$.smkEqualPass()</span>.",
+
+    "EQUAL-PASSWORD-VAR": "Equivalência de senha utilizando JavaScript",
+    "EQUAL-PASSWORD-VAR-DESC": "Para validar que o texto contido em um campo é igual ao valor de uma variável JavaScript, inclua o atributo <code>required</code> no elemento <code>input</code> . Utilize a função <span class='text-success'>$.smkEqualPass()</span>. ",
+
+    "CLEAR-FORM": "Limpar formulário",
+    "CLEAR-FORM-DESC": "Para limpar formulários utilize a função <span class='text-success'>smkClear()</span> . Para não limpar um ou mais tipos de campos, utilize a opção <span class='text-primary'>noClear</span> dentro da função. ",
+
+    "CUSTOMIZE-MESSAGE": "Mensagem customizada",
+    "CUSTOMIZE-MESSAGE-DESC": "Customize a mensagem de erro adicionando o atributo <code>smk-text</code> no elemento <code>input</code> .",
+
+    "LANGUAGE": "Idioma",
+    "LANGUAGE-DESC": "Para alterar o idioma das validações de mensagens, inclua no HTML os scripts necessários e então informe o idioma na opção <code>lang</code> da função <span class='text-success'> smkValidate()</span> .",
+    "LANGUAGE-TB": {
+        "TITLE": "Idiomas suportados",
+        "LANGUAGE": "Idioma",
+        "ARCHIVE": "Arquivo"
+    },
+
+
+    "OPTIONS": "Opções",
+    "OPTION":"Opção",
+    "TYPE":"Tipo",
+    "DESCRIPTION":"Descrição",
+
+
+	"NOTIFICATIONS-DESC": "Crie alertas ou confirmações de mensagens funcionais tão simples quanto utilizar JavaScript nativo.",
+
+    "ALERTS": "Alertas",
+    "ALERTS-DESC": "Exibindo mensagem de alerta para ações dos usuários quando um evento é acionado.",
+    "ALERTS-TB": {
+        "DESC": "Customização de alertas, alterando a mensagem, cor, duração ou a permanência do alerta.",
+        "DESCS": {
+            "TEXT":"Mensagem",
+            "TYPE":"Tipo da mensagem",
+            "TIME":"Duração do alerta em segundos",
+            "PERMANENT":"Alerta permanente"
+        }
+    },
+
+    "CONFIRMATION": "Confirmação",
+    "CONFIRMATION-DESC": "Exibindo mensagem de confirmação para ações dos usuários quando um evento é acionado.",
+    "CONFIRMATION-TB": {
+        "DESC": "Customização de confirmações, altera a mensagem e o texto dos botões.",
+        "DESCS": {
+            "TEXT":"Mensagem",
+            "ACCEPT":"Texto do botão de confirmação",
+            "CANCEL":"Texto do botão cancelar"
+        }
+    },
+
+
+
+
+    "PROGRESSBAR-DESC": "Inclua uma barra de progresso em sua aplicação.",
+    "PROGRESSBAR-DESC2": "Inclua uma barra de progresso em qualquer evento de sua aplicação.",
+    "PROGRESSBAR-TB": {
+        "DESC": "Customize o elemento em que a barra de progresso será adicionada. Defina quando iniciar e quando terminar.",
+        "DESCS": {
+            "ELEMENT": "Elemento em que a barra de progresso será adicionada",
+            "STATUS": "Quando iniciar e quando terminar"
+        }
+    },
+
+
+
+    "FULLSCREEN-DESC": "Inclua a funcionalidade de tela inteira em sua aplicação.",
+    "FULLSCREEN-DESC2": "Para adicionar o botão tela inteira é necessário apenas indicar para a função qual será o contâiner.",
+
+
+
+    "PANEL-DESC": "Adicione funcionalidade para os seus panels",
+    "PANEL-DESC2": "Adicione funcionalidade para os seus panels, minimizando-os, expandindo-os ou removendo-os.",
+    "PANEL-TB": {
+        "DESC": "Customizando os botões que você deseja exibir.",
+        "DESCS": {
+            "HIDE": "botões escondidos"
+        }
+    },
+
+
+
+    "HELPERS-DESC": "Coleção de funções de ajuda.",
+
+    "STRING-FLOAT": "String para float",
+    "STRING-FLOAT-DESC": "Converte uma string para float.",
+
+    "NUMBER-CURRENCY": "Formato monetário",
+    "NUMBER-CURRENCY-DESC": "Converte número para formato monetário.",
+    "NUMBER-CURRENCY-NOTE": "Esta função possui dois parâmetros, o primeiro é o número que deseja formatar e o segundo é o prefixo ou símbolo monetário.",
+
+    "URL-DESC": "Obter URL.",
+    "URL-NOTE": "Esta função possui parâmetro (opcional) que é o número de pastas para obter após a URL.",
+
+
+    "DATE": "Data",
+    "DATE-DESC": "Com esta função você poderá obter, formatar, traduzir e customizar datas",
+    "DATE-NOTE": "Para alterar o idioma da data, inclua no HTML o script do idioma desejado.",
+    "DATE-TB": {
+        "DEFAULT": {
+            "DATE": "Data Atual"
+        },
+        "DESCS": {
+            "DATE": "Data",
+            "FORMAT": "Formato",
+            "LANG": "Idioma da data"
+        }
+    },
+    "DATE-TB2": {
+        "DESC": "Formatos",
+        "TITLE": "Formato",
+        "DESCS": {
+            "d": "Exibir dia sem 0 (Zero) a esquerda",
+            "dd": "Exibir dia com 0 (Zero) a esquerda",
+            "m": "Exibir mês sem 0 (Zero) a esquerda",
+            "mm": "Exibir mês com o (Zero) a esquerda",
+            "M": "Nome do mês abreviado",
+            "MM": "Nome completo do mês",
+            "yy": "2 dígitos para ano",
+            "yyyy": "4 dígitos para ano"
+        }
+    },
+
+    "DATE-DIFF": "Diferença entre datas",
+    "DATE-DIFF-DESC": "Obtenha a diferença entre duas datas",
+    "DATE-DIFF-TB":{
+        "DEFAULT" : {
+            "DATE": "Data atual",
+            "INTERVAL": "dias"
+        },
+        "DESCS": {
+            "DATE" : "datas para comparar",
+            "INTERVAL" : "Intervalo"
+
+        }
+    }
+
+}

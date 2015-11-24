@@ -6,7 +6,7 @@
 
 
 
-Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3
+Smoke form validation and components for Bootstrap
 
 
 
@@ -85,6 +85,9 @@ If you want to making changes Better avoid working directly on the master branch
 - [@sdhp](https://github.com/sdhp)
 - [@LespiletteMaxime](https://github.com/LespiletteMaxime)
 - [@druzza](https://github.com/druzza)
+- [@adaniello](https://github.com/adaniello)
+- [@tamerwaw](https://github.com/tamerwaw)
+- [@itsromack](https://github.com/itsromack)
 
 
 

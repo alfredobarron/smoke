@@ -9,57 +9,88 @@
   <div class="row">
 
     <div class="col-lg-3">
-      <div class="list-group" affix>
-        <ul class="nav">
-          <a href="" smooth-scroll target="input-empty" offset="80" class="list-group-item">{{'INPUT-EMPTY' | translate}}</a>
-          <a href="" smooth-scroll target="input-email" offset="80" class="list-group-item">{{'INPUT-EMAIL' | translate}}</a>
-          <a href="" smooth-scroll target="input-alphanumeric" offset="80" class="list-group-item">{{'INPUT-ALPHANUMERIC' | translate}}</a>
-          <a href="" smooth-scroll target="input-number" offset="80" class="list-group-item">{{'INPUT-NUMBER' | translate}}</a>
-          <a href="" smooth-scroll target="input-numberRange" offset="80" class="list-group-item">{{'INPUT-NUMBERRANGE' | translate}}</a>
-          <a href="" smooth-scroll target="input-decimal" offset="80" class="list-group-item">{{'INPUT-DECIMAL' | translate}}</a>
-          <a href="" smooth-scroll target="input-currency" offset="80" class="list-group-item">{{'INPUT-CURRENCY' | translate}}</a>
-          <a href="" smooth-scroll target="number-character" offset="80" class="list-group-item">{{'NUMBER-CHARACTER' | translate}}</a>
-          <a href="" smooth-scroll target="range-character" offset="80" class="list-group-item">{{'RANGE-CHARACTER' | translate}}</a>
-          <a href="" smooth-scroll target="strong-password" offset="80" class="list-group-item">{{'STRONG-PASSWORD' | translate}}</a>
-          <a href="" smooth-scroll target="equal-password" offset="80" class="list-group-item">{{'EQUAL-PASSWORD' | translate}}</a>
-          <a href="" smooth-scroll target="equal-password-var" offset="80" class="list-group-item">{{'EQUAL-PASSWORD-VAR' | translate}}</a>
-          <a href="" smooth-scroll target="clear-form" offset="80" class="list-group-item">{{'CLEAR-FORM' | translate}}</a>
-          <a href="" smooth-scroll target="customize-message" offset="80" class="list-group-item">{{'CUSTOMIZE-MESSAGE' | translate}}</a>
-          <a href="" smooth-scroll target="language" offset="80" class="list-group-item">{{'LANGUAGE' | translate}}</a>
-        </ul>
-      </div>
+      <ul class="list-unstyled">
+        <li><a href="" smooth-scroll target="overview">{{'OVERVIEW' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-empty">{{'INPUT-EMPTY' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-email">{{'INPUT-EMAIL' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-alphanumeric">{{'INPUT-ALPHANUMERIC' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-number">{{'INPUT-NUMBER' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-numberRange">{{'INPUT-NUMBERRANGE' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-decimal">{{'INPUT-DECIMAL' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-currency">{{'INPUT-CURRENCY' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="number-character">{{'NUMBER-CHARACTER' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="range-character">{{'RANGE-CHARACTER' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="strong-password">{{'STRONG-PASSWORD' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="equal-password">{{'EQUAL-PASSWORD' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="equal-password-var">{{'EQUAL-PASSWORD-VAR' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-url">{{'INPUT-URL' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-tel">{{'INPUT-TEL' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-color">{{'INPUT-COLOR' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-date">{{'INPUT-DATE' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-datetime">{{'INPUT-DATETIME' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-time">{{'INPUT-TIME' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-month">{{'INPUT-MONTH' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-week">{{'INPUT-WEEK' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="clear-form">{{'CLEAR-FORM' | translate}}</a></li>
+      </ul>
     </div><!-- /.col-lg-3 -->
 
     <div class="col-lg-9">
+      <section id="overview">
+        <h1>{{'FORM' | translate}}</h1><hr>
+        <p ng-bind-html="'FORM-DESC' | translate"></p>
+        <div class="hljs-language">HTML</div>
+        <div hljs hljs-include="'templates/fv-form.html'" hljs-language="html"></div>
+        <br>
+        <div class="hljs-language">JS</div>
+        <div hljs hljs-include="'templates/fv-form.js'" hljs-language="javascript"></div>
+        <h3>{{'CUSTOMIZE-ICON' | translate}}</h3>
+        <p ng-bind-html="'CUSTOMIZE-ICON-DESC' | translate"></p>
+        <div class="hljs-language">HTML</div>
+        <div hljs hljs-include="'templates/fv-formicon.html'" hljs-language="html"></div>
+
+        <h1>{{'INPUT' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-DESC' | translate"></p>
+        <div class="alert alert-info" ng-bind-html="'INPUT-NOTE' | translate"></div>
+        <div class="alert alert-info" ng-bind-html="'INPUT-NOTE-DISABLED' | translate"></div>
+        <div class="hljs-language">HTML</div>
+        <div hljs hljs-include="'templates/fv-input.html'" hljs-language="html"></div>
+        <h3>{{'CUSTOMIZE-MESSAGE' | translate}}</h3>
+        <p ng-bind-html="'CUSTOMIZE-MESSAGE-DESC' | translate"></p>
+        <div class="hljs-language">HTML</div>
+        <div hljs hljs-include="'templates/fv-inputmessage.html'" hljs-language="html"></div>
+      </section>
 
       <section id="input-empty">
-
         <h1>{{'INPUT-EMPTY' | translate}}</h1><hr>
         <p ng-bind-html="'INPUT-EMPTY-DESC' | translate"></p>
-
-        <div class="alert alert-info" ng-bind-html="'INPUT-EMPTY-NOTE' | translate"></div>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formEmpty">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result1" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html1" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js1" role="tab" data-toggle="tab">JQuery</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result1">
+            <form id="formEmpty" data-smk-icon="glyphicon-remove-sign">
               <div class="form-group">
-                <label for="text">Text</label>
+                <label class="control-label">Text</label>
                 <input type="text" class="form-control" placeholder="Enter text" required>
               </div>
               <div class="form-group">
-                <label for="text">Select</label>
+                <label class="control-label">Disabled input (not validate)</label>
+                <input type="text" class="form-control" disabled required>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Select</label>
                 <select class="form-control" required>
                   <option value="">Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="text">Textarea</label>
+                <label class="control-label">Textarea</label>
                 <textarea class="form-control" rows="3" required></textarea>
               </div>
               <div class="form-group">
@@ -79,285 +110,262 @@
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="rad" value="option2">
+                    <input type="radio" name="rad" value="option2" required>
                     Option 2
                   </label>
                 </div>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateEmpty()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateEmpty()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="c28db278dc300293315d"></gist>
+          <div role="tabpanel" class="tab-pane" id="html1">
+            <div hljs hljs-include="'templates/fv-empty.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js1">
+            <div hljs hljs-include="'templates/fv-empty.js'"></div>
           </div>
-        </div>
-
-        <iframe height='600' scrolling='no' src='//codepen.io/alfredobarron/embed/wrfCI/?height=600&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/wrfCI/'>Smoke Validate Empty</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="input-email">
-
         <h1>{{'INPUT-EMAIL' | translate}}</h1><hr>
         <p ng-bind-html="'INPUT-EMAIL-DESC' | translate"></p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formEmail">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result3" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html3" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js3" role="tab" data-toggle="tab">Angular</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result3">
+            <form class="form-inline" id="formEmail" data-smk-icon="glyphicon-asterisk">
+              <p class="text-muted">Inline form</p>
               <div class="form-group">
-                <label for="text">Email</label>
-                <input type="email" class="form-control" placeholder="Enter email" required>
+                <label class="control-label">Email</label>
+                <input type="email" class="form-control" placeholder="Email" required>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateEmail()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateEmail()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="a1fae1f5114faa25cbe9"></gist>
+          <div role="tabpanel" class="tab-pane" id="html3">
+            <div hljs hljs-include="'templates/fv-email.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js3">
+            <div hljs hljs-include="'templates/fv-email.js'" hljs-language="javascript"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/bNdrxb/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/bNdrxb/'>Smoke Validate Email</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="input-alphanumeric">
-
         <h1>{{'INPUT-ALPHANUMERIC' | translate}}</h1><hr>
         <p ng-bind-html="'INPUT-ALPHANUMERIC-DESC' | translate"></p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formAlphanumeric">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result4" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html4" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js4" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result4">
+            <form class="form-horizontal" id="formAlphanumeric" data-smk-icon="glyphicon-remove">
+              <p class="text-muted">Horizontal form</p>
               <div class="form-group">
-                <label for="text">Alphanumeric</label>
-                <input type="text" class="form-control" placeholder="Enter alphanumeric string" smk-type="alphanumeric" required>
+                <label class="col-sm-2 control-label">Alphanumeric</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Enter alphanumeric string" data-smk-type="alphanumeric" required>
+                </div>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateAlphanumeric()">Submit</button>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default" ng-click="validateAlphanumeric()">Submit</button>
+                </div>
+              </div>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="7a4eb0150a2f1be4b544"></gist>
+          <div role="tabpanel" class="tab-pane" id="html4">
+            <div hljs hljs-include="'templates/fv-alphanumeric.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js4">
+            <div hljs hljs-include="'templates/fv-alphanumeric.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/GgJMNK/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/GgJMNK/'>Smoke Validate Alphanumeric</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="input-number">
-
         <h1>{{'INPUT-NUMBER' | translate}}</h1><hr>
         <p ng-bind-html="'INPUT-NUMBER-DESC' | translate"></p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formNumber">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result5" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html5" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js5" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result5">
+            <form id="formNumber">
               <div class="form-group">
-                <label for="text">Number</label>
-                <input type="text" class="form-control" placeholder="Enter number" smk-type="number" required>
+                <label class="control-label">Number (not required)</label>
+                <input type="text" class="form-control" placeholder="Enter number" data-smk-type="number">
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateNumber()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateNumber()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="3190da6e2750e8b6e153"></gist>
+          <div role="tabpanel" class="tab-pane" id="html5">
+            <div hljs hljs-include="'templates/fv-number.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js5">
+            <div hljs hljs-include="'templates/fv-number.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/VYLMjR/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/VYLMjR/'>Smoke Validate Number</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="input-numberRange">
-
         <h1>{{'INPUT-NUMBERRANGE' | translate}}</h1><hr>
         <p ng-bind-html="'INPUT-NUMBERRANGE-DESC' | translate"></p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formNumberRange">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result6" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html6" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js6" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result6">
+            <form id="formNumberRange">
               <div class="form-group">
-                <label for="text">Number</label>
-                <input type="text" class="form-control" placeholder="Enter number" smk-type="number" smk-min="2015" smk-max="2020" required>
+                <label class="control-label">Number (2015-2020)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter number" data-smk-type="number" data-smk-min="2015" data-smk-max="2020" required>
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default" ng-click="validateNumberRange()">Submit</button>
+                  </span>
+                </div>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateNumberRange()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="31532583c5b2349a8af6"></gist>
+          <div role="tabpanel" class="tab-pane" id="html6">
+            <div hljs hljs-include="'templates/fv-numberrange.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js6">
+            <div hljs hljs-include="'templates/fv-numberrange.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/PwvgXv/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/PwvgXv/'>Smoke Validate Number Range</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="input-decimal">
-
         <h1>{{'INPUT-DECIMAL' | translate}}</h1><hr>
         <p ng-bind-html="'INPUT-DECIMAL-DESC' | translate"></p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formDecimal">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result7" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html7" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js7" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result7">
+            <form id="formDecimal">
               <div class="form-group">
-                <label for="text">Decimal</label>
-                <input type="text" class="form-control" placeholder="Enter decimal" smk-type="decimal" required>
+                <label class="control-label">Decimal</label>
+                <input type="text" class="form-control" placeholder="Enter decimal" data-smk-type="decimal" required>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateDecimal()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateDecimal()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="2541fd89e958580718de"></gist>
+          <div role="tabpanel" class="tab-pane" id="html7">
+            <div hljs hljs-include="'templates/fv-decimal.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js7">
+            <div hljs hljs-include="'templates/fv-decimal.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/KwEKbV/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/KwEKbV/'>Smoke Validate Decimal</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="input-currency">
-
         <h1>{{'INPUT-CURRENCY' | translate}}</h1><hr>
         <p ng-bind-html="'INPUT-CURRENCY-DESC' | translate"></p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formCurrency">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result8" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html8" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js8" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result8">
+            <form id="formCurrency">
               <div class="form-group">
-                <label for="text">Currency</label>
-                <input type="text" class="form-control" placeholder="Enter currency" smk-type="currency" required>
+                <label class="control-label">Currency</label>
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="text" class="form-control" placeholder="Enter currency" data-smk-type="currency" required>
+                </div>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateCurrency()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateCurrency()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="8d3381f4a98cb1e39cae"></gist>
+          <div role="tabpanel" class="tab-pane" id="html8">
+            <div hljs hljs-include="'templates/fv-currency.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js8">
+            <div hljs hljs-include="'templates/fv-currency.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/raRBYg/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/raRBYg/'>Smoke Validate Currency</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="number-character">
-
         <h1>{{'NUMBER-CHARACTER' | translate}}</h1><hr>
         <p ng-bind-html="'NUMBER-CHARACTER-DESC' | translate"></p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formNumberChar">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result9" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html9" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js9" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result9">
+            <form id="formNumberChar">
               <div class="form-group">
-                <label for="text">Number Character</label>
+                <label class="control-label">Number Character (8)</label>
                 <input type="text" class="form-control" placeholder="Enter text" minlength="8" maxlength="8" required>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateNumberChar()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateNumberChar()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="dcc395702ee2503b2969"></gist>
+          <div role="tabpanel" class="tab-pane" id="html9">
+            <div hljs hljs-include="'templates/fv-numbercharacter.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js9">
+            <div hljs hljs-include="'templates/fv-numbercharacter.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/yyNvwK/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/yyNvwK/'>Smoke Validate Number Character</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="range-character">
-
         <h1>{{'RANGE-CHARACTER' | translate}}</h1><hr>
         <p ng-bind-html="'RANGE-CHARACTER-DESC' | translate"></p>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formRangeChar">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result10" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html10" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js10" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result10">
+            <form id="formRangeChar">
               <div class="form-group">
-                <label for="text">Range Character</label>
+                <label class="control-label">Range Character (4-8)</label>
                 <input type="text" class="form-control" placeholder="Enter text" minlength="4" maxlength="8" required>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateRangeChar()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateRangeChar()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="f23fab5edf7a5f2ef79b"></gist>
+          <div role="tabpanel" class="tab-pane" id="html10">
+            <div hljs hljs-include="'templates/fv-rangecharacter.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js10">
+            <div hljs hljs-include="'templates/fv-rangecharacter.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/PwqQgb/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/PwqQgb/'>Smoke Validate Range Character</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
-      <section id="strong-password">
 
+      <section id="strong-password">
         <h1>{{'STRONG-PASSWORD' | translate}}</h1><hr>
         <p ng-bind-html="'STRONG-PASSWORD-DESC' | translate"></p>
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th><code>smk-strongPass</code></th>
+              <th><code>data-smk-strongPass</code></th>
               <th>{{'STRONG-PASSWORD-TB.DESC' | translate}}</th>
             </tr>
           </thead>
@@ -380,126 +388,353 @@
             </tr>
           </tbody>
         </table>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formStrongPass">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result11" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html11" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js11" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result11">
+            <form id="formStrongPass">
               <div class="form-group">
-                <label for="text">Password</label>
-                <input type="password" class="form-control" placeholder="Enter password" smk-strongPass="medium" required>
+                <label class="control-label">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" placeholder="Enter password" data-smk-strongPass="medium" required>
+                  <span class="input-group-addon">medium</span>
+                </div>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateStrongPass()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateStrongPass()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="0166a41e380b7535232c"></gist>
+          <div role="tabpanel" class="tab-pane" id="html11">
+            <div hljs hljs-include="'templates/fv-strongpassword.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4d7a4b82a6da7638746c"></gist>
+          <div role="tabpanel" class="tab-pane" id="js11">
+            <div hljs hljs-include="'templates/fv-strongpassword.js'"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/qEdXQo/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/qEdXQo/'>Smoke Validate Strong Password</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="equal-password">
-
         <h1>{{'EQUAL-PASSWORD' | translate}}</h1><hr>
         <p ng-bind-html="'EQUAL-PASSWORD-DESC' | translate"></p>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formEqualPass">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result12" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html12" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js12" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result12">
+            <form id="formEqualPass">
               <div class="form-group">
-                <label for="text">Password</label>
+                <label class="control-label">Password</label>
                 <input type="password" class="form-control" placeholder="Enter password" id="pass1" required>
               </div>
               <div class="form-group">
-                <label for="text">Confirm Password</label>
+                <label class="control-label">Confirm Password</label>
                 <input type="password" class="form-control" placeholder="Confirm password" id="pass2">
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateEqualPass()">Submit</button>
+              <button type="submit" class="btn btn-default" ng-click="validateEqualPass()">Submit</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="0294312e08e5528dbce7"></gist>
+          <div role="tabpanel" class="tab-pane" id="html12">
+            <div hljs hljs-include="'templates/fv-equalpassword.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="dd3569a204c71fe86eb3"></gist>
+          <div role="tabpanel" class="tab-pane" id="js12">
+            <div hljs hljs-include="'templates/fv-equalpassword.js'"></div>
           </div>
-        </div>
-
-        <iframe height='400' scrolling='no' src='//codepen.io/alfredobarron/embed/LEVdOG/?height=400&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/LEVdOG/'>Smoke Validate Equal Password</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="equal-password-var">
-
         <h1>{{'EQUAL-PASSWORD-VAR' | translate}}</h1><hr>
         <p ng-bind-html="'EQUAL-PASSWORD-VAR-DESC' | translate"></p>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formEqualPassVar">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result13" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html13" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js13" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result13">
+            <form class="form-horizontal" id="formEqualPassVar">
               <div class="form-group">
-                <label for="text">Password</label>
-                <p class="form-control-static">Smoke1</p>
+                <label class="col-sm-2 control-label">Password (strong)</label>
+                <div class="col-sm-10">
+                  <p class="form-control-static">Smoke3</p>
+                </div>
               </div>
               <div class="form-group">
-                <label for="text">Confirm Password</label>
-                <input type="password" class="form-control" placeholder="Confirm password" smk-strongPass="strong" id="pass" required>
+                <label class="col-sm-2 control-label">Confirm Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" placeholder="Confirm password" data-smk-strongPass="strong" id="pass" required>
+                </div>
               </div>
-              <button type="button" class="btn btn-default" ng-click="validateEqualPassVar()">Submit</button>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default" ng-click="validateEqualPassVar()">Submit</button>
+                </div>
+              </div>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="b689cb15ff982c20da63"></gist>
+          <div role="tabpanel" class="tab-pane" id="html13">
+            <div hljs hljs-include="'templates/fv-equalpasswordvar.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="2e277dfbdf9a561ffbc3"></gist>
+          <div role="tabpanel" class="tab-pane" id="js13">
+            <div hljs hljs-include="'templates/fv-equalpasswordvar.js'"></div>
           </div>
-        </div>
+        </div><!-- /.tab-content -->
+      </section>
 
-        <iframe height='400' scrolling='no' src='//codepen.io/alfredobarron/embed/LEVdeN/?height=400&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/LEVdeN/'>Smoke Validate Equal Password & Var</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
+      <section id="input-url">
+        <h1>{{'INPUT-URL' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-URL-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result15" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html15" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js15" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result15">
+            <form id="formUrl">
+              <div class="form-group">
+                <label class="control-label">URL</label>
+                <input type="url" class="form-control" placeholder="Enter URL" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateUrl()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html15">
+            <div hljs hljs-include="'templates/fv-url.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js15">
+            <div hljs hljs-include="'templates/fv-url.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
 
+      <section id="input-tel">
+        <h1>{{'INPUT-TEL' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-TEL-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result16" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html16" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js16" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result16">
+            <form id="formTel">
+              <div class="form-group">
+                <label class="control-label">Tel</label>
+                <input type="tel" class="form-control" placeholder="Enter Phone" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateTel()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html16">
+            <div hljs hljs-include="'templates/fv-tel.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js16">
+            <div hljs hljs-include="'templates/fv-tel.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="input-color">
+        <h1>{{'INPUT-COLOR' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-COLOR-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result17" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html17" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js17" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result17">
+            <form id="formColor">
+              <div class="form-group">
+                <label class="control-label">Color</label>
+                <input type="color" class="form-control" placeholder="Enter color" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateColor()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html17">
+            <div hljs hljs-include="'templates/fv-color.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js17">
+            <div hljs hljs-include="'templates/fv-color.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="input-date">
+        <h1>{{'INPUT-DATE' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-DATE-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result18" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html18" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js18" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result18">
+            <form id="formDate">
+              <div class="form-group">
+                <label class="control-label">Date</label>
+                <input type="date" class="form-control" placeholder="Enter Date" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateDate()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html18">
+            <div hljs hljs-include="'templates/fv-date.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js18">
+            <div hljs hljs-include="'templates/fv-date.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="input-datetime">
+        <h1>{{'INPUT-DATETIME' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-DATETIME-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result19" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html19" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js19" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result19">
+            <form id="formDatetime">
+              <div class="form-group">
+                <label class="control-label">Datetime</label>
+                <input type="datetime" class="form-control" placeholder="Enter Datetime" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateDatetime()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html19">
+            <div hljs hljs-include="'templates/fv-datetime.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js19">
+            <div hljs hljs-include="'templates/fv-datetime.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="input-time">
+        <h1>{{'INPUT-TIME' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-TIME-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result20" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html20" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js20" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result20">
+            <form id="formTime">
+              <div class="form-group">
+                <label class="control-label">Time</label>
+                <input type="time" class="form-control" placeholder="Enter Time" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateTime()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html20">
+            <div hljs hljs-include="'templates/fv-time.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js20">
+            <div hljs hljs-include="'templates/fv-time.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="input-month">
+        <h1>{{'INPUT-MONTH' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-MONTH-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result21" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html21" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js21" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result21">
+            <form id="formMonth">
+              <div class="form-group">
+                <label class="control-label">Month</label>
+                <input type="month" class="form-control" placeholder="Enter Month" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateMonth()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html21">
+            <div hljs hljs-include="'templates/fv-month.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js21">
+            <div hljs hljs-include="'templates/fv-month.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="input-week">
+        <h1>{{'INPUT-WEEK' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-WEEK-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result22" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html22" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js22" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result22">
+            <form id="formWeek">
+              <div class="form-group">
+                <label class="control-label">Week</label>
+                <input type="week" class="form-control" placeholder="Enter Week" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validateWeek()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html22">
+            <div hljs hljs-include="'templates/fv-week.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js22">
+            <div hljs hljs-include="'templates/fv-week.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="clear-form">
-
         <h1>{{'CLEAR-FORM' | translate}}</h1><hr>
         <p ng-bind-html="'CLEAR-FORM-DESC' | translate"></p>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formClear">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result14" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html14" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js14" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result14">
+            <form id="formClear">
               <div class="form-group">
-                <label for="text">Text</label>
-                <input type="text" class="form-control" value="Text" >
+                <label class="control-label">Text</label>
+                <input type="text" class="form-control" value="Text">
               </div>
               <div class="form-group">
-                <label for="text">Select</label>
+                <label class="control-label">Disabled input (not clear)</label>
+                <input type="text" class="form-control" disabled required value="Disabled">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Text 2 (No clear)</label>
+                <input type="text" class="form-control" value="Text 2" data-smk-noclear>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Select</label>
                 <select class="form-control">
                   <option value="">Select</option>
                   <option value="1" selected>1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="text">Textarea</label>
+                <label class="control-label">Textarea</label>
                 <textarea class="form-control" rows="3">Textarea</textarea>
               </div>
               <div class="form-group">
@@ -527,103 +762,18 @@
               <button type="button" class="btn btn-default" ng-click="clear()">Clear</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="2c631283936ff85b7b1d"></gist>
+          <div role="tabpanel" class="tab-pane" id="html14">
+            <div hljs hljs-include="'templates/fv-clear.html'" hljs-language="html"></div>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="ac3a6190b6d3f4a72896"></gist>
+          <div role="tabpanel" class="tab-pane" id="js14">
+            <div hljs hljs-include="'templates/fv-clear.js'"></div>
           </div>
-        </div>
-
-        <iframe height='600' scrolling='no' src='//codepen.io/alfredobarron/embed/dPomjO/?height=600&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/dPomjO/'>Smoke Clear Form</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        </div><!-- /.tab-content -->
       </section>
 
-      <section id="customize-message">
-
-        <h1>{{'CUSTOMIZE-MESSAGE' | translate}}</h3><hr>
-        <p ng-bind-html="'CUSTOMIZE-MESSAGE-DESC' | translate"></p>
-        <div class="panel panel-default">
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="b1e3d4db93266fb569d5"></gist>
-          </div>
-        </div>
-
-      </section>
-
-      <section id="language">
-
-        <h1>{{'LANGUAGE' | translate}}</h3><hr>
-        <p ng-bind-html="'LANGUAGE-DESC' | translate"></p>
-        <div class="panel panel-default">
-          <div class="panel-footer">
-            <p class="text-muted"><small>HTML</small></p>
-            <gist id="71df7c95c90ed5bb7c61"></gist>
-          </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="e020231a38adafea6d38"></gist>
-          </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="4cacb25cbf352390beba"></gist>
-          </div>
-        </div>
-
-        <h4>{{'LANGUAGE-TB.TITLE' | translate}}</h4>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th><code>lang</code></th>
-              <th>{{'LANGUAGE-TB.LANGUAGE' | translate}}</th>
-              <th>{{'LANGUAGE-TB.ARCHIVE' | translate}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>de</td>
-              <td>{{'DEUTSCH' | translate}}</td>
-              <td>de.js</td>
-            </tr>
-            <tr>
-              <td>en</td>
-              <td>{{'ENGLISH' | translate}}</td>
-              <td>Default</td>
-            </tr>
-            <tr>
-              <td>es</td>
-              <td>{{'SPANISH' | translate}}</td>
-              <td>es.js</td>
-            </tr>
-            <tr>
-              <td>fr</td>
-              <td>{{'FRENCH' | translate}}</td>
-              <td>fr.js</td>
-            </tr>
-            <tr>
-              <td>it</td>
-              <td>{{'ITALIAN' | translate}}</td>
-              <td>it.js</td>
-            </tr>
-            <tr>
-              <td>ja</td>
-              <td>{{'JAPANESE' | translate}}</td>
-              <td>ja.js</td>
-            </tr>
-            <tr>
-              <td>pt_br</td>
-              <td>{{'BRAZILIANPORTUGUESE' | translate}}</td>
-              <td>pt_br.js</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </section>
-
+      <blockquote class="blockquote-reverse">
+        <p>{{'FULL-EXAMPLE' | translate}}<a href="http://codepen.io/alfredobarron/pen/rOgMvV" target="_blank">Codepen</a></p>
+      </blockquote>
     </div><!--/.col-lg-9 -->
 
   </div><!--/.row -->

@@ -1,0 +1,374 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{'HELPERS' | translate}}</h1>
+    <p class="lead">{{'HELPERS-DESC' | translate}}</p>
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="list-group" affix>
+          <ul class="nav">
+            <a href="" smooth-scroll target="string-float" offset="80" class="list-group-item">{{'STRING-FLOAT' | translate}}</a>
+            <a href=""  smooth-scroll target="number-currency" offset="80"class="list-group-item">{{'NUMBER-CURRENCY' | translate}}</a>
+            <a href="" smooth-scroll target="URL" offset="80" class="list-group-item">URL</a>
+            <a href="" smooth-scroll target="date" offset="80" class="list-group-item">{{'DATE' | translate}}</a>
+            <a href="" smooth-scroll target="date-difference" offset="80" class="list-group-item">{{'DATE-DIFF' | translate}}</a>
+          </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-9">
+
+      <section id="string-float">
+
+        <h1>{{'STRING-FLOAT' | translate}}</h1><hr>
+        <p class="lead">{{'STRING-FLOAT-DESC' | translate}}</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formFloatConv">
+              <div class="form-group">
+                <label for="text">Number</label>
+                  <input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="float()">Convert</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="e5b4156c2de3acb291fb"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/bNZGmX/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/bNZGmX/'>Smoke Float</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="number-currency">
+
+        <h1>{{'NUMBER-CURRENCY' | translate}}</h1><hr>
+        <p class="lead">{{'NUMBER-CURRENCY-DESC' | translate}}</p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formCurrencyConv">
+              <div class="form-group">
+                <label for="text">Number</label>
+                  <input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="currency()">Convert</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="2a12806211ee011bdf10"></gist>
+          </div>
+        </div>
+
+        <div class="alert alert-info">{{'NUMBER-CURRENCY-NOTE' | translate}}</div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/diCzs/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/diCzs/'>Smoke Currency</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="URL">
+
+        <h1>URL</h1><hr>
+        <p class="lead">{{'URL-DESC' | translate}}</p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formURL">
+              <button type="button" class="btn btn-default" ng-click="getUrl()">Get URL</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="24f147b3df83ebefdb62"></gist>
+          </div>
+        </div>
+
+        <div class="alert alert-info">{{'URL-NOTE' | translate}}</div>
+
+        <iframe height='250' scrolling='no' src='//codepen.io/alfredobarron/embed/qAKLF/?height=250&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/qAKLF/'>Smoke Get URL</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="date">
+
+        <h1>{{'DATE' | translate}}</h1><hr>
+        <p class="lead">{{'DATE-DESC' | translate}}</p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formDate">
+              <button type="button" class="btn btn-default" ng-click="date()">Current date</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="9d5dd2fc65aef5c58686"></gist>
+          </div>
+        </div>
+
+        <iframe height='250' scrolling='no' src='//codepen.io/alfredobarron/embed/vBlEs/?height=250&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/vBlEs/'>Smoke Date</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+        <h3>{{'OPTIONS' | translate}}</h3>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>date</code></td>
+              <td>Date | String</td>
+              <td>{{'DATE-TB.DEFAULT.DATE' | translate}}</td>
+              <td>{{'DATE-TB.DESCS.DATE' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>format</code></td>
+              <td>String</td>
+              <td>yyyy-mm-dd</td>
+              <td>{{'DATE-TB.DESCS.FORMAT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>lang</code></td>
+              <td>String: {en | es}</td>
+              <td>en</td>
+              <td>{{'DATE-TB.DESCS.LANG' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>{{'DATE-TB2.DESC' | translate}}</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'DATE-TB2.TITLE' | translate}}</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>d</td>
+                <td>{{'DATE-TB2.DESCS.d' | translate}}</td>
+              </tr>
+              <tr>
+                <td>dd</td>
+                <td>{{'DATE-TB2.DESCS.dd' | translate}}</td>
+              </tr>
+              <tr>
+                <td>m</td>
+                <td>{{'DATE-TB2.DESCS.m' | translate}}</td>
+              </tr>
+              <tr>
+                <td>mm</td>
+                <td>{{'DATE-TB2.DESCS.mm' | translate}}</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>{{'DATE-TB2.DESCS.M' | translate}}</td>
+              </tr>
+              <tr>
+                <td>MM</td>
+                <td>{{'DATE-TB2.DESCS.MM' | translate}}</td>
+              </tr>
+              <tr>
+                <td>yy</td>
+                <td>{{'DATE-TB2.DESCS.yy' | translate}}</td>
+              </tr>
+              <tr>
+                <td>yyyy</td>
+                <td>{{'DATE-TB2.DESCS.yyyy' | translate}}</td>
+              </tr>
+          </tbody>
+        </table>
+
+        <h4>{{'LANGUAGE-TB.TITLE' | translate}}</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><code>lang</code></th>
+              <th>{{'LANGUAGE-TB.LANGUAGE' | translate}}</th>
+              <th>{{'LANGUAGE-TB.ARCHIVE' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tbody>
+              <tr>
+                <td>de</td>
+                <td>{{'DEUTSCH' | translate}}</td>
+                <td>de.js</td>
+              </tr>
+              <tr>
+                <td>en</td>
+                <td>{{'ENGLISH' | translate}}</td>
+                <td>Default</td>
+              </tr>
+              <tr>
+                <td>es</td>
+                <td>{{'SPANISH' | translate}}</td>
+                <td>es.js</td>
+              </tr>
+              <tr>
+                <td>fr</td>
+                <td>{{'FRENCH' | translate}}</td>
+                <td>fr.js</td>
+              </tr>
+              <tr>
+                <td>it</td>
+                <td>{{'ITALIAN' | translate}}</td>
+                <td>it.js</td>
+              </tr>
+              <tr>
+                <td>ja</td>
+                <td>{{'JAPANESE' | translate}}</td>
+                <td>ja.js</td>
+              </tr>
+              <tr>
+                <td>pt_br</td>
+                <td>{{'BRAZILIANPORTUGUESE' | translate}}</td>
+                <td>pt_br.js</td>
+              </tr>
+            </tbody>
+          </tbody>
+        </table>
+
+        <div class="alert alert-info">{{'DATE-NOTE' | translate}}</div>
+
+        <gist id="71df7c95c90ed5bb7c61"></gist>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formDateCustomize">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="text">Date</label>
+                    <input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa" value="30-12-2014">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="format">Format</label>
+                    <input type="text" class="form-control" id="format" placeholder="dd/MM/yyyy" value="dd/MM/yyyy">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="lang">Language</label>
+                    <input type="text" class="form-control" id="lang" placeholder="es" value="es">
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="dateCustomize()">Customize</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="e62cec2a0a629de77cbc"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/eBgmD/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/eBgmD/'>Smoke Date Format</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+
+      </section>
+
+      <section id="date-difference">
+
+        <h1>{{'DATE-DIFF' | translate}}</h1><hr>
+        <p class="lead">{{'DATE-DIFF-DESC' | translate}}</p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formDateDiff">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="date1">Date 1</label>
+                    <input type="text" class="form-control" id="date1" placeholder="mm/dd/aaaa" value="09/25/2014">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="date2">Date 2</label>
+                    <input type="text" class="form-control" id="date2" placeholder="mm/dd/aaaa" value="09/30/2014">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="interval">Interval</label>
+                    <input type="text" class="form-control" id="interval" placeholder="Interval" value="days">
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="dateDiff()">Difference</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="692922050788e320b46a"></gist>
+          </div>
+        </div>
+
+        <h3>{{'OPTIONS' | translate}}</h3>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>fromDate</code></td>
+              <td>String: {date}</td>
+              <td>{{'DATE-DIFF-TB.DEFAULT.DATE' | translate}}</td>
+              <td>{{'DATE-DIFF-TB.DESCS.DATE' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>toDate</code></td>
+              <td>String: {date}</td>
+              <td>{{'DATE-DIFF-TB.DEFAULT.DATE' | translate}}</td>
+              <td>{{'DATE-DIFF-TB.DESCS.DATE' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>interval</code></td>
+              <td>String: {seconds | minutes | hours | days | weeks | months | years}</td>
+              <td>{{'DATE-DIFF-TB.DEFAULT.INTERVAL' | translate}}</td>
+              <td>{{'DATE-DIFF-TB.DESCS.INTERVAL' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/ksyfw/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/ksyfw/'>Smoke Date difference</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+    </div><!--/.col-lg-9 -->
+  </div><!--/.row -->
+</div><!-- /.container -->

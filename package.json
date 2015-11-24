@@ -1,7 +1,7 @@
 {
   "name": "smokejs",
-  "version": "2.2.4",
-  "description": "Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3",
+  "version": "3.0.0",
+  "description": "Smoke form validation and components for Bootstrap",
   "license": "LGPL",
   "author": "Alfredo Barron",
   "homepage": "https://github.com/alfredobarron/smoke",
@@ -14,7 +14,10 @@
     "plugin",
     "bootstrap",
     "front-end",
-    "web"
+    "web",
+    "Form validation",
+    "Components",
+    "helpers"
   ],
   "main": "index.js",
   "files": [
@@ -42,6 +45,7 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-cssmin": "^0.12.2",
     "grunt-contrib-uglify": "^0.8.0",
-    "grunt-gh-pages": "^0.10.0"
+    "grunt-gh-pages": "^0.10.0",
+    "grunt-wiredep": "^2.0.0"
   }
 }

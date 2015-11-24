@@ -1,70 +1,61 @@
 (function(){
-'use strict';
+  'use strict';
 
-angular
-    .module('appSmoke', [
-        'ui.router',
-        'pascalprecht.translate',
-        'angularSmoothscroll',
-        'gist',
-        'ngScrollSpy',
-        'ngSanitize'
-    ])
-    .config(configure)
-    .run(run)
-    .controller('MainCtrl', MainCtrl)
-    .directive('fullScreen', fullScreen)
-    .directive('panel', panel);
+  angular
+  .module('appSmoke', [
+    'ui.router',
+    'ngSanitize',
+    'pascalprecht.translate',
+    'angularSmoothscroll',
+    'hljs'
+  ])
+  .config(configure)
+  .run(run)
+  .controller('MainCtrl', MainCtrl)
+  .directive('fullScreen', fullScreen)
+  .directive('panel1', panel1)
+  .directive('panel2', panel2);
 
-configure.$inject = ['$stateProvider', '$urlRouterProvider', '$translateProvider'];
-function configure($stateProvider, $urlRouterProvider, $translateProvider) {
+  configure.$inject = ['$stateProvider', '$urlRouterProvider', '$translateProvider', '$locationProvider'];
+  function configure($stateProvider, $urlRouterProvider, $translateProvider, $locationProvider) {
 
     $translateProvider.useStaticFilesLoader({prefix: 'locales/', suffix: '.json'});
     $translateProvider.preferredLanguage('en');
 
+    //$locationProvider.html5Mode({enabled: true});
+
     $urlRouterProvider.otherwise("/404");
 
-    $stateProvider
-        .state('404', {
-            url: "/404",
-            templateUrl: "404.html"
-        })
-        .state('home', {
-            url: "/",
-            templateUrl: "home.html"
-        })
-        .state('validate', {
-            url: "/validate",
-            templateUrl: 'validate.html'
-        })
-        .state('getting-started', {
-            url: "/getting-started",
-            templateUrl: 'getting-started.html'
-        })
-        .state('notifications', {
-            url: "/notifications",
-            templateUrl: 'notifications.html'
-        })
-        .state('progressbar', {
-            url: "/progressbar",
-            templateUrl: 'progressbar.html'
-        })
-        .state('fullscreen', {
-            url: "/fullscreen",
-            templateUrl: 'fullscreen.html'
-        })
-        .state('panel', {
-            url: "/panel",
-            templateUrl: 'panel.html'
-        })
-        .state('helpers', {
-            url: "/helpers",
-            templateUrl: 'helpers.html'
-        });
 
-}
-run.$inject = ['$rootScope'];
-function run($rootScope){
+    $stateProvider
+    .state('404', {
+      url: "/404",
+      templateUrl: "404.html"
+    })
+    .state('home', {
+      url: "/",
+      templateUrl: "home.html"
+    })
+    .state('validate', {
+      url: "/validate",
+      templateUrl: 'validate.html'
+    })
+    .state('getting-started', {
+      url: "/getting-started",
+      templateUrl: 'getting-started.html'
+    })
+    .state('components', {
+      url: "/components",
+      templateUrl: 'components.html'
+    })
+    .state('helpers', {
+      url: "/helpers",
+      templateUrl: 'helpers.html'
+    });
+
+  }
+  run.$inject = ['$rootScope'];
+  function run($rootScope){
 
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -72,34 +63,34 @@ function run($rootScope){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $(window).bind("load", function() {
-       $('body').removeClass('load');
-       $('.loading').fadeOut();
+      $('body').removeClass('load');
+      $('.loading').fadeOut();
     });
 
     $rootScope.$on('$stateChangeStart', function(){
-        $.smkProgressBar({element:'body', status:'start'});
+      $.smkProgressBar({element:'body', status:'start'});
     });
     $rootScope.$on('$stateChangeSuccess', function() {
-        $.smkProgressBar({element:'body', status:'end'});
+      $.smkProgressBar({element:'body', status:'end'});
     });
-}
-MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
-function MainCtrl($scope, $translate, $sanitize){
+  }
+  MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
+  function MainCtrl($scope, $translate, $sanitize){
 
-    $scope.version = 'v2.2.4';
+    $scope.version = 'v3.0.0';
     $scope.lang = 'English';
 
     $scope.changeLanguage = function (langKey) {
-        $translate.use(langKey);
-        if(langKey == 'en'){
-            $scope.lang = 'English';
-        }else if(langKey == 'es'){
-            $scope.lang = 'Español';
-        }else if(langKey == 'de'){
-            $scope.lang = 'Deutsch';
-        }else {
-			$scope.lang = 'Português Brasileiro';
-		}
+      $translate.use(langKey);
+      if(langKey == 'en'){
+        $scope.lang = 'English';
+      }else if(langKey == 'es'){
+        $scope.lang = 'Español';
+      }else if(langKey == 'de'){
+        $scope.lang = 'Deutsch';
+      }else {
+        $scope.lang = 'Português Brasileiro';
+      }
     };
 
     /*
@@ -108,32 +99,26 @@ function MainCtrl($scope, $translate, $sanitize){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $scope.download = function(){
-        ga('send', 'event', 'button', 'click', 'download');
+      ga('send', 'event', 'button', 'click', 'download');
     };
     $scope.github = function(){
-        ga('send', 'event', 'button', 'click', 'github');
+      ga('send', 'event', 'button', 'click', 'github');
     };
     $scope.gettingStarted = function(){
-        ga('send', 'event', 'button', 'click', 'getting-started');
+      ga('send', 'event', 'button', 'click', 'getting-started');
     };
     $scope.validate = function(){
-        ga('send', 'event', 'button', 'click', 'validate');
+      ga('send', 'event', 'button', 'click', 'validate');
     };
-    $scope.notifications = function(){
-        ga('send', 'event', 'button', 'click', 'notifications');
-    };
-    $scope.btnProgressbar = function(){
-        ga('send', 'event', 'button', 'click', 'progressbar');
-    };
-    $scope.fullscreen = function(){
-        ga('send', 'event', 'button', 'click', 'fullscreen');
-    };
-    $scope.panel = function(){
-        ga('send', 'event', 'button', 'click', 'panel');
+    $scope.components = function(){
+      ga('send', 'event', 'button', 'click', 'components');
     };
     $scope.helpers = function(){
-        ga('send', 'event', 'button', 'click', 'helpers');
+      ga('send', 'event', 'button', 'click', 'helpers');
     };
+
+
+
 
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -142,84 +127,136 @@ function MainCtrl($scope, $translate, $sanitize){
     */
     // Validate Empty
     $scope.validateEmpty = function(){
-        if($('#formEmpty').smkValidate()){
-            $.smkAlert({text: 'Validate!!' , type: 'success'});
-        }
+      if($('#formEmpty').smkValidate()){
+        $.smkAlert({text: 'Validate!!' , type: 'success'});
+      }
     };
     // Validate Email
     $scope.validateEmail = function(){
-        if($('#formEmail').smkValidate()){
-            $.smkAlert({text: $('#formEmail input').val(), type: 'success'});
-        }
+      if($('#formEmail').smkValidate()){
+        $.smkAlert({text: $('#formEmail input').val(), type: 'success'});
+      }
     };
     // Validate Alphanumeric
     $scope.validateAlphanumeric = function(){
-        if($('#formAlphanumeric').smkValidate()){
-            $.smkAlert({text: $('#formAlphanumeric input').val(), type: 'success'});
-        }
+      if($('#formAlphanumeric').smkValidate()){
+        $.smkAlert({text: $('#formAlphanumeric input').val(), type: 'success'});
+      }
     };
     // Validate Number
     $scope.validateNumber = function(){
-        if($('#formNumber').smkValidate()){
-            $.smkAlert({text: $('#formNumber input').val(), type: 'success'});
+      if($('#formNumber').smkValidate()){
+        var val = 'Empty!';
+        if ($('#formNumber input').val() !== '') {
+          val = $('#formNumber input').val();
         }
+        $.smkAlert({text: val, type: 'success'});
+      }
     };
     // Validate Number Range
     $scope.validateNumberRange = function(){
-        if($('#formNumberRange').smkValidate()){
-            $.smkAlert({text: $('#formNumberRange input').val(), type: 'success'});
-        }
+      if($('#formNumberRange').smkValidate()){
+        $.smkAlert({text: $('#formNumberRange input').val(), type: 'success'});
+      }
     };
     // Validate Decimal
     $scope.validateDecimal = function(){
-        if($('#formDecimal').smkValidate()){
-            $.smkAlert({text: $('#formDecimal input').val(), type: 'success'});
-        }
+      if($('#formDecimal').smkValidate()){
+        $.smkAlert({text: $('#formDecimal input').val(), type: 'success'});
+      }
     };
     // Validate Currency
     $scope.validateCurrency = function(){
-        if($('#formCurrency').smkValidate()){
-            $.smkAlert({text: $('#formCurrency input').val(), type: 'success'});
-        }
+      if($('#formCurrency').smkValidate()){
+        $.smkAlert({text: $('#formCurrency input').val(), type: 'success'});
+      }
     };
     // Validate Number Character
     $scope.validateNumberChar = function(){
-        if($('#formNumberChar').smkValidate()){
-            $.smkAlert({text: $('#formNumberChar input').val(), type: 'success'});
-        }
+      if($('#formNumberChar').smkValidate()){
+        $.smkAlert({text: $('#formNumberChar input').val(), type: 'success'});
+      }
     };
     // Validate Range character
     $scope.validateRangeChar = function(){
-        if($('#formRangeChar').smkValidate()){
-            $.smkAlert({text: $('#formRangeChar input').val(), type: 'success'});
-        }
+      if($('#formRangeChar').smkValidate()){
+        $.smkAlert({text: $('#formRangeChar input').val(), type: 'success'});
+      }
+    };
+    // Validate Url
+    $scope.validateUrl = function(){
+      if($('#formUrl').smkValidate()){
+        $.smkAlert({text: $('#formUrl input').val(), type: 'success'});
+      }
+    };
+    // Validate Tel
+    $scope.validateTel = function(){
+      if($('#formTel').smkValidate()){
+        $.smkAlert({text: $('#formTel input').val(), type: 'success'});
+      }
+    };
+    // Validate Color
+    $scope.validateColor = function(){
+      if($('#formColor').smkValidate()){
+        $.smkAlert({text: $('#formColor input').val(), type: 'success'});
+      }
+    };
+    // Validate Date
+    $scope.validateDate = function(){
+      if($('#formDate').smkValidate()){
+        $.smkAlert({text: $('#formDate input').val(), type: 'success'});
+      }
+    };
+    // Validate Datetime
+    $scope.validateDatetime = function(){
+      if($('#formDatetime').smkValidate()){
+        $.smkAlert({text: $('#formDatetime input').val(), type: 'success'});
+      }
+    };
+    // Validate Time
+    $scope.validateTime = function(){
+      if($('#formTime').smkValidate()){
+        $.smkAlert({text: $('#formTime input').val(), type: 'success'});
+      }
+    };
+    // Validate Month
+    $scope.validateMonth = function(){
+      if($('#formMonth').smkValidate()){
+        $.smkAlert({text: $('#formMonth input').val(), type: 'success'});
+      }
+    };
+    // Validate Week
+    $scope.validateWeek = function(){
+      if($('#formWeek').smkValidate()){
+        $.smkAlert({text: $('#formWeek input').val(), type: 'success'});
+      }
     };
     // Validate Strong password
     $scope.validateStrongPass = function(){
-        if($('#formStrongPass').smkValidate()){
-            $.smkAlert({text: $('#formStrongPass input').val(), type: 'success'});
-        }
+      if($('#formStrongPass').smkValidate()){
+        $.smkAlert({text: $('#formStrongPass input').val(), type: 'success'});
+      }
     };
     // Validate Equal password
     $scope.validateEqualPass = function(){
-        if($('#formEqualPass').smkValidate()){
-            if($.smkEqualPass('#formEqualPass #pass1', '#formEqualPass #pass2')){
-                $.smkAlert({text: $('#formEqualPass #pass1').val(), type: 'success'});
-            }
+      if($('#formEqualPass').smkValidate()){
+        if($.smkEqualPass('#formEqualPass #pass1', '#formEqualPass #pass2')){
+          $.smkAlert({text: $('#formEqualPass #pass1').val(), type: 'success'});
         }
+      }
     };
     // Validate Equal password vs var
-    var smkPassword = 'Smoke1';
+    var smkPassword = 'Smoke3';
     $scope.validateEqualPassVar = function(){
-        if($('#formEqualPassVar').smkValidate()){
-            if($.smkEqualPass(smkPassword, '#formEqualPassVar #pass')){
-                $.smkAlert({text: $('#formEqualPassVar #pass').val(), type: 'success'});
-            }
+      if($('#formEqualPassVar').smkValidate()){
+        if($.smkEqualPass(smkPassword, '#formEqualPassVar #pass')){
+          $.smkAlert({text: $('#formEqualPassVar #pass').val(), type: 'success'});
         }
+      }
     };
     // Clear form
     $scope.clear = function(){
-        $('#formClear').smkClear();
+      $('#formClear').smkClear();
     };
 
 
@@ -232,19 +269,19 @@ function MainCtrl($scope, $translate, $sanitize){
     */
     // Alert Warning
     $scope.alertWarning = function(){
-        $.smkAlert({text:'Alert type "warning"', type:'warning'});
+      $.smkAlert({text:'Alert type "warning"', type:'warning'});
     };
     // Alert Success
     $scope.alertSuccess = function(){
-        $.smkAlert({text:'Alert type "success"', type:'success'});
+      $.smkAlert({text:'Alert type "success"', type:'success', position:'top-left'});
     };
     // Alert Danger 10 seconds
     $scope.alertDanger = function(){
-        $.smkAlert({text:'Alert type "danger" time 10 seconds', type:'danger', time: 10});
+      $.smkAlert({text:'Alert type "danger" time 10 seconds', type:'danger', position:'top-center', time: 10});
     };
     // Alert Info permanent
     $scope.alertInfo = function(){
-        $.smkAlert({text:'Alert type "info" permanent', type:'info', permanent: true});
+      $.smkAlert({text:'Alert type "info" permanent', type:'info', position:'bottom-right', icon: 'glyphicon-time', permanent: true});
     };
 
 
@@ -256,10 +293,34 @@ function MainCtrl($scope, $translate, $sanitize){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $scope.confirm = function(){
-        $.smkConfirm({text:'Are you sure?', accept:'Accept', cancel:'Cancel'}, function(e){if(e){
-            $.smkAlert({text: 'Confirm!!', type:'success'});
-        }});
+      $.smkConfirm({text:'Estas seguro?', accept:'Aceptar', cancel:'Cancelar'}, function(e){if(e){
+        $.smkAlert({text: 'Confirmado!!', type:'success'});
+      }});
     };
+
+
+
+    /*
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    |   Prompt
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    */
+    $scope.prompt = function(){
+      $.smkPrompt({text:'Estas seguro?', accept:'Aceptar', cancel:'Cancelar'}, function(res){
+        if (res) {
+          $.smkAlert({
+              text: 'Respuesta ' + res,
+              type: 'success'
+          });
+        } else {
+          $.smkAlert({
+              text: 'No hubo respuesta',
+              type: 'info'
+          });
+        }
+      });
+    };
+
 
 
 
@@ -269,11 +330,9 @@ function MainCtrl($scope, $translate, $sanitize){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $scope.progressbar = function(){
-        $.smkProgressBar({element:'body', status:'start'});
-        setTimeout(function(){ $.smkProgressBar({element:'body', status:'end'}); }, 1000);
+      $.smkProgressBar({element:'body', status:'start', content: 'Loading...', bgColor: '#000', barColor: '#fff'});
+      setTimeout(function(){ $.smkProgressBar({status:'end'}); }, 1000);
     };
-
-
 
 
 
@@ -288,7 +347,6 @@ function MainCtrl($scope, $translate, $sanitize){
 
 
 
-
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     |   Panel
@@ -299,20 +357,17 @@ function MainCtrl($scope, $translate, $sanitize){
 
 
 
-
-
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     |   Float
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $scope.float = function(){
-        if($('#formFloatConv').smkValidate()){
-            var mumber = $.smkFloat($('#formFloatConv input').val());
-            $.smkAlert({text: mumber, type:'success'});
-        }
+      if($('#formFloat').smkValidate()){
+        var float = $.smkFloat($('#formFloat input').val());
+        $.smkAlert({text: float, type:'success'});
+      }
     };
-
 
 
 
@@ -323,13 +378,11 @@ function MainCtrl($scope, $translate, $sanitize){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $scope.currency = function(){
-        if($('#formCurrencyConv').smkValidate()){
-            var currency = $.smkCurrency($('#formCurrencyConv input').val(), '$');
-            $.smkAlert({text: currency, type:'success'});
-        }
+      if($('#formCurrency').smkValidate()){
+        var currency = $.smkCurrency($('#formCurrency input').val(), '$');
+        $.smkAlert({text: currency, type:'success'});
+      }
     };
-
-
 
 
 
@@ -340,8 +393,8 @@ function MainCtrl($scope, $translate, $sanitize){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $scope.getUrl = function(){
-        var url = $.smkGetURL();
-        $.smkAlert({text: url, type:'success'});
+      var url = $.smkGetURL();
+      $.smkAlert({text: url, type:'success'});
     };
 
 
@@ -352,20 +405,12 @@ function MainCtrl($scope, $translate, $sanitize){
     |   Date
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
-    // Date Get
     $scope.date = function(){
-        var date = $.smkDate();
-        $.smkAlert({text: date, type:'success'});
-    };
-
-    // Date Customize
-    $scope.dateCustomize = function(){
-        var date = $.smkDate({
-            date: $('#formDateCustomize #date').val(),
-            format: $('#formDateCustomize #format').val(),
-            lang: $('#formDateCustomize #lang').val()
-        });
-        $.smkAlert({text: date, type:'success'});
+      var date = $.smkDate({
+        date: $('#formDate #date').val(),
+        format: $('#formDate #format').val()
+      });
+      $.smkAlert({text: date, type:'success'});
     };
 
 
@@ -377,61 +422,46 @@ function MainCtrl($scope, $translate, $sanitize){
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
     $scope.dateDiff = function(){
-        var interval = $('#formDateDiff #interval').val();
-        var date = $.smkDateDiff({
-            fromDate: $('#formDateDiff #date1').val(),
-            toDate: $('#formDateDiff #date2').val(),
-            interval: interval
-        });
-        $.smkAlert({text: date + ' ' + interval, type:'success'});
+      var date = $.smkDateDiff({
+        fromDate: $('#formDateDiff #date1').val(),
+        toDate: $('#formDateDiff #date2').val(),
+        interval: $('#formDateDiff #interval').val()
+      });
+      $.smkAlert({text: date + ' ' + $('#formDateDiff #interval').val(), type:'success'});
     };
-}
+  }
 
 
 
-/*
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-|   Fullscreen
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*/
-function fullScreen() {
+
+  /*
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  |   Fullscreen
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  */
+  function fullScreen() {
     return function($scope, elem, attrs) {
-        $(elem).smkFullscreen();
+      $(elem).smkFullscreen();
     };
-}
+  }
 
 
 
-/*
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-|   Panel
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*/
-function panel() {
+
+  /*
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  |   Panel
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  */
+  function panel1() {
     return function($scope, elem, attrs) {
-        $(elem).smkPanel();
+      $(elem).smkPanel();
     };
-}
-
-// function stateLoadingIndicator($rootScope) {
-//   return {
-//     restrict: 'E',
-//     template: "<div ng-show='isStateLoading' class='loading'>" +
-//     "<p class='loading-title'>Loading...</p>" +
-//     "<div class='spinner'><chasing-dots-spinner></chasing-dots-spinner></div>" +
-//     "</div>",
-//     replace: true,
-//     link: function(scope, elem, attrs) {
-//       scope.isStateLoading = false;
-
-//       $rootScope.$on('$stateChangeStart', function() {
-//         scope.isStateLoading = true;
-//       });
-//       $rootScope.$on('$stateChangeSuccess', function() {
-//         scope.isStateLoading = false;
-//       });
-//     }
-//   };
-// }
+  }
+  function panel2() {
+    return function($scope, elem, attrs) {
+      $(elem).smkPanel({hide: 'min,remove'});
+    };
+  }
 
 }());

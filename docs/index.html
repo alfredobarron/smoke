@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smoke</title>
-    <meta name="description" content="Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3" />
-    <meta name="keywords" content="HTML, CSS, JS, JavaScript, JQuery, plugin, bootstrap, smokejs, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, alert, alerts, notificacion, notificaciones, confirmacion, confirm, progressbar, barra de progreso, panel, paneles, pantalla completa, fullscreen, helpers, alfredobarron, alfredo barron, alfredo, barron" />
+    <meta name="description" content="Smoke form validation and components for Bootstrap 3" />
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, Components, JQuery, plugin, bootstrap, bootstrap3, smokejs, smoke, front-end, frontend, web development, valida, validar, validacion, validate, formulario, formularios, form, mensajes, alertas, alerta, alert, alerts, notificacion, notificaciones, confirmacion, confirm, progressbar, barra de progreso, panel, paneles, pantalla completa, fullscreen, helpers, alfredobarron, alfredo barron, alfredo, barron" />
     <meta name="robots" content="index,follow,archive">
     <meta name="author" content="Alfredo Barron" />
     <link rel="shortcut icon" href="images/favicon.png">
+    <!-- <base href="/"> -->
 
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bower_components/highlightjs/styles/rainbow.css" rel="stylesheet">
     <!-- endbower -->
 
     <!-- Smoke -->
-    <link href="dist/css/smoke.min.css" rel="stylesheet">
-
+    <link href="src/css/smoke.css" rel="stylesheet">
     <!-- Styles -->
     <link href="css/styles.min.css" rel="stylesheet">
 
@@ -47,10 +48,7 @@
           <ul class="nav navbar-nav">
             <li ui-sref-active="active"><a ui-sref="getting-started" ng-click="gettingStarted()">{{'GETTING-STARTED' | translate}}</a></li>
             <li ui-sref-active="active"><a ui-sref="validate" ng-click="validate()">{{'VALIDATE' | translate}}</a></li>
-            <li ui-sref-active="active"><a ui-sref="notifications" ng-click="notifications()">{{'NOTIFICATIONS' | translate}}</a></li>
-            <li ui-sref-active="active"><a ui-sref="progressbar" ng-click="btnProgressbar()">{{'PROGRESSBAR' | translate}}</a></li>
-            <li ui-sref-active="active"><a ui-sref="fullscreen" ng-click="fullscreen()">{{'FULLSCREEN' | translate}}</a></li>
-            <li ui-sref-active="active"><a ui-sref="panel" ng-click="panel()">{{'PANEL' | translate}}</a></li>
+            <li ui-sref-active="active"><a ui-sref="components" ng-click="components()">{{'COMPONENTS' | translate}}</a></li>
             <li ui-sref-active="active"><a ui-sref="helpers" ng-click="helpers()">{{'HELPERS' | translate}}</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -60,10 +58,10 @@
                 <li><a href="" ng-click="changeLanguage('en')">{{'ENGLISH' | translate}}</a></li>
                 <li class="divider"></li>
                 <li><a href="" ng-click="changeLanguage('es')">{{'SPANISH' | translate}}</a></li>
-                <li class="divider"></li>
+                <!-- <li class="divider"></li>
                 <li><a href="" ng-click="changeLanguage('de')">{{'DEUTSCH' | translate}}</a></li>
 			  	      <li class="divider"></li>
-                <li><a href="" ng-click="changeLanguage('pt_br')">{{'BRAZILIANPORTUGUESE' | translate}}</a></li>
+                <li><a href="" ng-click="changeLanguage('pt_br')">{{'BRAZILIANPORTUGUESE' | translate}}</a></li> -->
               </ul>
             </li>
           </ul>
@@ -76,21 +74,28 @@
     </section>
 
     <footer>
-        <div class="container text-center">
+      <div class="container text-center">
         <hr>
-          <ul class="list-inline">
-            <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://alfredobarron.github.io/smoke/#/"></div></li>
 
-            <li><div class="fb-share-button" data-href="http://alfredobarron.github.io/smoke/#/" data-layout="button_count"></div></li>
+        <ul class="list-inline">
+          <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://alfredobarron.github.io/smoke/#/"></div></li>
 
-            <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://alfredobarron.github.io/smoke/#/" data-via="AlfredoBarronC" data-related="AlfredoBarronC" data-hashtags="Smoke,JQuery,Plugin,Bootstrap,HechoEnMexico,OpenSource">Tweet</a></li>
-          </ul>
-          <p>{{'DESIGNED' | translate}} <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a>, {{'TRANSLATED' | translate}} <a href="https://plus.google.com/+MisaelRojas" target="_blank">+MisaelRojas</a></p>
+          <li><div class="fb-share-button" data-href="http://alfredobarron.github.io/smoke/#/" data-layout="button_count"></div></li>
 
-          <p>{{'LICENSE' | translate}} <a href="https://github.com/alfredobarron/smoke/blob/master/LICENSE">license LGPL</a></p>
+          <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://alfredobarron.github.io/smoke/#/" data-via="AlfredoBarronC" data-related="AlfredoBarronC" data-hashtags="Smoke,JQuery,Plugin,Bootstrap,HechoEnMexico,OpenSource">Tweet</a></li>
+        </ul>
 
-          <p><a href="https://github.com/alfredobarron/smoke" target="_blank">GitHub</a> . <a href="http://alfredobarron.github.io/smoke/v1.0/" target="_blank">Smock v1.0</a> . <a href="https://github.com/alfredobarron/smoke/issues" target="_blank">{{'ISSUES' | translate}}</a> . <a href="https://github.com/alfredobarron/smoke/releases" target="_blank">{{'RELEASES'| translate}}</a></p>
-        </div>
+        <p>{{'DESIGNED' | translate}} <a href="https://twitter.com/AlfredoBarronC" target="_blank">@AlfredoBarronC</a>, {{'TRANSLATED' | translate}} <a href="https://plus.google.com/+MisaelRojas" target="_blank">+MisaelRojas</a></p>
+
+        <p>{{'LICENSE' | translate}} <a href="https://github.com/alfredobarron/smoke/blob/master/LICENSE">license LGPL</a></p>
+
+        <p>
+          <a href="https://github.com/alfredobarron/smoke" target="_blank">GitHub</a> .
+          <a href="http://alfredobarron.github.io/smoke/v2.2.4/" target="_blank">Smoke v2.2.4</a> .
+          <a href="https://github.com/alfredobarron/smoke/issues" target="_blank">{{'ISSUES' | translate}}</a> .
+          <a href="https://github.com/alfredobarron/smoke/releases" target="_blank">{{'RELEASES'| translate}}</a>
+        </p>
+      </div>
     </footer>
 
     <div class="loading">
@@ -98,22 +103,20 @@
     </div>
 
     <!-- bower:js -->
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <script src="bower_components/angular-smoothscroll/dist/scripts/bb15da28.scripts.js"></script>
-    <script src="bower_components/angular-gist/angular-gist.min.js"></script>
-    <script src="bower_components/ngScrollSpy/dist/ngScrollSpy.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-smoothscroll/dist/scripts/bb15da28.scripts.js"></script>
+    <script src="bower_components/highlightjs/highlight.pack.min.js"></script>
+    <script src="bower_components/angular-highlightjs/angular-highlightjs.js"></script>
     <!-- endbower -->
 
     <!-- Smoke -->
-    <script src="dist/js/smoke.min.js"></script>
+    <script src="src/js/smoke.js"></script>
     <!-- Scripts -->
     <script src="js/scripts.min.js"></script>
 

@@ -1,0 +1,406 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{'COMPONENTS' | translate}}</h1>
+    <p class="lead">{{'COMPONENTS-DESC' | translate}}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-3">
+      <ul class="list-unstyled">
+        <li><a href="" smooth-scroll target="alerts">{{'ALERTS' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="confirmation">{{'CONFIRMATION' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="prompt">{{'CONFIRMATION-PROMPT' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="progressbar">{{'PROGRESSBAR' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="fullscreen">{{'FULLSCREEN' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="panel">{{'PANEL' | translate}}</a></li>
+      </ul>
+    </div>
+
+    <div class="col-lg-9">
+      <section id="alerts">
+        <h1>{{'ALERTS' | translate}}</h1><hr>
+        <p class="lead">{{'ALERTS-DESC' | translate}}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result1" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html1" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js1" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result1">
+            <div class="content">
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <a href="" class="btn btn-warning" ng-click="alertWarning()">Warning</a>
+                  <a href="" class="btn btn-success" ng-click="alertSuccess()">Success</a>
+                  <a href="" class="btn btn-danger" ng-click="alertDanger()">Danger 10 seconds</a>
+                  <a href="" class="btn btn-info" ng-click="alertInfo()">Info permanent</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html1">
+            <div hljs hljs-include="'templates/cp-alert.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js1">
+            <div hljs hljs-include="'templates/cp-alert.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+
+        <h3>{{'OPTIONS' | translate}}</h3>
+        <p>{{'ALERTS-TB.DESC' | translate}}</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>text</code></td>
+              <td>String: {Text | HTML}</td>
+              <td>"Hello world"</td>
+              <td>{{'ALERTS-TB.DESCS.TEXT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>type</code></td>
+              <td>String: {warning | success | danger | info}</td>
+              <td>"warning"</td>
+              <td>{{'ALERTS-TB.DESCS.TYPE' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>icon</code></td>
+              <td>String: {glyphicon}</td>
+              <td>
+                warning: glyphicon-exclamation-sign <br>
+                success: glyphicon-ok-sign <br>
+                danger: glyphicon-remove-sign <br>
+                info: glyphicon-info-sign"
+              </td>
+              <td>{{'ALERTS-TB.DESCS.ICON' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>position</code></td>
+              <td>String: {top-left | top-center | top-right | <br> bottom-left | bottom-center | bottom-right}</td>
+              <td>"top-right"</td>
+              <td>{{'ALERTS-TB.DESCS.POSITION' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>time</code></td>
+              <td>Number</td>
+              <td>5</td>
+              <td>{{'ALERTS-TB.DESCS.TIME' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>permanent</code></td>
+              <td>Boolean: {true | false}</td>
+              <td>false</td>
+              <td>{{'ALERTS-TB.DESCS.PERMANENT' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="confirmation">
+        <h1>{{'CONFIRMATION' | translate}}</h1><hr>
+        <p class="lead">{{'CONFIRMATION-DESC' | translate}}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result2" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html2" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js2" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result2">
+            <div class="content">
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <a href="" class="btn btn-default" ng-click="confirm()">Confirmation</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html2">
+            <div hljs hljs-include="'templates/cp-confirm.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js2">
+            <div hljs hljs-include="'templates/cp-confirm.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+
+        <h3>{{'OPTIONS' | translate}}</h3>
+        <p>{{'CONFIRMATION-TB.DESC' | translate}}</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>text</code></td>
+              <td>String: {Text | HTML}</td>
+              <td>"Are you sure?"</td>
+              <td>{{'CONFIRMATION-TB.DESCS.TEXT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>accept</code></td>
+              <td>String: {Text}</td>
+              <td>"Accept"</td>
+              <td>{{'CONFIRMATION-TB.DESCS.ACCEPT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>cancel</code></td>
+              <td>String: {Text}</td>
+              <td>"Cancel"</td>
+              <td>{{'CONFIRMATION-TB.DESCS.CANCEL' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="prompt">
+        <h1>{{'CONFIRMATION-PROMPT' | translate}}</h1><hr>
+        <p class="lead">{{'CONFIRMATION-PROMPT-DESC' | translate}}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result3" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html3" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js3" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result3">
+            <div class="content">
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <a href="" class="btn btn-default" ng-click="prompt()">Prompt</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html3">
+            <div hljs hljs-include="'templates/cp-prompt.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js3">
+            <div hljs hljs-include="'templates/cp-prompt.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+
+        <h3>{{'OPTIONS' | translate}}</h3>
+        <p>{{'CONFIRMATION-TB.DESC' | translate}}</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>text</code></td>
+              <td>String: {Text | HTML}</td>
+              <td>"Are you sure?"</td>
+              <td>{{'CONFIRMATION-TB.DESCS.TEXT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>accept</code></td>
+              <td>String: {Text}</td>
+              <td>"Accept"</td>
+              <td>{{'CONFIRMATION-TB.DESCS.ACCEPT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>cancel</code></td>
+              <td>String: {Text}</td>
+              <td>"Cancel"</td>
+              <td>{{'CONFIRMATION-TB.DESCS.CANCEL' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="progressbar">
+        <h1>{{'PROGRESSBAR' | translate}}</h1><hr>
+        <p class="lead">{{'PROGRESSBAR-DESC2' | translate}}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result4" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html4" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js4" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result4">
+            <div class="content">
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <a href="" class="btn btn-info" ng-click="progressbar()">Start</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html4">
+            <div hljs hljs-include="'templates/cp-progressbar.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js4">
+            <div hljs hljs-include="'templates/cp-progressbar.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+
+        <h3>{{'OPTIONS' | translate}}</h3>
+        <p>{{'PROGRESSBAR-TB.DESC' | translate}}</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>element</code></td>
+              <td>String: {id | class}</td>
+              <td>"body"</td>
+              <td>{{'PROGRESSBAR-TB.DESCS.ELEMENT' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>status</code></td>
+              <td>String: {start | end}</td>
+              <td>"start"</td>
+              <td>{{'PROGRESSBAR-TB.DESCS.STATUS' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>bgColor</code></td>
+              <td>String: {hexadecimal}</td>
+              <td>"#fff"</td>
+              <td>{{'PROGRESSBAR-TB.DESCS.BGCOLOR' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>barColor</code></td>
+              <td>String: {hexadecimal}</td>
+              <td>"#337ab7"</td>
+              <td>{{'PROGRESSBAR-TB.DESCS.BARCOLOR' | translate}}</td>
+            </tr>
+            <tr>
+              <td><code>content</code></td>
+              <td>String: {text | HTML}</td>
+              <td>""</td>
+              <td>{{'PROGRESSBAR-TB.DESCS.CONTENT' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="fullscreen">
+        <h1>{{'FULLSCREEN' | translate}}</h1><hr>
+        <p class="lead">{{'FULLSCREEN-DESC' | translate}}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result5" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html5" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js5" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result5">
+            <div class="content">
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <div full-screen></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html5">
+            <div hljs hljs-include="'templates/cp-fullscreen.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js5">
+            <div hljs hljs-include="'templates/cp-fullscreen.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="panel">
+        <h1>{{'PANEL' | translate }}</h1><hr>
+        <p class="lead">{{'PANEL-DESC2' | translate }}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result6" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html6" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js6" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result6">
+            <div class="content">
+              <div class="row">
+                <div class="col-sm-6">
+
+                  <div class="panel panel-default" panel1>
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Panel heading</h3>
+                    </div>
+                    <div class="panel-body">
+                      <p>Panel body</p>
+                    </div>
+                    <div class="panel-footer">
+                      <p>Panel footer</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                  <div class="panel panel-primary" panel2>
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                      <p>Panel body</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html6">
+            <div hljs hljs-include="'templates/cp-panel.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js6">
+            <div hljs hljs-include="'templates/cp-panel.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+
+        <h3>{{'OPTIONS' | translate }}</h3>
+        <p>{{'PANEL-TB.DESC' | translate }}</p>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'OPTION' | translate}}</th>
+              <th>{{'TYPE' | translate}}</th>
+              <th>Default</th>
+              <th>{{'DESCRIPTION' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hide</code></td>
+              <td>String: {min | remove | full}</td>
+              <td>N/A</td>
+              <td>{{'PANEL-TB.DESCS.HIDE' | translate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <blockquote class="blockquote-reverse">
+        <p>{{'FULL-EXAMPLE' | translate}}<a href="http://codepen.io/alfredobarron/pen/BoerXw" target="_blank">Codepen</a></p>
+      </blockquote>
+    </div><!--/.col-lg-9 -->
+  </div><!--/.row -->
+</div><!-- /.container -->
