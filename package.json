@@ -1,8 +1,7 @@
 {
-  "name": "smokeDocs",
-  "version": "1.0.0",
-  "description": "Docs plugin smoke",
-  "main": "index.js",
+  "name": "smoke-docs",
+  "version": "3.0.0",
+  "description": "Smoke docs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

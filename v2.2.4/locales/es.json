@@ -1,0 +1,237 @@
+{
+    "GETTING-STARTED": "Primeros pasos",
+    "VALIDATE": "Validación",
+    "NOTIFICATIONS": "Notificaciones",
+    "PROGRESSBAR": "Barra de Progreso",
+    "FULLSCREEN": "Pantalla Completa",
+    "PANEL": "Panel",
+    "HELPERS": "Helpers",
+
+    "BRAZILIANPORTUGUESE":"Portugués Brasileño",
+    "DEUTSCH": "Alemán",
+    "ENGLISH": "Inglés",
+    "FRENCH" : "Francés",
+    "ITALIAN" : "Italiano",
+    "JAPANESE": "Japonés",
+    "SPANISH": "Español",
+
+    "SLOGAN": "Smoke es el Plugin Jquery mas completo y ligero diseñado para usarse en Bootstrap 3",
+    "DOWNLOAD": "Descargar",
+
+    "FEATURES": "CARACTERÍSTICAS",
+
+    "GITHUB": "Smoke es open source, esta hosteado, desarrollado y mantenido en GitHub.",
+    "VIEW-IN": "Ver en",
+
+    "DESIGNED": "Diseñado y Desarrollado con muchas ganas por",
+    "TRANSLATED": "Traducido por",
+    "LICENSE": "Código y documentación (c) Copyright 2015 Alfredo Barron. Código publicado bajo la",
+    "ISSUES": "Preguntas",
+    "RELEASES": "Versiones",
+
+
+
+
+    "GETTING-STARTED-DESC": "Una visión general de Smoke, cómo descargar y utilizar.",
+
+    "DOWNLOAD-DESC": "Descarga Smoke y agregalo a tu proyecto, usarlo es fácil y rápido.",
+
+    "INSTALL": "Instala con",
+
+    "WHATS-INCLUDED": "Que incluye",
+    "WHATS-INCLUDED-DESC": "Una vez descargado el archivo, descomprime el .zip para ver la estructura de Smoke. Verás algo como esto:",
+
+    "REQUIRED": "Requerimientos",
+    "REQUIRED-DESC": "El plugin Smoke requiere que se incluyan estas dos librerías para su funcionamiento.",
+    "REQUIRED-JQUERY": "Ten en cuenta que el plugin Smoke requiere que se incluya la librería",
+    "REQUIRED-BOOTSTRAP": "Ten en cuenta que el plugin Smoke requiere que se incluya el framework",
+
+    "BASIC-TEMPLATE": "Plantilla básica",
+    "BASIC-TEMPLATE-DESC": "Comienza con esta plantilla de HTML o modifícala a tus necesidades.",
+    "BASIC-TEMPLATE-DESC2": "Copia el código HTML de abajo para empezar a trabajar con los requerimientos mínimos de Smoke.",
+
+
+
+
+
+    "VALIDATE": "Validar formulario",
+    "VALIDATE-DESC": "Hace que la validación de formularios del lado del cliente sea fácil, simple y muy segura.",
+
+    "INPUT-EMPTY": "Campo vacío",
+    "INPUT-EMPTY-DESC": "Para validar que un campo sea obligatorio solo tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. Los tipos de campos soportados hasta el momento son <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> y <code>checkbox</code>. La función que se utiliza para validar es <span class='text-success'>smkValidate()</span>.",
+    "INPUT-EMPTY-NOTE": "Es necesario que el <code>input</code> a validar este dentro de un <code>div</code> con la clase <code>form-group</code>",
+
+    "INPUT-EMAIL": "Campo email",
+    "INPUT-EMAIL-DESC": "Para validar una cuenta de correo electrónico, el campo debe ser de tipo <code>email</code> y agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>.",
+
+    "INPUT-ALPHANUMERIC": "Campo alfanumérico",
+    "INPUT-ALPHANUMERIC-DESC": "Para validar que un campo solo acepte números y letras, el campo debe ser de tipo text , agregar el atributo required dentro de la etiqueta input de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad alphanumeric.",
+
+    "INPUT-NUMBER": "Campo numérico",
+    "INPUT-NUMBER-DESC": "Para validar que un campo solo acepte números, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>number</code>.",
+
+    "INPUT-NUMBERRANGE": "Campo rango numérico",
+    "INPUT-NUMBERRANGE-DESC": "Para validar que un campo solo acepte números y que corresponda a un rango numérico, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>number</code> también agregar los atributos <code>smk-min</code> y <code>smk-max</code> y dentro de estos el rango numérico permitido.",
+
+    "INPUT-DECIMAL": "Campo decimal",
+    "INPUT-DECIMAL-DESC": "Para validar que un campo solo acepte números decimales, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>decimal</code>.",
+
+    "INPUT-CURRENCY": "Campo moneda",
+    "INPUT-CURRENCY-DESC": "Para validar que un campo solo acepte números, comas, puntos, es decir que solo acepte un formato de moneda, el campo debe ser de tipo <code>text</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar el atributo <code>smk-type</code> y dentro de este la propiedad <code>currency</code>.",
+
+    "NUMBER-CHARACTER": "Numero de caracteres",
+    "NUMBER-CHARACTER-DESC": "Para validar que un campo solo acepte un determinado numero de caracteres, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar los atributos <code>minlength</code> y <code>maxlength</code> y dentro de estos el numero de caracteres permitido.",
+
+    "RANGE-CHARACTER": "Rango de caracteres",
+    "RANGE-CHARACTER-DESC": "Para validar que un campo solo acepte un rango de numero de caracteres, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> de igual manera agregar los atributos <code>minlength</code> y <code>maxlength</code> y dentro de estos el rango de numero de caracteres permitido.",
+
+    "STRONG-PASSWORD": "Contraseña fuerte",
+    "STRONG-PASSWORD-DESC": "Para validar que un campo solo acepte una contraseña fuerte y segura, el campo debe ser de tipo <code>password</code> , agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> y por ultimo añadir el atributo <code>smk-strongPass</code> y dentro de este el nivel de fuerza que se requiera.",
+    "STRONG-PASSWORD-TB": {
+        "DESC": "Descripción",
+        "DESCS": {
+            "DEFAULT": "Mínimo 4 caracteres",
+            "WEAK": "Mínimo 6 caracteres",
+            "MEDIUM": "Mínimo 6 caracteres y un numero",
+            "STRONG": "Mínimo 6 caracteres un numero y una mayúscula"
+        }
+    },
+
+
+    "EQUAL-PASSWORD": "Contraseñas iguales",
+    "EQUAL-PASSWORD-DESC": "Para validar que los textos contenidos en dos campos sean iguales, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code> en el primer campo. La función que se utiliza es <span class='text-success'>$.smkEqualPass()</span>.",
+
+    "EQUAL-PASSWORD-VAR": "Contraseña igual a variable",
+    "EQUAL-PASSWORD-VAR-DESC": "Para validar que el texto contenido de un campo es igual al valor de una variable Javascript, hay agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>. La función que se utiliza es <span class='text-success'>$.smkEqualPass()</span>.",
+
+    "CLEAR-FORM": "Limpiar formulario",
+    "CLEAR-FORM-DESC": "Para limpiar formularios se usa la función <span class='text-success'>smkClear()</span>. Para no limpiar uno o más tipos de campos se usa la opción <span class='text-primary'>noClear</span> dentro de la función.",
+
+    "CUSTOMIZE-MESSAGE": "Personalizar mensaje",
+    "CUSTOMIZE-MESSAGE-DESC": "Personaliza los mensaje de error añadiendo el atributo <code>smk-text</code> dentro de la etiqueta <code>input</code>",
+
+    "LANGUAGE": "Lenguaje",
+    "LANGUAGE-DESC": "Para cambiar el lenguaje de los mensajes de validación es necesario agregar el script del lenguaje deseado dentro del html, para la función <span class='text-success'>smkValidate()</span> se pasa el lenguaje dentro de la opción <code>lang</code>, en la función <span class='text-success'>$.smkEqualPass()</span> se pasa el lenguaje como tercer parámetro.",
+    "LANGUAGE-TB": {
+        "TITLE": "Lenguajes soportados",
+        "LANGUAGE": "Lenguaje",
+        "ARCHIVE": "Archivo"
+    },
+
+
+    "OPTIONS": "Opciones",
+    "OPTION":"Opción",
+    "TYPE":"Tipo",
+    "DESCRIPTION":"Descripción",
+
+
+    "NOTIFICATIONS-DESC": "Crea mensajes de Alerta y de Confirmación vistosos y funcionales, y su uso es tan sencillo como los nativos de javascript.",
+
+    "ALERTS": "Alertas",
+    "ALERTS-DESC": "Proporciona mensajes de alerta para las acciones típicas de usuario al momento de invocar un evento.",
+    "ALERTS-TB": {
+        "DESC": "Personaliza las alertas, cambiando el mensaje, tiempo de duración, el color y si el mensaje sera permanente.",
+        "DESCS": {
+            "TEXT":"Mensaje",
+            "TYPE":"Tipo de mensaje",
+            "TIME":"Tiempo que dura la alerta en segundos",
+            "PERMANENT":"La alerta es permanente"
+        }
+    },
+
+    "CONFIRMATION": "Confirmación",
+    "CONFIRMATION-DESC": "Proporciona mensajes de confirmación para las acciones típicas de usuario al momento de invocar un evento.",
+    "CONFIRMATION-TB": {
+        "DESC": "Personaliza las confirmaciones, cambiando el mensaje y el texto de los botones.",
+        "DESCS": {
+            "TEXT":"Mensaje",
+            "ACCEPT":"Texto del botón aceptar",
+            "CANCEL":"Texto del botón cancelar"
+        }
+    },
+
+
+
+    "PROGRESSBAR-DESC": "Añade una barra de progreso a tu aplicación.",
+    "PROGRESSBAR-DESC2": "Añade una barra de progreso a tu aplicación, en cualquier evento.",
+    "PROGRESSBAR-TB": {
+        "DESC": "Personaliza el elemento en el que se agregara la barra de progreso, define cuando inicia y cuando termina.",
+        "DESCS": {
+            "ELEMENT": "Elemento en el que se agregara el progressBar",
+            "STATUS": "Cuando inicia y cuando termina"
+        }
+    },
+
+
+
+
+    "FULLSCREEN-DESC": "Agrega la funcionalidad fullscreen a tu aplicación.",
+    "FULLSCREEN-DESC2": "Para agregar el boton de pantalla completa solo es necesario indicarle a la funcion cual sera su contenedor.",
+
+
+    "PANEL-DESC": "Agrega funcionalidad a tus paneles.",
+    "PANEL-DESC2": "Agrega funcionalidad a tus paneles, minimízalos, expéndelos o elimínalos.",
+    "PANEL-TB": {
+        "DESC": "Personaliza los botones que quieras mostrar.",
+        "DESCS": {
+            "HIDE": "Botones que no se mostraran"
+        }
+    },
+
+
+    "HELPERS-DESC": "Colección de funciones de ayuda.",
+
+    "STRING-FLOAT": "Cadena a flotante",
+    "STRING-FLOAT-DESC": "Convierte una cadena de texto a un valor flotante.",
+
+    "NUMBER-CURRENCY": "Formato de moneda",
+    "NUMBER-CURRENCY-DESC": "Convierte un número a formato de moneda.",
+    "NUMBER-CURRENCY-NOTE": "Esta función recibe dos parámetros el primero es el número que se va a formatear y el segundo es el prefijo o el tipo de moneda.",
+
+
+    "URL-DESC": "Obtiene la URL.",
+    "URL-NOTE": "Esta función recibe un parámetro (opcional) es el número de carpetas para obener después de la URL.",
+
+
+    "DATE": "Fecha",
+    "DATE-DESC": "Con esta función puedes obtener, formatear, traducir y personalizar las fechas.",
+    "DATE-NOTE": "Para cambiar el lenguaje de la fecha, se agrega el script de lenguaje dentro del html.",
+    "DATE-TB": {
+        "DEFAULT": {
+            "DATE": "Fecha actual"
+        },
+        "DESCS": {
+            "DATE": "Fecha numérica",
+            "FORMAT": "Formato",
+            "LANG": "Lenguaje de la fecha"
+        }
+    },
+    "DATE-TB2": {
+        "DESC": "Formatos",
+        "TITLE": "Formato",
+        "DESCS": {
+            "d": "Día sin cero",
+            "dd": "Día con cero",
+            "m": "Mes numérico sin cero",
+            "mm": "Mes numérico con cero",
+            "M": "Nombre del mes abreviado",
+            "MM": "Nombre del mes completo",
+            "yy": "Año 2 dígitos",
+            "yyyy": "Año 4 dígitos"
+        }
+    },
+
+    "DATE-DIFF": "Diferencia de Fecha",
+    "DATE-DIFF-DESC": "Obtén la diferencia que existe entre dos fechas.",
+    "DATE-DIFF-TB":{
+        "DEFAULT" : {
+            "DATE": "Fecha actual",
+            "INTERVAL": "days"
+        },
+        "DESCS": {
+            "DATE" : "Fecha a comparar",
+            "INTERVAL" : "Intervalo"
+
+        }
+    }
+}

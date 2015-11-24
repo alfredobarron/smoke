@@ -1,0 +1,16 @@
+{
+  "name": "smokeDocs",
+  "version": "1.0.0",
+  "description": "Docs plugin smoke",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alfredo Barron",
+  "license": "GPLv3",
+  "devDependencies": {
+  	"bower": "^1.4.1",
+    "grunt": "^0.4.5",
+    "grunt-wiredep": "^2.0.0"
+  }
+}
