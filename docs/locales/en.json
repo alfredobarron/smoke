@@ -86,7 +86,7 @@
   "INPUT-ALPHANUMERIC-DESC": "To validate a field that accepts only numbers and letters, the field must be of type <code>text</code>, add the <code>data-smk-type</code> attribute and within this  the <code>alphanumeric</code> property.",
 
   "INPUT-NUMBER": "Number input",
-  "INPUT-NUMBER-DESC": "To validate that a field only accepts numbers, the field must be of type <code>text</code>, add the <code>data-smk-type</code> attribute and within this, the <code>number</code> attribute.",
+  "INPUT-NUMBER-DESC": "To validate that a field only accepts numbers, the field must be of type <code>text</code> or type <code>number</code>, if it is of type <code>text</code> add the <code>data-smk-type</code> attribute and within this, the <code>number</code> attribute.",
 
   "INPUT-NUMBERRANGE": "Input number range",
   "INPUT-NUMBERRANGE-DESC": "To validate a field that only accepts numbers and within in a range, the field must be of type <code>text</code>, add the <code>data-smk-type</code> and within this, the <code>number</code> attribute, also add the <code>data-smk-min</code> and <code>data-smk-max</code> attributes to indicate the range allowed.",
@@ -231,7 +231,7 @@
 
   "DATE": "Date",
   "DATE-DESC": "With this function you can get, format, translate and customize dates",
-  "DATE-NOTE": "To change the language of the date, Add the script of the language in your HTML.",
+  "DATE-NOTE": "Dates for handling recommend using ",
   "DATE-TB": {
     "DEFAULT": {
       "DATE": "Current Date"

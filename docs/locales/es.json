@@ -86,7 +86,7 @@
   "INPUT-ALPHANUMERIC-DESC": "Para validar que un campo solo acepte números y letras, el campo debe ser de tipo <code>text</code>, y agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>alphanumeric</code>.",
 
   "INPUT-NUMBER": "Campo numérico",
-  "INPUT-NUMBER-DESC": "Para validar que un campo solo acepte números, el campo debe ser de tipo <code>text</code>, agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>number</code>.",
+  "INPUT-NUMBER-DESC": "Para validar que un campo solo acepte números, el campo debe ser de tipo <code>text</code> o tipo <code>number</code>, si es tipo <code>text</code> agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>number</code>.",
 
   "INPUT-NUMBERRANGE": "Campo rango numérico",
   "INPUT-NUMBERRANGE-DESC": "Para validar que un campo solo acepte números y que corresponda a un rango numérico, el campo debe ser de tipo <code>text</code>, agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>number</code> también agregar los atributos <code>data-smk-min</code> y <code>data-smk-max</code> y dentro de estos el rango numérico permitido.",
@@ -231,7 +231,7 @@
 
   "DATE": "Fecha",
   "DATE-DESC": "Con esta función puedes obtener, formatear, traducir y personalizar las fechas.",
-  "DATE-NOTE": "Para cambiar el lenguaje de la fecha, se agrega el script de lenguaje dentro del html.",
+  "DATE-NOTE": "Para el manejo de fechas recomiendo usar ",
   "DATE-TB": {
     "DEFAULT": {
       "DATE": "Fecha actual"

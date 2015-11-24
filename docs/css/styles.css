@@ -147,6 +147,18 @@ footer ul li .fb-share-button>span{
   margin-top: 60px;
 }
 
+.advertise {
+  padding: 15px;
+  border: 1px solid #3A3C3C;
+  width: 330px;
+  margin: 80px auto 0 auto;
+}
+.advertise a {
+  color: #fff;
+}
+.advertise a:hover {
+  text-decoration: none;
+}
 
 .list-unstyled li {
   margin: 8px 0;

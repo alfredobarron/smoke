@@ -151,7 +151,7 @@
         }
 
         // Se valida el input NUMBER
-        if (smkType === 'number') {
+        if (type === 'number' || smkType === 'number') {
           // Se crea la expresión regular para el input number
           var numberRegex = /^\d+$/;
           // Se valida que el value del input cumpla con la expresión regular

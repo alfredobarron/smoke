@@ -22,7 +22,7 @@
     $translateProvider.useStaticFilesLoader({prefix: 'locales/', suffix: '.json'});
     $translateProvider.preferredLanguage('en');
 
-    //$locationProvider.html5Mode({enabled: true});
+    $locationProvider.html5Mode({enabled: true});
 
     $urlRouterProvider.otherwise("/404");
 
@@ -146,11 +146,7 @@
     // Validate Number
     $scope.validateNumber = function(){
       if($('#formNumber').smkValidate()){
-        var val = 'Empty!';
-        if ($('#formNumber input').val() !== '') {
-          val = $('#formNumber input').val();
-        }
-        $.smkAlert({text: val, type: 'success'});
+        $.smkAlert({text: $('#formNumber input').val(), type: 'success'});
       }
     };
     // Validate Number Range
