@@ -1,0 +1,46 @@
+<form id="formEmpty" data-smk-icon="glyphicon-remove-sign">
+  <div class="form-group">
+    <label class="control-label">Text</label>
+    <input type="text" class="form-control" placeholder="Enter text" required>
+  </div>
+  <div class="form-group">
+    <label class="control-label">Disabled input (not validate)</label>
+    <input type="text" class="form-control" disabled required>
+  </div>
+  <div class="form-group">
+    <label class="control-label">Select</label>
+    <select class="form-control" required>
+      <option value="">Select</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="control-label">Textarea</label>
+    <textarea class="form-control" rows="3" required></textarea>
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="check" value="1" required>
+        Checkbox
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="radio">
+      <label>
+        <input type="radio" name="rad" value="option1" required>
+        Option 1
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="rad" value="option2" required>
+        Option 2
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default" id="btnEmpty">Submit</button>
+</form>

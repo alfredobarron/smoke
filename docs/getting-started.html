@@ -9,52 +9,36 @@
   <div class="row">
 
     <div class="col-lg-3">
-      <div class="list-group" affix>
-        <ul class="nav">
-          <a href="" smooth-scroll target="download-smoke" offset="80" class="list-group-item">{{'DOWNLOAD' | translate}} Smoke</a>
-          <a href="" smooth-scroll target="whats-included" offset="80" class="list-group-item">{{'WHATS-INCLUDED' | translate}}</a>
-          <a href="" smooth-scroll target="required" offset="80" class="list-group-item">{{'REQUIRED' | translate}}</a>
-          <a href="" smooth-scroll target="basic-template" offset="80" class="list-group-item">{{'BASIC-TEMPLATE' | translate}}</a>
-        </ul>
-      </div>
+      <ul class="list-unstyled">
+        <li><a href="" smooth-scroll target="download-smoke">{{'DOWNLOAD' | translate}} Smoke</a></li>
+        <li><a href="" smooth-scroll target="whats-included">{{'WHATS-INCLUDED' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="required">{{'REQUIRED' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="basic-template">{{'BASIC-TEMPLATE' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="language">{{'LANGUAGE' | translate}}</a></li>
+      </ul>
     </div>
 
     <div class="col-lg-9">
 
       <section id="download-smoke">
         <h1>{{'DOWNLOAD' | translate}} Smoke</h1><hr>
+
         <p class="lead">{{'DOWNLOAD-DESC' | translate}}</p>
         <p><a class="btn btn-default btn-lg" role="button" href="https://github.com/alfredobarron/smoke/releases/download/{{version}}/smoke-{{version}}.zip" target="_blank" ng-click="download()">{{'DOWNLOAD' | translate}} Smoke</a></p>
+
         <br>
+
         <h2>{{'INSTALL' | translate}} Bower</h2>
-        <pre><span class="text-primary">$</span> bower install smoke</pre>
+        <div hljs>$ bower install smoke</div>
+
         <h2>{{'INSTALL' | translate}} npm</h2>
-        <pre><span class="text-primary">$</span> npm install smokejs</pre>
+        <div hljs>$ npm install smokejs</div>
       </section>
 
       <section id="whats-included">
         <h1>{{'WHATS-INCLUDED' | translate}}</h1><hr>
         <p class="lead">{{'WHATS-INCLUDED-DESC' | translate}}</p>
-<pre>
-smoke/
-├── css/
-│   ├── smoke.css
-│   └── smoke.min.css
-├── js/
-│   ├── smoke.js
-│   └── smoke.min.js
-└── lang/
-    ├── es.js
-    └── es.min.js
-    ├── de.js
-    └── de.min.js
-    ├── fr.js
-    └── fr.min.js
-    ├── pt_br.js
-    └── pt_br.min.js
-    ├── it.js
-    └── it.min.js
-</pre>
+        <div hljs hljs-include="'templates/gs-included.html'"></div>
       </section>
 
       <section id="required">
@@ -65,43 +49,61 @@ smoke/
       </section>
 
       <section id="basic-template">
-              <h1>{{'BASIC-TEMPLATE' | translate}}</h1><hr>
-              <p class="lead">{{'BASIC-TEMPLATE-DESC' | translate}}</p>
-              <p>{{'BASIC-TEMPLATE-DESC2' | translate}}</p>
-<pre><code><span class="text-success">&lt;!DOCTYPE html&gt;</span>
-<span class="text-info">&lt;html </span><span class="text-primary">lang=</span><span class="text-danger">"en"</span><span class="text-info">&gt;</span>
-<span class="text-info">&lt;head&gt;</span>
-<span class="text-info">&lt;meta</span> <span class="text-primary">charset=</span><span class="text-danger">"utf-8"</span><span class="text-info">&gt;</span>
-<span class="text-info">&lt;meta</span> <span class="text-primary">http-equiv=</span><span class="text-danger">"X-UA-Compatible"</span> <span class="text-primary">content=</span><span class="text-danger">"IE=edge"</span><span class="text-info">&gt;</span>
-<span class="text-info">&lt;meta</span> <span class="text-primary">name=</span><span class="text-danger">"viewport"</span> <span class="text-primary">content=</span><span class="text-danger">"width=device-width, initial-scale=1"</span><span class="text-info">&gt;</span>
-<span class="text-info">&lt;title&gt;</span>Basic template<span class="text-info">&lt;/title&gt;</span>
+        <h1>{{'BASIC-TEMPLATE' | translate}}</h1><hr>
+        <p class="lead">{{'BASIC-TEMPLATE-DESC' | translate}}</p>
+        <p>{{'BASIC-TEMPLATE-DESC2' | translate}}</p>
+        <div hljs hljs-include="'templates/gs-basic.html'"></div>
+      </section>
 
-<span class="text-muted">&lt;!-- Bootstrap (necessary for Smoke CSS plugins) --&gt;</span>
-<span class="text-info">&lt;link</span> <span class="text-primary">href=</span><span class="text-danger">"css/bootstrap.min.css"</span> <span class="text-primary">rel=</span><span class="text-danger">"stylesheet"</span><span class="text-info">&gt;</span>
-<span class="text-muted">&lt;!-- Smoke --&gt;</span>
-<span class="text-info">&lt;link</span> <span class="text-primary">href=</span><span class="text-danger">"css/smoke.min.css"</span> <span class="text-primary">rel=</span><span class="text-danger">"stylesheet"</span><span class="text-info">&gt;</span>
+      <section id="language">
+        <h1>{{'LANGUAGE' | translate}}</h3><hr>
+        <p class="lead">{{'LANGUAGE-DESC' | translate}}</p>
+        <div hljs hljs-include="'templates/gs-language.html'"></div>
 
-<span class="text-muted">&lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;</span>
-<span class="text-muted">&lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;</span>
-<span class="text-muted">&lt;!--[if lt IE 9]&gt;</span>
-<span class="text-muted">      &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"&gt;&lt;/script&gt;</span>
-<span class="text-muted">      &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span>
-<span class="text-muted">    &lt;![endif]--&gt;</span>
-<span class="text-info">&lt;/head&gt;</span>
-<span class="text-info">&lt;body&gt;</span>
-<span class="text-info">&lt;h1&gt;</span>Hola Mundo!<span class="text-info">&lt;/h1&gt;</span>
-
-<span class="text-muted">&lt;!-- jQuery (necessary for Smoke JavaScript plugins) --&gt;</span>
-<span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"https://code.jquery.com/jquery.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
-<span class="text-muted">&lt;!-- Bootstrap (necessary for Smoke JavaScript plugins) --&gt;</span>
-<span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"js/bootstrap.min.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
-<span class="text-muted">&lt;!-- Smoke --&gt;</span>
-<span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"js/smoke.min.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
-<span class="text-info">&lt;script </span><span class="text-primary">src=</span><span class="text-danger">"js/es.min.js"</span><span class="text-info">&gt;&lt;/script&gt;</span>
-<span class="text-info">&lt;/body&gt;</span>
-<span class="text-info">&lt;/html&gt;</span>
-</code></pre>
-          </section>
+        <h3>{{'LANGUAGE-TB.TITLE' | translate}}</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>{{'LANGUAGE-TB.LANGUAGE' | translate}}</th>
+              <th>{{'LANGUAGE-TB.ARCHIVE' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{'ENGLISH' | translate}}</td>
+              <td>Default</td>
+            </tr>
+            <tr>
+              <td>{{'SPANISH' | translate}}</td>
+              <td>es.js</td>
+            </tr>
+            <tr>
+              <td>{{'DEUTSCH' | translate}}</td>
+              <td>de.js</td>
+            </tr>
+            <tr>
+              <td>{{'FRENCH' | translate}}</td>
+              <td>fr.js</td>
+            </tr>
+            <tr>
+              <td>{{'ITALIAN' | translate}}</td>
+              <td>it.js</td>
+            </tr>
+            <tr>
+              <td>{{'JAPANESE' | translate}}</td>
+              <td>ja.js</td>
+            </tr>
+            <tr>
+              <td>{{'BRAZILIANPORTUGUESE' | translate}}</td>
+              <td>pt_br.js</td>
+            </tr>
+            <tr>
+              <td>{{'ARABIC' | translate}}</td>
+              <td>ar.js</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
 
     </div><!--/.col-lg-9 -->

@@ -10,121 +10,133 @@
 
   <div class="row">
     <div class="col-lg-3">
-      <div class="list-group" affix>
-          <ul class="nav">
-            <a href="" smooth-scroll target="string-float" offset="80" class="list-group-item">{{'STRING-FLOAT' | translate}}</a>
-            <a href=""  smooth-scroll target="number-currency" offset="80"class="list-group-item">{{'NUMBER-CURRENCY' | translate}}</a>
-            <a href="" smooth-scroll target="URL" offset="80" class="list-group-item">URL</a>
-            <a href="" smooth-scroll target="date" offset="80" class="list-group-item">{{'DATE' | translate}}</a>
-            <a href="" smooth-scroll target="date-difference" offset="80" class="list-group-item">{{'DATE-DIFF' | translate}}</a>
-          </ul>
-      </div>
+      <ul class="list-unstyled">
+        <li><a href="" smooth-scroll target="string-float">{{'STRING-FLOAT' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="number-currency">{{'NUMBER-CURRENCY' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="URL">URL</a></li>
+        <li><a href="" smooth-scroll target="date">{{'DATE' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="date-difference">{{'DATE-DIFF' | translate}}</a></li>
+      </ul>
     </div>
 
     <div class="col-lg-9">
-
       <section id="string-float">
-
         <h1>{{'STRING-FLOAT' | translate}}</h1><hr>
         <p class="lead">{{'STRING-FLOAT-DESC' | translate}}</p>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formFloatConv">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result1" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html1" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js1" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result1">
+            <form id="formFloat">
               <div class="form-group">
-                <label for="text">Number</label>
-                  <input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
+                <label class="control-label">Currency</label>
+                  <input type="text" class="form-control" placeholder="Enter currency" data-smk-type="currency" required>
               </div>
-              <button type="button" class="btn btn-default" ng-click="float()">Convert</button>
+              <button type="submit" class="btn btn-default" ng-click="float()">Convert</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="e5b4156c2de3acb291fb"></gist>
+          <div role="tabpanel" class="tab-pane" id="html1">
+            <div hljs hljs-include="'templates/hp-float.html'" hljs-language="html"></div>
           </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/bNZGmX/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/bNZGmX/'>Smoke Float</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+          <div role="tabpanel" class="tab-pane" id="js1">
+            <div hljs hljs-include="'templates/hp-float.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="number-currency">
-
         <h1>{{'NUMBER-CURRENCY' | translate}}</h1><hr>
         <p class="lead">{{'NUMBER-CURRENCY-DESC' | translate}}</p>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formCurrencyConv">
+        <div class="alert alert-info">{{'NUMBER-CURRENCY-NOTE' | translate}}</div>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result2" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html2" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js2" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result2">
+            <form id="formCurrency">
               <div class="form-group">
-                <label for="text">Number</label>
-                  <input type="text" class="form-control" placeholder="Enter number" smk-type="currency" required>
+                <label class="control-label">Currency</label>
+                  <input type="text" class="form-control" placeholder="Enter currency" data-smk-type="currency" required>
               </div>
-              <button type="button" class="btn btn-default" ng-click="currency()">Convert</button>
+              <button type="submit" class="btn btn-default" ng-click="currency()">Convert</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="2a12806211ee011bdf10"></gist>
+          <div role="tabpanel" class="tab-pane" id="html2">
+            <div hljs hljs-include="'templates/hp-currency.html'" hljs-language="html"></div>
           </div>
-        </div>
-
-        <div class="alert alert-info">{{'NUMBER-CURRENCY-NOTE' | translate}}</div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/diCzs/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/diCzs/'>Smoke Currency</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+          <div role="tabpanel" class="tab-pane" id="js2">
+            <div hljs hljs-include="'templates/hp-currency.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="URL">
-
         <h1>URL</h1><hr>
         <p class="lead">{{'URL-DESC' | translate}}</p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formURL">
-              <button type="button" class="btn btn-default" ng-click="getUrl()">Get URL</button>
-            </form>
-          </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="24f147b3df83ebefdb62"></gist>
-          </div>
-        </div>
-
         <div class="alert alert-info">{{'URL-NOTE' | translate}}</div>
-
-        <iframe height='250' scrolling='no' src='//codepen.io/alfredobarron/embed/qAKLF/?height=250&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/qAKLF/'>Smoke Get URL</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result3" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html3" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js3" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result3">
+            <div class="content text-center">
+              <a href="" class="btn btn-default" ng-click="getUrl()">Get URL</a>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html3">
+            <div hljs hljs-include="'templates/hp-url.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js3">
+            <div hljs hljs-include="'templates/hp-url.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
       </section>
 
       <section id="date">
-
         <h1>{{'DATE' | translate}}</h1><hr>
         <p class="lead">{{'DATE-DESC' | translate}}</p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formDate">
-              <button type="button" class="btn btn-default" ng-click="date()">Current date</button>
+        <div class="alert alert-info">{{'DATE-NOTE' | translate}} <a href="http://momentjs.com/" target="_blank">momentjs</a></div>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result4" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html4" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js4" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result4">
+            <form id="formDate">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="control-label">Date</label>
+                    <input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa" value="12-30-2015">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="control-label">Format</label>
+                    <input type="text" class="form-control" id="format" placeholder="dd/MM/yyyy" value="dd/MM/yyyy">
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="date()">Customize</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="9d5dd2fc65aef5c58686"></gist>
+          <div role="tabpanel" class="tab-pane" id="html4">
+            <div hljs hljs-include="'templates/hp-date.html'" hljs-language="html"></div>
           </div>
-        </div>
-
-        <iframe height='250' scrolling='no' src='//codepen.io/alfredobarron/embed/vBlEs/?height=250&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/vBlEs/'>Smoke Date</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
+          <div role="tabpanel" class="tab-pane" id="js4">
+            <div hljs hljs-include="'templates/hp-date.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
 
         <h3>{{'OPTIONS' | translate}}</h3>
-
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -146,12 +158,6 @@
               <td>String</td>
               <td>yyyy-mm-dd</td>
               <td>{{'DATE-TB.DESCS.FORMAT' | translate}}</td>
-            </tr>
-            <tr>
-              <td><code>lang</code></td>
-              <td>String: {en | es}</td>
-              <td>en</td>
-              <td>{{'DATE-TB.DESCS.LANG' | translate}}</td>
             </tr>
           </tbody>
         </table>
@@ -199,140 +205,52 @@
               </tr>
           </tbody>
         </table>
-
-        <h4>{{'LANGUAGE-TB.TITLE' | translate}}</h4>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th><code>lang</code></th>
-              <th>{{'LANGUAGE-TB.LANGUAGE' | translate}}</th>
-              <th>{{'LANGUAGE-TB.ARCHIVE' | translate}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tbody>
-              <tr>
-                <td>de</td>
-                <td>{{'DEUTSCH' | translate}}</td>
-                <td>de.js</td>
-              </tr>
-              <tr>
-                <td>en</td>
-                <td>{{'ENGLISH' | translate}}</td>
-                <td>Default</td>
-              </tr>
-              <tr>
-                <td>es</td>
-                <td>{{'SPANISH' | translate}}</td>
-                <td>es.js</td>
-              </tr>
-              <tr>
-                <td>fr</td>
-                <td>{{'FRENCH' | translate}}</td>
-                <td>fr.js</td>
-              </tr>
-              <tr>
-                <td>it</td>
-                <td>{{'ITALIAN' | translate}}</td>
-                <td>it.js</td>
-              </tr>
-              <tr>
-                <td>ja</td>
-                <td>{{'JAPANESE' | translate}}</td>
-                <td>ja.js</td>
-              </tr>
-              <tr>
-                <td>pt_br</td>
-                <td>{{'BRAZILIANPORTUGUESE' | translate}}</td>
-                <td>pt_br.js</td>
-              </tr>
-            </tbody>
-          </tbody>
-        </table>
-
-        <div class="alert alert-info">{{'DATE-NOTE' | translate}}</div>
-
-        <gist id="71df7c95c90ed5bb7c61"></gist>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formDateCustomize">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="text">Date</label>
-                    <input type="text" class="form-control" id="date" placeholder="mm/dd/aaaa" value="30-12-2014">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="format">Format</label>
-                    <input type="text" class="form-control" id="format" placeholder="dd/MM/yyyy" value="dd/MM/yyyy">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="lang">Language</label>
-                    <input type="text" class="form-control" id="lang" placeholder="es" value="es">
-                  </div>
-                </div>
-              </div>
-              <button type="button" class="btn btn-default" ng-click="dateCustomize()">Customize</button>
-            </form>
-          </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="e62cec2a0a629de77cbc"></gist>
-          </div>
-        </div>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/eBgmD/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/eBgmD/'>Smoke Date Format</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
-
       </section>
 
       <section id="date-difference">
-
         <h1>{{'DATE-DIFF' | translate}}</h1><hr>
         <p class="lead">{{'DATE-DIFF-DESC' | translate}}</p>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p class="text-muted"><small>EXAMPLE</small></p>
-            <form role="form" id="formDateDiff">
+        <div class="alert alert-info">{{'DATE-NOTE' | translate}} <a href="http://momentjs.com/" target="_blank">momentjs</a></div>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result5" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html5" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js5" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result5">
+            <form id="formDateDiff">
               <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
-                    <label for="date1">Date 1</label>
+                    <label class="control-label">Date 1</label>
                     <input type="text" class="form-control" id="date1" placeholder="mm/dd/aaaa" value="09/25/2014">
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="form-group">
-                    <label for="date2">Date 2</label>
+                    <label class="control-label">Date 2</label>
                     <input type="text" class="form-control" id="date2" placeholder="mm/dd/aaaa" value="09/30/2014">
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="form-group">
-                    <label for="interval">Interval</label>
+                    <label class="control-label">Interval</label>
                     <input type="text" class="form-control" id="interval" placeholder="Interval" value="days">
                   </div>
                 </div>
               </div>
-              <button type="button" class="btn btn-default" ng-click="dateDiff()">Difference</button>
+              <button type="submit" class="btn btn-default" ng-click="dateDiff()">Difference</button>
             </form>
           </div>
-          <div class="panel-footer">
-            <p class="text-muted"><small>CODE</small></p>
-            <gist id="692922050788e320b46a"></gist>
+          <div role="tabpanel" class="tab-pane" id="html5">
+            <div hljs hljs-include="'templates/hp-datediff.html'" hljs-language="html"></div>
           </div>
-        </div>
+          <div role="tabpanel" class="tab-pane" id="js5">
+            <div hljs hljs-include="'templates/hp-datediff.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
 
         <h3>{{'OPTIONS' | translate}}</h3>
-
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -363,12 +281,12 @@
             </tr>
           </tbody>
         </table>
-
-        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/ksyfw/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/ksyfw/'>Smoke Date difference</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
-        </iframe>
-
       </section>
 
+      <blockquote class="blockquote-reverse">
+        <p>{{'FULL-EXAMPLE' | translate}}<a href="http://codepen.io/alfredobarron/pen/NGVYQy" target="_blank">Codepen</a></p>
+      </blockquote>
     </div><!--/.col-lg-9 -->
+
   </div><!--/.row -->
 </div><!-- /.container -->

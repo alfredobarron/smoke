@@ -1,0 +1,630 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{'VALIDATE' | translate}}</h1>
+    <p class="lead">{{'VALIDATE-DESC' | translate}}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-3">
+      <div class="list-group" affix>
+        <ul class="nav">
+          <a href="" smooth-scroll target="input-empty" offset="80" class="list-group-item">{{'INPUT-EMPTY' | translate}}</a>
+          <a href="" smooth-scroll target="input-email" offset="80" class="list-group-item">{{'INPUT-EMAIL' | translate}}</a>
+          <a href="" smooth-scroll target="input-alphanumeric" offset="80" class="list-group-item">{{'INPUT-ALPHANUMERIC' | translate}}</a>
+          <a href="" smooth-scroll target="input-number" offset="80" class="list-group-item">{{'INPUT-NUMBER' | translate}}</a>
+          <a href="" smooth-scroll target="input-numberRange" offset="80" class="list-group-item">{{'INPUT-NUMBERRANGE' | translate}}</a>
+          <a href="" smooth-scroll target="input-decimal" offset="80" class="list-group-item">{{'INPUT-DECIMAL' | translate}}</a>
+          <a href="" smooth-scroll target="input-currency" offset="80" class="list-group-item">{{'INPUT-CURRENCY' | translate}}</a>
+          <a href="" smooth-scroll target="number-character" offset="80" class="list-group-item">{{'NUMBER-CHARACTER' | translate}}</a>
+          <a href="" smooth-scroll target="range-character" offset="80" class="list-group-item">{{'RANGE-CHARACTER' | translate}}</a>
+          <a href="" smooth-scroll target="strong-password" offset="80" class="list-group-item">{{'STRONG-PASSWORD' | translate}}</a>
+          <a href="" smooth-scroll target="equal-password" offset="80" class="list-group-item">{{'EQUAL-PASSWORD' | translate}}</a>
+          <a href="" smooth-scroll target="equal-password-var" offset="80" class="list-group-item">{{'EQUAL-PASSWORD-VAR' | translate}}</a>
+          <a href="" smooth-scroll target="clear-form" offset="80" class="list-group-item">{{'CLEAR-FORM' | translate}}</a>
+          <a href="" smooth-scroll target="customize-message" offset="80" class="list-group-item">{{'CUSTOMIZE-MESSAGE' | translate}}</a>
+          <a href="" smooth-scroll target="language" offset="80" class="list-group-item">{{'LANGUAGE' | translate}}</a>
+        </ul>
+      </div>
+    </div><!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+
+      <section id="input-empty">
+
+        <h1>{{'INPUT-EMPTY' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-EMPTY-DESC' | translate"></p>
+
+        <div class="alert alert-info" ng-bind-html="'INPUT-EMPTY-NOTE' | translate"></div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formEmpty">
+              <div class="form-group">
+                <label for="text">Text</label>
+                <input type="text" class="form-control" placeholder="Enter text" required>
+              </div>
+              <div class="form-group">
+                <label for="text">Select</label>
+                <select class="form-control" required>
+                  <option value="">Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="text">Textarea</label>
+                <textarea class="form-control" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="check" value="1" required>
+                    Checkbox
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="rad" value="option1" required>
+                    Option 1
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="rad" value="option2">
+                    Option 2
+                  </label>
+                </div>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateEmpty()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="c28db278dc300293315d"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='600' scrolling='no' src='//codepen.io/alfredobarron/embed/wrfCI/?height=600&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/wrfCI/'>Smoke Validate Empty</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="input-email">
+
+        <h1>{{'INPUT-EMAIL' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-EMAIL-DESC' | translate"></p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formEmail">
+              <div class="form-group">
+                <label for="text">Email</label>
+                <input type="email" class="form-control" placeholder="Enter email" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateEmail()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="a1fae1f5114faa25cbe9"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/bNdrxb/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/bNdrxb/'>Smoke Validate Email</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+
+      </section>
+
+      <section id="input-alphanumeric">
+
+        <h1>{{'INPUT-ALPHANUMERIC' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-ALPHANUMERIC-DESC' | translate"></p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formAlphanumeric">
+              <div class="form-group">
+                <label for="text">Alphanumeric</label>
+                <input type="text" class="form-control" placeholder="Enter alphanumeric string" smk-type="alphanumeric" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateAlphanumeric()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="7a4eb0150a2f1be4b544"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/GgJMNK/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/GgJMNK/'>Smoke Validate Alphanumeric</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="input-number">
+
+        <h1>{{'INPUT-NUMBER' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-NUMBER-DESC' | translate"></p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formNumber">
+              <div class="form-group">
+                <label for="text">Number</label>
+                <input type="text" class="form-control" placeholder="Enter number" smk-type="number" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateNumber()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="3190da6e2750e8b6e153"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/VYLMjR/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/VYLMjR/'>Smoke Validate Number</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="input-numberRange">
+
+        <h1>{{'INPUT-NUMBERRANGE' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-NUMBERRANGE-DESC' | translate"></p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formNumberRange">
+              <div class="form-group">
+                <label for="text">Number</label>
+                <input type="text" class="form-control" placeholder="Enter number" smk-type="number" smk-min="2015" smk-max="2020" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateNumberRange()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="31532583c5b2349a8af6"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/PwvgXv/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/PwvgXv/'>Smoke Validate Number Range</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="input-decimal">
+
+        <h1>{{'INPUT-DECIMAL' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-DECIMAL-DESC' | translate"></p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formDecimal">
+              <div class="form-group">
+                <label for="text">Decimal</label>
+                <input type="text" class="form-control" placeholder="Enter decimal" smk-type="decimal" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateDecimal()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="2541fd89e958580718de"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/KwEKbV/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/KwEKbV/'>Smoke Validate Decimal</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="input-currency">
+
+        <h1>{{'INPUT-CURRENCY' | translate}}</h1><hr>
+        <p ng-bind-html="'INPUT-CURRENCY-DESC' | translate"></p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formCurrency">
+              <div class="form-group">
+                <label for="text">Currency</label>
+                <input type="text" class="form-control" placeholder="Enter currency" smk-type="currency" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateCurrency()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="8d3381f4a98cb1e39cae"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/raRBYg/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/raRBYg/'>Smoke Validate Currency</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="number-character">
+
+        <h1>{{'NUMBER-CHARACTER' | translate}}</h1><hr>
+        <p ng-bind-html="'NUMBER-CHARACTER-DESC' | translate"></p>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formNumberChar">
+              <div class="form-group">
+                <label for="text">Number Character</label>
+                <input type="text" class="form-control" placeholder="Enter text" minlength="8" maxlength="8" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateNumberChar()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="dcc395702ee2503b2969"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/yyNvwK/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/yyNvwK/'>Smoke Validate Number Character</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="range-character">
+
+        <h1>{{'RANGE-CHARACTER' | translate}}</h1><hr>
+        <p ng-bind-html="'RANGE-CHARACTER-DESC' | translate"></p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formRangeChar">
+              <div class="form-group">
+                <label for="text">Range Character</label>
+                <input type="text" class="form-control" placeholder="Enter text" minlength="4" maxlength="8" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateRangeChar()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="f23fab5edf7a5f2ef79b"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/PwqQgb/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/PwqQgb/'>Smoke Validate Range Character</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="strong-password">
+
+        <h1>{{'STRONG-PASSWORD' | translate}}</h1><hr>
+        <p ng-bind-html="'STRONG-PASSWORD-DESC' | translate"></p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><code>smk-strongPass</code></th>
+              <th>{{'STRONG-PASSWORD-TB.DESC' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Default</td>
+              <td>{{'STRONG-PASSWORD-TB.DESCS.DEFAULT' | translate}}</td>
+            </tr>
+            <tr>
+              <td>weak</td>
+              <td>{{'STRONG-PASSWORD-TB.DESCS.WEAK' | translate}}</td>
+            </tr>
+            <tr>
+              <td>medium</td>
+              <td>{{'STRONG-PASSWORD-TB.DESCS.MEDIUM' | translate}}</td>
+            </tr>
+            <tr>
+              <td>strong</td>
+              <td>{{'STRONG-PASSWORD-TB.DESCS.STRONG' | translate}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formStrongPass">
+              <div class="form-group">
+                <label for="text">Password</label>
+                <input type="password" class="form-control" placeholder="Enter password" smk-strongPass="medium" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateStrongPass()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="0166a41e380b7535232c"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4d7a4b82a6da7638746c"></gist>
+          </div>
+        </div>
+
+        <iframe height='320' scrolling='no' src='//codepen.io/alfredobarron/embed/qEdXQo/?height=320&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/qEdXQo/'>Smoke Validate Strong Password</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+
+      </section>
+
+      <section id="equal-password">
+
+        <h1>{{'EQUAL-PASSWORD' | translate}}</h1><hr>
+        <p ng-bind-html="'EQUAL-PASSWORD-DESC' | translate"></p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formEqualPass">
+              <div class="form-group">
+                <label for="text">Password</label>
+                <input type="password" class="form-control" placeholder="Enter password" id="pass1" required>
+              </div>
+              <div class="form-group">
+                <label for="text">Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Confirm password" id="pass2">
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateEqualPass()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="0294312e08e5528dbce7"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="dd3569a204c71fe86eb3"></gist>
+          </div>
+        </div>
+
+        <iframe height='400' scrolling='no' src='//codepen.io/alfredobarron/embed/LEVdOG/?height=400&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/LEVdOG/'>Smoke Validate Equal Password</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="equal-password-var">
+
+        <h1>{{'EQUAL-PASSWORD-VAR' | translate}}</h1><hr>
+        <p ng-bind-html="'EQUAL-PASSWORD-VAR-DESC' | translate"></p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formEqualPassVar">
+              <div class="form-group">
+                <label for="text">Password</label>
+                <p class="form-control-static">Smoke1</p>
+              </div>
+              <div class="form-group">
+                <label for="text">Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Confirm password" smk-strongPass="strong" id="pass" required>
+              </div>
+              <button type="button" class="btn btn-default" ng-click="validateEqualPassVar()">Submit</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="b689cb15ff982c20da63"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="2e277dfbdf9a561ffbc3"></gist>
+          </div>
+        </div>
+
+        <iframe height='400' scrolling='no' src='//codepen.io/alfredobarron/embed/LEVdeN/?height=400&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/LEVdeN/'>Smoke Validate Equal Password & Var</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="clear-form">
+
+        <h1>{{'CLEAR-FORM' | translate}}</h1><hr>
+        <p ng-bind-html="'CLEAR-FORM-DESC' | translate"></p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted"><small>EXAMPLE</small></p>
+            <form role="form" id="formClear">
+              <div class="form-group">
+                <label for="text">Text</label>
+                <input type="text" class="form-control" value="Text" >
+              </div>
+              <div class="form-group">
+                <label for="text">Select</label>
+                <select class="form-control">
+                  <option value="">Select</option>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="text">Textarea</label>
+                <textarea class="form-control" rows="3">Textarea</textarea>
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="checkbox" value="1" checked>
+                    Checkbox
+                  </label>
+                </div>
+              </div>
+              <dif class="form-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="radios" value="option1" checked>
+                    Option 1
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="radios" value="option2">
+                    Option 2
+                  </label>
+                </div>
+              </dif>
+              <button type="button" class="btn btn-default" ng-click="clear()">Clear</button>
+            </form>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="2c631283936ff85b7b1d"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="ac3a6190b6d3f4a72896"></gist>
+          </div>
+        </div>
+
+        <iframe height='600' scrolling='no' src='//codepen.io/alfredobarron/embed/dPomjO/?height=600&theme-id=8624' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/alfredobarron/pen/dPomjO/'>Smoke Clear Form</a> by Alfredo Barron (<a href='http://codepen.io/alfredobarron'>@alfredobarron</a>) on <a href='http://codepen.io'>CodePen</a>.
+        </iframe>
+
+      </section>
+
+      <section id="customize-message">
+
+        <h1>{{'CUSTOMIZE-MESSAGE' | translate}}</h3><hr>
+        <p ng-bind-html="'CUSTOMIZE-MESSAGE-DESC' | translate"></p>
+        <div class="panel panel-default">
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="b1e3d4db93266fb569d5"></gist>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="language">
+
+        <h1>{{'LANGUAGE' | translate}}</h3><hr>
+        <p ng-bind-html="'LANGUAGE-DESC' | translate"></p>
+        <div class="panel panel-default">
+          <div class="panel-footer">
+            <p class="text-muted"><small>HTML</small></p>
+            <gist id="71df7c95c90ed5bb7c61"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="e020231a38adafea6d38"></gist>
+          </div>
+          <div class="panel-footer">
+            <p class="text-muted"><small>CODE</small></p>
+            <gist id="4cacb25cbf352390beba"></gist>
+          </div>
+        </div>
+
+        <h4>{{'LANGUAGE-TB.TITLE' | translate}}</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><code>lang</code></th>
+              <th>{{'LANGUAGE-TB.LANGUAGE' | translate}}</th>
+              <th>{{'LANGUAGE-TB.ARCHIVE' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>de</td>
+              <td>{{'DEUTSCH' | translate}}</td>
+              <td>de.js</td>
+            </tr>
+            <tr>
+              <td>en</td>
+              <td>{{'ENGLISH' | translate}}</td>
+              <td>Default</td>
+            </tr>
+            <tr>
+              <td>es</td>
+              <td>{{'SPANISH' | translate}}</td>
+              <td>es.js</td>
+            </tr>
+            <tr>
+              <td>fr</td>
+              <td>{{'FRENCH' | translate}}</td>
+              <td>fr.js</td>
+            </tr>
+            <tr>
+              <td>it</td>
+              <td>{{'ITALIAN' | translate}}</td>
+              <td>it.js</td>
+            </tr>
+            <tr>
+              <td>ja</td>
+              <td>{{'JAPANESE' | translate}}</td>
+              <td>ja.js</td>
+            </tr>
+            <tr>
+              <td>pt_br</td>
+              <td>{{'BRAZILIANPORTUGUESE' | translate}}</td>
+              <td>pt_br.js</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+
+    </div><!--/.col-lg-9 -->
+
+  </div><!--/.row -->
+</div><!-- /.container -->

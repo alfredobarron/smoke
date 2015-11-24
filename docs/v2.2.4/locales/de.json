@@ -1,0 +1,237 @@
+{
+    "GETTING-STARTED": "Beginnen",
+    "VALIDATE": "Validieren",
+    "NOTIFICATIONS": "Benachrichtigungen",
+    "PROGRESSBAR": "Fortschrittsanzeige",
+    "FULLSCREEN": "Vollbild",
+    "PANEL": "Panel",
+    "HELPERS": "Helfer",
+
+    "BRAZILIANPORTUGUESE":"Brasilianisches Portugiesisch",
+	"DEUTSCH": "Deutsch",
+    "ENGLISH": "Engels",
+    "FRENCH" : "Frans",
+    "ITALIAN" : "Italiaans",
+    "JAPANESE": "Japanse",
+    "SPANISH": "Spaans",
+
+    "SLOGAN": "Smoke ist das vollständigste jQuery Plugin, erstellt für die Nutzung mit Bootstrap 3",
+    "DOWNLOAD": "Download",
+
+    "FEATURES": "FEATURES",
+
+    "GITHUB": "Smoke ist ein Open source Projekt. Es wird gehosted, entwickelt, und gewartet auf GitHub.",
+    "VIEW-IN": "Ansehen auf",
+
+    "DESIGNED": "Gestaltet und entwickelt mit Liebe von",
+    "TRANSLATED": "Übersetzt von",
+    "LICENSE": "Quellcode und Dokumentation (c) Copyright 2015 Alfredo Barron. Code veröffentlich unter ",
+    "ISSUES": "Probleme",
+    "RELEASES": "veröffentlichte Versionen",
+
+
+
+
+    "GETTING-STARTED-DESC": "Eine Übersicht zu Smoke, wie herunterladen, wie nutzen.",
+
+    "DOWNLOAD-DESC": "Lade Smoke herunter und füge es Deinem Projekt bei. Es ist einfach und schnell zu bedienen.",
+
+    "INSTALL": "Installieren via",
+
+    "WHATS-INCLUDED": "Was ist enthalten",
+    "WHATS-INCLUDED-DESC": "Nach erfolgreichem Herunterladen, entpacke das .zip file und erkunde die Ordner-Struktur von Smoke. Du wirst etwas sehen wie das hier:",
+
+    "REQUIRED": "Erforderlich",
+    "REQUIRED-DESC": "Damit das Smoke-Plugin funktioniert, brauchst Du auch diese beiden Bibliotheken",
+    "REQUIRED-JQUERY": "Beachte, dass das Smoke-Plugin die jQuery Bibliothek benötigt.",
+    "REQUIRED-BOOTSTRAP": "Beachte, dass das Smoke-Plugin das Bootstrap 3 framework benötigt.",
+
+    "BASIC-TEMPLATE": "Startmuster für erste Schritte",
+    "BASIC-TEMPLATE-DESC": "Beginne mit dieser einfachen HTML-Vorlage und ändere sie nach Deinen Bedürfnissen ab.",
+    "BASIC-TEMPLATE-DESC2": "Kopiere den untenstehenden HTML-Code und beginne mit den Minimalanforderungen von Smoke.",
+
+
+
+
+    "VALIDATE": "Formular Validierung",
+    "VALIDATE-DESC": "Macht die Formularvalidierung auf der Benutzerseite einfacher und sicherer.",
+
+    "INPUT-EMPTY": "Leeres Eingabefeld",
+    "INPUT-EMPTY-DESC": "Damit dieses Feld überwacht wird, ist lediglich das Attribut <code>required</code> innerhalb des <code>input</code> feldes nötig. Die unterstützten Eingabefeldtypen sind momentan <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code> und <code>checkbox</code>. Die Funktion zur Validierung heisst <span class = 'text-success'> smkValidate () </span>.",
+    "INPUT-EMPTY-NOTE": "Es ist erforderlich dass das zu validierende <code>input</code> - Feld in einem <code>div</code> Container mit der Bootstrap-Formularklasse <code>form-group</code> eingefügt wird",
+
+    "INPUT-EMAIL": "Email Eingabe ",
+    "INPUT-EMAIL-DESC": "Um die Richtigkeit einer Emailadresse zu validieren, muss das Eingabefeld den Typ <code>email</code> und das Attribut <code>required</code> als Zusatz innerhalb des <code>input</code> -Feldes enthalten.",
+
+    "INPUT-ALPHANUMERIC": "Alphanumerische Eingabe ",
+    "INPUT-ALPHANUMERIC-DESC": "Um ein Feld zu validieren, das nur Ziffern und Buchstaben enthalten soll muss das Eingabefeld vom Typ <code>text</code> sein, und das  <code>required</code> Attribut innerhalb des Input tags beinhalten. Schliesslich fügt man das <code>smk-type</code> Attribut hinzu und innerhalb diesem dann die <code>alphanumeric</code> Eigenschaft.",
+
+    "INPUT-NUMBER": "Nummern-Eingabe",
+    "INPUT-NUMBER-DESC": "Soll ein Feld nur Ziffern akzeptieren, muss das Eingabefeld den Typ <code>text</code> haben und das <code>required</code> Attribut innerhalb des <code>input</code> tags enthalten. Am Ende wird dann noch das <code>smk-type</code> Attribut beigefügt werden und innerhalb diesem die <code>number</code> Eigenschaft.",
+
+    "INPUT-NUMBERRANGE": "Nummern-Bereich-Eingabe",
+    "INPUT-NUMBERRANGE-DESC": "Soll ein Feld nur Ziffern innerhalb eines bestimmten Bereiches enthalten dürfen, so muss das Eingabefeld vom Typ <code>text</code> sein und das Attribut <code>required</code> innerhalb des <code>input</code> tags beinhalten. Bitte beachte, dass wie in dem Muster das required-Attribut ohne Anführungszeichen für sich alleine steht. Auch hier wird am Ende der <code>smk-type</code> zugefügt und als dessen Eigenschaft <code>number</code> und die Begrenzer <code>smk-min</code> und <code>smk-max</code> als Attribute zur Eingrenzung des erlaubten Bereiches.",
+
+    "INPUT-DECIMAL": "Dezimal-Eingabe",
+    "INPUT-DECIMAL-DESC": "Ein Feld, welches nur Dezimalnummern akzeptieren soll, muss den Typ <code>text</code> und das Attribut <code>required</code> innerhalb des <code>input</code> tags erhalten. Schliesslich noch den <code>smk-type</code> hinzufügen und innerhalb diesem dann die <code>decimal</code> Eigenschaft.",
+
+    "INPUT-CURRENCY": "Eingabe Währung",
+    "INPUT-CURRENCY-DESC": "Ein Feld, das nur Eingaben enthalten darf, die für Währungseingaben typisch sind und neben Ziffern nur Kommata und Punktnotierungen akzeptieren soll muss vom Typ <code>text</code> sein, das <code>required</code> Attribut innerhalb des <code>input</code> tags beinhalten und schliesslich das <code>smk-type</code> Attribut mit der <code>currency</code> Eigenschaft.",
+
+    "NUMBER-CHARACTER": "Zeichen mit vorgegebener Anzahl (Bereich)",
+    "NUMBER-CHARACTER-DESC": "Soll ein Eingabefeld nur eine bestimmte Anzahl an Zeichen in einem bestimmten Bereich akzeptieren, benötigt es das <code>required</code> Attribut innerhalb des <code>input</code> tags. Schliesslich werden die Begrenzer <code>minLength</code> für die Mindestanzahl und <code>maxlength</code> für die Maximalanzahl an Zeichen als Attribut hinzugefügt und innerhalb derer die Anzahl der Zeichen eingetragen.",
+
+    "RANGE-CHARACTER": "Zeichen mit vorgegebener Anzahl (Bereich)",
+    "RANGE-CHARACTER-DESC": "Soll ein Eingabefeld nur eine bestimmte Anzahl an Zeichen in einem bestimmten Bereich akzeptieren, benötigt es das <code>required</code> Attribut innerhalb des <code>input</code> tags. Schliesslich werden die Begrenzer <code>minLength</code> für die Mindestanzahl und <code>maxlength</code> für die Maximalanzahl an Zeichen als Attribut hinzugefügt und innerhalb derer die Anzahl der Zeichen eingetragen.",
+
+    "STRONG-PASSWORD": "Passwortstärke",
+    "STRONG-PASSWORD-DESC": "Um eine gewisse Passwortstärke für eine verbesserte Sicherheit vorzugeben, muss das Eingabefeld vom Typ <code>password</code> sein, gefolgt vom <code>required</code> Attribut innerhalb des <code>input</code> tags. Füge dann die <code>smk-strongPass</code> Kennung hinzu und dort als Eigenschaft die gewünschte Vorgabe zur Passwortstärke.",
+    "STRONG-PASSWORD-TB": {
+        "DESC": "Beschreibung",
+        "DESCS": {
+            "DEFAULT": "mindestens 4 Zeichen (Voreinstellung)",
+            "WEAK": "mindestens 6 Zeichen (schwach)",
+            "MEDIUM": " mindestens 6 alphanumerische Zeichen und mindestens eines davon eine Ziffer (mittel)",
+            "STRONG": "mindestens 6 Zeichen, bestehend aus Ziffern und Zeichen in Gross- und Kleinschreibung (stark)"
+        }
+    },
+
+    "EQUAL-PASSWORD": "Passwort wiederholen",
+    "EQUAL-PASSWORD-DESC": "Während Neuregistrierungen wird der Benutzer meist gebeten, das gewählte Passwort nochmals zu bestätigen. Diese Funktion validiert, ob die Eingaben in beide Passwortfelder identisch ist. Füge den Code <code>required</code> innerhalb des <code>input</code> Tags beim ersten Feld zu. Die verwendete JQuery-Funktion zur Validierung lautet <span class = 'text-success'> $. SmkEqualPass () </span> - siehe Musterbeispiel im Code-Tab.",
+
+    "EQUAL-PASSWORD-VAR": "Passwort stimmt mit vorgegebener Variable überein",
+    "EQUAL-PASSWORD-VAR-DESC": "Soll ein Passwortfeld mit einer vorgegebenen JavaScript Variable übereinstimmen, füge das <code>required</code> Attribut innerhalb des <code>input</code> Tags hinzu. Die verwendete Funktion ist <span class='text-success'>$.smkEqualPass()</span>. Achtung: Da diese Variable im Quelltext eingesehen werden kann eignet sich diese Funktion nicht für sicherheitsrelevante Anwendungen. Für Musterseiten (sog. Mockups) kann das eine sinnvolle schnelle Variante sein.",
+
+    "CLEAR-FORM": "Formular zurücksetzen",
+    "CLEAR-FORM-DESC": "Um ein Formular in allen Eingaben auf den Ursprung zurück zu setzen genügt der Verknüpfen der <span class='text-success'>smkClear()</span> Funktion. Sollen einzelne Eingaben erhalten bleiben, nutze die <span class='text-primary'>noClear</span> Eigenschaft innerhalb der Funktion.",
+
+    "CUSTOMIZE-MESSAGE": "Nachricht(en) anpassen",
+    "CUSTOMIZE-MESSAGE-DESC": "Um die Fehlermeldung anzupassen gibt es alternativ zum einladen der Sprachdatei auch die Möglichkeit, Felder direkt über <code>smk-text</code> innerhalb des <code>input</code> -Tags zu verändern.",
+
+    "LANGUAGE": "Sprache",
+    "LANGUAGE-DESC": "Um die Sprache der Rückmeldungen zu verändern, füge in der HTML-Datei unten das benötigte Script-Plugin ein und dann (WICHTIG!!!) gebe die gewünschte Sprachkennung (z.B. 'de' für Deutsch) wie im unten stehenden Muster als <code>lang</code> Option in die <span class = 'text-success'>smkValidate()</span> Funktion ein.",
+    "LANGUAGE-TB": {
+        "TITLE": "Unterstütze Sprachen",
+        "LANGUAGE": "Language",
+        "ARCHIVE": "Archiv"
+    },
+
+
+    "OPTIONS": "Optionen",
+    "OPTION":"Option",
+    "TYPE":"Typ",
+    "DESCRIPTION":"Beschreibung",
+
+
+    "NOTIFICATIONS-DESC": "Erstellte funktionelle und farbenfrohe Warn- oder Bestätigungshinweise und nutze sie ebenso einfach wie die nativen von Javascript.",
+
+    "ALERTS": "Alerts",
+    "ALERTS-DESC": "Diese Funktion stellt Benachrichtigungen für den Benutzer bereit, verwendet bei den typischen Interaktionen wenn die Nutzer ein Ereignis aufrufen.",
+    "ALERTS-TB": {
+        "DESC": "Passe die Meldungen an, ändere die Nachricht, die Farbe, die Anzeigedauer oder bestimme, dass die Nachricht so lange stehen bleibt, bis der Nutzer sie per Klick entfernt.",
+        "DESCS": {
+            "TEXT":"Nachricht",
+            "TYPE":"Type message",
+            "TIME":"Dauer der Anzeige in Sekunden",
+            "PERMANENT":"Die Benachrichtigung bleibt stehen"
+        }
+    },
+
+    "CONFIRMATION": "Bestätigung",
+    "CONFIRMATION-DESC": "Diese Funktion fordert eine Bestätigung beim Benutzer für die typischen Interaktionen",
+    "CONFIRMATION-TB": {
+        "DESC": "Passe die Bestätigungen an, ändere die Nachricht oder den Text der Schaltflächen.",
+        "DESCS": {
+            "TEXT":"Nachricht an den Nutzer",
+            "ACCEPT":"Text des Bestätigungsknopfes",
+            "CANCEL":"Text des Abbruchknopfes"
+        }
+    },
+
+
+
+
+    "PROGRESSBAR-DESC": "Füge der Anwendung eine Fortschrittsanzeige hinzu.",
+    "PROGRESSBAR-DESC2": "Füge eine Fortschrittsanzeige für jeden Event hinzu.",
+    "PROGRESSBAR-TB": {
+        "DESC": "Passe das Element an, in dem die Anzeige erscheinen soll. Definiere Start und Ende der Anzeige.",
+        "DESCS": {
+            "ELEMENT": "Element, in dem die Fortschrittsanzeige erfolgt",
+            "STATUS": "Wann sie beginnt, und wann sie endet"
+        }
+    },
+
+
+
+    "FULLSCREEN-DESC": "Spendiere Deinen Anwendungen Vollbild.",
+    "FULLSCREEN-DESC2": "Um einer Schaltfläche die Funktion Vollbild zu geben ist es lediglich nötig der Funktion mitzuteilen, welches Element als Vollbild gehen soll. Tipp: Das geht auch mit einem div, oder einem img.",
+
+
+
+    "PANEL-DESC": "Erweitere die Funktion der Bootstrap-Panels",
+    "PANEL-DESC2": "Füge die Funktionen minimieren, maximieren oder schliessen hinzu.",
+    "PANEL-TB": {
+        "DESC": "Passe die Schaltflächen an und blende aus, welche Du nicht anzeigen willst. (Standard: alle angezeigt).",
+        "DESCS": {
+            "HIDE": "auszublendene Schaltflächen"
+        }
+    },
+
+
+
+    "HELPERS-DESC": "Sammlung an Hilfsfunktionen.",
+
+    "STRING-FLOAT": "Zeichen zu Fliesskommazahl",
+    "STRING-FLOAT-DESC": "Wandelt eine Zeichenkette in eine Flieskommazahl um.",
+
+    "NUMBER-CURRENCY": "Währungsformat",
+    "NUMBER-CURRENCY-DESC": "Wandelt eine Zahl in ein Währungsformat um.",
+    "NUMBER-CURRENCY-NOTE": "Diese Funktion benötigt 2 Parameter: Die umzuwandelnde Zahl, die formatiert werden soll und die zweite entspricht der Währungskennung (z.B. $ oder EUR, CHF).",
+
+    "URL-DESC": "Aktuelle Adresse (URL)",
+    "URL-NOTE": "Diese Funktion gibt die aktuelle Seite zurück, auf der sich der Nutzer befindet.",
+
+
+    "DATE": "Datum",
+    "DATE-DESC": "Diese Funktion erzeugt, formatiert, übersetzt Daten oder passt Datumseingaben an.",
+    "DATE-NOTE": "Um die Sprache eines Datums zu ändern, füge die gewünschte Sprachdatei dem HTML-Skript hinzu.",
+    "DATE-TB": {
+        "DEFAULT": {
+            "DATE": "Aktuelles Datum"
+        },
+        "DESCS": {
+            "DATE": "Numerisches Datum",
+            "FORMAT": "Gewünschtes Format",
+            "LANG": "Sprache Datum (Monatsangaben)"
+        }
+    },
+    "DATE-TB2": {
+        "DESC": "Formate",
+        "TITLE": "Formate",
+        "DESCS": {
+            "d": "Tag ohne vorangestellte 0",
+            "dd": "Tag mit vorangestellter 0",
+            "m": "Numerischer Monat ohne 0",
+            "mm": "Numerischer Monat, mit 0",
+            "M": "Abgekürzter Monat (z.B. Apr)",
+            "MM": "Voller Monatsname (April)",
+            "yy": "2 stelliges Jahr (15)",
+            "yyyy": "4 stelliges Jahr (2015)"
+        }
+    },
+
+    "DATE-DIFF": "Differenz zweiter Daten",
+    "DATE-DIFF-DESC": "Ermittelt die Differenz zweiter Datumsangaben",
+    "DATE-DIFF-TB":{
+        "DEFAULT" : {
+            "DATE": "Aktuelles Datum",
+            "INTERVAL": "days"
+        },
+        "DESCS": {
+            "DATE" : "Datum zum Vergleich",
+            "INTERVAL" : "Ausgabe Grösse (days, hours, minutes, seconds, weeks)"
+
+        }
+    }
+
+}
