@@ -10,7 +10,7 @@ Smoke form validation and components for Bootstrap
 
 
 
-To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
+To get started, check out [http://alfredobarron.github.io/smoke/](http://alfredobarron.github.io/smoke/)
 
 
 ## Table of contents
@@ -49,7 +49,7 @@ Smoke plugin requires the [Jquery](http://jquery.com/) library and [Bootstrap 3.
 
 ##Documentation
 
-Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
+Documentation can check the [http://alfredobarron.github.io/smoke/](http://alfredobarron.github.io/smoke/)
 
 ##How to contribute
 
