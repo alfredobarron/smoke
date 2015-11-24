@@ -22,9 +22,9 @@
     $translateProvider.useStaticFilesLoader({prefix: 'locales/', suffix: '.json'});
     $translateProvider.preferredLanguage('en');
 
-    $locationProvider.html5Mode({enabled: true});
+    //$locationProvider.html5Mode({enabled: true});
 
-    $urlRouterProvider.otherwise("/404");
+    $urlRouterProvider.otherwise("/");
 
 
     $stateProvider
