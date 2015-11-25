@@ -1,6 +1,6 @@
 $('#btnPrompt').click(function(e) {
   e.preventDefault();
-  $.smkConfirm({
+  $.smkPrompt({
     text:'Estas seguro?',
     accept:'Aceptar',
     cancel:'Cancelar'
