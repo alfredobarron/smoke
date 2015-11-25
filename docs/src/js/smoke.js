@@ -111,6 +111,7 @@
       // Se obtiene el nivel de la fuerza de la contraseña
       var smkStrongPass = $(v).attr('data-smk-strongPass');
 
+      // Se eliminan los mensajes de error
       $.smkRemoveError(input);
 
       // Se obtiene el value de los input RADIO y/o CHECKBOX
@@ -411,53 +412,60 @@
   $.fn.smkClear = function() {
 
     // Se obtienen todos los inputs
-    var inputs = (this.is(':input')) ? $(this) : $(':input:not(:button):not(:disabled):not([data-smk-noclear])', this);
+    var inputs = (this.is(':input')) ? $(this) : $(':input:not(:button)', this);
 
     // Se recorren todos los inputs del formulario
     inputs.each(function(k,v) {
-      //Se obtiene el type y el tag del input
-      var type = this.type;
-      var tag = this.tagName.toLowerCase();
-      //Si el tag trae el valor 'input' se sustituye por el valor type
-      if (tag == 'input') {
-        tag = type;
-      }
-      //Se compara el type y se limpia
-      switch (type) {
-        case 'text':
-        case 'password':
-        case 'email':
-        case 'number':
-        case 'hidden':
-        case 'date':
-        case 'datetime':
-        case 'datetime-local':
-        case 'month':
-        case 'week':
-        case 'time':
-        case 'tel':
-        case 'url':
-        case 'search':
-        case 'range':
-        case 'color':
-        this.value = '';
-        break;
-        case 'checkbox':
-        case 'radio':
-        this.checked = false;
-        break;
-      }
-      //Se compara el tag y se limpia
-      switch (tag) {
-        case 'textarea':
-        this.value = '';
-        break;
-        case 'select':
-        this.selectedIndex = -1;
-        if($(this).hasClass('select2')){
-          $(this).select2('val', '');
+
+      // Se eliminan los mensajes de error
+      $.smkRemoveError(v);
+
+      // Si el input no contiene el attr data-smk-noclear
+      if ( $(v).attr('data-smk-noclear') === undefined ) {
+        //Se obtiene el type y el tag del input
+        var type = this.type;
+        var tag = this.tagName.toLowerCase();
+        //Si el tag trae el valor 'input' se sustituye por el valor type
+        if (tag == 'input') {
+          tag = type;
         }
-        break;
+        //Se compara el type y se limpia
+        switch (type) {
+          case 'text':
+          case 'password':
+          case 'email':
+          case 'number':
+          case 'hidden':
+          case 'date':
+          case 'datetime':
+          case 'datetime-local':
+          case 'month':
+          case 'week':
+          case 'time':
+          case 'tel':
+          case 'url':
+          case 'search':
+          case 'range':
+          case 'color':
+            this.value = '';
+          break;
+          case 'checkbox':
+          case 'radio':
+            this.checked = false;
+          break;
+        }
+        //Se compara el tag y se limpia
+        switch (tag) {
+          case 'textarea':
+            this.value = '';
+          break;
+          case 'select':
+            this.selectedIndex = 0;
+            if($(this).hasClass('select2')){
+              $(this).select2('val', '');
+            }
+          break;
+        }
       }
     });
     //$(this)[0].reset();
