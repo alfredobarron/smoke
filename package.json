@@ -1,6 +1,6 @@
 {
   "name": "smoke-docs",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Smoke docs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

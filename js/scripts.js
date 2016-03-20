@@ -14,7 +14,8 @@
   .controller('MainCtrl', MainCtrl)
   .directive('fullScreen', fullScreen)
   .directive('panel1', panel1)
-  .directive('panel2', panel2);
+  .directive('panel2', panel2)
+  .directive('showPass', showPass);
 
   configure.$inject = ['$stateProvider', '$urlRouterProvider', '$translateProvider', '$locationProvider'];
   function configure($stateProvider, $urlRouterProvider, $translateProvider, $locationProvider) {
@@ -77,7 +78,7 @@
   MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
   function MainCtrl($scope, $translate, $sanitize){
 
-    $scope.version = 'v3.0.1';
+    $scope.version = 'v3.1.0';
     $scope.lang = 'English';
 
     $scope.changeLanguage = function (langKey) {
@@ -88,8 +89,10 @@
         $scope.lang = 'Español';
       }else if(langKey == 'de'){
         $scope.lang = 'Deutsch';
-      }else {
+      }else if(langKey == 'pt_br'){
         $scope.lang = 'Português Brasileiro';
+      }else if(langKey == 'fr'){
+        $scope.lang = 'French';
       }
     };
 
@@ -225,6 +228,12 @@
     $scope.validateWeek = function(){
       if($('#formWeek').smkValidate()){
         $.smkAlert({text: $('#formWeek input').val(), type: 'success'});
+      }
+    };
+    // Validate Pattern
+    $scope.validatePattern = function(){
+      if($('#formPattern').smkValidate()){
+        $.smkAlert({text: $('#formPattern input').val(), type: 'success'});
       }
     };
     // Validate Strong password
@@ -385,6 +394,21 @@
 
     /*
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    |   Hide Email
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    */
+    $scope.hideEmail = function(){
+      if($('#formHideEmail').smkValidate()){
+        var email = $.smkHideEmail($('#formHideEmail input').val());
+        $.smkAlert({text: email, type:'success'});
+      }
+    };
+
+
+
+
+    /*
+    |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     |   GetURL
     |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     */
@@ -392,6 +416,7 @@
       var url = $.smkGetURL();
       $.smkAlert({text: url, type:'success'});
     };
+
 
 
 
@@ -457,6 +482,20 @@
   function panel2() {
     return function($scope, elem, attrs) {
       $(elem).smkPanel({hide: 'min,remove'});
+    };
+  }
+
+
+
+
+  /*
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  |   showPassword
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  */
+  function showPass() {
+    return function($scope, elem, attrs) {
+      $(elem).smkShowPass();
     };
   }
 

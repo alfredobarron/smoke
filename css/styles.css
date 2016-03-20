@@ -159,6 +159,9 @@ footer ul li .fb-share-button>span{
 .advertise a:hover {
   text-decoration: none;
 }
+.advertise .carousel-indicators {
+  bottom: -50px;
+}
 
 .list-unstyled li {
   margin: 8px 0;
@@ -172,6 +175,9 @@ footer ul li .fb-share-button>span{
   color: #3A3C3C;
   text-decoration: none;
   border-left: 2px solid #3A3C3C;
+}
+.list-unstyled li img {
+  height: 20px;
 }
 
 
@@ -213,6 +219,10 @@ pre {
   background-color: #474949;
   border-radius: 0;
   margin: 0;
+}
+
+.blockquote-reverse img {
+  height: 20px;
 }
 
 .error h1,
@@ -338,7 +348,10 @@ pre {
     font-size: 7em;
   }
   .error p{
-    font-size: 1.5em
+    font-size: 1.5em;
+  }
+  .advertise img {
+    margin-bottom: 10px;
   }
 }
 @media (min-width: 1200px){

@@ -4,22 +4,66 @@
 
     <p class="lead">{{'SLOGAN' | translate}}</p>
 
-    <p><a class="btn btn-default btn-lg smk-transition1" role="button" href="#getting-started">{{'DOWNLOAD' | translate}} Smoke {{version}}</a></p>
+    <p><a class="btn btn-default btn-lg smk-transition1" role="button" href="#getting-started">{{'DOWNLOAD' | translate}} Smoke</a></p>
+
+    <small class="text-muted">{{'CURRENTLY' | translate}} {{version}}</small>
 
     <div class="advertise">
-      <div class="row">
-        <div class="col-md-6">
-          <a href="http://modulr.io/components/angular-file/" target="_blank">
-            <img src="images/angular-file.png" class="img-responsive" alt="Angular File" />
-          </a>
-        </div>
-        <div class="col-md-6 text-left">
-          <a href="http://modulr.io/components/angular-file/" target="_blank">
-            <p>Angular File</p>
-            <small>File Upload Drag and Drop, Uses the native Angularjs scope for data binding</small>
-          </a>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="http://modulr.io/components/mdr-angular-file/" target="_blank">
+                  <img src="images/angular-file.jpg" class="img-responsive" alt="Angular File" />
+                </a>
+              </div>
+              <div class="col-md-6 text-left">
+                <a href="http://modulr.io/components/mdr-angular-file/" target="_blank">
+                  <small>Angular File - Angular component that can upload files via XHR, provides drag & drop support.</small>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="http://modulr.io/components/mdr-angular-select2/" target="_blank">
+                  <img src="images/angular-select2.jpg" class="img-responsive" alt="Angular File" />
+                </a>
+              </div>
+              <div class="col-md-6 text-left">
+                <a href="http://modulr.io/components/mdr-angular-select2/" target="_blank">
+                  <small>Angular Select2 - Angular component that can replacement for select boxes.</small>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="http://modulr.io/components/angular-datepicker/" target="_blank">
+                  <img src="images/angular-datepicker.jpg" class="img-responsive" alt="Angular File" />
+                </a>
+              </div>
+              <div class="col-md-6 text-left">
+                <a href="http://modulr.io/components/angular-datepicker/" target="_blank">
+                  <small>Angular Bootstrap - Angular component that can replacement for datepicker boxes.</small>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </div><!-- /.container -->
 </div>
@@ -29,6 +73,7 @@
 
     <div class="row">
       <p class="lead">{{'FEATURES' | translate}}</p>
+      <p class="lead2">{{'FEATURES-DESC' | translate}} <a href="https://angularjs.org/" target="_blank">Angular</a>, <a href="https://select2.github.io/" target="_blank">Select2</a>, <a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">Bootstrap Datepicker</a>.</p>
       <hr class="small">
     </div>
 
