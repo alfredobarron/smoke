@@ -12,7 +12,7 @@
       <ul class="list-unstyled">
         <li><a href="" smooth-scroll target="overview">{{'OVERVIEW' | translate}}</a></li>
         <li><a href="" smooth-scroll target="input-empty">{{'INPUT-EMPTY' | translate}}</a></li>
-        <li><a href="" smooth-scroll target="input-email">{{'INPUT-EMAIL' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="input-email" ng-bind-html="'INPUT-EMAIL' | translate"></a></li>
         <li><a href="" smooth-scroll target="input-alphanumeric">{{'INPUT-ALPHANUMERIC' | translate}}</a></li>
         <li><a href="" smooth-scroll target="input-number">{{'INPUT-NUMBER' | translate}}</a></li>
         <li><a href="" smooth-scroll target="input-numberRange">{{'INPUT-NUMBERRANGE' | translate}}</a></li>
@@ -31,14 +31,17 @@
         <li><a href="" smooth-scroll target="input-time">{{'INPUT-TIME' | translate}}</a></li>
         <li><a href="" smooth-scroll target="input-month">{{'INPUT-MONTH' | translate}}</a></li>
         <li><a href="" smooth-scroll target="input-week">{{'INPUT-WEEK' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="pattern">{{'PATTERN' | translate}}</a></li>
         <li><a href="" smooth-scroll target="clear-form">{{'CLEAR-FORM' | translate}}</a></li>
+        <li><br></li>
+        <li><a href="http://codepen.io/alfredobarron/pen/rOgMvV" target="_blank"><img src="images/codepen.png" alt=""></a></li>
       </ul>
     </div><!-- /.col-lg-3 -->
 
     <div class="col-lg-9">
       <section id="overview">
         <h1>{{'FORM' | translate}}</h1><hr>
-        <p ng-bind-html="'FORM-DESC' | translate"></p>
+        <p class="lead"><span ng-bind-html="'FORM-DESC' | translate"></span></p>
         <div class="hljs-language">HTML</div>
         <div hljs hljs-include="'templates/fv-form.html'" hljs-language="html"></div>
         <br>
@@ -128,7 +131,7 @@
       </section>
 
       <section id="input-email">
-        <h1>{{'INPUT-EMAIL' | translate}}</h1><hr>
+        <h1 ng-bind-html="'INPUT-EMAIL' | translate"></h1><hr>
         <p ng-bind-html="'INPUT-EMAIL-DESC' | translate"></p>
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="" data-target="#result3" role="tab" data-toggle="tab">Result</a></li>
@@ -705,6 +708,33 @@
         </div><!-- /.tab-content -->
       </section>
 
+      <section id="pattern">
+        <h1>{{'PATTERN' | translate}}</h1><hr>
+        <p ng-bind-html="'PATTERN-DESC' | translate"></p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result23" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html23" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js23" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result23">
+            <form id="formPattern">
+              <div class="form-group">
+                <label class="control-label">Pattern</label>
+                <input type="text" class="form-control" placeholder="Enter 3 character from 'a' to 'z'" data-smk-pattern="[a-z]{3}" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="validatePattern()">Submit</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html23">
+            <div hljs hljs-include="'templates/fv-pattern.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js23">
+            <div hljs hljs-include="'templates/fv-pattern.js'"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
       <section id="clear-form">
         <h1>{{'CLEAR-FORM' | translate}}</h1><hr>
         <p ng-bind-html="'CLEAR-FORM-DESC' | translate"></p>
@@ -776,7 +806,7 @@
       </section>
 
       <blockquote class="blockquote-reverse">
-        <p>{{'FULL-EXAMPLE' | translate}}<a href="http://codepen.io/alfredobarron/pen/rOgMvV" target="_blank">Codepen</a></p>
+        <p>{{'FULL-EXAMPLE' | translate}}<a href="http://codepen.io/alfredobarron/pen/rOgMvV" target="_blank"><img src="images/codepen.png" alt=""></a></p>
       </blockquote>
     </div><!--/.col-lg-9 -->
 

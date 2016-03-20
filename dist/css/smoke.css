@@ -229,6 +229,30 @@ a.smk-full:focus {
 
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Show Pass
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+.smk-show-pass {
+  position: relative;
+}
+.smk-btn-show-pass {
+  position: absolute;
+  right: 0;
+  top: 25px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
+
+
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Helper Styles
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */

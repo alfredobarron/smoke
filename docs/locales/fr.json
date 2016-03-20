@@ -1,0 +1,285 @@
+{
+  "ENGLISH": "English",
+  "SPANISH": "Spanish",
+  "BRAZILIANPORTUGUESE":"Brazilian Portuguese",
+  "DEUTSCH": "Deutsch",
+  "FRENCH" : "French",
+  "ITALIAN" : "Italian",
+  "JAPANESE": "Japanese",
+  "ARABIC": "Arabic",
+  "RUSSIAN": "Russian",
+
+
+
+  "SLOGAN": "Smoke Composants et Validation de formulaire pour Bootstrap",
+  "DOWNLOAD": "Télécharger",
+  "CURRENTLY": "Currently",
+
+  "FEATURES": "FONCTIONNALITÉS",
+  "FEATURES-DESC": "Supports",
+
+  "NOTIFICATIONS": "Notifications",
+
+  "GITHUB": "Smoke est open source. Il est hébergé, développé et maintenu sur Github.",
+  "VIEW-IN": "Voir sur",
+
+  "DESIGNED": "Designé et développé avec amour par",
+  "TRANSLATED": "Traduit par",
+  "LICENSE": "Code et documentation (c) Copyright 2015 Alfredo Barron. Code publié sous ",
+  "ISSUES": "Problèmes",
+  "RELEASES": "Version",
+
+  "FULL-EXAMPLE": "Exemple complet dans ",
+
+  "GETTING-STARTED": "Commencer",
+  "GETTING-STARTED-DESC": "Un aperçu de Smoke, comment le télécharger et l'utiliser.",
+
+  "DOWNLOAD-DESC": "Télécharger Smoke et l'ajouter à votre projet. Il est simple et rapide à utiliser.",
+
+  "INSTALL": "Installer avec",
+
+  "WHATS-INCLUDED": "Ce qui est inclus",
+  "WHATS-INCLUDED-DESC": "Une fois téléchargé , décompressez le fichier .zip pour voir la structure de Smoke. Vous verrez quelque chose comme ceci:",
+
+  "REQUIRED": "Requis",
+  "REQUIRED-DESC": "Pour fonctionner, le plugin Smoke nécessite ces deux bibliothèques:",
+  "REQUIRED-JQUERY": "Notez que le plugin Smoke dépend de la librairie jQuery.",
+  "REQUIRED-BOOTSTRAP": "Notez que le plugin Smoke dépend du framework Bootstrap 3.",
+
+  "BASIC-TEMPLATE": "Template basique",
+  "BASIC-TEMPLATE-DESC": "Commencez avec ce template HTML basique et modifiez le selon vos besoins.",
+  "BASIC-TEMPLATE-DESC2": "Copiez le code HTML suivant pour commencer avec le minimum requis par Smoke.",
+
+  "LANGUAGE": "Langue",
+  "LANGUAGE-DESC": "Pour changer la langue des messages de validations, ajoutez le script suivant dans le html.",
+  "LANGUAGE-TB": {
+    "TITLE": "Langues Supportés",
+    "LANGUAGE": "Langue",
+    "ARCHIVE": "Archive"
+  },
+
+
+
+  "VALIDATE": "Validation de Formulaire",
+  "VALIDATE-DESC": "Il rend la validation du formulaire sur le client simple, facile et sûr.",
+
+  "OVERVIEW": "Vue d'ensemble",
+
+  "FORM": "Formulaire",
+  "FORM-DESC": "Pour valider un formulaire la fonction utilisé est <code>smkValidate()</code>.",
+
+  "CUSTOMIZE-ICON": "Icône personnalisé",
+  "CUSTOMIZE-ICON-DESC": "Personnalisez l'icon d'erreur enajoutant <code>data-smk-icon</code> dans la balise <code>form</code>.",
+
+  "INPUT": "Champ Input",
+  "INPUT-DESC": "Le type de champ supportés jusqu'ici sont <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, <code>radio</code>, <code>checkbox</code>, <code>number</code>, <code>color</code>, <code>date</code>, <code>datetime</code>, <code>time</code>, <code>month</code>, <code>week</code>, <code>tel</code>, <code>url</code>, <code>search</code> and <code>range</code>.",
+  "INPUT-NOTE": "Il est nécessaire que le champs <code>input</code> ai la classe <code>form-control</code> et soit inclut dans un <code>div</code> avec la classe <code>form-group</code> pour être validé.",
+  "INPUT-NOTE-DISABLED": "Si le champ <code>input</code> a l'attribut <code>disabled</code> , il ne sera pas validé.",
+
+  "CUSTOMIZE-MESSAGE": "Message personnalisé",
+  "CUSTOMIZE-MESSAGE-DESC": "Personnalisez le message d'erreur en ajoutant <code>data-smk-msg</code> dans la balise <code>input</code>.",
+
+  "INPUT-EMPTY": "Champ Input vide",
+  "INPUT-EMPTY-DESC": "Pour valider un champ qui est obligatoire, vous avez juste a ajouter l'attribut <code>required</code> dans la balise <code>input</code>.",
+
+  "INPUT-EMAIL": "Champ E-mail <small>whit Angular</small>",
+  "INPUT-EMAIL-DESC": "Pour valider un champ input e-mail, le champ doit être de type <code>email</code>.",
+
+  "INPUT-ALPHANUMERIC": "Champ  alphanumerique",
+  "INPUT-ALPHANUMERIC-DESC": "Pour valider un champ input qui n’accepte que des chiffres et des lettres, le champ doit être de type <code>text</code>, ajoutez l'attribut <code>data-smk-type</code> avec la propriété <code>alphanumeric</code>.",
+
+  "INPUT-NUMBER": "Champ numérique",
+  "INPUT-NUMBER-DESC": "Pour valider un champ input qui n'accepte que des nombres, le champ doit être de type <code>text</code> ou de type <code>number</code>, si il est de type <code>text</code> ajoutez l'attribut <code>data-smk-type</code> avec la valeur <code>number</code>.",
+
+  "INPUT-NUMBERRANGE": "Champ intervalle numérique",
+  "INPUT-NUMBERRANGE-DESC": "Pour valider un champ qui n'accepte qu'un nombre dans une intervalle donnée, le champ doit être de type <code>text</code>, ajoutez lui <code>data-smk-type</code>, l'attribut <code>number</code>, ajoutez aussi les attributs <code>data-smk-min</code> et <code>data-smk-max</code> pour indiquer l'intervalle autorisée.",
+
+  "INPUT-DECIMAL": "Champ décimal",
+  "INPUT-DECIMAL-DESC": "Pour valider un champ qui n'accepte que des nombres décimaux, le champ doit être de type <code>text</code>, ajoutez lui <code>data-smk-type</code>, avec l'attribut <code>decimal</code>. You can change the separator with the <code>data-smk-decimal-separator</code> attribute.",
+
+  "INPUT-CURRENCY": "Champ monétaire",
+  "INPUT-CURRENCY-DESC": "Pour valider un champ qui n'accepte que des nombres avec des virgules et des points, c’est-à-dire un champs monétaire, le champ doit être de type <code>text</code>, ajoutez lui l'attribut <code>data-smk-type</code> avec la propriété <code>currency</code>. You can change the separators with the <code>data-smk-decimal-separator</code> and <code>data-smk-thousand-separator</code> attributes.",
+
+  "NUMBER-CHARACTER": "Nombre de caractères",
+  "NUMBER-CHARACTER-DESC": "Pour valider un champ qui n'accepte qu'un certain nombre de caratères, ajoutez lui les attributs <code>minLength</code> et <code>maxlength</code> avec pour valeurs les nombres minimum et maximum de caractères autorisées.",
+
+  "RANGE-CHARACTER": "Intervalle de caractères",
+  "RANGE-CHARACTER-DESC": "Pour valider un champ qui n'accepte q'une intervalle de caractères, ajoutez lui les attributs <code>minLength</code> et <code>maxlength</code> avec pour valeurs les nombres minimum et maximum de caractères autorisées.",
+
+  "STRONG-PASSWORD": "Mot de passe robuste",
+  "STRONG-PASSWORD-DESC": "Pour valider un champ qui n'accepterait qu'un mot de passe robuste et sécurisé, le champ doit être de type <code>password</code>, ajoutez lui l'attribut <code>data-smk-strongPass</code> avec le niveau de sécurité voulu.",
+  "STRONG-PASSWORD-TB": {
+    "DESC": "Description",
+    "DESCS": {
+      "DEFAULT": "4 caractères minimum",
+      "WEAK": "6 caractères minimum",
+      "MEDIUM": "6 caractères alphanumeric et au moin l'un deux doit être numérique",
+      "STRONG": "6 caractères minimum, combinant nombre et lettre en minuscule et majuscule."
+    }
+  },
+
+  "EQUAL-PASSWORD": "Égalité de mot de passe",
+  "EQUAL-PASSWORD-DESC": "Pour valider que deux champs soit égaux, ajoutez l'attribut <code>required</code> dans le tag <code>input</code>. La fonction utilisé est <code>$.smkEqualPass()</code>.",
+
+  "EQUAL-PASSWORD-VAR": "Égalité de mot de passe var",
+  "EQUAL-PASSWORD-VAR-DESC": "Pour valider que le contenu d'un champ soit égale a la valeur d'une variable JavaScript, ajoutez l'attribut <code>required</code> dans la balise <code>input</code> . La fonction utilisé est <code>$.smkEqualPass()</code>. ",
+
+  "INPUT-URL": "Champ URL",
+  "INPUT-URL-DESC": "Pour valider une url, le champ doit être de type <code>url</code>.",
+
+  "INPUT-TEL": "Champ Téléphonique",
+  "INPUT-TEL-DESC": "Pour valider un champ téléphonique, le champ doit être de type <code>tel</code>.",
+
+  "INPUT-COLOR": "Champ Couleur",
+  "INPUT-COLOR-DESC": "Pour valider un champ couleur, le champ doit être de type <code>color</code>.",
+
+  "INPUT-DATE": "Champ Date",
+  "INPUT-DATE-DESC": "Pour valider un champ date, le champ doit être de type <code>date</code>.",
+
+  "INPUT-DATETIME": "Champ Date et Heure",
+  "INPUT-DATETIME-DESC": "Pour valider une date et une heure, le champ doit être de type <code>datetime</code>.",
+
+  "INPUT-TIME": "Champ Heure",
+  "INPUT-TIME-DESC": "Pour valider une heure, le champ doit être de type <code>time</code>.",
+
+  "INPUT-MONTH": "Champ Mois",
+  "INPUT-MONTH-DESC": "Pour valider un mois, le champ doit être de type <code>month</code>.",
+
+  "INPUT-WEEK": "Champ Semaine",
+  "INPUT-WEEK-DESC": "Pour valider une semaine, le champs doit être de type <code>week</code>.",
+
+  "PATTERN": "Pattern (RegExp)",
+  "PATTERN-DESC": "Validate your own pattern or regular expression by adding the <code>data-smk-pattern</code> within the etiquette <code>input</code>.",
+
+  "CLEAR-FORM": "Néttoyer le formualire",
+  "CLEAR-FORM-DESC": "Pour néttoyer le formulaire utilisez la fonction <code>smkClear()</code>. Pour ne pas néttoyer certains champs, utilisez l'attribut <code>data-smk-noclear</code> dans la balise <code>input</code>.",
+
+  "OPTIONS": "Options",
+  "OPTION":"Option",
+  "TYPE":"Type",
+  "DESCRIPTION":"Description",
+
+
+
+  "COMPONENTS": "Composants",
+  "COMPONENTS-DESC": "Crée de jolies messages d'alert et de confirmations en utilisant les méthodes native de javascript.",
+
+  "ALERTS": "Alerts",
+  "ALERTS-DESC": "Fourni des message d'alerte pour les actions courantes des utilisateurs lors de certaines actions.",
+  "ALERTS-TB": {
+    "DESC": "Personnaliser les alertes, changer le message, la couleur, la durée ou si l'alert doit être permanente.",
+    "DESCS": {
+      "TEXT":"Message",
+      "TYPE":"Type de message",
+      "ICON":"Icône dans le message",
+      "POSITION":"Position du message",
+      "TIME":"Durée de l'alerte en secondes",
+      "PERMANENT":"L'alerte est permanente"
+    }
+  },
+
+  "CONFIRMATION": "Confirmation",
+  "CONFIRMATION-DESC": "Il fourni des messages de confirmation pour les actions courantes des utilisateurs lors de certaines actions.",
+  "CONFIRMATION-TB": {
+    "DESC": "Personnaliser la confirmation, changer le message ainsi que le texte sur les boutons.",
+    "DESCS": {
+      "TEXT":"Message",
+      "ACCEPT":"Texte du bouton pour Confirmer",
+      "CANCEL":"Texte du bouton pour Annuler"
+    }
+  },
+
+  "CONFIRMATION-PROMPT": "Confirmation Prompt",
+  "CONFIRMATION-PROMPT-DESC": "Il fourni des messages de confirmation avec un champ a remplir pour les actions courantes des utilisateurs lors de certaines actions.",
+
+  "PROGRESSBAR": "Progressbar",
+  "PROGRESSBAR-DESC": "Ajoute une barre de progression a votre application.",
+  "PROGRESSBAR-DESC2": "Ajouter une barre de progression a votre application pour n'importe quel événement.",
+  "PROGRESSBAR-TB": {
+    "DESC": "Personnalisé l'élement auquel la barre de progression sera ajoutée. Définir lorsqu'elle commence et finie.",
+    "DESCS": {
+      "ELEMENT": "Element auquel la barre de progression est ajoutée",
+      "STATUS": "Lorsque ça démarre et lorsque ça fini",
+      "BGCOLOR": "Couleur de fond",
+      "BARCOLOR": "Couleur de la barre",
+      "CONTENT": "Contenu"
+    }
+  },
+
+  "FULLSCREEN": "Fullscreen",
+  "FULLSCREEN-DESC": "Ajoute la fonctionnalité plein écran a votre application.",
+  "FULLSCREEN-DESC2": "Ajoute un bouton plein écran et le contenu occupera la totalité de l'espace du contenant.",
+
+  "PANEL": "Panel",
+  "PANEL-DESC": "Ajoute des fonctionnalités a votre panel",
+  "PANEL-DESC2": "Ajoute des fonctionnalité a votre panel, minimiser, étendre, supprimer.",
+  "PANEL-TB": {
+    "DESC": "Personnaliser les boutons que vous voulez afficher.",
+    "DESCS": {
+      "HIDE": "Cache les bouttons"
+    }
+  },
+
+
+
+  "HELPERS": "Assistant",
+  "HELPERS-DESC": "COllection de fonction pour vous assister.",
+
+  "STRING-FLOAT": "String to float",
+  "STRING-FLOAT-DESC": "Converti une chaine en nombre a virgule.",
+
+  "NUMBER-CURRENCY": "Currency format",
+  "NUMBER-CURRENCY-DESC": "Converti un nombre en format monétaire.",
+  "NUMBER-CURRENCY-NOTE": "Cette fonction prend deux paramètres, le premier est le nombre qui doit être formaté et le second and the second est le préfixe ou la monnaie.",
+
+  "SHOW-PASS": "Show Password",
+  "SHOW-PASS-DESC": "Show password in a field password.",
+
+  "HIDE-EMAIL": "Hide email",
+  "HIDE-EMAIL-DESC": "Hide email for security.",
+
+  "URL-DESC": "Get URL.",
+  "URL-NOTE": "This function takes a parameter (optional) is the number of folders to get  the URL after.",
+
+  "DATE": "Date",
+  "DATE-DESC": "Avec cette fonction vous pouvez formatter, traduire et personnalisé les dates",
+  "DATE-NOTE": "Dates for handling recommend using ",
+  "DATE-TB": {
+    "DEFAULT": {
+      "DATE": "Date courante"
+    },
+    "DESCS": {
+      "DATE": "Date numérique",
+      "FORMAT": "Format",
+      "LANG": "Language Date"
+    }
+  },
+  "DATE-TB2": {
+    "DESC": "Formats",
+    "TITLE": "Format",
+    "DESCS": {
+      "d": "Jour sans 0",
+      "dd": "Jour avec 0",
+      "m": "Numéro du Mois sans 0",
+      "mm": "Numéro du Mois avec 0",
+      "M": "Abréviation du mois",
+      "MM": "Mois complet",
+      "yy": "Année sur 2 digits",
+      "yyyy": "Année sur 4 digits"
+    }
+  },
+
+  "DATE-DIFF": "Difference dates",
+  "DATE-DIFF-DESC": "Donne la différence entre deux dates",
+  "DATE-DIFF-TB":{
+    "DEFAULT" : {
+      "DATE": "Date courante",
+      "INTERVAL": "jours"
+    },
+    "DESCS": {
+      "DATE" : "Date a comparé ",
+      "INTERVAL" : "Intervalle"
+
+    }
+  }
+}

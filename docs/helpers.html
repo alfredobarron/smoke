@@ -13,9 +13,13 @@
       <ul class="list-unstyled">
         <li><a href="" smooth-scroll target="string-float">{{'STRING-FLOAT' | translate}}</a></li>
         <li><a href="" smooth-scroll target="number-currency">{{'NUMBER-CURRENCY' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="show-pass">{{'SHOW-PASS' | translate}}</a></li>
+        <li><a href="" smooth-scroll target="hide-email">{{'HIDE-EMAIL' | translate}}</a></li>
         <li><a href="" smooth-scroll target="URL">URL</a></li>
         <li><a href="" smooth-scroll target="date">{{'DATE' | translate}}</a></li>
         <li><a href="" smooth-scroll target="date-difference">{{'DATE-DIFF' | translate}}</a></li>
+        <li><br></li>
+        <li><a href="http://codepen.io/alfredobarron/pen/NGVYQy" target="_blank"><img src="images/codepen.png" alt=""></a></li>
       </ul>
     </div>
 
@@ -71,6 +75,59 @@
           </div>
           <div role="tabpanel" class="tab-pane" id="js2">
             <div hljs hljs-include="'templates/hp-currency.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="show-pass">
+        <h1>{{'SHOW-PASS' | translate}}</h1><hr>
+        <p class="lead">{{'SHOW-PASS-DESC' | translate}}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result6" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html6" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js6" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result6">
+            <form>
+              <div class="form-group">
+                <label class="control-label">Password</label>
+                <input type="password" class="form-control" value="Smoke3" show-pass>
+              </div>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html6">
+            <div hljs hljs-include="'templates/hp-showpass.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js6">
+            <div hljs hljs-include="'templates/hp-showpass.js'" hljs-language="javascript"></div>
+          </div>
+        </div><!-- /.tab-content -->
+      </section>
+
+      <section id="hide-email">
+        <h1>{{'HIDE-EMAIL' | translate}}</h1><hr>
+        <p class="lead">{{'HIDE-EMAIL-DESC' | translate}}</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" data-target="#result7" role="tab" data-toggle="tab">Result</a></li>
+          <li role="presentation"><a href="" data-target="#html7" role="tab" data-toggle="tab">HTML</a></li>
+          <li role="presentation"><a href="" data-target="#js7" role="tab" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="result7">
+            <form id="formHideEmail">
+              <div class="form-group">
+                <label class="control-label">Email</label>
+                  <input type="email" class="form-control" placeholder="Enter email" value="alfredobarronc@gmail.com" required>
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="hideEmail()">Hide email</button>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="html7">
+            <div hljs hljs-include="'templates/hp-hideemail.html'" hljs-language="html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="js7">
+            <div hljs hljs-include="'templates/hp-hideemail.js'" hljs-language="javascript"></div>
           </div>
         </div><!-- /.tab-content -->
       </section>
@@ -284,7 +341,7 @@
       </section>
 
       <blockquote class="blockquote-reverse">
-        <p>{{'FULL-EXAMPLE' | translate}}<a href="http://codepen.io/alfredobarron/pen/NGVYQy" target="_blank">Codepen</a></p>
+        <p>{{'FULL-EXAMPLE' | translate}}<a href="http://codepen.io/alfredobarron/pen/NGVYQy" target="_blank"><img src="images/codepen.png" alt=""></a></p>
       </blockquote>
     </div><!--/.col-lg-9 -->
 

@@ -1,9 +1,8 @@
 $scope.validateEmail = function(){
   if ($('#formEmail').smkValidate()) {
     // Code here
-
     $.smkAlert({
-      text: $('#formEmail #email').val(),
+      text: $scope.email,
       type: 'success'
     });
   }

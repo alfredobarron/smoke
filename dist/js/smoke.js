@@ -69,7 +69,8 @@
         textDatetime     : 'Please enter a valid date and time',
         textMonth        : 'Please enter a valid month',
         textWeek         : 'Please enter a valid week',
-        textTime         : 'Please enter a valid time'
+        textTime         : 'Please enter a valid time',
+        textPattern      : 'Enter a valid string'
       };
     }
 
@@ -110,6 +111,22 @@
       var smkMax = $(v).attr('data-smk-max');
       // Se obtiene el nivel de la fuerza de la contraseña
       var smkStrongPass = $(v).attr('data-smk-strongPass');
+      // Se obtiene el pattern de una expresión regular
+      var smkPattern = $(v).attr('data-smk-pattern');
+      // Se obtiene el valor pestaña centavos
+      var smkDecimalSeparator = $(v).attr('data-smk-decimal-separator');
+      // Se obtiene el valor pestaña miles
+      var smkThousandSeparator = $(v).attr('data-smk-thousand-separator');
+
+      //Obtiene las fichas de los valores por defecto de miles y centavos
+      if (typeof(smkDecimalSeparator) === 'undefined'){
+        //Valor por defecto
+        smkDecimalSeparator = '.'; //Default
+      }
+      if (typeof(smkThousandSeparator) === 'undefined'){
+        //Valor por defecto
+        smkThousandSeparator = ','; //Default
+      }
 
       // Se eliminan los mensajes de error
       $.smkRemoveError(input);
@@ -117,7 +134,8 @@
       // Se obtiene el value de los input RADIO y/o CHECKBOX
       if (type === 'radio' || type === 'checkbox') {
         // Se obtiene el value del grupo de checks o radios
-        value = $("input[name=" + name + "]:checked").val();
+        //value = $("input[name=" + name + "]:checked").val();
+        value = $("input[name='" + name + "']:checked").val();
       }
 
       // Se validan los INPUTS que son requeridos y estan vacios
@@ -179,7 +197,8 @@
         // Se valida el input DECIMAL
         if (smkType === 'decimal') {
           // Se crea la expresión regular para el input decimal
-          var decimalRegex = /^\d+(?:\.\d{1,4})?$/;
+          //var decimalRegex = /^\d+(?:\.\d{1,4})?$/;
+          var decimalRegex = (smkDecimalSeparator === ',') ? (/^\d+(?:\,\d{1,4})?$/) :  (/^\d+(?:\.\d{1,4})?$/);
           // Se valida que el value del input cumpla con la expresión regular
           if (!decimalRegex.test(value)) {
             // Se agrega el mensaje de error
@@ -192,7 +211,8 @@
           // Se crea la expresión regular para el input currency con $ al inicio
           //var currencyRegex = /^\$?(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
           // Se crea la expresión regular para el input currency
-          var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/;
+          //var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/;
+          var currencyRegex = (smkDecimalSeparator === ',' && smkThousandSeparator === '.') ? (/^(?:\d+|\d{1,3}(?:.\d{3})*)(?:\,\d{1,4}){0,1}$/) : (/^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/) ;
           // Se valida que el value del input cumpla con la expresión regular
           if (!currencyRegex.test(value)) {
             // Se agrega el mensaje de error
@@ -341,6 +361,17 @@
           }
         }
 
+        // Se valida el pattern de una expresión regular
+        if (smkPattern !== '' && smkPattern !== undefined) {
+          // Se valida que el value del input cumpla con la expresión regular
+          var patternRegex = new RegExp('^(' + smkPattern + ')$');
+          // Se valida que el value del input cumpla con la expresión regular
+          if (!patternRegex.test(value)) {
+            // Se agrega el mensaje de error
+            result = $.smkAddError(input, languaje.textPattern);
+          }
+        }
+
       }
 
       input
@@ -462,7 +493,9 @@
           case 'select':
             this.selectedIndex = 0;
             if($(this).hasClass('select2')){
-              $(this).select2('val', '');
+              //$(this).select2('val', '');
+              // new version
+              $(this).val('').trigger("change.select2");
             }
           break;
         }
@@ -841,6 +874,9 @@
   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   */
   $.smkCurrency = function(number, prefix) {
+    if (typeof number !== 'string') {
+      number = number.toString();
+    }
     var num = number.replace(',', '');
     if(num !== ''&& !isNaN(num)){
       num = Math.round(parseFloat(num) * Math.pow(10, 2)) / Math.pow(10, 2);
@@ -903,6 +939,61 @@
     return url;
   };
 
+
+
+
+
+  /**
+  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * ShowPass
+  * $('.panel').smkShowPass();
+  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  */
+  $.fn.smkShowPass = function(options) {
+
+    var self = $(this);
+    var parent = self.parent('.form-group');
+    var btnShow = '<span class="glyphicon glyphicon-eye-open smk-btn-show-pass" aria-hidden="true"></span>';
+
+    parent.addClass('smk-show-pass');
+    parent.append( btnShow );
+
+    // Evento del boton Remove
+    parent.find('.smk-btn-show-pass').click(function(event) {
+      event.preventDefault();
+      if (self.prop('type') == 'password') {
+        self.prop('type', 'text');
+        $(this).addClass('glyphicon-eye-close');
+        $(this).removeClass('glyphicon-eye-open');
+      } else {
+        self.prop('type', 'password');
+        $(this).removeClass('glyphicon-eye-close');
+        $(this).addClass('glyphicon-eye-open');
+      }
+    });
+
+  };
+
+
+
+
+  /**
+  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * Hide email
+  * var email = $.smkHideEmail('alfredobarronc@gmail.com');
+  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  */
+  $.smkHideEmail = function(string) {
+    var parts = string.split('@');
+    var first = parts[0].charAt(0);
+    var last = parts[0].slice(-1);
+    var arterisk = '';
+    for (var i = 0; i < parts[0].length - 2; i++) {
+      arterisk = arterisk + '*';
+    }
+    var email = first + arterisk + last + '@' + parts[1];
+    return email;
+  };
 
 
 
