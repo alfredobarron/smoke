@@ -7,13 +7,18 @@
   "ITALIAN" : "Italian",
   "JAPANESE": "Japanese",
   "ARABIC": "Arabic",
+  "RUSSIAN": "Russian",
 
 
 
   "SLOGAN": "Smoke form validation and components for Bootstrap",
   "DOWNLOAD": "Download",
+  "CURRENTLY": "Currently",
 
   "FEATURES": "FEATURES",
+  "FEATURES-DESC": "Supports",
+
+  "NOTIFICATIONS": "Notifications",
 
   "GITHUB": "Smoke is open source. It's hosted, developed, and maintained on GitHub.",
   "VIEW-IN": "View in",
@@ -52,7 +57,8 @@
   "LANGUAGE-TB": {
     "TITLE": "Supported languages",
     "LANGUAGE": "Language",
-    "ARCHIVE": "Archive"
+    "ARCHIVE": "Archive",
+    "CREATOR": "Creator"
   },
 
 
@@ -63,7 +69,7 @@
   "OVERVIEW": "Overview",
 
   "FORM": "Form",
-  "FORM-DESC": "To validate a form the function used is  <code>smkValidate()</code>. This function supports JQuery, Angular and Select2.",
+  "FORM-DESC": "To validate a form the function used is  <code>smkValidate()</code>.",
 
   "CUSTOMIZE-ICON": "Customize icon",
   "CUSTOMIZE-ICON-DESC": "Customize the error icon by adding the <code>data-smk-icon</code> within the etiquette <code>form</code>.",
@@ -79,10 +85,10 @@
   "INPUT-EMPTY": "Empty input",
   "INPUT-EMPTY-DESC": "To validate a field that is mandatory, you only have to add the <code>required</code> attribute within the <code>input</code>.",
 
-  "INPUT-EMAIL": "Email input ",
+  "INPUT-EMAIL": "Email input <small>whit Angular</small>",
   "INPUT-EMAIL-DESC": "To validate an email account, the field must be of type <code>email</code>.",
 
-  "INPUT-ALPHANUMERIC": "Alphanumeric input ",
+  "INPUT-ALPHANUMERIC": "Alphanumeric input",
   "INPUT-ALPHANUMERIC-DESC": "To validate a field that accepts only numbers and letters, the field must be of type <code>text</code>, add the <code>data-smk-type</code> attribute and within this  the <code>alphanumeric</code> property.",
 
   "INPUT-NUMBER": "Number input",
@@ -92,10 +98,10 @@
   "INPUT-NUMBERRANGE-DESC": "To validate a field that only accepts numbers and within in a range, the field must be of type <code>text</code>, add the <code>data-smk-type</code> and within this, the <code>number</code> attribute, also add the <code>data-smk-min</code> and <code>data-smk-max</code> attributes to indicate the range allowed.",
 
   "INPUT-DECIMAL": "Decimal input",
-  "INPUT-DECIMAL-DESC": "To validate a field that only accepts decimal numbers, that field must be of type <code>text</code>, add the <code>data-smk-type</code> and within this, the <code>decimal</code> attribute.",
+  "INPUT-DECIMAL-DESC": "To validate a field that only accepts decimal numbers, that field must be of type <code>text</code>, add the <code>data-smk-type</code> and within this, the <code>decimal</code> attribute. You can change the separator with the <code>data-smk-decimal-separator</code> attribute.",
 
   "INPUT-CURRENCY": "Input currency",
-  "INPUT-CURRENCY-DESC": "To validate a field that only accepts numbers, commas, dots, ie a currency format, the field must be of type <code>text</code>, add the <code>data-smk-type</code> attribute and within this, the <code>currency</code> property.",
+  "INPUT-CURRENCY-DESC": "To validate a field that only accepts numbers, commas, dots, ie a currency format, the field must be of type <code>text</code>, add the <code>data-smk-type</code> attribute and within this, the <code>currency</code> property. You can change the separators with the <code>data-smk-decimal-separator</code> and <code>data-smk-thousand-separator</code> attributes.",
 
   "NUMBER-CHARACTER": "Number character",
   "NUMBER-CHARACTER-DESC": "To validate a field that only accept a certain number of characters, add the <code>minLength</code> and <code>maxlength</code> attributes and within these the number of characters allowed.",
@@ -144,6 +150,9 @@
 
   "INPUT-WEEK": "Week input",
   "INPUT-WEEK-DESC": "To validate an week, the field must be of type <code>week</code>.",
+
+  "PATTERN": "Pattern (RegExp)",
+  "PATTERN-DESC": "Validate your own pattern or regular expression by adding the <code>data-smk-pattern</code> within the etiquette <code>input</code>.",
 
   "CLEAR-FORM": "Clear form",
   "CLEAR-FORM-DESC": "To clean forms use the <code>smkClear()</code> function. For not cleaning one or more fields, use the attribute <code>data-smk-noclear</code> within the etiquette <code>input</code>.",
@@ -225,6 +234,12 @@
   "NUMBER-CURRENCY": "Currency format",
   "NUMBER-CURRENCY-DESC": "Converts a number to currency format.",
   "NUMBER-CURRENCY-NOTE": "This function takes two parameters, the first is the number to be formatted and the second is the prefix or the currency.",
+
+  "SHOW-PASS": "Show Password",
+  "SHOW-PASS-DESC": "Show password in a field password.",
+
+  "HIDE-EMAIL": "Hide email",
+  "HIDE-EMAIL-DESC": "Hide email for security.",
 
   "URL-DESC": "Get URL.",
   "URL-NOTE": "This function takes a parameter (optional) is the number of folders to get  the URL after.",

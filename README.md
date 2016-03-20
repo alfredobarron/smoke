@@ -80,10 +80,12 @@ If you want to making changes Better avoid working directly on the master branch
 
 ##Collaborators
 
-- [+MisaelRojas](https://plus.google.com/+MisaelRojas)
+- [@misaelrojas](https://github.com/misaelrojas)
 - [@mostrosonido](https://twitter.com/mostrosonido)
 - [@sdhp](https://github.com/sdhp)
 - [@LespiletteMaxime](https://github.com/LespiletteMaxime)
+- [@promogest](https://github.com/promogest)
+- [@hidesuke](https://github.com/hidesuke)
 - [@druzza](https://github.com/druzza)
 - [@adaniello](https://github.com/adaniello)
 - [@tamerwaw](https://github.com/tamerwaw)

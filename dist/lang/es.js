@@ -37,7 +37,8 @@
     textDatetime     : 'Ingresa una fecha y hora válida',
     textMonth        : 'Ingresa un mes válido',
     textWeek         : 'Ingresa una semana válida',
-    textTime         : 'Ingresa una hora válida'
+    textTime         : 'Ingresa una hora válida',
+    textPattern      : 'Ingresa una cadena de texto valida'
   };
 
   $.smkEqualPass.Languaje = {

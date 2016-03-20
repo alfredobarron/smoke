@@ -7,13 +7,18 @@
   "ITALIAN" : "Italiano",
   "JAPANESE": "Japonés",
   "ARABIC": "Arabe",
+  "RUSSIAN": "Ruso",
 
 
 
   "SLOGAN": "Smoke validacion de formularios y componentes para Bootstrap",
   "DOWNLOAD": "Descargar",
+  "CURRENTLY": "Actual",
 
   "FEATURES": "CARACTERÍSTICAS",
+  "FEATURES-DESC": "Soporta",
+
+  "NOTIFICATIONS": "Notificaciones",
 
   "GITHUB": "Smoke es open source, esta hosteado, desarrollado y mantenido en GitHub.",
   "VIEW-IN": "Ver en",
@@ -52,7 +57,8 @@
   "LANGUAGE-TB": {
     "TITLE": "Lenguajes soportados",
     "LANGUAGE": "Lenguaje",
-    "ARCHIVE": "Archivo"
+    "ARCHIVE": "Archivo",
+    "CREATOR": "Creador"
   },
 
 
@@ -63,7 +69,7 @@
   "OVERVIEW": "Información general",
 
   "FORM": "Formulario",
-  "FORM-DESC": "Para validar un formulario la función que se utiliza es <code>smkValidate()</code>. Esta funcion tiene soporte para JQuery, Angular y Select2.",
+  "FORM-DESC": "Para validar un formulario la función que se utiliza es <code>smkValidate()</code>.",
 
   "CUSTOMIZE-ICON": "Personalizar icono",
   "CUSTOMIZE-ICON-DESC": "Personaliza los mensaje de error añadiendo el atributo <code>data-smk-msg</code> dentro de la etiqueta <code>input</code>.",
@@ -79,7 +85,7 @@
   "INPUT-EMPTY": "Campo vacío",
   "INPUT-EMPTY-DESC": "Para validar que un campo sea obligatorio solo tienes que agregar el atributo <code>required</code> dentro de la etiqueta <code>input</code>.",
 
-  "INPUT-EMAIL": "Campo email",
+  "INPUT-EMAIL": "Campo email <small>con Angular</small>",
   "INPUT-EMAIL-DESC": "Para validar una cuenta de correo electrónico, el campo debe ser de tipo <code>email</code>.",
 
   "INPUT-ALPHANUMERIC": "Campo alfanumérico",
@@ -92,10 +98,10 @@
   "INPUT-NUMBERRANGE-DESC": "Para validar que un campo solo acepte números y que corresponda a un rango numérico, el campo debe ser de tipo <code>text</code>, agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>number</code> también agregar los atributos <code>data-smk-min</code> y <code>data-smk-max</code> y dentro de estos el rango numérico permitido.",
 
   "INPUT-DECIMAL": "Campo decimal",
-  "INPUT-DECIMAL-DESC": "Para validar que un campo solo acepte números decimales, el campo debe ser de tipo <code>text</code>, agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>decimal</code>.",
+  "INPUT-DECIMAL-DESC": "Para validar que un campo solo acepte números decimales, el campo debe ser de tipo <code>text</code>, agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>decimal</code>. Puedes cambiar el separador con el atributo <code>data-smk-decimal-separator</code>.",
 
   "INPUT-CURRENCY": "Campo moneda",
-  "INPUT-CURRENCY-DESC": "Para validar que un campo solo acepte números, comas, puntos, es decir que solo acepte un formato de moneda, el campo debe ser de tipo <code>text</code>, agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>currency</code>.",
+  "INPUT-CURRENCY-DESC": "Para validar que un campo solo acepte números, comas, puntos, es decir que solo acepte un formato de moneda, el campo debe ser de tipo <code>text</code>, agregar el atributo <code>data-smk-type</code> y dentro de este la propiedad <code>currency</code>. Puedes cambiar los separadores con los atributos <code>data-smk-decimal-separator</code> y <code>data-smk-thousand-separator</code>.",
 
   "NUMBER-CHARACTER": "Numero de caracteres",
   "NUMBER-CHARACTER-DESC": "Para validar que un campo solo acepte un determinado numero de caracteres, agregar los atributos <code>minlength</code> y <code>maxlength</code> y dentro de estos el numero de caracteres permitido.",
@@ -144,6 +150,9 @@
 
   "INPUT-WEEK": "Campo week",
   "INPUT-WEEK-DESC": "Para validar una semana, el campo debe ser de tipo <code>week</code>.",
+
+  "PATTERN": "Patron (RegExp)",
+  "PATTERN-DESC": "Valida tu propio patron o expresion regular añadiendo el atributo <code>data-smk-pattern</code> dentro de la etiqueta <code>input</code>.",
 
   "CLEAR-FORM": "Limpiar formulario",
   "CLEAR-FORM-DESC": "Para limpiar formularios se usa la función <code>smkClear()</code>. Para no limpiar uno o más campos se usa el atributo <code>data-smk-noclear</code> dentro de la etiqueta <code>input</code>.",
@@ -225,6 +234,12 @@
   "NUMBER-CURRENCY": "Formato de moneda",
   "NUMBER-CURRENCY-DESC": "Convierte un número a formato de moneda.",
   "NUMBER-CURRENCY-NOTE": "Esta función recibe dos parámetros el primero es el número que se va a formatear y el segundo es el prefijo o el tipo de moneda.",
+
+  "SHOW-PASS": "Mostrar contraseña",
+  "SHOW-PASS-DESC": "Muestra la contraseña de un campo de tipo password.",
+
+  "HIDE-EMAIL": "Ocultar correo electrónico",
+  "HIDE-EMAIL-DESC": "Oculta el correo electrónico por seguridad.",
 
   "URL-DESC": "Obtiene la URL.",
   "URL-NOTE": "Esta función recibe un parámetro (opcional) es el número de carpetas para obener después de la URL.",

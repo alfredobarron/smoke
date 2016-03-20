@@ -2,7 +2,8 @@
 .grunt
 node_modules
 docsHTML
-docs/node_modules
 
 # Extension to ognore
+*.
 *.zip
+Gruntfile.js
