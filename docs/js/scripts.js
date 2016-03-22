@@ -78,7 +78,7 @@
   MainCtrl.$inject = ['$scope', '$translate', '$sanitize'];
   function MainCtrl($scope, $translate, $sanitize){
 
-    $scope.version = 'v3.1.0';
+    $scope.version = 'v3.1.1';
     $scope.lang = 'English';
 
     $scope.changeLanguage = function (langKey) {
